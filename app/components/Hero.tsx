@@ -3,8 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 import { motion } from "framer-motion"
-import { matchingStats, recentPlacements } from "@/lib/data"
-import { CheckCircle } from "lucide-react"
+import { DynamicMatchCard } from "./DynamicMatchCard"
 
 export default function Hero() {
   const { t } = useLanguage()
@@ -37,45 +36,7 @@ export default function Hero() {
           className="flex-1 relative"
         >
           <div className="relative w-full max-w-2xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 shadow-lg">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <CheckCircle className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold">{recentPlacements[0].role}</h3>
-                  <p className="text-white/80 text-sm">Latest AI-Matched Position</p>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="bg-white/5 rounded-lg p-4">
-                  <h4 className="text-white/90 text-sm font-medium mb-2">Overall Match Score</h4>
-                  <div className="w-full bg-white/20 rounded-full h-2">
-                    <div
-                      className="bg-primary h-full rounded-full transition-all duration-1000"
-                      style={{ width: `${matchingStats.overallMatch}%` }}
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/5 rounded-lg p-4">
-                    <h4 className="text-white/90 text-sm font-medium mb-1">Technical Skills</h4>
-                    <p className="text-white text-lg font-semibold">{matchingStats.technicalSkills}%</p>
-                  </div>
-                  <div className="bg-white/5 rounded-lg p-4">
-                    <h4 className="text-white/90 text-sm font-medium mb-1">Team Fit</h4>
-                    <p className="text-white text-lg font-semibold">{matchingStats.teamFit}%</p>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {recentPlacements[0].skills.map((skill, index) => (
-                    <span key={index} className="px-2 py-1 rounded-full bg-white/10 text-white/90 text-sm">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <DynamicMatchCard />
           </div>
         </motion.div>
       </div>

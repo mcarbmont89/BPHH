@@ -16,11 +16,6 @@ const processSteps = [
     descriptionKey: "process.match.description",
   },
   {
-    icon: Users,
-    titleKey: "process.candidates.title",
-    descriptionKey: "process.candidates.description",
-  },
-  {
     icon: Video,
     titleKey: "process.interview.title",
     descriptionKey: "process.interview.description",
@@ -29,6 +24,11 @@ const processSteps = [
     icon: BarChart3,
     titleKey: "process.scoring.title",
     descriptionKey: "process.scoring.description",
+  },
+  {
+    icon: Users,
+    titleKey: "process.candidates.title",
+    descriptionKey: "process.candidates.description",
   },
   {
     icon: CheckCircle,

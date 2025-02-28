@@ -1,6 +1,5 @@
 "use client"
 
-// import ClientCarousel from "./components/ClientCarousel"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Services from "./components/Services"
@@ -20,14 +19,22 @@ export default function Home() {
       <main>
         <Hero />
         <Stats />
-        <Services />
-        <Industries />
-        {/*<ClientCarousel />*/}
-        {/*<VideoSection />*/}
-        <Process />
+        <section id="services">
+          <Services />
+        </section>
+        <section id="industries">
+          <Industries />
+        </section>
+        <section id="process">
+          <Process />
+        </section>
         <Testimonials />
-        <Solution />
-        <About />
+        <section id="solution">
+          <Solution />
+        </section>
+        <section id="about">
+          <About />
+        </section>
       </main>
       <Footer />
       <Chatbot />

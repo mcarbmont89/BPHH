@@ -1,23 +1,23 @@
 export const stats = [
   {
     value: "93%",
-    label: "Placement Rate",
-    description: "Successful placements within 30 days",
+    label: "Tasa de Colocación",
+    description: "Colocaciones exitosas en 15 días",
   },
   {
     value: "2.5x",
-    label: "Faster Hiring",
-    description: "Compared to traditional recruitment",
+    label: "Contratación más Rápida",
+    description: "Comparado con el reclutamiento tradicional",
   },
   {
     value: "85%",
-    label: "Long-term Retention",
-    description: "Candidates stay over 2 years",
+    label: "Retención a Largo Plazo",
+    description: "Candidatos permanecen más de 2 años",
   },
   {
     value: "10k+",
-    label: "Tech Professionals",
-    description: "In our AI-powered network",
+    label: "Profesionales Tech",
+    description: "En nuestra red impulsada por IA",
   },
 ]
 

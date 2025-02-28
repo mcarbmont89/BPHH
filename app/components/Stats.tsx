@@ -4,10 +4,12 @@ import { stats } from "@/lib/data"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
+import { useLanguage } from "@/lib/i18n/LanguageContext"
 
 export default function Stats() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const { language } = useLanguage()
 
   return (
     <section className="py-16 bg-white">

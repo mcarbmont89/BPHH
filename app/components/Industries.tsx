@@ -2,19 +2,19 @@
 
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 import { motion } from "framer-motion"
-import { Code, Stethoscope, Cpu, Briefcase, Factory, Lightbulb, Leaf, ShoppingCart } from "lucide-react"
+import { Code, Cpu, Briefcase, Lightbulb } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
 const industries = [
   {
     icon: Code,
-    titleKey: "industries.aitech.title",
-    descriptionKey: "industries.aitech.description",
+    titleKey: "industries.technology.title",
+    descriptionKey: "industries.technology.description",
   },
   {
-    icon: Stethoscope,
-    titleKey: "industries.healthcare.title",
-    descriptionKey: "industries.healthcare.description",
+    icon: Lightbulb,
+    titleKey: "industries.deeptech.title",
+    descriptionKey: "industries.deeptech.description",
   },
   {
     icon: Cpu,
@@ -22,29 +22,9 @@ const industries = [
     descriptionKey: "industries.semiconductors.description",
   },
   {
-    icon: Factory,
-    titleKey: "industries.manufacturing.title",
-    descriptionKey: "industries.manufacturing.description",
-  },
-  {
-    icon: Lightbulb,
-    titleKey: "industries.energy.title",
-    descriptionKey: "industries.energy.description",
-  },
-  {
-    icon: ShoppingCart,
-    titleKey: "industries.retail.title",
-    descriptionKey: "industries.retail.description",
-  },
-  {
     icon: Briefcase,
     titleKey: "industries.consulting.title",
     descriptionKey: "industries.consulting.description",
-  },
-  {
-    icon: Leaf,
-    titleKey: "industries.sustainability.title",
-    descriptionKey: "industries.sustainability.description",
   },
 ]
 
@@ -93,8 +73,8 @@ export default function Industries() {
           className="mt-16 text-center"
         >
           <div className="inline-block p-6 bg-white rounded-lg shadow-lg max-w-3xl">
-            <h3 className="text-xl font-semibold mb-4">{t("industries.global.title")}</h3>
-            <p className="text-gray-600">{t("industries.global.description")}</p>
+            <h3 className="text-xl font-semibold mb-4">{t("industries.expertise.title")}</h3>
+            <p className="text-gray-600">{t("industries.expertise.description")}</p>
           </div>
         </motion.div>
       </div>

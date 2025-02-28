@@ -63,9 +63,8 @@
     "@types/react": "latest",
     "framer-motion": "latest",
     "ai": "latest",
-    "openai-edge": "latest",
-    "embla-carousel-autoplay": "latest",
-    "react-fast-marquee": "latest"
+    "@ai-sdk/openai": "latest",
+    "embla-carousel-autoplay": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",
