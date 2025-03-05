@@ -51,13 +51,7 @@ export default function Footer() {
         <div>
           <h4 className="text-lg font-semibold mb-4">{t("footer.followUs")}</h4>
           <div className="flex space-x-4">
-            <Link href="#" className="text-gray-400 hover:text-white">
-              <Facebook className="h-6 w-6" />
-            </Link>
-            <Link href="#" className="text-gray-400 hover:text-white">
-              <Twitter className="h-6 w-6" />
-            </Link>
-            <Link href="#" className="text-gray-400 hover:text-white">
+            <Link href="https://www.linkedin.com/company/boticpartners/" className="text-gray-400 hover:text-white">
               <LinkedIn className="h-6 w-6" />
             </Link>
             <Link href="mailto:admin@boticpartners.com" className="text-gray-400 hover:text-white">

@@ -1,26 +1,3 @@
-export const stats = [
-  {
-    value: "93%",
-    label: "Tasa de Colocación",
-    description: "Colocaciones exitosas en 15 días",
-  },
-  {
-    value: "2.5x",
-    label: "Contratación más Rápida",
-    description: "Comparado con el reclutamiento tradicional",
-  },
-  {
-    value: "85%",
-    label: "Retención a Largo Plazo",
-    description: "Candidatos permanecen más de 2 años",
-  },
-  {
-    value: "10k+",
-    label: "Profesionales Tech",
-    description: "En nuestra red impulsada por IA",
-  },
-]
-
 export const clients = [
   {
     name: "TechCorp",

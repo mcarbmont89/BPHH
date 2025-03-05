@@ -6,41 +6,69 @@ import { CheckCircle } from "lucide-react"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 
 interface MatchData {
-  title: string
+  titleKey: string
   technicalSkills: number
   teamFit: number
   overallMatch: number
-  skills: string[]
+  skillsKey: string
 }
 
 const matchData: MatchData[] = [
   {
-    title: "Senior Full Stack Developer",
+    titleKey: "dynamicMatchCard.positions.vpMemsEngineer",
     technicalSkills: 95,
-    teamFit: 89,
-    overallMatch: 92,
-    skills: ["React", "Node.js", "Python", "AWS"],
-  },
-  {
-    title: "AI Research Scientist",
-    technicalSkills: 97,
-    teamFit: 91,
+    teamFit: 92,
     overallMatch: 94,
-    skills: ["PyTorch", "TensorFlow", "Python", "MLOps"],
+    skillsKey: "dynamicMatchCard.skills.vpMemsEngineer",
   },
   {
-    title: "DevOps Engineer",
-    technicalSkills: 93,
-    teamFit: 88,
-    overallMatch: 91,
-    skills: ["Kubernetes", "Docker", "AWS", "CI/CD"],
+    titleKey: "dynamicMatchCard.positions.processEngineer",
+    technicalSkills: 97,
+    teamFit: 89,
+    overallMatch: 93,
+    skillsKey: "dynamicMatchCard.skills.processEngineer",
   },
   {
-    title: "Semiconductor Process Engineer",
+    titleKey: "dynamicMatchCard.positions.asicEngineer",
     technicalSkills: 96,
     teamFit: 90,
     overallMatch: 93,
-    skills: ["TCAD", "SPICE", "Python", "Process Integration"],
+    skillsKey: "dynamicMatchCard.skills.asicEngineer",
+  },
+  {
+    titleKey: "dynamicMatchCard.positions.directorGeneral",
+    technicalSkills: 93,
+    teamFit: 95,
+    overallMatch: 94,
+    skillsKey: "dynamicMatchCard.skills.directorGeneral",
+  },
+  {
+    titleKey: "dynamicMatchCard.positions.directorComercial",
+    technicalSkills: 92,
+    teamFit: 96,
+    overallMatch: 94,
+    skillsKey: "dynamicMatchCard.skills.directorComercial",
+  },
+  {
+    titleKey: "dynamicMatchCard.positions.fieldApplicationsEngineer",
+    technicalSkills: 94,
+    teamFit: 91,
+    overallMatch: 93,
+    skillsKey: "dynamicMatchCard.skills.fieldApplicationsEngineer",
+  },
+  {
+    titleKey: "dynamicMatchCard.positions.marketingDirector",
+    technicalSkills: 91,
+    teamFit: 94,
+    overallMatch: 92,
+    skillsKey: "dynamicMatchCard.skills.marketingDirector",
+  },
+  {
+    titleKey: "dynamicMatchCard.positions.directorPrevencion",
+    technicalSkills: 93,
+    teamFit: 95,
+    overallMatch: 94,
+    skillsKey: "dynamicMatchCard.skills.directorPrevencion",
   },
 ]
 
@@ -85,7 +113,7 @@ export function DynamicMatchCard() {
               exit={{ opacity: 0 }}
               className="font-semibold"
             >
-              {currentMatch.title}
+              {t(currentMatch.titleKey)}
             </motion.h3>
             <p className="text-white/80 text-sm">{t("dynamicMatchCard.latestMatch")}</p>
           </div>
@@ -139,11 +167,13 @@ export function DynamicMatchCard() {
             animate={{ opacity: 1 }}
             className="flex flex-wrap gap-2"
           >
-            {currentMatch.skills.map((skill, index) => (
-              <span key={index} className="px-2 py-1 rounded-full bg-white/10 text-white/90 text-sm">
-                {skill}
-              </span>
-            ))}
+            {t(currentMatch.skillsKey)
+              .split(", ")
+              .map((skill, index) => (
+                <span key={index} className="px-2 py-1 rounded-full bg-white/10 text-white/90 text-sm">
+                  {skill}
+                </span>
+              ))}
           </motion.div>
         </div>
       </motion.div>

@@ -6,11 +6,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Menu } from "lucide-react"
+// Import the EmailOptionsModal at the top of the file
+import { EmailOptionsModal } from "./EmailOptionsModal"
 
 export default function Header() {
   const { language, setLanguage, t } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  // Add a new state for controlling the modal visibility
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,9 +32,12 @@ export default function Header() {
     { href: "https://www.boticpartners.com/#process", label: t("nav.process") },
     { href: "https://www.boticpartners.com/#solution", label: t("nav.solution") },
     { href: "https://www.boticpartners.com/#about", label: t("nav.about") },
-    { href: "https://www.boticpartners.com/blog", label: t("nav.blog") },
-    { href: "https://www.boticpartners.com/careers", label: t("nav.careers") },
   ]
+
+  // Update the handleContact function
+  const handleContact = () => {
+    setIsEmailModalOpen(true)
+  }
 
   return (
     <header
@@ -74,7 +81,7 @@ export default function Header() {
               ES
             </button>
           </div>
-          <Button variant="default" size="sm" className="hidden md:inline-flex">
+          <Button variant="default" size="sm" className="hidden md:inline-flex" onClick={handleContact}>
             {t("nav.contact")}
           </Button>
           <button className="md:hidden" onClick={toggleMenu}>
@@ -111,12 +118,18 @@ export default function Header() {
                 ES
               </button>
             </div>
-            <Button variant="default" size="sm">
+            <Button variant="default" size="sm" onClick={handleContact}>
               {t("nav.contact")}
             </Button>
           </div>
         </div>
       )}
+      {/* Add the EmailOptionsModal component at the end of the return statement, just before the closing tag */}
+      <EmailOptionsModal
+        isOpen={isEmailModalOpen}
+        onClose={() => setIsEmailModalOpen(false)}
+        subject={t("header.contactSubject")}
+      />
     </header>
   )
 }

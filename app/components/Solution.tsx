@@ -12,7 +12,7 @@ const comparisonData = [
   { feature: "Real-Time Salary and Market Benchmarking", botic: true, traditional: false },
   { feature: "Automated CV and Profile Evaluation", botic: true, traditional: true },
   { feature: "Hiring Bias Detection", botic: true, traditional: true },
-  { feature: "Sentiment Analysis in Interviews and Feedback", botic: true, traditional: false },
+  { feature: "Sentiment Analysis in Interviews and Feedback", botic: true, traditional: true },
   { feature: "Automated Candidate Tracking and Relationship Management", botic: true, traditional: true },
   { feature: "Market Intelligence for Hiring Strategies", botic: true, traditional: false },
 ]

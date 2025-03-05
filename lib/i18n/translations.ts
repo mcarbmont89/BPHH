@@ -16,26 +16,63 @@ export const translations = {
         "Transform your hiring process with our AI-driven solution. Find the perfect talent faster and smarter.",
       cta: "Get Started",
       demo: "Watch Demo",
+      getStartedSubject: "Get Started with Botic Partners",
+      watchDemoSubject: "Request a Demo from Botic Partners",
     },
     services: {
       title: "Our Services",
-      subtitle: "Accelerating recruitment through AI-powered solutions",
-      recruitment: {
-        title: "Tech Recruitment",
-        description: "Specialized headhunting for tech positions",
+      subtitle: "Driving business growth through AI-powered talent and strategic partnerships.",
+      headhunting: {
+        title: "Headhunting & Executive Search – Technology, Hardware & Software",
+        description: "Find top tech talent quickly and efficiently.",
+        longDescription:
+          "At Botic Partners, we use a data-driven and AI-powered approach to identify, assess, and connect the best talent in hardware, software, and advanced technology.",
+        whyDifferent: "Why is our headhunting different?",
+        points: [
+          "Fast and precise – We filter ideal candidates in seconds.",
+          "Smart automation – We enhance efficiency with advanced AI tools.",
+          "Significant cost savings – We reduce hiring costs and time.",
+        ],
+        conclusion:
+          "If you're looking for tech specialists or executive leaders, Botic Partners is your strategic recruitment partner.",
+        expertiseTitle: "Our Areas of Expertise",
+        expertiseAreas: [
+          "Software Development & Engineering",
+          "Hardware & Semiconductor Design",
+          "AI & Machine Learning",
+          "Cloud Architecture & DevOps",
+          "Technical Leadership & CTO roles",
+        ],
+        metricsTitle: "Our Success Metrics",
+        metrics: [
+          "93% successful placement rate within 15 days",
+          "85% of placed candidates stay 2+ years",
+          "50% reduction in hiring costs",
+          "Access to 10,000+ pre-vetted tech professionals",
+        ],
       },
-      aiSolutions: {
-        title: "AI-Powered Matching",
-        description: "Advanced algorithms to find the perfect candidate-company fit",
+      partnerships: {
+        title: "Partnerships & Business Growth – M&A & Strategic Alliances",
+        description: "Connecting Opportunities, Accelerating Business.",
+        longDescription:
+          "At Botic Partners, we do more than just finding talent. We connect companies with the right strategic partners to drive their growth.",
+        whatWeDo: "What do we do?",
+        weConnect: "We facilitate high-value connections between companies seeking:",
+        connectionTypes: [
+          "New clients or strategic partners",
+          "Investors or potential buyers",
+          "Collaboration opportunities in key industries",
+        ],
+        howWeDoIt: "How do we do it?",
+        methods: [
+          "No platforms, no automation – We leverage our validated direct network.",
+          "Fast and flexible – We tailor our approach to each case, ensuring high-value introductions.",
+          "Trust-based approach – Every connection is relevant and has real potential.",
+        ],
+        cta: "Looking for the right connection to grow your business? Let's talk.",
       },
-      international: {
-        title: "International Talent",
-        description: "Access to global tech talent pools",
-      },
-      consulting: {
-        title: "HR Consulting",
-        description: "Strategic talent acquisition consulting",
-      },
+      ctaText: "Schedule a Consultation",
+      consultationSubject: "Consultation Request",
     },
     solution: {
       title: "Our Solution vs. Traditional Recruitment",
@@ -208,26 +245,26 @@ export const translations = {
     industries: {
       title: "Our Specialized Industries",
       subtitle: "Focused expertise in cutting-edge sectors",
-      technology: {
-        title: "Technology",
-        description: "Connecting innovative tech companies with top-tier talent across various specializations.",
+      software: {
+        title: "Software (AI and Development)",
+        description: "Connecting innovative software companies with top-tier AI and development talent.",
       },
-      deeptech: {
-        title: "DeepTech",
-        description: "Sourcing experts for groundbreaking technologies that push the boundaries of innovation.",
+      hardware: {
+        title: "Hardware (Deep Tech)",
+        description: "Sourcing experts for groundbreaking hardware and deep tech innovations.",
       },
-      semiconductors: {
-        title: "Semiconductors",
-        description: "Finding specialized talent for cutting-edge semiconductor design, manufacturing, and research.",
+      construction: {
+        title: "Construction & Real Estate",
+        description: "Finding specialized talent for modern construction and real estate technology.",
       },
-      consulting: {
-        title: "Consulting",
-        description: "Matching consulting firms with expert advisors and specialists in tech-related fields.",
+      logistics: {
+        title: "Logistics",
+        description: "Matching logistics companies with experts in supply chain and transportation technology.",
       },
       expertise: {
         title: "Specialized Recruitment Expertise",
         description:
-          "Our AI-powered global recruitment focuses on Technology, DeepTech, Semiconductors, and Consulting. We provide tailored talent acquisition services, ensuring perfect matches in these high-demand, specialized sectors.",
+          "Our AI-powered global recruitment focuses on Software, Hardware, Construction & Real Estate, and Logistics. We provide tailored talent acquisition services, ensuring perfect matches in these high-demand, specialized sectors.",
       },
     },
     clientCarousel: {
@@ -253,6 +290,26 @@ export const translations = {
       overallMatchScore: "Overall Match Score",
       technicalSkills: "Technical Skills",
       teamFit: "Team Fit",
+      positions: {
+        vpMemsEngineer: "VP MEMS Engineer",
+        processEngineer: "Process Engineer",
+        asicEngineer: "ASIC Engineer",
+        directorGeneral: "General Director",
+        directorComercial: "Commercial Director",
+        fieldApplicationsEngineer: "Field Applications Engineer",
+        marketingDirector: "Marketing Director",
+        directorPrevencion: "Prevention Director",
+      },
+      skills: {
+        vpMemsEngineer: "MEMS Design, Team Leadership, Project Management, Semiconductor Industry",
+        processEngineer: "Process Optimization, Yield Improvement, Statistical Analysis, Equipment Maintenance",
+        asicEngineer: "ASIC Design, Verilog, FPGA, Digital Signal Processing",
+        directorGeneral: "Strategic Planning, Business Development, Team Leadership, Financial Management",
+        directorComercial: "Sales Strategy, Market Analysis, Client Relations, Revenue Growth",
+        fieldApplicationsEngineer: "Technical Support, Product Knowledge, Customer Relations, Problem Solving",
+        marketingDirector: "Brand Management, Market Research, Digital Marketing, Product Positioning",
+        directorPrevencion: "Risk Assessment, Safety Protocols, Regulatory Compliance, Emergency Planning",
+      },
     },
     blog: {
       posts: {
@@ -298,15 +355,45 @@ export const translations = {
         Retail: "Retail",
       },
     },
+    stats: {
+      placement: {
+        value: "93%",
+        label: "Placement Rate",
+        description: "Successful placements in 15 days",
+      },
+      hiring: {
+        value: "2.5x",
+        label: "Faster Hiring",
+        description: "Compared to traditional recruitment",
+      },
+      retention: {
+        value: "85%",
+        label: "Long-term Retention",
+        description: "Candidates stay more than 2 years",
+      },
+      network: {
+        value: "10k+",
+        label: "Tech Professionals",
+        description: "In our AI-powered network",
+      },
+    },
+    emailOptions: {
+      title: "Choose Email Client",
+      useOutlook: "Use Outlook",
+      useGmail: "Use Gmail",
+    },
+    header: {
+      contactSubject: "Contact Request",
+    },
   },
   es: {
     nav: {
       services: "Servicios",
+      industries: "Industrias", // Update this line
       process: "Proceso", // Changed from 'solution' to 'process'
       solution: "Nuestra Solución",
       about: "Nosotros",
       contact: "Contacto",
-      industrias: "Industrias",
       careers: "Vacantes",
       blog: "Blog",
     },
@@ -316,26 +403,63 @@ export const translations = {
         "Transforma tu proceso de contratación con nuestra solución de reclutamiento basada en IA. Encuentra el talento perfecto más rápido y eficientemente.",
       cta: "Comenzar",
       demo: "Ver Demo",
+      getStartedSubject: "Comenzar con Botic Partners",
+      watchDemoSubject: "Solicitar una Demostración de Botic Partners",
     },
     services: {
       title: "Nuestros Servicios",
-      subtitle: "Acelerando el reclutamiento con soluciones basadas en IA",
-      recruitment: {
-        title: "Reclutamiento Tech",
-        description: "Headhunting especializado para posiciones tech",
+      subtitle: "Impulsando el crecimiento empresarial a través del talento potenciado por IA y alianzas estratégicas.",
+      headhunting: {
+        title: "Headhunting y Búsqueda Ejecutiva – Tecnología, Hardware y Software",
+        description: "Encuentra talento tecnológico de alto nivel de forma rápida y eficiente.",
+        longDescription:
+          "En Botic Partners, utilizamos un enfoque basado en datos y potenciado por IA para identificar, evaluar y conectar el mejor talento en hardware, software y tecnología avanzada.",
+        whyDifferent: "¿Por qué nuestro headhunting es diferente?",
+        points: [
+          "Rápido y preciso – Filtramos candidatos ideales en segundos.",
+          "Automatización inteligente – Mejoramos la eficiencia con herramientas avanzadas de IA.",
+          "Ahorro significativo de costos – Reducimos los costos y el tiempo de contratación.",
+        ],
+        conclusion:
+          "Si buscas especialistas en tecnología o líderes ejecutivos, Botic Partners es tu socio estratégico de reclutamiento.",
+        expertiseTitle: "Nuestras Áreas de Especialización",
+        expertiseAreas: [
+          "Desarrollo de Software e Ingeniería",
+          "Diseño de Hardware y Semiconductores",
+          "IA y Aprendizaje Automático",
+          "Arquitectura Cloud y DevOps",
+          "Liderazgo Técnico y roles CTO",
+        ],
+        metricsTitle: "Nuestras Métricas de Éxito",
+        metrics: [
+          "93% de tasa de colocación exitosa en 15 días",
+          "85% de los candidatos permanecen más de 2 años",
+          "50% de reducción en costos de contratación",
+          "Acceso a más de 10,000 profesionales tech pre-evaluados",
+        ],
       },
-      aiSolutions: {
-        title: "Match con IA",
-        description: "Algoritmos avanzados para encontrar el ajuste perfecto",
+      partnerships: {
+        title: "Alianzas y Crecimiento Empresarial – M&A y Alianzas Estratégicas",
+        description: "Conectando Oportunidades, Acelerando Negocios.",
+        longDescription:
+          "En Botic Partners, hacemos más que encontrar talento. Conectamos empresas con los socios estratégicos adecuados para impulsar su crecimiento.",
+        whatWeDo: "¿Qué hacemos?",
+        weConnect: "Facilitamos conexiones de alto valor entre empresas que buscan:",
+        connectionTypes: [
+          "Nuevos clientes o socios estratégicos",
+          "Inversores o compradores potenciales",
+          "Oportunidades de colaboración en industrias clave",
+        ],
+        howWeDoIt: "¿Cómo lo hacemos?",
+        methods: [
+          "Sin plataformas, sin automatización – Aprovechamos nuestra red directa validada.",
+          "Rápido y flexible – Adaptamos nuestro enfoque a cada caso, asegurando introducciones de alto valor.",
+          "Enfoque basado en la confianza – Cada conexión es relevante y tiene un potencial real.",
+        ],
+        cta: "¿Buscas la conexión adecuada para hacer crecer tu negocio? Hablemos.",
       },
-      international: {
-        title: "Talento Internacional",
-        description: "Acceso a pools de talento global",
-      },
-      consulting: {
-        title: "Consultoría RH",
-        description: "Consultoría estratégica en adquisición de talento",
-      },
+      ctaText: "Programar una Consulta",
+      consultationSubject: "Consultation Request",
     },
     solution: {
       title: "Nuestra Solución vs. Reclutamiento Tradicional",
@@ -512,29 +636,27 @@ export const translations = {
     industries: {
       title: "Nuestras Industrias Especializadas",
       subtitle: "Experiencia enfocada en sectores de vanguardia",
-      technology: {
-        title: "Tecnología",
-        description:
-          "Conectando empresas tecnológicas innovadoras con talento de primer nivel en diversas especializaciones.",
+      software: {
+        title: "Software (IA y Desarrollo)",
+        description: "Conectando empresas de software innovadoras con talento de primer nivel en IA y desarrollo.",
       },
-      deeptech: {
-        title: "DeepTech",
-        description: "Captando expertos para tecnologías revolucionarias que empujan los límites de la innovación.",
+      hardware: {
+        title: "Hardware (Deep Tech)",
+        description: "Captando expertos para innovaciones revolucionarias en hardware y tecnología profunda.",
       },
-      semiconductors: {
-        title: "Semiconductores",
-        description:
-          "Encontrando talento especializado para el diseño, fabricación e investigación de semiconductores de vanguardia.",
+      construction: {
+        title: "Construcción y Bienes Raíces",
+        description: "Encontrando talento especializado para tecnología moderna en construcción y bienes raíces.",
       },
-      consulting: {
-        title: "Consultoría",
+      logistics: {
+        title: "Logística",
         description:
-          "Conectando firmas consultoras con asesores y especialistas expertos en campos relacionados con la tecnología.",
+          "Conectando empresas de logística con expertos en tecnología de cadena de suministro y transporte.",
       },
       expertise: {
         title: "Experiencia en Reclutamiento Especializado",
         description:
-          "Nuestro reclutamiento global impulsado por IA se centra en Tecnología, DeepTech, Semiconductores y Consultoría. Proporcionamos servicios de adquisición de talento a medida, asegurando coincidencias perfectas en estos sectores especializados de alta demanda.",
+          "Nuestro reclutamiento global impulsado por IA se centra en Software, Hardware, Construcción y Bienes Raíces, y Logística. Proporcionamos servicios de adquisición de talento a medida, asegurando coincidencias perfectas en estos sectores especializados de alta demanda.",
       },
     },
     clientCarousel: {
@@ -560,6 +682,30 @@ export const translations = {
       overallMatchScore: "Puntuación General de Coincidencia",
       technicalSkills: "Habilidades Técnicas",
       teamFit: "Ajuste de Equipo",
+      positions: {
+        vpMemsEngineer: "VP Ingeniero MEMS",
+        processEngineer: "Ingeniero de Procesos",
+        asicEngineer: "Ingeniero ASIC",
+        directorGeneral: "Director General",
+        directorComercial: "Director Comercial",
+        fieldApplicationsEngineer: "Ingeniero de Aplicaciones de Campo",
+        marketingDirector: "Director de Marketing",
+        directorPrevencion: "Director de Prevención",
+      },
+      skills: {
+        vpMemsEngineer: "Diseño MEMS, Liderazgo de Equipo, Gestión de Proyectos, Industria de Semiconductores",
+        processEngineer:
+          "Optimización de Procesos, Mejora de Rendimiento, Análisis Estadístico, Mantenimiento de Equipos",
+        asicEngineer: "Diseño ASIC, Verilog, FPGA, Procesamiento de Señales Digitales",
+        directorGeneral: "Planificación Estratégica, Desarrollo de Negocios, Liderazgo de Equipo, Gestión Financiera",
+        directorComercial:
+          "Estrategia de Ventas, Análisis de Mercado, Relaciones con Clientes, Crecimiento de Ingresos",
+        fieldApplicationsEngineer:
+          "Soporte Técnico, Conocimiento del Producto, Relaciones con Clientes, Resolución de Problemas",
+        marketingDirector: "Gestión de Marca, Investigación de Mercado, Marketing Digital, Posicionamiento de Producto",
+        directorPrevencion:
+          "Evaluación de Riesgos, Protocolos de Seguridad, Cumplimiento Normativo, Planificación de Emergencias",
+      },
     },
     blog: {
       posts: {
@@ -606,6 +752,36 @@ export const translations = {
         Manufacturing: "Manufactura",
         Retail: "Venta al por menor",
       },
+    },
+    stats: {
+      placement: {
+        value: "93%",
+        label: "Tasa de Colocación",
+        description: "Colocaciones exitosas en 15 días",
+      },
+      hiring: {
+        value: "2.5x",
+        label: "Contratación más Rápida",
+        description: "Comparado con el reclutamiento tradicional",
+      },
+      retention: {
+        value: "85%",
+        label: "Retención a Largo Plazo",
+        description: "Candidatos permanecen más de 2 años",
+      },
+      network: {
+        value: "10k+",
+        label: "Profesionales Tech",
+        description: "En nuestra red impulsada por IA",
+      },
+    },
+    emailOptions: {
+      title: "Choose Email Client",
+      useOutlook: "Use Outlook",
+      useGmail: "Use Gmail",
+    },
+    header: {
+      contactSubject: "Contact Request",
     },
   },
 }
