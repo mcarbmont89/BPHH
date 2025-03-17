@@ -5,6 +5,11 @@ import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 import { motion } from "framer-motion"
+import { Calendar, Clock, Share2, ArrowLeft, Tag } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { useState } from "react"
 
 const blogPosts = {
   "recruitment-process": {
@@ -27,6 +32,13 @@ const blogPosts = {
       <p>By leveraging these AI-powered tools, we're able to make more accurate matches, reduce time-to-hire, and ultimately contribute to the success of both candidates and companies in the tech industry.</p>
     `,
     date: "2025-01-15",
+    readTime: "5 min",
+    category: "Recruitment",
+    author: "Maria Rodriguez",
+    authorRole: "Head of AI Recruitment",
+    authorImage: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.svg?height=600&width=1200",
+    relatedPosts: ["connecting-companies", "ai-agents-implementation"],
   },
   "connecting-companies": {
     title: "Connecting Companies, Fueling Growth: The Botic Partners Approach",
@@ -48,6 +60,13 @@ const blogPosts = {
       <p>Through this approach, we've helped numerous companies scale their tech teams, launch innovative products, and achieve unprecedented growth. At Botic Partners, we're not just a recruitment agency – we're a growth partner for the tech industry.</p>
     `,
     date: "2025-02-15",
+    readTime: "6 min",
+    category: "Business Growth",
+    author: "Carlos Mendez",
+    authorRole: "Strategic Partnerships Director",
+    authorImage: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.svg?height=600&width=1200",
+    relatedPosts: ["recruitment-process", "ai-agents-implementation"],
   },
   "ai-agents-implementation": {
     title: "Implementing AI Agents: Transforming Your Business Processes",
@@ -72,6 +91,98 @@ const blogPosts = {
       <p>By implementing AI agents, our partners have seen dramatic improvements in efficiency, accuracy, and overall performance. Whether you're looking to streamline your hiring process, improve customer service, or optimize your operations, AI agents can be a game-changer for your business.</p>
     `,
     date: "2025-03-15",
+    readTime: "7 min",
+    category: "AI Technology",
+    author: "Elena Kim",
+    authorRole: "AI Implementation Specialist",
+    authorImage: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.svg?height=600&width=1200",
+    relatedPosts: ["recruitment-process", "connecting-companies"],
+  },
+  // Add entries for the additional blog posts
+  "ai-recruitment-trends": {
+    title: "2025 AI Recruitment Trends: What's Next in Talent Acquisition",
+    content: `
+      <p>The landscape of talent acquisition is constantly evolving, with AI technologies driving much of this change. As we look ahead to 2025, several key trends are emerging that will shape how companies find and secure top talent.</p>
+      
+      <h2>1. Hyper-Personalized Candidate Experiences</h2>
+      <p>AI is enabling unprecedented levels of personalization in the recruitment process. From customized job recommendations to tailored interview questions, candidates will experience recruitment processes designed specifically for them.</p>
+      
+      <h2>2. Predictive Workforce Planning</h2>
+      <p>Advanced AI models are now capable of predicting future talent needs with remarkable accuracy. Companies are increasingly using these tools to anticipate skills gaps and hiring needs before they become urgent.</p>
+      
+      <h2>3. Ethical AI and Bias Mitigation</h2>
+      <p>As AI becomes more prevalent in recruitment, there's a growing focus on ensuring these systems are fair and unbiased. New tools and methodologies are emerging to detect and mitigate bias in AI-powered recruitment processes.</p>
+      
+      <h2>4. Voice and Emotion Analysis</h2>
+      <p>Beyond analyzing resumes and written communication, AI is now capable of analyzing voice patterns and emotional cues during interviews. This provides deeper insights into candidate fit and potential.</p>
+      
+      <p>At Botic Partners, we're at the forefront of these trends, continuously evolving our AI recruitment solutions to provide our clients with the most advanced, effective, and ethical talent acquisition tools available.</p>
+    `,
+    date: "2025-02-10",
+    readTime: "5 min",
+    category: "Industry Trends",
+    author: "David Chen",
+    authorRole: "AI Research Director",
+    authorImage: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.svg?height=600&width=1200",
+    relatedPosts: ["recruitment-process", "future-of-work"],
+  },
+  "talent-retention-strategies": {
+    title: "AI-Enhanced Talent Retention Strategies That Actually Work",
+    content: `
+      <p>Finding top talent is only half the battle – keeping them engaged and committed to your organization is equally crucial. Here's how AI is transforming talent retention strategies:</p>
+      
+      <h2>1. Predictive Attrition Analysis</h2>
+      <p>AI systems can now analyze patterns in employee behavior, performance, and engagement to predict which team members might be considering leaving. This allows HR teams to proactively address concerns before they lead to turnover.</p>
+      
+      <h2>2. Personalized Growth Paths</h2>
+      <p>AI can analyze an employee's skills, interests, and career trajectory to suggest personalized development opportunities. This ensures each team member has a clear path for growth within your organization.</p>
+      
+      <h2>3. Real-time Engagement Monitoring</h2>
+      <p>Advanced sentiment analysis tools can monitor employee engagement through various channels, providing managers with insights into team morale and potential issues.</p>
+      
+      <h2>4. AI-Powered Mentorship Matching</h2>
+      <p>Finding the right mentor-mentee relationships can significantly impact retention. AI can analyze personality traits, skills, and career goals to suggest optimal mentorship pairings.</p>
+      
+      <p>By implementing these AI-enhanced retention strategies, our clients have seen significant improvements in employee satisfaction and dramatic reductions in turnover rates, particularly among high-value technical talent.</p>
+    `,
+    date: "2025-02-22",
+    readTime: "6 min",
+    category: "Talent Management",
+    author: "Sophia Johnson",
+    authorRole: "Talent Retention Specialist",
+    authorImage: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.svg?height=600&width=1200",
+    relatedPosts: ["connecting-companies", "future-of-work"],
+  },
+  "future-of-work": {
+    title: "The Future of Work: How AI is Reshaping Recruitment and Workforce Management",
+    content: `
+      <p>The workplace is undergoing a profound transformation, driven largely by advances in artificial intelligence. These changes are reshaping not just how we work, but how companies find, develop, and manage talent.</p>
+      
+      <h2>1. The Rise of the Hybrid Workforce</h2>
+      <p>AI is enabling new models of work that blend human and artificial intelligence. Companies are increasingly building teams where humans and AI agents collaborate, each focusing on what they do best.</p>
+      
+      <h2>2. Skills-Based Talent Acquisition</h2>
+      <p>Traditional role-based hiring is giving way to skills-based recruitment. AI systems can now identify the specific skills needed for business success and find candidates who possess those skills, regardless of their formal qualifications or career history.</p>
+      
+      <h2>3. Continuous Learning Ecosystems</h2>
+      <p>The rapid pace of technological change means that continuous learning is essential. AI-powered learning platforms can identify skill gaps and deliver personalized learning experiences to keep workforces competitive.</p>
+      
+      <h2>4. Augmented Management</h2>
+      <p>AI tools are increasingly supporting managers with data-driven insights about team performance, engagement, and development needs. This allows for more informed, effective leadership.</p>
+      
+      <p>At Botic Partners, we're helping companies navigate this changing landscape, ensuring they have the right talent strategies in place to thrive in the AI-augmented workplace of the future.</p>
+    `,
+    date: "2025-03-05",
+    readTime: "8 min",
+    category: "Future Insights",
+    author: "James Wilson",
+    authorRole: "Workforce Futurist",
+    authorImage: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.svg?height=600&width=1200",
+    relatedPosts: ["ai-recruitment-trends", "talent-retention-strategies"],
   },
 }
 
@@ -80,26 +191,230 @@ export default function BlogPost() {
   const params = useParams()
   const id = params.id as string
   const post = blogPosts[id as keyof typeof blogPosts]
+  const [isShareMenuOpen, setIsShareMenuOpen] = useState(false)
 
   if (!post) {
-    return <div>Post not found</div>
+    return (
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow container mx-auto px-4 py-12 flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-3xl font-bold mb-4">{t("blog.postNotFound")}</h1>
+            <p className="text-gray-600 mb-8">{t("blog.postNotFoundMessage")}</p>
+            <Link href="/blog">
+              <Button>
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                {t("blog.backToBlog")}
+              </Button>
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  const sharePost = (platform: string) => {
+    const url = window.location.href
+    const title = post.title
+
+    switch (platform) {
+      case "twitter":
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, "_blank")
+        break
+      case "linkedin":
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank")
+        break
+      case "facebook":
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank")
+        break
+      case "email":
+        window.open(`mailto:?subject=${title}&body=${url}`, "_blank")
+        break
+    }
+
+    setIsShareMenuOpen(false)
   }
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow container mx-auto px-4 py-8">
-        <motion.article
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto"
-        >
-          <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-          <p className="text-gray-500 mb-8">{new Date(post.date).toLocaleDateString()}</p>
-          <div className="prose prose-lg" dangerouslySetInnerHTML={{ __html: post.content }} />
-        </motion.article>
+
+      {/* Hero section with featured image */}
+      <div className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] w-full">
+        <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+          <div className="container mx-auto px-4 pb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-4xl"
+            >
+              <Link
+                href="/blog"
+                className="inline-flex items-center text-white mb-4 hover:text-primary transition-colors"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                {t("blog.backToBlog")}
+              </Link>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="bg-primary text-white text-xs font-medium px-2.5 py-1 rounded">{post.category}</span>
+              </div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">{post.title}</h1>
+              <div className="flex items-center text-white/80 text-sm gap-4">
+                <div className="flex items-center">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  <span>{new Date(post.date).toLocaleDateString()}</span>
+                </div>
+                <div className="flex items-center">
+                  <Clock className="h-4 w-4 mr-1" />
+                  <span>{post.readTime} read</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      <main className="flex-grow bg-white">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Main content */}
+            <div className="lg:col-span-2">
+              <article className="prose prose-lg max-w-none">
+                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+              </article>
+
+              {/* Tags */}
+              <div className="mt-8 pt-8 border-t border-gray-200">
+                <div className="flex items-center flex-wrap gap-2">
+                  <Tag className="h-4 w-4 text-gray-500" />
+                  <span className="text-gray-700 font-medium mr-2">Tags:</span>
+                  <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded">
+                    {post.category}
+                  </span>
+                  <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded">
+                    AI Technology
+                  </span>
+                  <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded">Recruitment</span>
+                </div>
+              </div>
+
+              {/* Share buttons */}
+              <div className="mt-6 flex items-center">
+                <span className="text-gray-700 font-medium mr-3">Share:</span>
+                <div className="relative">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex items-center"
+                    onClick={() => setIsShareMenuOpen(!isShareMenuOpen)}
+                  >
+                    <Share2 className="h-4 w-4 mr-2" />
+                    Share
+                  </Button>
+
+                  {isShareMenuOpen && (
+                    <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg p-2 z-10 w-40">
+                      <button
+                        className="w-full text-left px-3 py-2 hover:bg-gray-100 rounded text-sm"
+                        onClick={() => sharePost("twitter")}
+                      >
+                        Twitter
+                      </button>
+                      <button
+                        className="w-full text-left px-3 py-2 hover:bg-gray-100 rounded text-sm"
+                        onClick={() => sharePost("linkedin")}
+                      >
+                        LinkedIn
+                      </button>
+                      <button
+                        className="w-full text-left px-3 py-2 hover:bg-gray-100 rounded text-sm"
+                        onClick={() => sharePost("facebook")}
+                      >
+                        Facebook
+                      </button>
+                      <button
+                        className="w-full text-left px-3 py-2 hover:bg-gray-100 rounded text-sm"
+                        onClick={() => sharePost("email")}
+                      >
+                        Email
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-1">
+              {/* Author info */}
+              <div className="bg-gray-50 rounded-lg p-6 mb-8">
+                <div className="flex items-center mb-4">
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">
+                    <Image
+                      src={post.authorImage || "/placeholder.svg"}
+                      alt={post.author}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">{post.author}</h3>
+                    <p className="text-gray-600 text-sm">{post.authorRole}</p>
+                  </div>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  Expert in AI-powered recruitment solutions with over 10 years of experience in the tech industry.
+                </p>
+              </div>
+
+              {/* Related posts */}
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="font-semibold text-lg mb-4">Related Articles</h3>
+                <div className="space-y-4">
+                  {post.relatedPosts.map((relatedPostId) => {
+                    const relatedPost = blogPosts[relatedPostId as keyof typeof blogPosts]
+                    return (
+                      <Link href={`/blog/${relatedPostId}`} key={relatedPostId}>
+                        <div className="group">
+                          <h4 className="font-medium text-gray-800 group-hover:text-primary transition-colors">
+                            {relatedPost.title}
+                          </h4>
+                          <div className="flex items-center text-gray-500 text-xs mt-1">
+                            <Calendar className="h-3 w-3 mr-1" />
+                            <span>{new Date(relatedPost.date).toLocaleDateString()}</span>
+                          </div>
+                        </div>
+                      </Link>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
+
+      {/* Newsletter section */}
+      <section className="bg-primary/10 py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">{t("blog.newsletter.title")}</h2>
+            <p className="text-gray-600 mb-8">{t("blog.newsletter.description")}</p>
+            <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder={t("blog.newsletter.placeholder")}
+                className="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+              />
+              <Button className="whitespace-nowrap">{t("blog.newsletter.subscribe")}</Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )

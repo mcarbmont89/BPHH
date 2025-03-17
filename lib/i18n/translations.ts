@@ -8,7 +8,10 @@ export const translations = {
       contact: "Contact",
       industries: "Industries",
       careers: "Careers",
-      blog: "Blog",
+      blog: {
+        title: "Our Blog",
+        subtitle: "Insights and perspectives on AI-powered recruitment and business growth",
+      },
     },
     hero: {
       title: "AI-Powered Talent, Matched Perfectly",
@@ -22,8 +25,13 @@ export const translations = {
     services: {
       title: "Our Services",
       subtitle: "Driving business growth through AI-powered talent and strategic partnerships.",
+      aiTalentMatching: {
+        title: "AI-Powered Talent Matching & Business Acceleration",
+        subtitle:
+          "At Botic Partners, we optimize recruitment with AI-driven precision. Our AI agents process thousands of profiles and shortlist top talent, while our expert headhunters conduct interviews—ensuring faster, smarter hiring.",
+      },
       headhunting: {
-        title: "Headhunting & Executive Search – Technology, Hardware & Software",
+        title: "Headhunting & Executive Search",
         description: "Find top tech talent quickly and efficiently.",
         longDescription:
           "At Botic Partners, we use a data-driven and AI-powered approach to identify, assess, and connect the best talent in hardware, software, and advanced technology.",
@@ -50,10 +58,35 @@ export const translations = {
           "50% reduction in hiring costs",
           "Access to 10,000+ pre-vetted tech professionals",
         ],
+        testimonials: [
+          {
+            quote:
+              "Botic Partners reduced our time-to-hire by 60% while improving candidate quality. Their AI-powered approach is revolutionary.",
+            author: "CTO, Leading Tech Company",
+          },
+          {
+            quote:
+              "We found exceptional talent in record time. The AI matching was incredibly accurate for our specialized roles.",
+            author: "VP of Engineering, Software Startup",
+          },
+          {
+            quote:
+              "The quality of candidates and speed of placement exceeded our expectations. A game-changer for our hiring process.",
+            author: "HR Director, Enterprise Tech",
+          },
+        ],
+        dataApproach: "Our data-driven approach consistently delivers exceptional results.",
       },
       partnerships: {
-        title: "Partnerships & Business Growth – M&A & Strategic Alliances",
-        description: "Connecting Opportunities, Accelerating Business.",
+        title: "Strategic Partnerships & Business Growth",
+        subtitle: "Strategic Connections for Business Expansion",
+        description: "Connecting Opportunities, Accelerating Business Growth",
+        marketGrowth: "Market Growth with Strategic Partnerships",
+        livePartnershipData: "Live Partnership Data",
+        partnership: "Partnership",
+        company: "Company",
+        partner: "Partner",
+        investor: "Investor",
         longDescription:
           "At Botic Partners, we do more than just finding talent. We connect companies with the right strategic partners to drive their growth.",
         whatWeDo: "What do we do?",
@@ -92,9 +125,22 @@ export const translations = {
           "Automated Candidate Tracking and Relationship Management",
         "Market Intelligence for Hiring Strategies": "Market Intelligence for Hiring Strategies",
       },
+      aiPoweredAdvantage: "AI-Powered Advantage",
+      moreEfficient: "80% More Efficient",
+      traditionalTimeToHire: "Traditional Time-to-Hire",
+      traditionalDays: "45 Days",
+      boticTimeToHire: "Botic Partners Time-to-Hire",
+      boticDays: "15 Days",
+      fasterRecruitment: "AI-powered recruitment is 3x faster than traditional methods",
+      realTimeData: "Real-time AI Recruitment Data",
+      aiEnhanced: "AI-Enhanced",
       aiAgents: {
-        title: "AI Agents and Acceleration KPIs",
+        title: "AI Agents & Acceleration KPIs",
         description: "Revolutionize your business with artificial intelligence and accelerate your processes.",
+        realTimeData: "Real-time data",
+        insights: "AI Insights Feed",
+        features: "Key AI-Powered Features",
+        exploreButton: "Explore AI Solutions",
         consultantCommunity: {
           title: "AI Consultant Community",
           description:
@@ -105,6 +151,30 @@ export const translations = {
           description:
             "At AI Workforce, our intelligent virtual assistants free your mind from repetitive tasks. Feel the freedom to focus on the essentials, save precious time, and simplify your daily routine. Boost your productivity and enjoy a brighter future today!",
         },
+        matchQuality: "Match Quality",
+        excellentMatch: "90%+ Excellent Match",
+        goodMatch: "85-90% Good Match",
+        potentialMatch: "80-85% Potential Match",
+        reviewRequired: "<80% Review Required",
+        processingStats: "Processing Stats",
+        profilesAnalyzed: "Profiles Analyzed:",
+        interviewsConducted: "Interviews Conducted:",
+        matchAccuracy: "Match Accuracy:",
+        talentDashboard: "Talent Dashboard",
+        aiMatchingCore: "AI Matching Core",
+        transformRecruitment: "Ready to transform your recruitment process?",
+        discoverSolutions:
+          "Discover how our AI-powered solutions can help you find the perfect talent faster and more efficiently.",
+        scheduleConsultation: "Schedule a Consultation",
+        automatedTalentSourcing: "Automated Talent Sourcing",
+        automatedTalentDescription: "AI agents scan multiple platforms to identify ideal candidates.",
+        naturalLanguageProcessing: "Natural Language Processing",
+        naturalLanguageDescription: "Understand and analyze candidate communications and responses.",
+        predictiveAnalytics: "Predictive Analytics",
+        predictiveAnalyticsDescription: "Forecast candidate success and retention based on data patterns.",
+        secureDataHandling: "Secure Data Handling",
+        secureDataDescription: "Ensure compliance and data security throughout the process.",
+        learnMore: "Learn more",
       },
       aiFeatures: {
         title: "Powerful Features for Your Business",
@@ -129,7 +199,7 @@ export const translations = {
     },
     about: {
       title: "About Botic Partners",
-      subtitle: "Revolutionizing tech recruitment with AI and expertise",
+      subtitle: "Revolutionizing tech recruitment with AI and data",
       mission: {
         title: "Our Mission",
         point1: "We drive your growth by connecting you with top talent and strategic opportunities.",
@@ -277,13 +347,123 @@ export const translations = {
       title: "Open Positions",
       sector: "Sector",
       apply: "Apply",
+      filterByIndustry: "Filter by Industry",
+      allIndustries: "All Industries",
       applyModalTitle: "Choose Application Method",
       applyModalDescription: "How would you like to apply for the {jobTitle} position?",
       useDefaultEmail: "Use Default Email",
       useGmail: "Use Gmail",
+      jobs: {
+        seniorFullStack: {
+          title: "Senior Full Stack Developer",
+          description: "Develop and maintain complex web applications using modern frameworks and cloud technologies.",
+        },
+        aiResearchScientist: {
+          title: "AI Research Scientist",
+          description: "Conduct cutting-edge research in machine learning and develop innovative AI solutions.",
+        },
+        healthcareDataAnalyst: {
+          title: "Healthcare Data Analyst",
+          description: "Analyze healthcare data to improve patient outcomes and operational efficiency.",
+        },
+        energyEfficiencyConsultant: {
+          title: "Energy Efficiency Consultant",
+          description: "Develop and implement strategies to optimize energy usage and reduce environmental impact.",
+        },
+        semiconductorProcessEngineer: {
+          title: "Semiconductor Process Engineer",
+          description: "Develop and optimize manufacturing processes for semiconductor devices.",
+        },
+        asicDesignEngineer: {
+          title: "ASIC Design Engineer",
+          description: "Design and develop application-specific integrated circuits for various applications.",
+        },
+        photolithographySpecialist: {
+          title: "Photolithography Specialist",
+          description: "Operate and maintain photolithography equipment for semiconductor manufacturing.",
+        },
+        medicalDeviceSoftwareEngineer: {
+          title: "Medical Device Software Engineer",
+          description: "Develop software for medical devices ensuring compliance with regulatory requirements.",
+        },
+        bioinformaticsSpecialist: {
+          title: "Bioinformatics Specialist",
+          description: "Apply computational methods to analyze biological data and support healthcare research.",
+        },
+        renewableEnergyProjectManager: {
+          title: "Renewable Energy Project Manager",
+          description: "Oversee the planning and implementation of renewable energy projects.",
+        },
+        smartGridSystemsEngineer: {
+          title: "Smart Grid Systems Engineer",
+          description: "Design and implement intelligent electrical grid systems for improved efficiency.",
+        },
+        dataScientist: {
+          title: "Data Scientist",
+          description:
+            "Analyze complex datasets to extract insights and build predictive models for business decision-making.",
+        },
+        embeddedSystemsEngineer: {
+          title: "Embedded Systems Engineer",
+          description: "Design and develop firmware and hardware for embedded systems and IoT devices.",
+        },
+        constructionProjectManager: {
+          title: "Construction Project Manager",
+          description:
+            "Oversee construction projects from planning to completion, ensuring quality, safety, and efficiency.",
+        },
+        bimSpecialist: {
+          title: "BIM Specialist",
+          description: "Create and manage Building Information Models to optimize construction planning and execution.",
+        },
+        smartBuildingEngineer: {
+          title: "Smart Building Engineer",
+          description: "Design and implement intelligent systems for building automation and energy efficiency.",
+        },
+        supplyChainAnalyst: {
+          title: "Supply Chain Analyst",
+          description: "Analyze and optimize supply chain operations to improve efficiency and reduce costs.",
+        },
+        logisticsOperationsManager: {
+          title: "Logistics Operations Manager",
+          description: "Oversee logistics operations to ensure efficient movement of goods and materials.",
+        },
+        warehouseAutomationSpecialist: {
+          title: "Warehouse Automation Specialist",
+          description: "Implement and maintain automated systems for warehouse operations and inventory management.",
+        },
+      },
+      sectors: {
+        Technology: "Technology",
+        "Artificial Intelligence": "Artificial Intelligence",
+        "Cloud Infrastructure": "Cloud Infrastructure",
+        Design: "Design",
+        "Data Analytics": "Data Analytics",
+        "Information Security": "Information Security",
+        Semiconductors: "Semiconductors",
+        Healthcare: "Healthcare",
+        Energy: "Energy",
+        Manufacturing: "Manufacturing",
+        Retail: "Retail",
+      },
     },
     blog: {
-      title: "Our Blog",
+      title: "Insights & Perspectives",
+      subtitle: "Expert analysis and thought leadership on AI-powered recruitment and business growth",
+      searchPlaceholder: "Search articles...",
+      readMore: "Read More",
+      noResults: "No articles found",
+      tryDifferentSearch: "Try a different search term or category",
+      clearFilters: "Clear Filters",
+      newsletter: {
+        title: "Subscribe to Our Newsletter",
+        description: "Stay updated with the latest insights and news about AI in recruitment and business growth",
+        placeholder: "Your email address",
+        subscribe: "Subscribe",
+      },
+      postNotFound: "Article Not Found",
+      postNotFoundMessage: "The article you're looking for doesn't exist or has been moved.",
+      backToBlog: "Back to Blog",
     },
     dynamicMatchCard: {
       latestMatch: "Latest AI-Matched Position",
@@ -328,31 +508,21 @@ export const translations = {
           excerpt:
             "Explore how our partners can leverage AI agents to streamline operations, boost efficiency, and stay ahead in the competitive tech landscape.",
         },
-      },
-    },
-    careers: {
-      jobs: {
-        seniorFullStack: {
-          title: "Senior Full Stack Developer",
-          description: "Develop and maintain complex web applications using modern frameworks and cloud technologies.",
+        aiRecruitmentTrends: {
+          title: "2025 AI Recruitment Trends: What's Next in Talent Acquisition",
+          excerpt:
+            "Explore the emerging trends in AI-powered recruitment that will shape the talent acquisition landscape in 2025 and beyond.",
         },
-        aiResearchScientist: {
-          title: "AI Research Scientist",
-          description: "Conduct cutting-edge research in machine learning and develop innovative AI solutions.",
+        talentRetentionStrategies: {
+          title: "AI-Enhanced Talent Retention Strategies That Actually Work",
+          excerpt:
+            "Discover how leading companies are using AI to develop effective talent retention strategies that reduce turnover and boost employee satisfaction.",
         },
-      },
-      sectors: {
-        Technology: "Technology",
-        "Artificial Intelligence": "Artificial Intelligence",
-        "Cloud Infrastructure": "Cloud Infrastructure",
-        Design: "Design",
-        "Data Analytics": "Data Analytics",
-        "Information Security": "Information Security",
-        Semiconductors: "Semiconductors",
-        Healthcare: "Healthcare",
-        Energy: "Energy",
-        Manufacturing: "Manufacturing",
-        Retail: "Retail",
+        futureOfWork: {
+          title: "The Future of Work: How AI is Reshaping Recruitment and Workforce Management",
+          excerpt:
+            "An in-depth look at how artificial intelligence is transforming the workplace, recruitment processes, and the very nature of work itself.",
+        },
       },
     },
     stats: {
@@ -385,6 +555,41 @@ export const translations = {
     header: {
       contactSubject: "Contact Request",
     },
+    contact: {
+      title: "Let's Talk About AI, Talent, and Growth",
+      subtitle:
+        "Ready to transform your recruitment process? Fill out the form below and our AI experts will contact you within 24 hours.",
+      name: "Name",
+      email: "Email",
+      emailPlaceholder: "your.email@company.com",
+      inquiry: "Business Inquiry",
+      inquiryPlaceholder: "Tell us about your recruitment needs...",
+      aiInterest: "AI Interest",
+      selectInterest: "Select your interest",
+      talentMatching: "AI Talent Matching",
+      recruitmentAutomation: "Recruitment Automation",
+      executiveSearch: "Executive Search",
+      strategicPartnerships: "Strategic Partnerships",
+      other: "Other",
+      getInTouch: "Get in Touch",
+      whyPartnerWithUs: "Why Partner With Us",
+      aiTalentMatching: "AI talent matching with 93% accuracy",
+      reduceTimeToHire: "Reduce time-to-hire by up to 60%",
+      accessToTalent: "Access to 10,000+ pre-vetted professionals",
+      retentionRate: "82% retention rate after 2+ years",
+      aiPoweredRecruitment: "AI-Powered Recruitment",
+    },
+    aiAgents: {
+      realTimeData: "Real-time data",
+      insights: "AI Insights",
+      discovery: "Discovery",
+      match: "Match",
+      analysis: "Analysis",
+      verification: "Verification",
+      sentiment: "Sentiment",
+      scheduling: "Scheduling",
+      alert: "Alert",
+    },
   },
   es: {
     nav: {
@@ -395,7 +600,10 @@ export const translations = {
       about: "Nosotros",
       contact: "Contacto",
       careers: "Vacantes",
-      blog: "Blog",
+      blog: {
+        title: "Nuestro Blog",
+        subtitle: "Perspectivas y conocimientos sobre reclutamiento impulsado por IA y crecimiento empresarial",
+      },
     },
     hero: {
       title: "Encontramos Talento con IA, perfectamente afin a las necesidades de tu empresa",
@@ -409,6 +617,11 @@ export const translations = {
     services: {
       title: "Nuestros Servicios",
       subtitle: "Impulsando el crecimiento empresarial a través del talento potenciado por IA y alianzas estratégicas.",
+      aiTalentMatching: {
+        title: "Matching de Talento Impulsado por IA y Aceleración de Negocios",
+        subtitle:
+          "En Botic Partners, optimizamos el reclutamiento con precisión impulsada por IA. Nuestros agentes de IA procesan miles de perfiles y preseleccionan el mejor talento, mientras nuestros headhunters expertos realizan entrevistas, garantizando contrataciones más rápidas e inteligentes.",
+      },
       headhunting: {
         title: "Headhunting y Búsqueda Ejecutiva – Tecnología, Hardware y Software",
         description: "Encuentra talento tecnológico de alto nivel de forma rápida y eficiente.",
@@ -437,10 +650,35 @@ export const translations = {
           "50% de reducción en costos de contratación",
           "Acceso a más de 10,000 profesionales tech pre-evaluados",
         ],
+        testimonials: [
+          {
+            quote:
+              "Botic Partners redujo nuestro tiempo de contratación en un 60% mientras mejoraba la calidad de los candidatos. Su enfoque impulsado por IA es revolucionario.",
+            author: "CTO, Empresa Tecnológica Líder",
+          },
+          {
+            quote:
+              "Encontramos talento excepcional en tiempo récord. El matching con IA fue increíblemente preciso para nuestros roles especializados.",
+            author: "VP de Ingeniería, Startup de Software",
+          },
+          {
+            quote:
+              "La calidad de los candidatos y la velocidad de colocación superaron nuestras expectativas. Un cambio de juego para nuestro proceso de contratación.",
+            author: "Director de RRHH, Tecnología Empresarial",
+          },
+        ],
+        dataApproach: "Nuestro enfoque basado en datos ofrece consistentemente resultados excepcionales.",
       },
       partnerships: {
-        title: "Alianzas y Crecimiento Empresarial – M&A y Alianzas Estratégicas",
-        description: "Conectando Oportunidades, Acelerando Negocios.",
+        title: "Alianzas Estratégicas y Crecimiento Empresarial",
+        subtitle: "Conexiones Estratégicas para la Expansión Empresarial",
+        description: "Conectando Oportunidades, Acelerando el Crecimiento Empresarial",
+        marketGrowth: "Crecimiento de Mercado con Alianzas Estratégicas",
+        livePartnershipData: "Datos de Alianzas en Vivo",
+        partnership: "Alianza",
+        company: "Empresa",
+        partner: "Socio",
+        investor: "Inversor",
         longDescription:
           "En Botic Partners, hacemos más que encontrar talento. Conectamos empresas con los socios estratégicos adecuados para impulsar su crecimiento.",
         whatWeDo: "¿Qué hacemos?",
@@ -457,6 +695,31 @@ export const translations = {
           "Enfoque basado en la confianza – Cada conexión es relevante y tiene un potencial real.",
         ],
         cta: "¿Buscas la conexión adecuada para hacer crecer tu negocio? Hablemos.",
+        newClients: "Nuevos Clientes o Socios Estratégicos",
+        newClientsDescription:
+          "Facilitamos conexiones de alto valor entre empresas que buscan nuevas relaciones comerciales.",
+        investors: "Inversores o Compradores Potenciales",
+        investorsDescription:
+          "Conectamos empresas con los inversores o compradores adecuados para impulsar el crecimiento o facilitar transiciones.",
+        collaboration: "Oportunidades de Colaboración en Industrias Clave",
+        collaborationDescription:
+          "Identificamos y facilitamos colaboraciones estratégicas entre industrias para beneficio mutuo.",
+        noPlatforms: "Sin Plataformas, Sin Automatización",
+        noPlatformsDescription:
+          "Aprovechamos nuestra red directa validada en lugar de depender de plataformas automatizadas.",
+        fastFlexible: "Rápido y Flexible",
+        fastFlexibleDescription:
+          "Adaptamos nuestro enfoque a cada caso, asegurando introducciones de alto valor que importan.",
+        trustBased: "Enfoque Basado en la Confianza",
+        trustBasedDescription:
+          "Cada conexión es relevante y tiene un potencial real para resultados comerciales significativos.",
+        findPartner: "Encuentra el Socio Comercial Adecuado",
+        company: "Empresa",
+        investor: "Inversor",
+        partner: "Socio",
+        partnership: "Alianza",
+        marketGrowth: "Crecimiento de Mercado con Alianzas Estratégicas",
+        livePartnershipData: "Datos de Alianzas en Vivo",
       },
       ctaText: "Programar una Consulta",
       consultationSubject: "Consultation Request",
@@ -474,14 +737,47 @@ export const translations = {
         "Real-Time Salary and Market Benchmarking": "Benchmarking Salarial y de Mercado en Tiempo Real",
         "Automated CV and Profile Evaluation": "Evaluación Automática de CVs y Perfiles",
         "Hiring Bias Detection": "Detección de Sesgos en la Contratación",
-        "Sentiment Analysis in Interviews y Feedback": "Análisis de Sentimiento en Entrevistas y Feedback",
+        "Sentiment Analysis in Interviews and Feedback": "Análisis de Sentimiento en Entrevistas y Feedback",
         "Automated Candidate Tracking and Relationship Management":
           "Automatización del Seguimiento y Relación con Candidatos",
         "Market Intelligence for Hiring Strategies": "Inteligencia de Mercado para Estrategias de Contratación",
+        "AI-Powered Matching": "Matching Impulsado por IA",
+        "Extensive Talent Network": "Red de Talento Extensa",
+        "Proven Success Metrics": "Métricas de Éxito Comprobadas",
+        "Fast and Precise": "Rápido y Preciso",
+        "Smart Automation": "Automatización Inteligente",
+        "Significant Cost Savings": "Ahorro Significativo de Costos",
+        "Technical Skills": "Habilidades Técnicas",
+        "Team Fit": "Ajuste de Equipo",
+        "Overall Match": "Coincidencia General",
+        "Successful Placements": "Colocaciones Exitosas",
+        "Employee Retention": "Retención de Empleados",
+        "Reduced Hiring Costs": "Reducción de Costos de Contratación",
+        "Professionals in Network": "Profesionales en la Red",
+        "Client Satisfaction": "Satisfacción del Cliente",
+        "AI Matching Algorithm": "Algoritmo de Matching con IA",
+        "Performance Metrics": "Métricas de Rendimiento",
+        Placements: "Colocaciones",
+        Retention: "Retención",
+        Cost: "Costo",
+        Network: "Red",
       },
+      aiPoweredAdvantage: "Ventaja Impulsada por IA",
+      moreEfficient: "80% Más Eficiente",
+      traditionalTimeToHire: "Tiempo de Contratación Tradicional",
+      traditionalDays: "45 Días",
+      boticTimeToHire: "Tiempo de Contratación de Botic Partners",
+      boticDays: "15 Días",
+      fasterRecruitment: "El reclutamiento impulsado por IA es 3 veces más rápido que los métodos tradicionales",
+      realTimeData: "Datos de Reclutamiento IA en Tiempo Real",
+      aiEnhanced: "Mejorado con IA",
       aiAgents: {
         title: "Agentes de IA y KPIs de Aceleración",
         description: "Revoluciona tu negocio con inteligencia artificial y acelera tus procesos.",
+        realTimeData: "Datos en tiempo real",
+        insights: "Feed de Insights de IA",
+        features: "Características Clave Impulsadas por IA",
+        exploreButton: "Explorar Soluciones de IA",
         consultantCommunity: {
           title: "Comunidad de Consultores de IA",
           description:
@@ -492,6 +788,31 @@ export const translations = {
           description:
             "En AI Workforce, nuestros asistentes virtuales inteligentes liberan tu mente de tareas repetitivas. Siente la libertad de enfocarte en lo esencial, ahorra tiempo valioso y simplifica tu rutina diaria. ¡Aumenta tu productividad y disfruta de un futuro más brillante hoy!",
         },
+        matchQuality: "Calidad de Coincidencia IA",
+        excellentMatch: "90%+ Coincidencia Excelente",
+        goodMatch: "85-90% Buena Coincidencia",
+        potentialMatch: "80-85% Coincidencia Potencial",
+        reviewRequired: "<80% Revisión Requerida",
+        processingStats: "Estadísticas de Procesamiento IA",
+        profilesAnalyzed: "Perfiles Analizados:",
+        interviewsConducted: "Entrevistas Realizadas:",
+        matchAccuracy: "Precisión de Coincidencia:",
+        talentDashboard: "Panel de Talento IA",
+        aiMatchingCore: "Núcleo de Coincidencia IA",
+        transformRecruitment: "¿Listo para transformar tu proceso de reclutamiento?",
+        discoverSolutions:
+          "Descubre cómo nuestras soluciones impulsadas por IA pueden ayudarte a encontrar el talento perfecto más rápido y de manera más eficiente.",
+        scheduleConsultation: "Programar una Consulta",
+        automatedTalentSourcing: "Búsqueda Automatizada de Talento",
+        automatedTalentDescription:
+          "Los agentes de IA escanean múltiples plataformas para identificar candidatos ideales.",
+        naturalLanguageProcessing: "Procesamiento de Lenguaje Natural",
+        naturalLanguageDescription: "Comprende y analiza las comunicaciones y respuestas de los candidatos.",
+        predictiveAnalytics: "Análisis Predictivo",
+        predictiveAnalyticsDescription: "Predice el éxito y la retención de candidatos basándose en patrones de datos.",
+        secureDataHandling: "Manejo Seguro de Datos",
+        secureDataDescription: "Garantiza el cumplimiento y la seguridad de los datos durante todo el proceso.",
+        learnMore: "Aprender más",
       },
       aiFeatures: {
         title: "Potentes Características para tu Negocio",
@@ -669,13 +990,137 @@ export const translations = {
       title: "Posiciones Abiertas",
       sector: "Sector",
       apply: "Aplicar",
+      filterByIndustry: "Filtrar por Industria",
+      allIndustries: "Todas las Industrias",
       applyModalTitle: "Elige el Método de Aplicación",
       applyModalDescription: "¿Cómo te gustaría aplicar para la posición de {jobTitle}?",
       useDefaultEmail: "Usar Email Predeterminado",
       useGmail: "Usar Gmail",
+      jobs: {
+        seniorFullStack: {
+          title: "Desarrollador Senior Full Stack",
+          description:
+            "Desarrolle y mantenga aplicaciones web complejas utilizando marcos modernos y tecnologías en la nube.",
+        },
+        aiResearchScientist: {
+          title: "Científico de Investigación de IA",
+          description:
+            "Realizar investigaciones de vanguardia en aprendizaje automático y desarrolle soluciones innovadoras de IA.",
+        },
+        healthcareDataAnalyst: {
+          title: "Analista de Datos de Salud",
+          description:
+            "Analizar datos de salud para mejorar los resultados de los pacientes y la eficiencia operativa.",
+        },
+        energyEfficiencyConsultant: {
+          title: "Consultor de Eficiencia Energética",
+          description:
+            "Desarrollar e implementar estrategias para optimizar el uso de energía y reducir el impacto ambiental.",
+        },
+        semiconductorProcessEngineer: {
+          title: "Ingeniero de Procesos de Semiconductores",
+          description: "Desarrollar y optimizar procesos de fabricación para dispositivos semiconductores.",
+        },
+        asicDesignEngineer: {
+          title: "Ingeniero de Diseño ASIC",
+          description:
+            "Diseñar y desarrollar circuitos integrados de aplicación específica para diversas aplicaciones.",
+        },
+        photolithographySpecialist: {
+          title: "Especialista en Fotolitografía",
+          description: "Operar y mantener equipos de fotolitografía para la fabricación de semiconductores.",
+        },
+        medicalDeviceSoftwareEngineer: {
+          title: "Ingeniero de Software para Dispositivos Médicos",
+          description:
+            "Desarrollar software para dispositivos médicos asegurando el cumplimiento de requisitos regulatorios.",
+        },
+        bioinformaticsSpecialist: {
+          title: "Especialista en Bioinformática",
+          description:
+            "Aplicar métodos computacionales para analizar datos biológicos y apoyar la investigación en salud.",
+        },
+        renewableEnergyProjectManager: {
+          title: "Gerente de Proyectos de Energía Renovable",
+          description: "Supervisar la planificación e implementación de proyectos de energía renovable.",
+        },
+        smartGridSystemsEngineer: {
+          title: "Ingeniero de Sistemas de Red Inteligente",
+          description: "Diseñar e implementar sistemas de red eléctrica inteligente para mejorar la eficiencia.",
+        },
+        dataScientist: {
+          title: "Científico de Datos",
+          description:
+            "Analizar conjuntos de datos complejos para extraer información y construir modelos predictivos para la toma de decisiones empresariales.",
+        },
+        embeddedSystemsEngineer: {
+          title: "Ingeniero de Sistemas Embebidos",
+          description: "Diseñar y desarrollar firmware y hardware para sistemas embebidos y dispositivos IoT.",
+        },
+        constructionProjectManager: {
+          title: "Gerente de Proyectos de Construcción",
+          description:
+            "Supervisar proyectos de construcción desde la planificación hasta la finalización, garantizando calidad, seguridad y eficiencia.",
+        },
+        bimSpecialist: {
+          title: "Especialista en BIM",
+          description:
+            "Crear y gestionar Modelos de Información de Construcción para optimizar la planificación y ejecución de la construcción.",
+        },
+        smartBuildingEngineer: {
+          title: "Ingeniero de Edificios Inteligentes",
+          description:
+            "Diseñar e implementar sistemas inteligentes para la automatización de edificios y la eficiencia energética.",
+        },
+        supplyChainAnalyst: {
+          title: "Analista de Cadena de Suministro",
+          description:
+            "Analizar y optimizar las operaciones de la cadena de suministro para mejorar la eficiencia y reducir costos.",
+        },
+        logisticsOperationsManager: {
+          title: "Gerente de Operaciones Logísticas",
+          description:
+            "Supervisar las operaciones logísticas para garantizar el movimiento eficiente de bienes y materiales.",
+        },
+        warehouseAutomationSpecialist: {
+          title: "Especialista en Automatización de Almacenes",
+          description:
+            "Implementar y mantener sistemas automatizados para operaciones de almacén y gestión de inventario.",
+        },
+      },
+      sectors: {
+        Technology: "Tecnología",
+        "Artificial Intelligence": "Inteligencia Artificial",
+        "Cloud Infrastructure": "Infraestructura en la Nube",
+        Design: "Diseño",
+        "Data Analytics": "Análisis de Datos",
+        "Information Security": "Seguridad de la Información",
+        Semiconductors: "Semiconductores",
+        Healthcare: "Salud",
+        Energy: "Energía",
+        Manufacturing: "Manufactura",
+        Retail: "Venta al por menor",
+      },
     },
     blog: {
-      title: "Nuestro Blog",
+      title: "Conocimientos y Perspectivas",
+      subtitle:
+        "Análisis experto y liderazgo de pensamiento sobre reclutamiento impulsado por IA y crecimiento empresarial",
+      searchPlaceholder: "Buscar artículos...",
+      readMore: "Leer Más",
+      noResults: "No se encontraron artículos",
+      tryDifferentSearch: "Prueba un término de búsqueda o categoría diferente",
+      clearFilters: "Borrar Filtros",
+      newsletter: {
+        title: "Suscríbete a Nuestro Boletín",
+        description:
+          "Mantente actualizado con los últimos conocimientos y noticias sobre IA en reclutamiento y crecimiento empresarial",
+        placeholder: "Tu dirección de correo electrónico",
+        subscribe: "Suscribirse",
+      },
+      postNotFound: "Artículo No Encontrado",
+      postNotFoundMessage: "El artículo que buscas no existe o ha sido movido.",
+      backToBlog: "Volver al Blog",
     },
     dynamicMatchCard: {
       latestMatch: "Última Posición con Match de IA",
@@ -724,33 +1169,22 @@ export const translations = {
           excerpt:
             "Explore cómo nuestros socios pueden aprovechar los agentes de IA para optimizar las operaciones, aumentar la eficiencia y mantenerse a la vanguardia en el competitivo panorama tecnológico.",
         },
-      },
-    },
-    careers: {
-      jobs: {
-        seniorFullStack: {
-          title: "Desarrollador Senior Full Stack",
-          description:
-            "Desarrolle y mantenga aplicaciones web complejas utilizando marcos modernos y tecnologías en la nube.",
+        aiRecruitmentTrends: {
+          title: "Tendencias de Reclutamiento con IA 2025: Lo que Viene en Adquisición de Talento",
+          excerpt:
+            "Explora las tendencias emergentes en reclutamiento impulsado por IA que darán forma al panorama de adquisición de talento en 2025 y más allá.",
         },
-        aiResearchScientist: {
-          title: "Científico de Investigación de IA",
-          description:
-            "Realice investigaciones de vanguardia en aprendizaje automático y desarrolle soluciones innovadoras de IA.",
+        talentRetentionStrategies: {
+          title: "Estrategias de Retención de Talento Mejoradas con IA que Realmente Funcionan",
+          excerpt:
+            "Descubre cómo las empresas líderes están utilizando la IA para desarrollar estrategias efectivas de retención de talento que reducen la rotación y aumentan la satisfacción de los empleados.",
         },
-      },
-      sectors: {
-        Technology: "Tecnología",
-        "Artificial Intelligence": "Inteligencia Artificial",
-        "Cloud Infrastructure": "Infraestructura en la Nube",
-        Design: "Diseño",
-        "Data Analytics": "Análisis de Datos",
-        "Information Security": "Seguridad de la Información",
-        Semiconductors: "Semiconductores",
-        Healthcare: "Salud",
-        Energy: "Energía",
-        Manufacturing: "Manufactura",
-        Retail: "Venta al por menor",
+        futureOfWork: {
+          title:
+            "El Futuro del Trabajo: Cómo la IA está Remodelando el Reclutamiento y la Gestión de la Fuerza Laboral",
+          excerpt:
+            "Una mirada en profundidad a cómo la inteligencia artificial está transformando el lugar de trabajo, los procesos de reclutamiento y la naturaleza misma del trabajo.",
+        },
       },
     },
     stats: {
@@ -776,12 +1210,47 @@ export const translations = {
       },
     },
     emailOptions: {
-      title: "Choose Email Client",
-      useOutlook: "Use Outlook",
-      useGmail: "Use Gmail",
+      title: "Elegir Cliente de Correo",
+      useOutlook: "Usar Outlook",
+      useGmail: "Usar Gmail",
     },
     header: {
-      contactSubject: "Contact Request",
+      contactSubject: "Solicitud de Contacto",
+    },
+    contact: {
+      title: "Hablemos de IA, Talento y Crecimiento",
+      subtitle:
+        "¿Listo para transformar tu proceso de reclutamiento? Completa el formulario a continuación y nuestros expertos en IA se pondrán en contacto contigo en 24 horas.",
+      name: "Nombre",
+      email: "Correo Electrónico",
+      emailPlaceholder: "tu.email@empresa.com",
+      inquiry: "Consulta de Negocio",
+      inquiryPlaceholder: "Cuéntanos sobre tus necesidades de reclutamiento...",
+      aiInterest: "Interés en IA",
+      selectInterest: "Selecciona tu interés",
+      talentMatching: "Matching de Talento con IA",
+      recruitmentAutomation: "Automatización de Reclutamiento",
+      executiveSearch: "Búsqueda Ejecutiva",
+      strategicPartnerships: "Alianzas Estratégicas",
+      other: "Otro",
+      getInTouch: "Contáctanos",
+      whyPartnerWithUs: "Por Qué Asociarse Con Nosotros",
+      aiTalentMatching: "Matching de talento con IA con 93% de precisión",
+      reduceTimeToHire: "Reduce el tiempo de contratación hasta en un 60%",
+      accessToTalent: "Acceso a más de 10,000 profesionales pre-evaluados",
+      retentionRate: "82% de tasa de retención después de 2+ años",
+      aiPoweredRecruitment: "Reclutamiento Impulsado por IA",
+    },
+    aiAgents: {
+      realTimeData: "Datos en tiempo real",
+      insights: "Insights de IA",
+      discovery: "Descubrimiento",
+      match: "Coincidencia",
+      analysis: "Análisis",
+      verification: "Verificación",
+      sentiment: "Sentimiento",
+      scheduling: "Programación",
+      alert: "Alerta",
     },
   },
 }

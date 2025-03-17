@@ -1,9 +1,12 @@
 "use client"
 
 import { useLanguage } from "@/lib/i18n/LanguageContext"
-import { motion } from "framer-motion"
+import { motion, useAnimation, AnimatePresence, useInView } from "framer-motion"
 import { Code, Cpu, Building2, Truck } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { useState, useRef, useEffect } from "react"
+// First, import the EmailOptionsModal component at the top of the file
+import { EmailOptionsModal } from "./EmailOptionsModal"
 
 const industries = [
   {
@@ -11,33 +14,198 @@ const industries = [
     titleKey: "industries.software.title",
     descriptionKey: "industries.software.description",
     color: "from-blue-400 to-blue-600",
+    bgColor: "bg-blue-50",
+    borderColor: "border-blue-200",
+    iconColor: "text-blue-500",
+    stats: {
+      placements: 25,
+      companies: 10,
+      retention: 94,
+    },
+    technologies: ["AI/ML", "Cloud", "DevOps", "Mobile", "Web"],
   },
   {
     icon: Cpu,
     titleKey: "industries.hardware.title",
     descriptionKey: "industries.hardware.description",
     color: "from-purple-400 to-purple-600",
+    bgColor: "bg-purple-50",
+    borderColor: "border-purple-200",
+    iconColor: "text-purple-500",
+    stats: {
+      placements: 18,
+      companies: 10,
+      retention: 91,
+    },
+    technologies: ["Semiconductors", "ASIC", "FPGA", "IoT", "Embedded"],
   },
   {
     icon: Building2,
     titleKey: "industries.construction.title",
     descriptionKey: "industries.construction.description",
     color: "from-orange-400 to-orange-600",
+    bgColor: "bg-orange-50",
+    borderColor: "border-orange-200",
+    iconColor: "text-orange-500",
+    stats: {
+      placements: 35,
+      companies: 17,
+      retention: 94,
+    },
+    technologies: ["BIM", "PropTech", "Smart Buildings", "Sustainability", "Project Management"],
   },
   {
     icon: Truck,
     titleKey: "industries.logistics.title",
     descriptionKey: "industries.logistics.description",
     color: "from-green-400 to-green-600",
+    bgColor: "bg-green-50",
+    borderColor: "border-green-200",
+    iconColor: "text-green-500",
+    stats: {
+      placements: 30,
+      companies: 13,
+      retention: 90,
+    },
+    technologies: ["Supply Chain", "Fleet Management", "Warehouse Automation", "Last-Mile", "Blockchain"],
   },
 ]
 
+// Particle animation points
+const particlePoints = Array.from({ length: 30 }, () => ({
+  x: Math.random() * 1200,
+  y: Math.random() * 600,
+  size: Math.random() * 4 + 2,
+  speed: Math.random() * 3 + 2,
+}))
+
 export default function Industries() {
   const { t } = useLanguage()
+  const [hoveredIndustry, setHoveredIndustry] = useState<number | null>(null)
+  const [expandedIndustry, setExpandedIndustry] = useState<number | null>(null)
+  const [animateParticles, setAnimateParticles] = useState(true)
+  const [counters, setCounters] = useState({
+    placements: 0,
+    companies: 0,
+    retention: 0,
+  })
+  // Add these state variables inside the Industries component, after the existing useState declarations
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
+  const [emailSubject, setEmailSubject] = useState("")
+
+  const sectionRef = useRef(null)
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 })
+  const controls = useAnimation()
+
+  // Handle industry hover
+  const handleIndustryHover = (index: number | null) => {
+    setHoveredIndustry(index)
+
+    if (index !== null) {
+      const industry = industries[index]
+      setCounters({
+        placements: 0,
+        companies: 0,
+        retention: 0,
+      })
+
+      // Animate counters
+      let frame = 0
+      const frames = 30
+      const interval = setInterval(() => {
+        frame++
+        setCounters({
+          placements: Math.floor((industry.stats.placements * frame) / frames),
+          companies: Math.floor((industry.stats.companies * frame) / frames),
+          retention: Math.floor((industry.stats.retention * frame) / frames),
+        })
+
+        if (frame >= frames) clearInterval(interval)
+      }, 20)
+    }
+  }
+
+  // Toggle expanded industry
+  const toggleExpandedIndustry = (index: number) => {
+    setExpandedIndustry(expandedIndustry === index ? null : index)
+  }
+
+  // Add this function inside the Industries component, after the toggleExpandedIndustry function
+  const handleContactRequest = (industryTitle: string) => {
+    setEmailSubject(`Inquiry about ${industryTitle} Industry Solutions`)
+    setIsEmailModalOpen(true)
+  }
+
+  // Add this useEffect after the other functions
+  useEffect(() => {
+    if (isInView) {
+      // Set expandedIndustry to null since we'll show all expanded by default
+      setExpandedIndustry(null)
+
+      // Animate counters for all industries
+      industries.forEach((industry, index) => {
+        setTimeout(() => {
+          setHoveredIndustry(index)
+
+          let frame = 0
+          const frames = 30
+          const interval = setInterval(() => {
+            frame++
+            setCounters({
+              placements: Math.floor((industry.stats.placements * frame) / frames),
+              companies: Math.floor((industry.stats.companies * frame) / frames),
+              retention: Math.floor((industry.stats.retention * frame) / frames),
+            })
+
+            if (frame >= frames) clearInterval(interval)
+          }, 20)
+        }, index * 300) // Stagger the animations
+      })
+
+      // Reset hoveredIndustry after all animations
+      setTimeout(
+        () => {
+          setHoveredIndustry(null)
+        },
+        industries.length * 300 + 1000,
+      )
+    }
+  }, [isInView])
 
   return (
-    <section id="industries" className="py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-4">
+    <section
+      id="industries"
+      className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
+      ref={sectionRef}
+    >
+      {/* Dynamic background with particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        <AnimatePresence>
+          {animateParticles &&
+            particlePoints.map((point, index) => (
+              <motion.div
+                key={`particle-${index}`}
+                className="absolute rounded-full bg-primary/10"
+                initial={{ x: point.x, y: point.y, opacity: 0 }}
+                animate={{
+                  x: [point.x, point.x + (Math.random() * 100 - 50)],
+                  y: [point.y, point.y + (Math.random() * 100 - 50)],
+                  opacity: [0, 0.5, 0],
+                }}
+                transition={{
+                  duration: point.speed * 5,
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                  times: [0, 0.5, 1],
+                }}
+                style={{ width: point.size, height: point.size }}
+              />
+            ))}
+        </AnimatePresence>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,6 +222,9 @@ export default function Industries() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {industries.map((industry, index) => {
             const Icon = industry.icon
+            const isHovered = hoveredIndustry === index
+            const isExpanded = expandedIndustry === index
+
             return (
               <motion.div
                 key={index}
@@ -61,21 +232,95 @@ export default function Industries() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative"
               >
-                <Card className="h-full overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-xl">
-                  <CardContent className="p-6">
+                <Card
+                  className={`h-full overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-xl ${
+                    isHovered === index
+                      ? `border-2 ${industry.borderColor} shadow-lg`
+                      : `border-2 ${industry.borderColor} shadow-md`
+                  }`}
+                  onMouseEnter={() => handleIndustryHover(index)}
+                  onMouseLeave={() => handleIndustryHover(null)}
+                >
+                  <CardContent className={`p-6 ${industry.bgColor}`}>
                     <div className="flex flex-col items-center text-center">
-                      <div
+                      <motion.div
                         className={`p-4 rounded-full mb-6 bg-gradient-to-br ${industry.color} group-hover:scale-110 transition-transform duration-300`}
+                        animate={
+                          isHovered === index
+                            ? {
+                                scale: [1, 1.2, 1],
+                                rotate: [0, 10, -10, 0],
+                              }
+                            : {}
+                        }
+                        transition={{ duration: 2, repeat: isHovered === index ? Number.POSITIVE_INFINITY : 0 }}
                       >
                         <Icon className="h-8 w-8 text-white" />
-                      </div>
+                      </motion.div>
+
                       <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
                         {t(industry.titleKey)}
                       </h3>
-                      <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
+
+                      <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300 mb-4">
                         {t(industry.descriptionKey)}
                       </p>
+
+                      {/* Stats section - always visible */}
+                      <div className="w-full">
+                        <div className="grid grid-cols-3 gap-2 my-4 text-center">
+                          <div className={`p-2 rounded-lg ${industry.bgColor}`}>
+                            <div className={`text-xl font-bold ${industry.iconColor}`}>
+                              {industry.stats.placements}+
+                            </div>
+                            <div className="text-xs text-gray-600">Placements</div>
+                          </div>
+                          <div className={`p-2 rounded-lg ${industry.bgColor}`}>
+                            <div className={`text-xl font-bold ${industry.iconColor}`}>{industry.stats.companies}+</div>
+                            <div className="text-xs text-gray-600">Companies</div>
+                          </div>
+                          <div className={`p-2 rounded-lg ${industry.bgColor}`}>
+                            <div className={`text-xl font-bold ${industry.iconColor}`}>{industry.stats.retention}%</div>
+                            <div className="text-xs text-gray-600">Retention</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Technologies section - always visible */}
+                      <div className="w-full mt-2">
+                        <h4 className={`text-sm font-semibold mb-2 ${industry.iconColor}`}>Key Technologies</h4>
+                        <div className="flex flex-wrap justify-center gap-2">
+                          {industry.technologies.map((tech, techIndex) => (
+                            <motion.span
+                              key={techIndex}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: 0.2 + techIndex * 0.1 }}
+                              className={`px-2 py-1 text-xs rounded-full ${industry.bgColor} ${industry.iconColor} border ${industry.borderColor}`}
+                            >
+                              {tech}
+                            </motion.span>
+                          ))}
+                        </div>
+
+                        <div className="mt-4 pt-4 border-t border-gray-200">
+                          <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className={`px-4 py-2 rounded-full text-sm text-white bg-gradient-to-r ${industry.color} shadow-md`}
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              handleContactRequest(t(industry.titleKey))
+                            }}
+                          >
+                            Explore Opportunities
+                          </motion.button>
+                        </div>
+                      </div>
+
+                      {/* Remove the expand/collapse indicator since content is always expanded */}
                     </div>
                   </CardContent>
                 </Card>
@@ -83,22 +328,8 @@ export default function Industries() {
             )
           })}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <Card className="bg-gradient-to-r from-primary/10 to-primary-foreground/10 border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-semibold mb-4 text-primary">{t("industries.expertise.title")}</h3>
-              <p className="text-gray-700 max-w-3xl mx-auto">{t("industries.expertise.description")}</p>
-            </CardContent>
-          </Card>
-        </motion.div>
       </div>
+      <EmailOptionsModal isOpen={isEmailModalOpen} onClose={() => setIsEmailModalOpen(false)} subject={emailSubject} />
     </section>
   )
 }

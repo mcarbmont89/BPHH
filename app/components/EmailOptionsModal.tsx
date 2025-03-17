@@ -9,18 +9,27 @@ interface EmailOptionsModalProps {
   isOpen: boolean
   onClose: () => void
   subject?: string
+  body?: string
 }
 
-export function EmailOptionsModal({ isOpen, onClose, subject = "Consultation Request" }: EmailOptionsModalProps) {
+export function EmailOptionsModal({
+  isOpen,
+  onClose,
+  subject = "Consultation Request",
+  body = "",
+}: EmailOptionsModalProps) {
   const { t } = useLanguage()
   const [isLoading, setIsLoading] = useState(false)
 
   const handleEmailOption = (useGmail: boolean) => {
     setIsLoading(true)
-    const email = "borjamoreno@boticpartners.com"
+    const email = "admin@boticpartners.com"
     const encodedSubject = encodeURIComponent(subject)
-    const mailtoLink = `mailto:${email}?subject=${encodedSubject}`
-    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodedSubject}`
+    const encodedBody = encodeURIComponent(body)
+
+    // Add the body parameter to both email links
+    const mailtoLink = `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodedSubject}&body=${encodedBody}`
 
     setTimeout(() => {
       window.open(useGmail ? gmailLink : mailtoLink, "_blank")

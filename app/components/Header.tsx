@@ -70,13 +70,17 @@ export default function Header() {
           <div className="hidden md:flex space-x-2">
             <button
               onClick={() => setLanguage("en")}
-              className={`px-2 py-1 rounded text-sm ${language === "en" ? "bg-primary text-white" : "text-gray-600"}`}
+              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                language === "en" ? "bg-primary text-white shadow-sm" : "text-gray-600 hover:bg-gray-100"
+              }`}
             >
               EN
             </button>
             <button
               onClick={() => setLanguage("es")}
-              className={`px-2 py-1 rounded text-sm ${language === "es" ? "bg-primary text-white" : "text-gray-600"}`}
+              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                language === "es" ? "bg-primary text-white shadow-sm" : "text-gray-600 hover:bg-gray-100"
+              }`}
             >
               ES
             </button>
@@ -104,16 +108,21 @@ export default function Header() {
             ))}
           </nav>
           <div className="mt-4 flex justify-between">
-            <div className="flex space-x-2">
+            {/* Mobile language toggle */}
+            <div className="md:hidden flex space-x-2">
               <button
                 onClick={() => setLanguage("en")}
-                className={`px-2 py-1 rounded text-sm ${language === "en" ? "bg-primary text-white" : "text-gray-600"}`}
+                className={`px-2 py-1 rounded-md text-sm font-medium transition-colors ${
+                  language === "en" ? "bg-primary text-white shadow-sm" : "text-gray-600 hover:bg-gray-100"
+                }`}
               >
                 EN
               </button>
               <button
                 onClick={() => setLanguage("es")}
-                className={`px-2 py-1 rounded text-sm ${language === "es" ? "bg-primary text-white" : "text-gray-600"}`}
+                className={`px-2 py-1 rounded-md text-sm font-medium transition-colors ${
+                  language === "es" ? "bg-primary text-white shadow-sm" : "text-gray-600 hover:bg-gray-100"
+                }`}
               >
                 ES
               </button>

@@ -9,7 +9,7 @@ interface ApplyModalProps {
   isOpen: boolean
   onClose: () => void
   job: {
-    title: string
+    titleKey: string
     id: string
   }
 }
@@ -20,7 +20,8 @@ export function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
 
   const handleApply = (useGmail: boolean) => {
     setIsLoading(true)
-    const subject = encodeURIComponent(`Application for ${job.title} - ${job.id}`)
+    const jobTitle = t(job.titleKey)
+    const subject = encodeURIComponent(`Application for ${jobTitle} - ${job.id}`)
     const email = "admin@boticpartners.com"
     const mailtoLink = `mailto:${email}?subject=${subject}`
     const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}`
@@ -37,7 +38,7 @@ export function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>{t("careers.applyModalTitle")}</DialogTitle>
-          <DialogDescription>{t("careers.applyModalDescription", { jobTitle: job.title })}</DialogDescription>
+          <DialogDescription>{t("careers.applyModalDescription", { jobTitle: t(job.titleKey) })}</DialogDescription>
         </DialogHeader>
         <div className="flex justify-end space-x-2 mt-4">
           <Button onClick={() => handleApply(false)} disabled={isLoading}>
