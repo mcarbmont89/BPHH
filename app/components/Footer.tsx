@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 import Link from "next/link"
-import { Facebook, Twitter, LinkedinIcon as LinkedIn, Mail } from "lucide-react"
+import { LinkedinIcon as LinkedIn, Mail } from "lucide-react"
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -68,4 +68,3 @@ export default function Footer() {
     </footer>
   )
 }
-

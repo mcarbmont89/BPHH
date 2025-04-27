@@ -1,7 +1,6 @@
 "use client"
 
 import { useLanguage } from "@/lib/i18n/LanguageContext"
-import { motion } from "framer-motion"
 import { useState } from "react"
 // Import the EmailOptionsModal at the top of the file
 import { EmailOptionsModal } from "./EmailOptionsModal"
@@ -14,19 +13,7 @@ export default function Services() {
 
   return (
     <section id="services" className="py-16 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-            {t("services.title")}
-          </h2>
-        </motion.div>
-      </div>
+      <div className="container mx-auto px-4"></div>
       {/* Keep the EmailOptionsModal component for potential future use */}
       <EmailOptionsModal
         isOpen={isEmailModalOpen}
@@ -36,4 +23,3 @@ export default function Services() {
     </section>
   )
 }
-

@@ -1,19 +1,18 @@
 "use client"
 
-import Header from "./components/Header"
+import { Header } from "@/app/components/Header"
 import Hero from "./components/Hero"
 import Services from "./components/Services"
-import Solution from "./components/Solution"
 import About from "./components/About"
 import Footer from "./components/Footer"
 import Process from "./components/Process"
-import Stats from "./components/Stats"
 import Chatbot from "./components/Chatbot"
 import Industries from "./components/Industries"
-import AIAgentsDashboard from "./components/AIAgentsDashboard"
+import TalentMatchingHero from "./components/TalentMatchingHero"
 import HeadhuntingSection from "./components/HeadhuntingSection"
 import PartnershipsSection from "./components/PartnershipsSection"
 import ContactForm from "./components/ContactForm"
+import CoreServicesSection from "./components/CoreServicesSection"
 
 export default function Home() {
   return (
@@ -21,8 +20,8 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <AIAgentsDashboard />
-        <Stats />
+        <CoreServicesSection />
+        <TalentMatchingHero />
         <section id="services">
           <Services />
           <HeadhuntingSection />
@@ -31,12 +30,7 @@ export default function Home() {
         <section id="industries">
           <Industries />
         </section>
-        <section id="process">
-          <Process />
-        </section>
-        <section id="solution">
-          <Solution />
-        </section>
+        <Process />
         <section id="about">
           <About />
         </section>
@@ -47,4 +41,3 @@ export default function Home() {
     </div>
   )
 }
-

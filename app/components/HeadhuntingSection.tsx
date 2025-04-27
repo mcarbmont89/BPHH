@@ -68,6 +68,17 @@ const metrics = [
   },
 ]
 
+// Function to format the counter values
+const formatCounter = (id: string, value: number): string => {
+  if (id === "professionals") {
+    if (value >= 10000) {
+      return "10k+"
+    }
+    return value.toString()
+  }
+  return `${value}%`
+}
+
 export default function HeadhuntingSection() {
   const { t } = useLanguage()
   const [hoveredBox, setHoveredBox] = useState<number | null>(null)
@@ -144,26 +155,6 @@ export default function HeadhuntingSection() {
 
     return () => clearInterval(interval)
   }, [hoveredBox])
-
-  // Highlight random metrics periodically
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setHighlightedMetric(Math.floor(Math.random() * metrics.length))
-      setTimeout(() => setHighlightedMetric(null), 1800)
-    }, 3600)
-
-    return () => clearInterval(interval)
-  }, [metrics.length])
-
-  // Format counter display
-  const formatCounter = (id: string, value: number) => {
-    if (id === "professionals" || id === "network") {
-      if (value >= 10000) return "10k+"
-      if (value >= 1000) return `${Math.floor(value / 1000)}k+`
-      return value
-    }
-    return `${value}%`
-  }
 
   // Auto-expand boxes when section comes into view
   useEffect(() => {
@@ -556,37 +547,35 @@ export default function HeadhuntingSection() {
                 <div className="grid grid-cols-1 gap-4 mt-6">
                   {metrics.slice(0, 4).map((metric, index) => {
                     const Icon = metric.icon
-                    const isHighlighted = highlightedMetric === index
+                    // Remove the isHighlighted variable usage
 
                     return (
                       <motion.div
                         key={index}
-                        className={`flex items-center ${isHighlighted ? "bg-green-50 rounded-lg p-2 -mx-2" : ""}`}
+                        className="flex items-center"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.27 + index * 0.09 }}
-                        animate={{
-                          scale: isHighlighted ? [1, 1.05, 1] : 1,
-                        }}
+                        // Remove the scale animation
                       >
                         <motion.div
-                          className={`p-2 rounded-full ${isHighlighted ? "bg-green-100" : "bg-green-50"} mr-3`}
+                          className="p-2 rounded-full bg-green-50 mr-3"
                           animate={{
-                            scale: hoveredBox === 1 || isHighlighted ? [1, 1.2, 1] : 1,
-                            rotate: isHighlighted ? [0, 10, -10, 0] : 0,
+                            scale: hoveredBox === 1 ? [1, 1.2, 1] : 1,
+                            // Remove the rotation animation
                           }}
                           transition={{
-                            duration: isHighlighted ? 0.45 : 1.8,
+                            duration: 1.8,
                             delay: index * 0.09,
-                            repeat: hoveredBox === 1 || isHighlighted ? Number.POSITIVE_INFINITY : 0,
+                            repeat: hoveredBox === 1 ? Number.POSITIVE_INFINITY : 0,
                           }}
                         >
-                          <Icon className={`h-5 w-5 ${isHighlighted ? "text-green-600" : "text-green-500"}`} />
+                          <Icon className="h-5 w-5 text-green-500" />
                         </motion.div>
                         <div>
                           <motion.span
-                            className={`text-2xl font-bold ${isHighlighted ? "text-green-600" : "text-green-500"}`}
+                            className="text-2xl font-bold text-green-500"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
@@ -800,4 +789,3 @@ export default function HeadhuntingSection() {
     </section>
   )
 }
-

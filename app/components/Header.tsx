@@ -1,40 +1,125 @@
 "use client"
 
+import type React from "react"
+
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 import Image from "next/image"
 import Link from "next/link"
-import { useState, useEffect } from "react"
-import { Menu } from "lucide-react"
-// Import the EmailOptionsModal at the top of the file
+import { useState, useEffect, useRef } from "react"
+import { Menu, ChevronDown, ChevronUp } from "lucide-react"
 import { EmailOptionsModal } from "./EmailOptionsModal"
 
-export default function Header() {
+export function Header() {
   const { language, setLanguage, t } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  // Add a new state for controlling the modal visibility
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+
+    // Close dropdown when clicking outside
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsServicesDropdownOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+
+    // Handle process link click
+    const handleProcessLinkClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (target.tagName === "A" && target.getAttribute("href") === "#process") {
+        e.preventDefault()
+        const processSection = document.getElementById("ai-powered-recruitment")
+        if (processSection) {
+          processSection.scrollIntoView({ behavior: "smooth" })
+        }
+      }
+    }
+    document.addEventListener("click", handleProcessLinkClick)
+
+    // Handle solution link click
+    const handleSolutionLinkClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (target.tagName === "A" && target.getAttribute("href") === "#solution") {
+        e.preventDefault()
+        const solutionSection = document.getElementById("solution-comparison")
+        if (solutionSection) {
+          solutionSection.scrollIntoView({ behavior: "smooth" })
+        }
+      }
+    }
+    document.addEventListener("click", handleSolutionLinkClick)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("click", handleProcessLinkClick)
+      document.removeEventListener("click", handleSolutionLinkClick)
+    }
   }, [])
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const toggleServicesDropdown = () => setIsServicesDropdownOpen(!isServicesDropdownOpen)
+
+  const handleProcessClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+
+    // Verificar si estamos en la página principal
+    if (window.location.pathname !== "/") {
+      // Si no estamos en la página principal, redirigir primero
+      window.location.href = "/#ai-powered-recruitment"
+      return
+    }
+
+    const processSection = document.getElementById("ai-powered-recruitment")
+    if (processSection) {
+      processSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  const handleSolutionClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+
+    // Verificar si estamos en la página principal
+    if (window.location.pathname !== "/") {
+      // Si no estamos en la página principal, redirigir primero
+      window.location.href = "/#solution-comparison"
+      return
+    }
+
+    const solutionSection = document.getElementById("solution-comparison")
+    if (solutionSection) {
+      solutionSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
 
   const navItems = [
-    { href: "https://www.boticpartners.com/#services", label: t("nav.services") },
-    { href: "https://www.boticpartners.com/#industries", label: t("nav.industries") },
-    { href: "https://www.boticpartners.com/#process", label: t("nav.process") },
-    { href: "https://www.boticpartners.com/#solution", label: t("nav.solution") },
-    { href: "https://www.boticpartners.com/#about", label: t("nav.about") },
+    {
+      href: "/#services",
+      label: t("nav.services"),
+      hasDropdown: true,
+      dropdownItems: [
+        { href: "/permanent-talent", label: "Talento en Plantilla" },
+        { href: "/freelance-talent", label: "Talento Freelance" },
+        { href: "/ma-services", label: "M&A" },
+      ],
+    },
+    { href: "/#process", label: t("nav.process"), onClick: handleProcessClick },
+    { href: "/#industries", label: t("nav.industries") },
+    { href: "/#solution", label: t("nav.solution"), onClick: handleSolutionClick },
+    { href: "/#about", label: t("nav.about") },
+    { href: "/careers", label: t("nav.careers") },
+    { href: "/blog", label: t("nav.blog.title") },
   ]
 
-  // Update the handleContact function
   const handleContact = () => {
     setIsEmailModalOpen(true)
   }
@@ -46,7 +131,7 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="https://www.boticpartners.com/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2">
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/botic%20long-Uu1ik81vsOqA55IYRxP8xIzHs4xpzU.png"
             alt="Botic Partners"
@@ -56,15 +141,47 @@ export default function Header() {
           />
         </Link>
         <nav className="hidden md:flex space-x-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) =>
+            item.hasDropdown ? (
+              <div key={item.href} className="relative" ref={dropdownRef}>
+                <button
+                  onClick={toggleServicesDropdown}
+                  className="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center"
+                >
+                  {item.label}
+                  {isServicesDropdownOpen ? (
+                    <ChevronUp className="ml-1 h-4 w-4" />
+                  ) : (
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  )}
+                </button>
+
+                {isServicesDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                    {item.dropdownItems?.map((dropdownItem) => (
+                      <Link
+                        key={dropdownItem.href}
+                        href={dropdownItem.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={() => setIsServicesDropdownOpen(false)}
+                      >
+                        {dropdownItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
+                onClick={item.onClick || (() => setIsMenuOpen(false))}
+              >
+                {item.label}
+              </a>
+            ),
+          )}
         </nav>
         <div className="flex items-center space-x-4">
           <div className="hidden md:flex space-x-2">
@@ -96,19 +213,52 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
           <nav className="flex flex-col space-y-4">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) =>
+              item.hasDropdown ? (
+                <div key={item.href} className="space-y-2">
+                  <button
+                    onClick={toggleServicesDropdown}
+                    className="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center"
+                  >
+                    {item.label}
+                    {isServicesDropdownOpen ? (
+                      <ChevronUp className="ml-1 h-4 w-4" />
+                    ) : (
+                      <ChevronDown className="ml-1 h-4 w-4" />
+                    )}
+                  </button>
+
+                  {isServicesDropdownOpen && (
+                    <div className="pl-4 space-y-2">
+                      {item.dropdownItems?.map((dropdownItem) => (
+                        <Link
+                          key={dropdownItem.href}
+                          href={dropdownItem.href}
+                          className="block text-sm text-gray-600 hover:text-primary"
+                          onClick={() => {
+                            setIsServicesDropdownOpen(false)
+                            setIsMenuOpen(false)
+                          }}
+                        >
+                          {dropdownItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
+                  onClick={item.onClick || (() => setIsMenuOpen(false))}
+                >
+                  {item.label}
+                </a>
+              ),
+            )}
           </nav>
           <div className="mt-4 flex justify-between">
-            {/* Mobile language toggle */}
             <div className="md:hidden flex space-x-2">
               <button
                 onClick={() => setLanguage("en")}
@@ -133,7 +283,6 @@ export default function Header() {
           </div>
         </div>
       )}
-      {/* Add the EmailOptionsModal component at the end of the return statement, just before the closing tag */}
       <EmailOptionsModal
         isOpen={isEmailModalOpen}
         onClose={() => setIsEmailModalOpen(false)}
@@ -143,3 +292,4 @@ export default function Header() {
   )
 }
 
+export default Header

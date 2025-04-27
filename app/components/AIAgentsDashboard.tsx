@@ -914,25 +914,6 @@ export default function AIAgentsDashboard() {
                         `solution.aiAgents.${index === 0 ? "automatedTalentDescription" : index === 1 ? "naturalLanguageDescription" : index === 2 ? "predictiveAnalyticsDescription" : "secureDataDescription"}`,
                       )}
                     </motion.p>
-
-                    <motion.div
-                      className={`mt-3 pt-2 border-t border-gray-100 ${isHovered ? "block" : "hidden sm:hidden"}`}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: isHovered ? 1 : 0 }}
-                    >
-                      <span className="text-xs md:text-sm text-primary font-medium cursor-pointer flex items-center">
-                        {t("solution.aiAgents.learnMore")}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-3 w-3 md:h-4 md:w-4 ml-1"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                    </motion.div>
                   </motion.div>
                 )
               })}
@@ -947,10 +928,11 @@ export default function AIAgentsDashboard() {
               className="text-center w-full max-w-2xl"
             >
               <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gray-800">
-                {t("solution.aiAgents.transformRecruitment")}
+                In less than 2 days your candidates in a call
               </h3>
               <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg px-2">
-                {t("solution.aiAgents.discoverSolutions")}
+                Our AI-powered matching system delivers qualified candidates faster than traditional recruitment
+                methods.
               </p>
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -980,4 +962,3 @@ export default function AIAgentsDashboard() {
     </section>
   )
 }
-

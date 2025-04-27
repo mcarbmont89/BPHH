@@ -60,4 +60,3 @@ export const recentPlacements = [
     skills: ["Kubernetes", "Docker", "AWS", "CI/CD"],
   },
 ]
-

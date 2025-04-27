@@ -72,4 +72,3 @@ const WhyChooseBotic = () => {
 }
 
 export default WhyChooseBotic
-

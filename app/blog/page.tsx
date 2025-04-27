@@ -7,10 +7,13 @@ import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
 import { Search, Calendar, ArrowRight } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
+// Update the blog page to use the translated content based on the selected language
+
+// First, update the BlogPost interface to include translations
 interface BlogPost {
   id: string
   titleKey: string
@@ -27,7 +30,8 @@ const blogPosts: BlogPost[] = [
     excerptKey: "blog.posts.recruitmentProcess.excerpt",
     date: "2025-01-15",
     category: "Recruitment",
-    imageUrl: "/placeholder.svg?height=200&width=400",
+    imageUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%207%20abr%202025%2C%2014_56_15-9G8Pl56e7GyYUUquCqdMyWiTfMpQxG.png",
   },
   {
     id: "connecting-companies",
@@ -35,7 +39,8 @@ const blogPosts: BlogPost[] = [
     excerptKey: "blog.posts.connectingCompanies.excerpt",
     date: "2025-01-15",
     category: "Business Growth",
-    imageUrl: "/placeholder.svg?height=200&width=400",
+    imageUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%207%20abr%202025%2C%2012_27_18-ANHdHODVQFX0EsM4a7FyXlKx8cRoDb.png",
   },
   {
     id: "ai-agents-implementation",
@@ -43,7 +48,8 @@ const blogPosts: BlogPost[] = [
     excerptKey: "blog.posts.aiAgentsImplementation.excerpt",
     date: "2025-03-15",
     category: "AI Technology",
-    imageUrl: "/placeholder.svg?height=200&width=400",
+    imageUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%207%20abr%202025%2C%2015_32_15-39a4zY9RPLXSTRXLrM6PtC743trwfW.png",
   },
 ]
 
@@ -55,7 +61,8 @@ const additionalPosts: BlogPost[] = [
     excerptKey: "blog.posts.aiRecruitmentTrends.excerpt",
     date: "2025-02-10",
     category: "Industry Trends",
-    imageUrl: "/placeholder.svg?height=200&width=400",
+    imageUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%207%20abr%202025%2C%2015_52_25-l7QNyXnPwAO5G9cRMRtnpM8g5Z5ZtY.png",
   },
   {
     id: "talent-retention-strategies",
@@ -63,7 +70,8 @@ const additionalPosts: BlogPost[] = [
     excerptKey: "blog.posts.talentRetentionStrategies.excerpt",
     date: "2025-02-22",
     category: "Talent Management",
-    imageUrl: "/placeholder.svg?height=200&width=400",
+    imageUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%207%20abr%202025%2C%2012_51_58-bstYWBgRPMl0ZqJWW149VZ71DkaVXi.png",
   },
   {
     id: "future-of-work",
@@ -71,7 +79,8 @@ const additionalPosts: BlogPost[] = [
     excerptKey: "blog.posts.futureOfWork.excerpt",
     date: "2025-03-05",
     category: "Future Insights",
-    imageUrl: "/placeholder.svg?height=200&width=400",
+    imageUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%207%20abr%202025%2C%2015_52_08-Sq8nfJEM4qzpzIn4rkQ58amsR7bPzz.png",
   },
 ]
 
@@ -89,11 +98,17 @@ const categories = [
 ]
 
 export default function Blog() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
+  const [mounted, setMounted] = useState(false)
 
-  // Filter posts based on search query and category
+  // Use useEffect to ensure component is mounted before rendering
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Update the filteredPosts mapping to use the correct translations
   const filteredPosts = allPosts.filter((post) => {
     const matchesSearch =
       searchQuery === "" ||
@@ -104,6 +119,11 @@ export default function Blog() {
 
     return matchesSearch && matchesCategory
   })
+
+  // Don't render anything until component is mounted to avoid hydration issues
+  if (!mounted) {
+    return null
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -186,17 +206,69 @@ export default function Blog() {
             </div>
 
             <div className="flex flex-wrap gap-2 w-full md:w-auto">
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedCategory(category)}
-                  className="text-sm"
-                >
-                  {category}
-                </Button>
-              ))}
+              <Button
+                key="All"
+                variant={selectedCategory === "All" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedCategory("All")}
+                className="text-sm"
+              >
+                {t("blog.categories.all")}
+              </Button>
+              <Button
+                key="Recruitment"
+                variant={selectedCategory === "Recruitment" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedCategory("Recruitment")}
+                className="text-sm"
+              >
+                {t("blog.categories.recruitment")}
+              </Button>
+              <Button
+                key="Business Growth"
+                variant={selectedCategory === "Business Growth" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedCategory("Business Growth")}
+                className="text-sm"
+              >
+                {t("blog.categories.businessGrowth")}
+              </Button>
+              <Button
+                key="AI Technology"
+                variant={selectedCategory === "AI Technology" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedCategory("AI Technology")}
+                className="text-sm"
+              >
+                {t("blog.categories.aiTechnology")}
+              </Button>
+              <Button
+                key="Industry Trends"
+                variant={selectedCategory === "Industry Trends" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedCategory("Industry Trends")}
+                className="text-sm"
+              >
+                {t("blog.categories.industryTrends")}
+              </Button>
+              <Button
+                key="Talent Management"
+                variant={selectedCategory === "Talent Management" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedCategory("Talent Management")}
+                className="text-sm"
+              >
+                {t("blog.categories.talentManagement")}
+              </Button>
+              <Button
+                key="Future Insights"
+                variant={selectedCategory === "Future Insights" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedCategory("Future Insights")}
+                className="text-sm"
+              >
+                {t("blog.categories.futureInsights")}
+              </Button>
             </div>
           </div>
         </div>
@@ -229,7 +301,7 @@ export default function Blog() {
                       <CardContent className="p-6">
                         <div className="flex items-center text-sm text-gray-500 mb-3">
                           <Calendar className="h-4 w-4 mr-1" />
-                          <span>{new Date(post.date).toLocaleDateString()}</span>
+                          <span>{new Date(post.date).toLocaleDateString(language === "es" ? "es-ES" : "en-US")}</span>
                         </div>
                         <h2 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
                           {t(post.titleKey)}
@@ -287,4 +359,3 @@ export default function Blog() {
     </div>
   )
 }
-

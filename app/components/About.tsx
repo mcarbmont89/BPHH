@@ -254,4 +254,3 @@ function NetworkVisualization({ activeConnection, networkData }) {
     </motion.div>
   )
 }
-

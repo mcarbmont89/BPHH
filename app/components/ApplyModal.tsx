@@ -11,12 +11,15 @@ interface ApplyModalProps {
   job: {
     titleKey: string
     id: string
+    descriptionKey: string
+    sector: string
   }
 }
 
 export function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
   const { t } = useLanguage()
   const [isLoading, setIsLoading] = useState(false)
+  const [showEmailOptions, setShowEmailOptions] = useState(false)
 
   const handleApply = (useGmail: boolean) => {
     setIsLoading(true)
@@ -29,27 +32,51 @@ export function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
     setTimeout(() => {
       window.open(useGmail ? gmailLink : mailtoLink, "_blank")
       setIsLoading(false)
+      setShowEmailOptions(false)
       onClose()
     }, 500)
   }
 
+  // Use the descriptionKey directly instead of trying to construct it
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent>
+      <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>{t("careers.applyModalTitle")}</DialogTitle>
-          <DialogDescription>{t("careers.applyModalDescription", { jobTitle: t(job.titleKey) })}</DialogDescription>
+          <DialogTitle>{t("careers.jobDetails") || "Job Details"}</DialogTitle>
+          <DialogDescription>
+            {t("careers.jobDetailsDescription") || "Review the details of this position before applying."}
+          </DialogDescription>
         </DialogHeader>
-        <div className="flex justify-end space-x-2 mt-4">
-          <Button onClick={() => handleApply(false)} disabled={isLoading}>
-            {t("careers.useDefaultEmail")}
-          </Button>
-          <Button onClick={() => handleApply(true)} disabled={isLoading}>
-            {t("careers.useGmail")}
-          </Button>
+
+        <div className="py-4">
+          <h3 className="text-lg font-semibold mb-2">{t(job.titleKey)}</h3>
+          <p className="text-sm text-gray-500 mb-2">ID: {job.id}</p>
+          <div className="bg-gray-50 p-4 rounded-md mb-4">
+            <p className="text-sm text-gray-700">{t(job.descriptionKey) || "No description available."}</p>
+          </div>
+
+          {!showEmailOptions ? (
+            <Button onClick={() => setShowEmailOptions(true)} className="w-full bg-primary hover:bg-primary/90">
+              {t("careers.apply")}
+            </Button>
+          ) : (
+            <div className="space-y-4">
+              <p className="text-sm text-center">
+                {t("careers.applyModalDescription", { jobTitle: t(job.titleKey) }) ||
+                  `How would you like to apply for the ${t(job.titleKey)} position?`}
+              </p>
+              <div className="flex justify-center space-x-4">
+                <Button onClick={() => handleApply(false)} disabled={isLoading} variant="outline">
+                  {t("careers.useDefaultEmail")}
+                </Button>
+                <Button onClick={() => handleApply(true)} disabled={isLoading}>
+                  {t("careers.useGmail")}
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </DialogContent>
     </Dialog>
   )
 }
-

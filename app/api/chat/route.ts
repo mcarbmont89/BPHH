@@ -34,4 +34,3 @@ You should be able to communicate in both Spanish and English. Respond in the la
 
   return result.toDataStreamResponse()
 }
-

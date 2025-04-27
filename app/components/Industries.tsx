@@ -18,9 +18,9 @@ const industries = [
     borderColor: "border-blue-200",
     iconColor: "text-blue-500",
     stats: {
-      placements: 25,
-      companies: 10,
-      retention: 94,
+      placements: 10,
+      companies: 4,
+      retention: 90,
     },
     technologies: ["AI/ML", "Cloud", "DevOps", "Mobile", "Web"],
   },
@@ -33,8 +33,8 @@ const industries = [
     borderColor: "border-purple-200",
     iconColor: "text-purple-500",
     stats: {
-      placements: 18,
-      companies: 10,
+      placements: 8,
+      companies: 3,
       retention: 91,
     },
     technologies: ["Semiconductors", "ASIC", "FPGA", "IoT", "Embedded"],
@@ -48,8 +48,8 @@ const industries = [
     borderColor: "border-orange-200",
     iconColor: "text-orange-500",
     stats: {
-      placements: 35,
-      companies: 17,
+      placements: 15,
+      companies: 10,
       retention: 94,
     },
     technologies: ["BIM", "PropTech", "Smart Buildings", "Sustainability", "Project Management"],
@@ -63,8 +63,8 @@ const industries = [
     borderColor: "border-green-200",
     iconColor: "text-green-500",
     stats: {
-      placements: 30,
-      companies: 13,
+      placements: 13,
+      companies: 5,
       retention: 90,
     },
     technologies: ["Supply Chain", "Fleet Management", "Warehouse Automation", "Last-Mile", "Blockchain"],
@@ -131,9 +131,20 @@ export default function Industries() {
   }
 
   // Add this function inside the Industries component, after the toggleExpandedIndustry function
-  const handleContactRequest = (industryTitle: string) => {
-    setEmailSubject(`Inquiry about ${industryTitle} Industry Solutions`)
-    setIsEmailModalOpen(true)
+  // Eliminar o comentar la función handleContactRequest existente
+  // const handleContactRequest = (industryTitle: string) => {
+  //   setEmailSubject(`Inquiry about ${industryTitle} Industry Solutions`);
+  //   setIsEmailModalOpen(true);
+  // }
+
+  // Agregar esta nueva función que redirige a la página de careers con el filtro correspondiente
+  const handleIndustryExplore = (index: number) => {
+    // Mapeo directo de índice a nombre de industria
+    const industryNames = ["Software", "Hardware", "Construction", "Logistics"]
+    const industryName = industryNames[index]
+
+    // Redirigir a la página de careers con el parámetro de industria
+    window.location.href = `/careers?industry=${industryName}`
   }
 
   // Add this useEffect after the other functions
@@ -312,10 +323,10 @@ export default function Industries() {
                             className={`px-4 py-2 rounded-full text-sm text-white bg-gradient-to-r ${industry.color} shadow-md`}
                             onClick={(e) => {
                               e.stopPropagation()
-                              handleContactRequest(t(industry.titleKey))
+                              handleIndustryExplore(index)
                             }}
                           >
-                            Explore Opportunities
+                            {t("industries.exploreOpportunities")}
                           </motion.button>
                         </div>
                       </div>
@@ -333,4 +344,3 @@ export default function Industries() {
     </section>
   )
 }
-
