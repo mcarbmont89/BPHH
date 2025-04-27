@@ -387,12 +387,12 @@ export const translations = {
       jobDetailsDescription: "Review the details of this position before applying.",
       jobs: {
         seniorFullStack: {
-          title: "Senior Full Stack Developer",
-          description: "Develop and maintain complex web applications using modern frameworks and cloud technologies.",
+          title: "SENIOR FULLSTACK DEVELOPER",
+          description: "Are you comfortable working in both the backend and frontend? We're looking for a senior profile to lead the development of new features for tech products with a global impact. Typical stack: Node.js, React, Typescript, MongoDB. Experience with scalable architectures, CI/CD, and technical leadership is a plus.",
         },
         aiResearchScientist: {
-          title: "AI Research Scientist",
-          description: "Conduct cutting-edge research in machine learning and develop innovative AI solutions.",
+          title: "FRONTEND LEAD",
+          description: "Are you passionate about creating powerful and scalable visual experiences? This role is for you. You'll lead the front-end development of a growing SaaS platform, making key decisions about the stack, performance, and UX. Experience with modern frameworks (React, Vue, Angular) and a product vision are required.",
         },
         healthcareDataAnalyst: {
           title: "Healthcare Data Analyst",
@@ -403,12 +403,12 @@ export const translations = {
           description: "Develop and implement strategies to optimize energy usage and reduce environmental impact.",
         },
         semiconductorProcessEngineer: {
-          title: "Semiconductor Process Engineer",
-          description: "Develop and optimize manufacturing processes for semiconductor devices.",
+          title: "SEMICONDUCTOR PROCESS ENGINEER",
+          description: "We are seeking a process engineer with experience in semiconductor manufacturing. You will participate in the development and optimization of key processes (lithography, etching, deposition, etc.), working closely with the design and testing team. Knowledge of cleanroom and high-precision production environments is essential.",
         },
         asicDesignEngineer: {
-          title: "ASIC Design Engineer",
-          description: "Design and develop application-specific integrated circuits for various applications.",
+          title: "ASIC DESIGN ENGINEER",
+          description: "Is chip design your game? We're looking for an ASIC engineer with experience in RTL design, verification, and full development workflows. You'll work for a leading company with projects related to AI, communications, and data processing. Experience with Verilog/VHDL, Synopsys, or Cadence is a plus.",
         },
         photolithographySpecialist: {
           title: "Photolithography Specialist",
@@ -431,38 +431,38 @@ export const translations = {
           description: "Design and implement intelligent electrical grid systems for improved efficiency.",
         },
         dataScientist: {
-          title: "Data Scientist",
+          title: "DATA SCIENTIST",
           description:
-            "Analyze complex datasets to extract insights and build predictive models for business decision-making.",
+            "¿Eres capaz de convertir datos en decisiones? Buscamos un/a Data Scientist con experiencia en modelos predictivos, machine learning y análisis de grandes volúmenes de datos. Participarás en proyectos innovadores aplicando IA para resolver problemas reales de negocio. Python, SQL y bibliotecas como scikit-learn o TensorFlow, muy valoradas.",
         },
         embeddedSystemsEngineer: {
-          title: "Embedded Systems Engineer",
-          description: "Design and develop firmware and hardware for embedded systems and IoT devices.",
+          title: "FIELD APPLICATION ENGINEER",
+          description: "¿Te apasiona la tecnología y el trato con cliente? Este rol combina conocimiento técnico profundo con habilidades comerciales. Serás el nexo entre el equipo de ingeniería y los clientes, ayudando a implementar soluciones de hardware avanzadas y resolviendo retos técnicos en campo. Ideal para perfiles con background en electrónica y vocación de servicio.",
         },
         constructionProjectManager: {
-          title: "Construction Project Manager",
+          title: "INDUSTRIAL CONSTRUCTION MANAGER",
           description:
-            "Oversee construction projects from planning to completion, ensuring quality, safety, and efficiency.",
+            "Do you have experience leading industrial projects from start to finish? We are looking for a strong technical coordination and team management profile capable of ensuring deadlines, quality, and safety on large-scale projects. Experience in logistics, industrial, or data centers is ideal. Budget management, dealing with subcontractors, and on-site problem-solving skills are a plus.",
         },
         bimSpecialist: {
-          title: "BIM Specialist",
-          description: "Create and manage Building Information Models to optimize construction planning and execution.",
+          title: "CONSTRUCTION TECHNICIAN",
+          description: "Are you an expert in analyzing projects and identifying risks from the initial phase? This role requires a technical background with a keen eye for detail and mastery of measurements, budgets, and planning. You will participate in preparing bids for large construction projects, collaborating with the construction and management teams to ensure technical and economic viability.",
         },
         smartBuildingEngineer: {
-          title: "Smart Building Engineer",
-          description: "Design and implement intelligent systems for building automation and energy efficiency.",
+          title: "DIRECTOR OF DATA CENTER FACILITIES",
+          description: "We are seeking a senior profile with experience in the design, execution, and commissioning of critical installations (HVAC, electrical, BMS) in data centers. You will be responsible for compliance with technical standards, energy efficiency, and coordination with engineering firms and contractors. A key position for leading projects in a rapidly growing sector.",
         },
         supplyChainAnalyst: {
-          title: "Supply Chain Analyst",
-          description: "Analyze and optimize supply chain operations to improve efficiency and reduce costs.",
+          title: "SUPPLY CHAIN ​​ANALYST",
+          description: "Analyze and optimize supply chain operations to identify inefficiencies, improve processes, and reduce costs. Collaborate with internal teams to implement data-driven improvements, optimize inventories, and ensure efficient flow of materials and products, thereby driving operational efficiency and achieving strategic objectives.",
         },
         logisticsOperationsManager: {
-          title: "Logistics Operations Manager",
-          description: "Oversee logistics operations to ensure efficient movement of goods and materials.",
+          title: "LOGISTIC OPERATIONS MANAGER",
+          description: "Oversee and coordinate logistics operations to ensure the efficient and timely movement of goods and materials throughout the supply chain, optimizing transportation, storage, and distribution processes to meet quality standards, delivery times, and operational efficiency objectives.",
         },
         warehouseAutomationSpecialist: {
-          title: "Warehouse Automation Specialist",
-          description: "Implement and maintain automated systems for warehouse operations and inventory management.",
+          title: "WAREHOUSE AUTOMATION SPECIALIST",
+          description: "Implement and maintain automated systems to optimize warehouse operations and inventory management, ensuring accurate stock control, streamlining receiving, storage, and dispatch processes, and improving overall efficiency through the use of advanced technologies.",
         },
       },
       sectors: {
