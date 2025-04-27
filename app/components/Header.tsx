@@ -114,7 +114,7 @@ export function Header() {
     },
     { href: "/#process", label: t("nav.process"), onClick: handleProcessClick },
     { href: "/#industries", label: t("nav.industries") },
-    { href: "/#solution", label: t("nav.solution"), onClick: handleSolutionClick },
+    //{ href: "/#solution", label: t("nav.solution"), onClick: handleSolutionClick },
     { href: "/#about", label: t("nav.about") },
     { href: "/careers", label: t("nav.careers") },
     { href: "/blog", label: t("nav.blog.title") },
