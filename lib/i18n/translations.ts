@@ -769,19 +769,19 @@ export const translations = {
         {
           quote:
             "Botic Partners found us a specialized AI engineer in just 3 days when we urgently needed expertise for a critical client project. The quality was exceptional.",
-          author: "Maria Rodriguez",
+          author: "MARÍA RODRÍGUEZ",
           position: "CTO, Digital Solutions Inc.",
         },
         {
           quote:
             "The freelance cloud architect Botic connected us with transformed our infrastructure approach, delivering 40% cost savings and improved performance.",
-          author: "James Chen",
+          author: "JUAN PEÑA",
           position: "VP Engineering, TechScale",
         },
         {
           quote:
             "When we needed interim leadership during our CTO transition, Botic found us the perfect temporary leader who kept our roadmap on track.",
-          author: "Sarah Johnson",
+          author: "ANTONIO LÓPEZ",
           position: "CEO, InnovateTech",
         },
       ],
@@ -1679,19 +1679,19 @@ export const translations = {
         {
           quote:
             "Botic Partners nos encontró un ingeniero de IA especializado en solo 3 días cuando necesitábamos urgentemente experiencia para un proyecto crítico de cliente. La calidad fue excepcional.",
-          author: "María Rodríguez",
+          author: "MARÍA RODRÍGUEZ",
           position: "CTO, Digital Solutions Inc.",
         },
         {
           quote:
             "El arquitecto cloud freelance con el que Botic nos conectó transformó nuestro enfoque de infraestructura, logrando un 40% de ahorro en costos y mejorando el rendimiento.",
-          author: "James Chen",
+          author: "JUAN PEÑA",
           position: "VP Engineering, TechScale",
         },
         {
           quote:
             "Cuando necesitamos liderazgo interino durante la transición de nuestro CTO, Botic nos encontró el líder temporal perfecto que mantuvo nuestro roadmap en marcha.",
-          author: "Sarah Johnson",
+          author: "ANTONIO LÓPEZ",
           position: "CEO, InnovateTech",
         },
       ],
