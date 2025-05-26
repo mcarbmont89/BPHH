@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Brain, TrendingUp, Users, CheckCircle, Activity, Zap } from "lucide-react"
@@ -20,8 +18,7 @@ export default function ContactForm() {
   const { t } = useLanguage()
   const [animateParticles, setAnimateParticles] = useState(true)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = () => {
     window.open(
       "https://outlook.office.com/bookwithme/user/5dc7b4ad41ef41dfa5e4f1053f4710b8@boticpartners.com/meetingtype/n6FtRriP-0afMrnBYzgN9w2?anonymous&ep=mlink",
       "_blank",
@@ -51,79 +48,7 @@ export default function ContactForm() {
                 <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
                   {t("contact.title")}
                 </h2>
-                <p className="text-gray-600">{t("contact.subtitle")}</p>
-              </motion.div>
-
-              <motion.form
-                className="space-y-5"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                onSubmit={handleSubmit}
-              >
-                <div className="space-y-2">
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                    {t("contact.name")}
-                  </label>
-                  <motion.input
-                    whileFocus={{ scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                    placeholder={t("contact.name")}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    {t("contact.email")}
-                  </label>
-                  <motion.input
-                    whileFocus={{ scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                    placeholder={t("contact.emailPlaceholder")}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="inquiry" className="block text-sm font-medium text-gray-700">
-                    {t("contact.inquiry")}
-                  </label>
-                  <motion.textarea
-                    whileFocus={{ scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    id="inquiry"
-                    rows={3}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                    placeholder={t("contact.inquiryPlaceholder")}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="ai-interest" className="block text-sm font-medium text-gray-700">
-                    {t("contact.aiInterest")}
-                  </label>
-                  <motion.select
-                    whileFocus={{ scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    id="ai-interest"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                  >
-                    <option value="" disabled>
-                      {t("contact.selectInterest")}
-                    </option>
-                    <option value="talent-matching">{t("contact.talentMatching")}</option>
-                    <option value="recruitment-automation">{t("contact.recruitmentAutomation")}</option>
-                    <option value="executive-search">{t("contact.executiveSearch")}</option>
-                    <option value="strategic-partnerships">{t("contact.strategicPartnerships")}</option>
-                    <option value="other">{t("contact.other")}</option>
-                  </motion.select>
-                </div>
+                <p className="text-gray-600 mb-8">{t("contact.subtitle")}</p>
 
                 <motion.div
                   whileHover={{ scale: 1.03 }}
@@ -132,7 +57,7 @@ export default function ContactForm() {
                   className="pt-3"
                 >
                   <Button
-                    type="submit"
+                    onClick={handleSubmit}
                     size="lg"
                     className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg font-semibold shadow-lg shadow-primary/30 relative overflow-hidden group"
                   >
@@ -154,7 +79,7 @@ export default function ContactForm() {
                     />
                   </Button>
                 </motion.div>
-              </motion.form>
+              </motion.div>
             </div>
 
             {/* Right side - Animated visual */}
