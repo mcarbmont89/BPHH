@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Brain, TrendingUp, Users, CheckCircle, Activity, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
-import { EmailOptionsModal } from "./EmailOptionsModal"
 
 // Particle animation points
 const particlePoints = Array.from({ length: 20 }, () => ({
@@ -20,25 +19,13 @@ const particlePoints = Array.from({ length: 20 }, () => ({
 export default function ContactForm() {
   const { t } = useLanguage()
   const [animateParticles, setAnimateParticles] = useState(true)
-  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    inquiry: "",
-    aiInterest: "",
-  })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setIsEmailModalOpen(true)
-  }
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
+    window.open(
+      "https://outlook.office.com/bookwithme/user/5dc7b4ad41ef41dfa5e4f1053f4710b8@boticpartners.com/meetingtype/n6FtRriP-0afMrnBYzgN9w2?anonymous&ep=mlink",
+      "_blank",
+    )
   }
 
   return (
@@ -84,9 +71,6 @@ export default function ContactForm() {
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     type="text"
                     id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                     placeholder={t("contact.name")}
                   />
@@ -101,9 +85,6 @@ export default function ContactForm() {
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     type="email"
                     id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                     placeholder={t("contact.emailPlaceholder")}
                   />
@@ -117,9 +98,6 @@ export default function ContactForm() {
                     whileFocus={{ scale: 1.01 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     id="inquiry"
-                    name="inquiry"
-                    value={formData.inquiry}
-                    onChange={handleInputChange}
                     rows={3}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                     placeholder={t("contact.inquiryPlaceholder")}
@@ -134,9 +112,6 @@ export default function ContactForm() {
                     whileFocus={{ scale: 1.01 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     id="ai-interest"
-                    name="aiInterest"
-                    value={formData.aiInterest}
-                    onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                   >
                     <option value="" disabled>
@@ -278,13 +253,6 @@ export default function ContactForm() {
           </div>
         </motion.div>
       </div>
-      {/* Add the EmailOptionsModal component */}
-      <EmailOptionsModal
-        isOpen={isEmailModalOpen}
-        onClose={() => setIsEmailModalOpen(false)}
-        subject={`Inquiry from ${formData.name}: ${formData.aiInterest || "General Contact"}`}
-        body={formData.inquiry}
-      />
     </section>
   )
 }

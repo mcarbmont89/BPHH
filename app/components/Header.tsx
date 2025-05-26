@@ -8,13 +8,11 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import { Menu, ChevronDown, ChevronUp } from "lucide-react"
-import { EmailOptionsModal } from "./EmailOptionsModal"
 
 export function Header() {
   const { language, setLanguage, t } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -121,7 +119,10 @@ export function Header() {
   ]
 
   const handleContact = () => {
-    setIsEmailModalOpen(true)
+    window.open(
+      "https://outlook.office.com/bookwithme/user/5dc7b4ad41ef41dfa5e4f1053f4710b8@boticpartners.com/meetingtype/n6FtRriP-0afMrnBYzgN9w2?anonymous&ep=mlink",
+      "_blank",
+    )
   }
 
   return (
@@ -283,11 +284,6 @@ export function Header() {
           </div>
         </div>
       )}
-      <EmailOptionsModal
-        isOpen={isEmailModalOpen}
-        onClose={() => setIsEmailModalOpen(false)}
-        subject={t("header.contactSubject")}
-      />
     </header>
   )
 }
