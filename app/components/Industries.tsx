@@ -254,8 +254,8 @@ export default function Industries() {
                   onMouseEnter={() => handleIndustryHover(index)}
                   onMouseLeave={() => handleIndustryHover(null)}
                 >
-                  <CardContent className={`p-6 ${industry.bgColor}`}>
-                    <div className="flex flex-col items-center text-center">
+                  <CardContent className={`p-6 ${industry.bgColor} h-full`}>
+                    <div className="flex flex-col items-center text-center h-full justify-between">
                       <motion.div
                         className={`p-4 rounded-full mb-6 bg-gradient-to-br ${industry.color} group-hover:scale-110 transition-transform duration-300`}
                         animate={

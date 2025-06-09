@@ -79,9 +79,9 @@ export const translations = {
         ],
         metricsTitle: "Our Success Metrics",
         metrics: [
-          "93% successful placement rate within 15 days",
-          "85% of placed candidates stay 2+ years",
-          "50% reduction in hiring costs",
+          " successful placement rate within 15 days",
+          " of placed candidates stay 2+ years",
+          " reduction in hiring costs",
           "Access to 10,000+ pre-vetted tech professionals",
         ],
         testimonials: [
@@ -900,7 +900,7 @@ export const translations = {
       acquisitionOpportunity: "Evaluación de oportunidades de adquisición",
     },
     hero: {
-      title: "Encontramos Talento con IA, perfectamente afin a las necesidades de tu empresa",
+      title: "El talento ideal, potenciado por IA",
       subtitle:
         "Transforma tu proceso de contratación con nuestra solución de reclutamiento basada en IA. Encuentra el talento perfecto más rápido y eficientemente.",
       cta: "Comenzar",
@@ -939,9 +939,9 @@ export const translations = {
         ],
         metricsTitle: "Nuestras Métricas de Éxito",
         metrics: [
-          "93% de tasa de colocación exitosa en 15 días",
-          "85% de los candidatos permanecen más de 2 años",
-          "50% de reducción en costos de contratación",
+          " de tasa de colocación exitosa en 15 días",
+          " de los candidatos permanecen más de 2 años",
+          " de reducción en costos de contratación",
           "Acceso a más de 10,000 profesionales tech pre-evaluados",
         ],
         testimonials: [
@@ -1503,8 +1503,7 @@ export const translations = {
       reduceTimeToHire: "Reduce el tiempo de contratación hasta en un 60%",
       accessToTalent: "Acceso a más de 10,000 profesionales pre-evaluados",
       retentionRate: "82% de tasa de retención después de 2+ años",
-      aiPoweredRecruitment: "Reclutamiento Impulsado por IA",
-      strategicPartnerships: "Alianzas Estratégicas",
+      aiPoweredRecruitment: "Reclutamiento Impulsado por IA"
     },
     aiAgents: {
       realTimeData: "Datos en tiempo real",

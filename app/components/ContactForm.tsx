@@ -37,18 +37,17 @@ export default function ContactForm() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Left side - Form */}
-            <div className="p-8 md:p-10">
+            <div className="p-8 md:p-10 grid place-items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="mb-8"
               >
                 <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
                   {t("contact.title")}
                 </h2>
-                <p className="text-gray-600 mb-8">{t("contact.subtitle")}</p>
+                <p className="text-gray-600 mb-4">{t("contact.subtitle")}</p>
 
                 <motion.div
                   whileHover={{ scale: 1.03 }}
@@ -63,13 +62,7 @@ export default function ContactForm() {
                   >
                     <span className="relative z-10 flex items-center justify-center">
                       {t("contact.getInTouch")}
-                      <motion.div
-                        className="ml-2"
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
-                      >
-                        <Zap className="h-5 w-5" />
-                      </motion.div>
+                      <Zap className="ml-2 h-5 w-5" />
                     </span>
                     <motion.span
                       className="absolute inset-0 bg-primary-foreground z-0"
@@ -85,20 +78,20 @@ export default function ContactForm() {
             {/* Right side - Animated visual */}
             <div className="bg-gradient-to-br from-primary/10 to-primary/30 p-8 md:p-10 relative overflow-hidden">
               {/* Animated particles */}
-              <AnimatePresence>
+              {/* <AnimatePresence>
                 {animateParticles &&
                   Array.from({ length: 20 }).map((_, index) => (
                     <motion.div
                       key={`contact-particle-${index}`}
                       className="absolute rounded-full bg-primary/40"
                       initial={{
-                        x: Math.random() * 100 + 50,
-                        y: Math.random() * 300 + 50,
+                        x: Math.random() * 100 + 250,
+                        y: Math.random() * 100 + 50,
                         opacity: 0,
                       }}
                       animate={{
-                        x: [Math.random() * 100 + 50, Math.random() * 100 + 150, Math.random() * 100 + 50],
-                        y: [Math.random() * 300 + 50, Math.random() * 300 + 100, Math.random() * 300 + 50],
+                        x: [Math.random() * 100 + 150, Math.random() * 100 + 250, Math.random() * 100 + 150],
+                        y: [Math.random() * 300 + 0, Math.random() * 300 + 50, Math.random() * 300 + 0],
                         opacity: [0, 0.7, 0],
                       }}
                       transition={{
@@ -112,7 +105,7 @@ export default function ContactForm() {
                       }}
                     />
                   ))}
-              </AnimatePresence>
+              </AnimatePresence> */}
 
               {/* Animated benefits */}
               <div className="relative z-10 h-full flex flex-col justify-center">
@@ -157,7 +150,7 @@ export default function ContactForm() {
                 </div>
 
                 {/* Live indicator */}
-                <motion.div
+                {/* <motion.div
                   className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-sm rounded-md px-3 py-2 text-xs text-gray-700 flex items-center shadow-md"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -172,7 +165,7 @@ export default function ContactForm() {
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                     </span>
                   </span>
-                </motion.div>
+                </motion.div> */}
               </div>
             </div>
           </div>

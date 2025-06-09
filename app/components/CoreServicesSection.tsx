@@ -23,7 +23,7 @@ export default function CoreServicesSection() {
           >
             {t("coreServices.whatWeDo")}
           </motion.h2>
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -31,7 +31,7 @@ export default function CoreServicesSection() {
             className="text-xl text-gray-600 max-w-3xl mx-auto"
           >
             {t("coreServices.subtitle")}
-          </motion.p>
+          </motion.p> */}
         </div>
 
         {/* Core Services Grid */}

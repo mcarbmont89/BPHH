@@ -16,6 +16,7 @@ export default function VideoSection() {
 
   return (
     <section className="py-20 bg-accent">
+      ASDASD
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">{t("video.title")}</h2>

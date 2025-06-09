@@ -122,39 +122,39 @@ export default function HeadhuntingSection() {
     return () => clearInterval(interval)
   }, [testimonials.length])
 
-  // Animate counters when in view
-  useEffect(() => {
-    let interval: NodeJS.Timeout
+  // // Animate counters when in view or when hovering over the metrics box
+  // useEffect(() => {
+  //   let interval: NodeJS.Timeout
 
-    if (hoveredBox === 1) {
-      let frame = 0
-      const frames = 25 // Reduced from 50 to 25 for faster animation
+  //   if (isInView) {
+  //     let frame = 0
+  //     const frames = 25 // Reduced from 50 to 25 for faster animation
 
-      interval = setInterval(() => {
-        frame++
-        setCounters({
-          placements: Math.min(Math.floor(93 * (0.6 + (0.4 * frame) / frames)), 93),
-          retention: Math.min(Math.floor(85 * (0.6 + (0.4 * frame) / frames)), 85),
-          cost: Math.min(Math.floor(50 * (0.6 + (0.4 * frame) / frames)), 50),
-          professionals: Math.min(Math.floor(10000 * (0.6 + (0.4 * frame) / frames)), 10000),
-          network: Math.min(Math.floor(6000 * (0.6 + (0.4 * frame) / frames)), 6000),
-        })
+  //     interval = setInterval(() => {
+  //       frame++
+  //       setCounters({
+  //         placements: Math.min(Math.floor(93 * (0.6 + (0.4 * frame) / frames)), 93),
+  //         retention: Math.min(Math.floor(85 * (0.6 + (0.4 * frame) / frames)), 85),
+  //         cost: Math.min(Math.floor(50 * (0.6 + (0.4 * frame) / frames)), 50),
+  //         professionals: Math.min(Math.floor(10000 * (0.6 + (0.4 * frame) / frames)), 10000),
+  //         network: Math.min(Math.floor(6000 * (0.6 + (0.4 * frame) / frames)), 6000),
+  //       })
 
-        if (frame >= frames) clearInterval(interval)
-      }, 15) // Reduced from 18 to 15ms for faster animation
-    } else {
-      // Reset to 60% instead of 0
-      setCounters({
-        placements: Math.floor(93 * 0.6),
-        retention: Math.floor(85 * 0.6),
-        cost: Math.floor(50 * 0.6),
-        professionals: Math.floor(10000 * 0.6),
-        network: Math.floor(6000 * 0.6),
-      })
-    }
+  //       if (frame >= frames) clearInterval(interval)
+  //     }, 15) // Reduced from 18 to 15ms for faster animation
+  //   } else if (!isInView) {
+  //     // Only reset if not in view
+  //     setCounters({
+  //       placements: Math.floor(93 * 0.6),
+  //       retention: Math.floor(85 * 0.6),
+  //       cost: Math.floor(50 * 0.6),
+  //       professionals: Math.floor(10000 * 0.6),
+  //       network: Math.floor(6000 * 0.6),
+  //     })
+  //   }
 
-    return () => clearInterval(interval)
-  }, [hoveredBox])
+  //   return () => clearInterval(interval)
+  // }, [isInView, hoveredBox])
 
   // Auto-expand boxes when section comes into view
   useEffect(() => {
@@ -177,13 +177,13 @@ export default function HeadhuntingSection() {
             network: Math.min(Math.floor(6000 * (0.6 + (0.4 * frame) / frames)), 6000),
           })
 
-          if (frame >= frames) {
-            clearInterval(interval)
-            // After the first box animation completes, show the second box
-            setTimeout(() => setHoveredBox(1), 500)
-            // Then after another delay, show the third box
-            setTimeout(() => setHoveredBox(2), 1000)
-          }
+          // if (frame >= frames) {
+          //   clearInterval(interval)
+          //   // After the first box animation completes, show the second box
+          //   setTimeout(() => setHoveredBox(1), 500)
+          //   // Then after another delay, show the third box
+          //   setTimeout(() => setHoveredBox(2), 1000)
+          // }
         }, 15)
 
         return () => {
@@ -216,7 +216,7 @@ export default function HeadhuntingSection() {
 
           {/* Glow effects */}
           <circle cx="600" cy="300" r="200" fill="url(#headhuntingGlow)">
-            <animate attributeName="r" values="200;220;200" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="r" values="200;220;200" dur={9000} repeatCount="indefinite" />
           </circle>
 
           {/* Data flow lines */}
@@ -246,7 +246,7 @@ export default function HeadhuntingSection() {
 
         {/* Floating particles */}
         <AnimatePresence>
-          {animateParticles &&
+          {(isInView || hoveredBox !== null) &&
             particlePoints.map((point, index) => (
               <motion.div
                 key={`particle-${index}`}
@@ -306,19 +306,17 @@ export default function HeadhuntingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: 0.09 }}
             className={`bg-white p-6 rounded-xl shadow-lg border-2 transition-all duration-300 ${
-              hoveredBox === 0 || isInView ? "border-blue-400 shadow-xl" : "border-gray-100"
+              isInView ? "border-blue-400 shadow-xl" : "border-gray-100"
             }`}
-            onMouseEnter={() => setHoveredBox(0)}
-            onMouseLeave={() => setHoveredBox(null)}
           >
             <div className="flex items-center mb-4">
               <motion.div
                 className="p-3 rounded-full bg-blue-100 mr-3"
                 animate={{
-                  scale: hoveredBox === 0 ? [1, 1.1, 1] : 1,
-                  rotate: hoveredBox === 0 ? [0, 5, -5, 0] : 0,
+                  scale: isInView ? [1, 1.1, 1] : 1,
+                  rotate: isInView ? [0, 5, -5, 0] : 0,
                 }}
-                transition={{ duration: 1.8, repeat: hoveredBox === 0 ? Number.POSITIVE_INFINITY : 0 }}
+                transition={{ duration: 1.8, repeat: isInView ? Number.POSITIVE_INFINITY : 0 }}
               >
                 <Brain className="h-6 w-6 text-blue-600" />
               </motion.div>
@@ -454,10 +452,10 @@ export default function HeadhuntingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: 0.18 }}
             className={`bg-white p-6 rounded-xl shadow-lg border-2 transition-all duration-300 ${
-              hoveredBox === 1 || isInView ? "border-green-400 shadow-xl" : "border-gray-100"
+              isInView ? "border-green-400 shadow-xl" : "border-gray-100"
             }`}
-            onMouseEnter={() => setHoveredBox(1)}
-            onMouseLeave={() => setHoveredBox(null)}
+            // onMouseEnter={() => setHoveredBox(1)}
+            // onMouseLeave={() => setHoveredBox(null)}
           >
             <div className="flex items-center mb-4">
               <motion.div
@@ -490,33 +488,33 @@ export default function HeadhuntingSection() {
                 {/* Chart bars - Now with 4 bars including Network */}
                 <motion.rect
                   x="30"
-                  y={100 - (hoveredBox === 1 ? counters.placements : 0) * 0.9}
+                  y={100 - (isInView ? counters.placements : 0) * 0.9}
                   width="40"
-                  height={(hoveredBox === 1 ? counters.placements : 0) * 0.9}
+                  height={(isInView ? counters.placements : 0) * 0.9}
                   fill="#10b981"
                   opacity="0.8"
                 />
                 <motion.rect
                   x="90"
-                  y={100 - (hoveredBox === 1 ? counters.retention : 0) * 0.9}
+                  y={100 - (isInView ? counters.retention : 0) * 0.9}
                   width="40"
-                  height={(hoveredBox === 1 ? counters.retention : 0) * 0.9}
+                  height={(isInView ? counters.retention : 0) * 0.9}
                   fill="#3b82f6"
                   opacity="0.8"
                 />
                 <motion.rect
                   x="150"
-                  y={100 - (hoveredBox === 1 ? counters.cost : 0) * 0.9}
+                  y={100 - (isInView ? counters.cost : 0) * 0.9}
                   width="40"
-                  height={(hoveredBox === 1 ? counters.cost : 0) * 0.9}
+                  height={(isInView ? counters.cost : 0) * 0.9}
                   fill="#8b5cf6"
                   opacity="0.8"
                 />
                 <motion.rect
                   x="210"
-                  y={100 - (hoveredBox === 1 ? 80 : 0)}
+                  y={100 - (isInView ? 80 : 0)}
                   width="40"
-                  height={hoveredBox === 1 ? 80 : 0}
+                  height={isInView ? 80 : 0}
                   fill="#f59e0b"
                   opacity="0.8"
                 />
@@ -616,10 +614,10 @@ export default function HeadhuntingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: 0.27 }}
             className={`bg-white p-6 rounded-xl shadow-lg border-2 transition-all duration-300 ${
-              hoveredBox === 2 || isInView ? "border-orange-400 shadow-xl" : "border-gray-100"
+              isInView ? "border-orange-400 shadow-xl" : "border-gray-100"
             }`}
-            onMouseEnter={() => setHoveredBox(2)}
-            onMouseLeave={() => setHoveredBox(null)}
+            // onMouseEnter={() => setHoveredBox(2)}
+            // onMouseLeave={() => setHoveredBox(null)}
           >
             <div className="flex items-center mb-4">
               <motion.div
@@ -680,7 +678,7 @@ export default function HeadhuntingSection() {
                 </text>
 
                 {/* Animated icons */}
-                {Array.from({ length: 5 }).map((_, i) => (
+                {/* {Array.from({ length: 5 }).map((_, i) => (
                   <g key={`satisfaction-icon-${i}`} opacity={hoveredBox === 2 ? 1 : 0}>
                     <motion.circle
                       cx={60 + i * 45}
@@ -698,7 +696,7 @@ export default function HeadhuntingSection() {
                       }}
                     />
                   </g>
-                ))}
+                ))} */}
               </svg>
 
               {/* Overlay label */}
@@ -751,7 +749,7 @@ export default function HeadhuntingSection() {
         </div>
 
         {/* Real-time data indicator */}
-        <div className="absolute bottom-8 right-8 bg-white/80 backdrop-blur-sm rounded-md px-4 py-3 text-sm text-gray-500 flex items-center shadow-md z-20">
+        {/* <div className="absolute bottom-8 right-8 bg-white/80 backdrop-blur-sm rounded-md px-4 py-3 text-sm text-gray-500 flex items-center shadow-md z-20">
           <Activity className="h-4 w-4 text-primary mr-2 animate-pulse" />
           <span className="relative">
             Real-time AI Matching
@@ -760,10 +758,10 @@ export default function HeadhuntingSection() {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
             </span>
           </span>
-        </div>
+        </div> */}
 
         {/* Bottom animated wave */}
-        <div className="mt-16 relative h-16 overflow-hidden">
+        {/* <div className="mt-16 relative h-16 overflow-hidden">
           <svg
             className="absolute bottom-0 w-full"
             xmlns="http://www.w3.org/2000/svg"
@@ -784,7 +782,7 @@ export default function HeadhuntingSection() {
               transition={{ duration: 9, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
             />
           </svg>
-        </div>
+        </div> */}
       </div>
     </section>
   )

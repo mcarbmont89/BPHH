@@ -31,9 +31,9 @@ export default function Home() {
           <Industries />
         </section>
         <Process />
-        <section id="about">
+        {/* <section id="about">
           <About />
-        </section>
+        </section> */}
         <ContactForm />
       </main>
       <Footer />

@@ -8,7 +8,7 @@ export default function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 text-white p-12 md:px-0">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h3 className="text-xl font-bold mb-4">Botic Partners</h3>
@@ -46,16 +46,13 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="text-lg font-semibold mb-4">{t("footer.contact")}</h4>
-          <p className="text-gray-400">admin@boticpartners.com</p>
+          <Link href="mailto:admin@boticpartners.com" className="text-gray-400 hover:text-white">admin@boticpartners.com</Link>
         </div>
         <div>
           <h4 className="text-lg font-semibold mb-4">{t("footer.followUs")}</h4>
           <div className="flex space-x-4">
             <Link href="https://www.linkedin.com/company/boticpartners/" className="text-gray-400 hover:text-white">
               <LinkedIn className="h-6 w-6" />
-            </Link>
-            <Link href="mailto:admin@boticpartners.com" className="text-gray-400 hover:text-white">
-              <Mail className="h-6 w-6" />
             </Link>
           </div>
         </div>

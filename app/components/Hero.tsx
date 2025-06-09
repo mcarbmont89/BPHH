@@ -25,7 +25,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen pt-20 overflow-hidden">
       <div className="curved-gradient absolute inset-0 -z-10" />
-      <div className="container mx-auto px-4 h-full flex flex-col lg:flex-row items-center justify-between pt-10">
+      <div className="container lg:max-w-[1280px] mx-auto h-[calc(100vh-25rem)] px-8 flex flex-col lg:grid grid-cols-2 lg:place-items-center items-center justify-between pt-10">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -41,7 +41,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="bg-white/10 text-white border-white/20 hover:bg-white/20"
+              className="bg-white/10 text-white hover:text-white border-white/20 hover:bg-white/40"
               onClick={handleWatchDemo}
             >
               {t("hero.demo")}

@@ -8,8 +8,11 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import { Menu, ChevronDown, ChevronUp } from "lucide-react"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { usePathname } from "next/navigation"
 
 export function Header() {
+  const path = usePathname()
   const { language, setLanguage, t } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -110,10 +113,10 @@ export function Header() {
         { href: "/ma-services", label: "M&A" },
       ],
     },
-    { href: "/#process", label: t("nav.process"), onClick: handleProcessClick },
     { href: "/#industries", label: t("nav.industries") },
+    { href: "/#process", label: t("nav.process"), onClick: handleProcessClick },
     //{ href: "/#solution", label: t("nav.solution"), onClick: handleSolutionClick },
-    { href: "/#about", label: t("nav.about") },
+    // { href: "/#about", label: t("nav.about") },
     { href: "/careers", label: t("nav.careers") },
     { href: "/blog", label: t("nav.blog.title") },
   ]
@@ -138,7 +141,7 @@ export function Header() {
             alt="Botic Partners"
             width={200}
             height={50}
-            className="h-8 w-auto"
+            className="h-8 w-auto drop-shadow"
           />
         </Link>
         <nav className="hidden md:flex space-x-8">
@@ -147,7 +150,7 @@ export function Header() {
               <div key={item.href} className="relative" ref={dropdownRef}>
                 <button
                   onClick={toggleServicesDropdown}
-                  className="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center"
+                  className={`text-sm font-medium ${path === "/" && !isScrolled ? "text-gray-100 hover:text-white" : "text-gray-600 hover:text-primary"} ${isScrolled ? "text-gray-600 hover:text-primary" : ""} transition-colors flex items-center`}
                 >
                   {item.label}
                   {isServicesDropdownOpen ? (
@@ -176,7 +179,7 @@ export function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
+                className={`text-sm font-medium ${path === "/" && !isScrolled ? "text-gray-100 hover:text-white" : "text-gray-600 hover:text-primary"} ${isScrolled ? "text-gray-600 hover:text-primary" : ""} transition-colors`}
                 onClick={item.onClick || (() => setIsMenuOpen(false))}
               >
                 {item.label}
@@ -185,25 +188,15 @@ export function Header() {
           )}
         </nav>
         <div className="flex items-center space-x-4">
-          <div className="hidden md:flex space-x-2">
-            <button
-              onClick={() => setLanguage("en")}
-              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                language === "en" ? "bg-primary text-white shadow-sm" : "text-gray-600 hover:bg-gray-100"
-              }`}
-            >
-              EN
-            </button>
-            <button
-              onClick={() => setLanguage("es")}
-              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                language === "es" ? "bg-primary text-white shadow-sm" : "text-gray-600 hover:bg-gray-100"
-              }`}
-            >
-              ES
-            </button>
-          </div>
-          <Button variant="default" size="sm" className="hidden md:inline-flex" onClick={handleContact}>
+          <button
+            className={`relative hidden md:inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary bg-primary text-white`}
+            onClick={() => setLanguage(language === "en" ? "es" : "en")}
+          >
+            <span className="pointer-events-none absolute inset-0 flex items-center justify-center w-full px-2 text-xs">
+              {language === "en" ? "ES" : "EN"}
+            </span>
+          </button>
+          <Button variant={`${isScrolled ? "default" : "secondary"}`} size="sm" className="hidden md:inline-flex" onClick={handleContact}>
             {t("nav.contact")}
           </Button>
           <button className="md:hidden" onClick={toggleMenu}>
@@ -211,6 +204,7 @@ export function Header() {
           </button>
         </div>
       </div>
+      
       {isMenuOpen && (
         <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
           <nav className="flex flex-col space-y-4">
@@ -259,26 +253,16 @@ export function Header() {
               ),
             )}
           </nav>
-          <div className="mt-4 flex justify-between">
-            <div className="md:hidden flex space-x-2">
-              <button
-                onClick={() => setLanguage("en")}
-                className={`px-2 py-1 rounded-md text-sm font-medium transition-colors ${
-                  language === "en" ? "bg-primary text-white shadow-sm" : "text-gray-600 hover:bg-gray-100"
-                }`}
-              >
-                EN
-              </button>
-              <button
-                onClick={() => setLanguage("es")}
-                className={`px-2 py-1 rounded-md text-sm font-medium transition-colors ${
-                  language === "es" ? "bg-primary text-white shadow-sm" : "text-gray-600 hover:bg-gray-100"
-                }`}
-              >
-                ES
-              </button>
-            </div>
-            <Button variant="default" size="sm" onClick={handleContact}>
+          <div className="mt-4 md:hidden flex justify-between">
+            <button
+              className={`relative hidden md:inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary bg-primary text-white`}
+              onClick={() => setLanguage(language === "en" ? "es" : "en")}
+            >
+              <span className="pointer-events-none absolute inset-0 flex items-center justify-center w-full px-2 text-xs">
+                {language === "en" ? "ES" : "EN"}
+              </span>
+            </button>
+            <Button variant={`${isScrolled ? "default" : "secondary"}`} size="sm" onClick={handleContact}>
               {t("nav.contact")}
             </Button>
           </div>
