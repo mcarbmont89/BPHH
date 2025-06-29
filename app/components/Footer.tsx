@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 import Link from "next/link"
-import { LinkedinIcon as LinkedIn, Mail } from "lucide-react"
+import { LinkedinIcon as LinkedIn } from "lucide-react"
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white p-12 md:px-0">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <h3 className="text-xl font-bold mb-4">Botic Partners</h3>
+          <h3 className="text-xl font-bold mb-4">{t("footer.title")}</h3>
           <p className="text-gray-400">{t("footer.description")}</p>
         </div>
         <div>
@@ -46,7 +46,9 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="text-lg font-semibold mb-4">{t("footer.contact")}</h4>
-          <Link href="mailto:admin@boticpartners.com" className="text-gray-400 hover:text-white">admin@boticpartners.com</Link>
+          <Link href={`mailto:${t("footer.contactEmail")}`} className="text-gray-400 hover:text-white">
+            {t("footer.contactEmail")}
+          </Link>
         </div>
         <div>
           <h4 className="text-lg font-semibold mb-4">{t("footer.followUs")}</h4>
@@ -59,7 +61,7 @@ export default function Footer() {
       </div>
       <div className="container mx-auto mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
         <p>
-          &copy; {new Date().getFullYear()} Botic Partners. {t("footer.rights")}
+          &copy; {new Date().getFullYear()} {t("footer.title")}. {t("footer.rights")}
         </p>
       </div>
     </footer>

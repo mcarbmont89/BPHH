@@ -1,143 +1,27 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
+import { useSearchParams } from "next/navigation"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import { Button } from "@/components/ui/button"
-import { ApplyModal } from "../components/ApplyModal"
 import { Code, Cpu, Building2, Truck, Filter } from "lucide-react"
-
-// Importar useSearchParams para obtener los parámetros de la URL
-import { useSearchParams } from "next/navigation"
-
-interface Job {
-  titleKey: string
-  sector: string
-  id: string
-  descriptionKey: string
-}
-
-// Organize jobs by the four industry sectors shown in the image
-const jobsByIndustry = {
-  Software: [
-    {
-      titleKey: "careers.jobs.seniorFullStack.title",
-      sector: "Software",
-      id: "SFS001",
-      descriptionKey: "careers.jobs.seniorFullStack.description",
-    },
-    {
-      titleKey: "careers.jobs.aiResearchScientist.title",
-      sector: "Software",
-      id: "AIRS001",
-      descriptionKey: "careers.jobs.aiResearchScientist.description",
-    },
-    {
-      titleKey: "careers.jobs.dataScientist.title",
-      sector: "Software",
-      id: "DS001",
-      descriptionKey: "careers.jobs.dataScientist.description",
-    },
-  ],
-  Hardware: [
-    {
-      titleKey: "careers.jobs.semiconductorProcessEngineer.title",
-      sector: "Hardware",
-      id: "SPE001",
-      descriptionKey: "careers.jobs.semiconductorProcessEngineer.description",
-    },
-    {
-      titleKey: "careers.jobs.asicDesignEngineer.title",
-      sector: "Hardware",
-      id: "ADE001",
-      descriptionKey: "careers.jobs.asicDesignEngineer.description",
-    },
-    {
-      titleKey: "careers.jobs.embeddedSystemsEngineer.title",
-      sector: "Hardware",
-      id: "ESE001",
-      descriptionKey: "careers.jobs.embeddedSystemsEngineer.description",
-    },
-  ],
-  Construction: [
-    {
-      titleKey: "careers.jobs.constructionProjectManager.title",
-      sector: "Construction",
-      id: "CPM001",
-      descriptionKey: "careers.jobs.constructionProjectManager.description",
-    },
-    {
-      titleKey: "careers.jobs.bimSpecialist.title",
-      sector: "Construction",
-      id: "BIM001",
-      descriptionKey: "careers.jobs.bimSpecialist.description",
-    },
-    {
-      titleKey: "careers.jobs.smartBuildingEngineer.title",
-      sector: "Construction",
-      id: "SBE001",
-      descriptionKey: "careers.jobs.smartBuildingEngineer.description",
-    },
-  ],
-  Logistics: [
-    {
-      titleKey: "careers.jobs.supplyChainAnalyst.title",
-      sector: "Logistics",
-      id: "SCA001",
-      descriptionKey: "careers.jobs.supplyChainAnalyst.description",
-    },
-    {
-      titleKey: "careers.jobs.logisticsOperationsManager.title",
-      sector: "Logistics",
-      id: "LOM001",
-      descriptionKey: "careers.jobs.logisticsOperationsManager.description",
-    },
-    {
-      titleKey: "careers.jobs.warehouseAutomationSpecialist.title",
-      sector: "Logistics",
-      id: "WAS001",
-      descriptionKey: "careers.jobs.warehouseAutomationSpecialist.description",
-    },
-  ],
-}
-
-// Update the industry titles mapping to match the image
-const industryTitles = {
-  Software: "Software (AI and Development)",
-  Hardware: "Hardware (Deep Tech)",
-  Construction: "Construction & Real Estate",
-  Logistics: "Logistics",
-}
+import { jobsByIndustry, industryTitles } from "./data"
 
 export default function Careers() {
   const { t } = useLanguage()
-  const [selectedJob, setSelectedJob] = useState<Job | null>(null)
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null)
-
-  // Dentro del componente Careers, agregar este código después de las declaraciones de useState
   const searchParams = useSearchParams()
   const industryParam = searchParams.get("industry")
 
-  // Modificar el useEffect existente o agregar uno nuevo para establecer el filtro de industria basado en el parámetro de URL
   useEffect(() => {
-    if (industryParam) {
-      // Ahora el parámetro ya viene con el nombre correcto de la industria
-      if (Object.keys(industryTitles).includes(industryParam)) {
-        setSelectedIndustry(industryParam)
-      }
+    if (industryParam && Object.keys(industryTitles).includes(industryParam)) {
+      setSelectedIndustry(industryParam)
     }
   }, [industryParam])
 
-  const handleApply = (job: Job) => {
-    setSelectedJob(job)
-  }
-
-  const handleCloseModal = () => {
-    setSelectedJob(null)
-  }
-
-  // Filter jobs based on selected industry
   const filteredIndustries = selectedIndustry
     ? { [selectedIndustry]: jobsByIndustry[selectedIndustry as keyof typeof jobsByIndustry] }
     : jobsByIndustry
@@ -183,10 +67,8 @@ export default function Careers() {
           </div>
         </div>
 
-        {/* Divider line */}
         <div className="border-t border-gray-200 my-8"></div>
 
-        {/* Display selected industry header */}
         {selectedIndustry && (
           <div className="flex items-center justify-center mb-10">
             <div className="flex items-center">
@@ -201,7 +83,6 @@ export default function Careers() {
           </div>
         )}
 
-        {/* Industry sections */}
         {Object.entries(filteredIndustries).map(([industry, jobs]) => (
           <div key={industry} className="mb-16">
             {!selectedIndustry && (
@@ -222,22 +103,16 @@ export default function Careers() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {jobs.map((job) => (
-                <div
-                  key={job.id}
-                  className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-all"
-                >
-                  <h3 className="text-xl font-semibold mb-3">{t(job.titleKey)}</h3>
-
-                  <p className="text-gray-600 mb-4">
-                    {t("careers.sector")}: {industryTitles[job.sector as keyof typeof industryTitles].split(" ")[0]}
-                  </p>
-
-                  <p className="text-gray-500 mb-8 text-sm">{t(job.descriptionKey)}</p>
-
-                  <Button onClick={() => handleApply(job)} className="w-full bg-primary hover:bg-primary/90">
-                    {t("careers.learnMore") || "Learn More"}
-                  </Button>
-                </div>
+                <Link key={job.id} href={`/careers/${job.id}`} className="block">
+                  <div className="bg-white rounded-lg border border-gray-200 p-6 h-full flex flex-col hover:shadow-md transition-all">
+                    <h3 className="text-xl font-semibold mb-3">{t(job.titleKey)}</h3>
+                    <p className="text-gray-600 mb-4">
+                      {t("careers.sector")}: {industryTitles[job.sector as keyof typeof industryTitles].split(" ")[0]}
+                    </p>
+                    <p className="text-gray-500 mb-8 text-sm flex-grow">{t(job.descriptionKey)}</p>
+                    <Button className="w-full mt-auto bg-primary hover:bg-primary/90">{t("careers.learnMore")}</Button>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -245,7 +120,6 @@ export default function Careers() {
       </main>
 
       <Footer />
-      {selectedJob && <ApplyModal isOpen={!!selectedJob} onClose={handleCloseModal} job={selectedJob} />}
     </div>
   )
 }
