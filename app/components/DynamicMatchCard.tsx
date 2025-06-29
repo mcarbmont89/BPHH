@@ -1,191 +1,67 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { CheckCircle } from "lucide-react"
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import { Badge } from "@/components/ui/badge"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 
-interface MatchData {
-  titleKey: string
-  technicalSkills: number
-  teamFit: number
-  overallMatch: number
-  skillsKey: string
-}
-
-const matchData: MatchData[] = [
-  {
-    titleKey: "dynamicMatchCard.positions.vpMemsEngineer",
-    technicalSkills: 95,
-    teamFit: 92,
-    overallMatch: 94,
-    skillsKey: "dynamicMatchCard.skills.vpMemsEngineer",
-  },
-  {
-    titleKey: "dynamicMatchCard.positions.processEngineer",
-    technicalSkills: 97,
-    teamFit: 89,
-    overallMatch: 93,
-    skillsKey: "dynamicMatchCard.skills.processEngineer",
-  },
-  {
-    titleKey: "dynamicMatchCard.positions.asicEngineer",
-    technicalSkills: 96,
-    teamFit: 90,
-    overallMatch: 93,
-    skillsKey: "dynamicMatchCard.skills.asicEngineer",
-  },
-  {
-    titleKey: "dynamicMatchCard.positions.directorGeneral",
-    technicalSkills: 93,
-    teamFit: 95,
-    overallMatch: 94,
-    skillsKey: "dynamicMatchCard.skills.directorGeneral",
-  },
-  {
-    titleKey: "dynamicMatchCard.positions.directorComercial",
-    technicalSkills: 92,
-    teamFit: 96,
-    overallMatch: 94,
-    skillsKey: "dynamicMatchCard.skills.directorComercial",
-  },
-  {
-    titleKey: "dynamicMatchCard.positions.fieldApplicationsEngineer",
-    technicalSkills: 94,
-    teamFit: 91,
-    overallMatch: 93,
-    skillsKey: "dynamicMatchCard.skills.fieldApplicationsEngineer",
-  },
-  {
-    titleKey: "dynamicMatchCard.positions.marketingDirector",
-    technicalSkills: 91,
-    teamFit: 94,
-    overallMatch: 92,
-    skillsKey: "dynamicMatchCard.skills.marketingDirector",
-  },
-  {
-    titleKey: "dynamicMatchCard.positions.directorPrevencion",
-    technicalSkills: 93,
-    teamFit: 95,
-    overallMatch: 94,
-    skillsKey: "dynamicMatchCard.skills.directorPrevencion",
-  },
+const positions = [
+  "vpMemsEngineer",
+  "processEngineer",
+  "asicEngineer",
+  "directorGeneral",
+  "directorComercial",
+  "fieldApplicationsEngineer",
+  "marketingDirector",
+  "directorPrevencion",
 ]
 
 export function DynamicMatchCard() {
   const { t } = useLanguage()
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
+  const [currentPositionIndex, setCurrentPositionIndex] = useState(0)
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setIsAnimating(true)
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % matchData.length)
-        setIsAnimating(false)
-      }, 500)
+    const interval = setInterval(() => {
+      setCurrentPositionIndex((prevIndex) => (prevIndex + 1) % positions.length)
     }, 5000)
-
-    return () => clearInterval(timer)
+    return () => clearInterval(interval)
   }, [])
 
-  const currentMatch = matchData[currentIndex]
+  const currentPositionKey = positions[currentPositionIndex]
+  const positionName = t(`dynamicMatchCard.positions.${currentPositionKey}`)
+  const skills = t(`dynamicMatchCard.skills.${currentPositionKey}`)
+  const matchScore = (85 + (currentPositionIndex % 15)).toFixed(1)
+  const techScore = (80 + (currentPositionIndex % 20)).toFixed(1)
+  const fitScore = (90 - (currentPositionIndex % 10)).toFixed(1)
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={currentIndex}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.5 }}
-        className="bg-gradient-to-br from-primary/20 to-primary/20 rounded-xl p-4 sm:p-6 text-white backdrop-blur-md shadow-xl w-full max-w-md mx-auto border border-white/10"
-      >
-        <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/25 flex items-center justify-center flex-shrink-0">
-            <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-          </div>
-          <div className="min-w-0 flex-1">
-            <motion.h3
-              key={`title-${currentIndex}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="font-semibold text-sm sm:text-base leading-tight drop-shadow-sm"
-            >
-              {t(currentMatch.titleKey)}
-            </motion.h3>
-            <p className="text-white/90 text-xs sm:text-sm drop-shadow-sm">{t("dynamicMatchCard.latestMatch")}</p>
-          </div>
+    <motion.div
+      key={currentPositionIndex}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="rounded-xl shadow-lg p-6 bg-boticPurple/[.90] text-white w-full max-w-md mx-auto"
+    >
+      <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-none">
+        {t("dynamicMatchCard.latestMatch")}
+      </Badge>
+      <h3 className="text-2xl font-bold mb-2">{positionName}</h3>
+      <p className="text-sm text-white/80 mb-4 h-10">{skills}</p>
+
+      <div className="grid grid-cols-3 gap-4 text-center mb-4">
+        <div>
+          <p className="text-3xl font-bold">{matchScore}%</p>
+          <p className="text-xs text-white/70">{t("dynamicMatchCard.overallMatchScore")}</p>
         </div>
-
-        <div className="space-y-3 sm:space-y-4">
-          <div className="bg-white/15 rounded-lg p-3 sm:p-4 backdrop-blur-sm">
-            <h4 className="text-white/95 text-xs sm:text-sm font-medium mb-2 drop-shadow-sm">
-              {t("dynamicMatchCard.overallMatchScore")}
-            </h4>
-            <motion.div
-              className="w-full bg-white/25 rounded-full h-2 overflow-hidden"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              <motion.div
-                className="bg-white h-full rounded-full shadow-sm"
-                initial={{ width: 0 }}
-                animate={{ width: `${currentMatch.overallMatch}%` }}
-                transition={{ duration: 1, ease: "easeOut" }}
-              />
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 sm:gap-4">
-            <div className="bg-white/15 rounded-lg p-3 sm:p-4 backdrop-blur-sm">
-              <h4 className="text-white/95 text-xs sm:text-sm font-medium mb-1 drop-shadow-sm">
-                {t("dynamicMatchCard.technicalSkills")}
-              </h4>
-              <motion.p
-                key={`tech-${currentIndex}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-white text-base sm:text-lg font-semibold drop-shadow-sm"
-              >
-                {currentMatch.technicalSkills}%
-              </motion.p>
-            </div>
-            <div className="bg-white/15 rounded-lg p-3 sm:p-4 backdrop-blur-sm">
-              <h4 className="text-white/95 text-xs sm:text-sm font-medium mb-1 drop-shadow-sm">
-                {t("dynamicMatchCard.teamFit")}
-              </h4>
-              <motion.p
-                key={`fit-${currentIndex}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-white text-base sm:text-lg font-semibold drop-shadow-sm"
-              >
-                {currentMatch.teamFit}%
-              </motion.p>
-            </div>
-          </div>
-
-          <motion.div
-            key={`skills-${currentIndex}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="flex flex-wrap gap-1 sm:gap-2"
-          >
-            {t(currentMatch.skillsKey)
-              .split(", ")
-              .map((skill, index) => (
-                <span
-                  key={index}
-                  className="px-2 py-1 rounded-full bg-white/15 text-white/95 text-xs sm:text-sm backdrop-blur-sm drop-shadow-sm"
-                >
-                  {skill}
-                </span>
-              ))}
-          </motion.div>
+        <div>
+          <p className="text-3xl font-bold">{techScore}%</p>
+          <p className="text-xs text-white/70">{t("dynamicMatchCard.technicalSkills")}</p>
         </div>
-      </motion.div>
-    </AnimatePresence>
+        <div>
+          <p className="text-3xl font-bold">{fitScore}%</p>
+          <p className="text-xs text-white/70">{t("dynamicMatchCard.teamFit")}</p>
+        </div>
+      </div>
+    </motion.div>
   )
 }

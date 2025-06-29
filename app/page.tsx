@@ -3,9 +3,7 @@
 import { Header } from "@/app/components/Header"
 import Hero from "./components/Hero"
 import Services from "./components/Services"
-import About from "./components/About"
 import Footer from "./components/Footer"
-import Process from "./components/Process"
 import Chatbot from "./components/Chatbot"
 import Industries from "./components/Industries"
 import TalentMatchingHero from "./components/TalentMatchingHero"
@@ -13,6 +11,7 @@ import HeadhuntingSection from "./components/HeadhuntingSection"
 import PartnershipsSection from "./components/PartnershipsSection"
 import ContactForm from "./components/ContactForm"
 import CoreServicesSection from "./components/CoreServicesSection"
+import RecruitmentTimeline from "./components/RecruitmentTimeline"
 
 export default function Home() {
   return (
@@ -30,10 +29,7 @@ export default function Home() {
         <section id="industries">
           <Industries />
         </section>
-        <Process />
-        {/* <section id="about">
-          <About />
-        </section> */}
+        <RecruitmentTimeline />
         <ContactForm />
       </main>
       <Footer />

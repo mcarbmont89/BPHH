@@ -2,25 +2,60 @@ export const translations = {
   en: {
     nav: {
       services: "Services",
-      process: "Process", // Changed from 'solution' to 'process'
-      solution: "Our Solution",
-      about: "About Us",
-      contact: "Contact",
       industries: "Industries",
+      process: "Process",
       careers: "Careers",
+      contact: "Contact Us",
       blog: {
-        title: "Our Blog",
+        title: "Blog",
         subtitle: "Insights and perspectives on AI-powered recruitment and business growth",
       },
     },
+    talentMatchingHero: {
+      badge: "AI-Powered Recruitment",
+      title: "AI-Powered Talent Matching & Business Acceleration",
+      description:
+        "At Botic Partners, we optimize recruitment with AI-driven precision. Our AI agents process thousands of profiles and shortlist top talent, while our expert headhunters conduct interviews—ensuring faster, smarter hiring.",
+      highlightBox: {
+        title: "In less than 2 days your candidates in a call",
+        description:
+          "Our AI-powered matching system delivers qualified candidates faster than traditional recruitment methods. Experience the future of recruitment with our advanced AI technology.",
+        button: "Discover",
+      },
+    },
+    recruitment: {
+      title: "Our Recruitment Process",
+      steps: [
+        {
+          title: "01. Smart Profile Analysis",
+          description:
+            "We analyze technical and cultural requirements using AI to define the ideal fit. We assess soft skills from the beginning.",
+        },
+        {
+          title: "02. Predictive Search and Automated Evaluation",
+          description:
+            "Matching, passive talent search, and soft skills evaluation powered by AI. Includes automated CV and profile analysis.",
+        },
+        {
+          title: "03. AI-Assisted Interviews and Market Benchmark",
+          description:
+            "We use AI for interviews and apply scoring systems with clear reports. Real-time salary and market benchmarking included.",
+        },
+        {
+          title: "04. Agile Selection and Hiring",
+          description:
+            "We present a validated shortlist and guide your decision with data. Hiring in 15 days (80% faster than the standard).",
+        },
+      ],
+    },
     hero: {
-      title: "AI-Powered Talent, Matched Perfectly",
+      title: "AI-Powered Talent Matching",
       subtitle:
-        "Transform your hiring process with our AI-driven solution. Find the perfect talent faster and smarter.",
+        "Transform your recruitment process with our AI-powered talent matching solution. Find the perfect talent faster and more efficiently.",
       cta: "Get Started",
       demo: "Watch Demo",
-      getStartedSubject: "Get Started with Botic Partners",
-      watchDemoSubject: "Request a Demo from Botic Partners",
+      getStartedSubject: "Inquiry: Getting Started with Botic Partners",
+      watchDemoSubject: "Request: Demo of Botic Partners Platform",
     },
     coreServices: {
       whatWeDo: "What We Do",
@@ -134,96 +169,6 @@ export const translations = {
       ctaText: "Schedule a Consultation",
       consultationSubject: "Consultation Request",
     },
-    solution: {
-      title: "Our Solution vs. Traditional Recruitment",
-      subtitle: "See how Botic Partners stands out from traditional recruitment methods",
-      feature: "Feature",
-      traditional: "Traditional Recruitment",
-      features: {
-        "AI-Powered Predictive Matching": "AI-Powered Predictive Matching",
-        "AI-Driven Soft Skills Analysis": "AI-Driven Soft Skills Analysis",
-        "AI-Powered Passive Talent Identification": "AI-Powered Passive Talent Identification",
-        "AI-Personalized Messaging for Engagement": "AI-Personalized Messaging for Engagement",
-        "Real-Time Salary and Market Benchmarking": "Real-Time Salary and Market Benchmarking",
-        "Automated CV and Profile Evaluation": "Automated CV and Profile Evaluation",
-        "Hiring Bias Detection": "Hiring Bias Detection",
-        "Sentiment Analysis in Interviews and Feedback": "Sentiment Analysis in Interviews and Feedback",
-        "Automated Candidate Tracking and Relationship Management":
-          "Automated Candidate Tracking and Relationship Management",
-        "Market Intelligence for Hiring Strategies": "Market Intelligence for Hiring Strategies",
-      },
-      aiPoweredAdvantage: "AI-Powered Advantage",
-      moreEfficient: "80% More Efficient",
-      traditionalTimeToHire: "Traditional Time-to-Hire",
-      traditionalDays: "45 Days",
-      boticTimeToHire: "Botic Partners Time-to-Hire",
-      boticDays: "15 Days",
-      fasterRecruitment: "AI-powered recruitment is 3x faster than traditional methods",
-      realTimeData: "Real-time AI Recruitment Data",
-      aiEnhanced: "AI-Enhanced",
-      aiAgents: {
-        title: "AI Agents & Acceleration KPIs",
-        description: "Revolutionize your business with artificial intelligence and accelerate your processes.",
-        realTimeData: "Real-time data",
-        insights: "AI Insights Feed",
-        features: "Key AI-Powered Features",
-        exploreButton: "Explore AI Solutions",
-        consultantCommunity: {
-          title: "AI Consultant Community",
-          description:
-            "Our community of AI consultants accelerates our processes, providing expert knowledge and cutting-edge solutions.",
-        },
-        virtualAssistants: {
-          title: "Intelligent Virtual Assistants",
-          description:
-            "At AI Workforce, our intelligent virtual assistants free your mind from repetitive tasks. Feel the freedom to focus on the essentials, save precious time, and simplify your daily routine. Boost your productivity and enjoy a brighter future today!",
-        },
-        matchQuality: "Match Quality",
-        excellentMatch: "90%+ Excellent Match",
-        goodMatch: "85-90% Good Match",
-        potentialMatch: "80-85% Potential Match",
-        reviewRequired: "<80% Review Required",
-        processingStats: "Processing Stats",
-        profilesAnalyzed: "Profiles Analyzed:",
-        interviewsConducted: "Interviews Conducted:",
-        matchAccuracy: "Match Accuracy:",
-        talentDashboard: "Talent Dashboard",
-        aiMatchingCore: "AI Matching Core",
-        transformRecruitment: "In less than 2 days your candidates in a call",
-        discoverSolutions:
-          "Our AI-powered matching system delivers qualified candidates faster than traditional recruitment methods.",
-        scheduleConsultation: "Schedule a Consultation",
-        automatedTalentSourcing: "Automated Talent Sourcing",
-        automatedTalentDescription: "AI agents scan multiple platforms to identify ideal candidates.",
-        naturalLanguageProcessing: "Natural Language Processing",
-        naturalLanguageDescription: "Understand and analyze candidate communications and responses.",
-        predictiveAnalytics: "Predictive Analytics",
-        predictiveAnalyticsDescription: "Forecast candidate success and retention based on data patterns.",
-        secureDataHandling: "Secure Data Handling",
-        secureDataDescription: "Ensure compliance and data security throughout the process.",
-        learnMore: "Learn more",
-      },
-      aiFeatures: {
-        title: "Powerful Features for Your Business",
-        description: "Our AI agents come equipped with everything you need to streamline your operations:",
-        automatedTaskManagement: {
-          title: "Automated Task Management",
-          description: "Efficiently manage and schedule tasks with AI-powered automation.",
-        },
-        naturalLanguageProcessing: {
-          title: "Natural Language Processing",
-          description: "Understand and respond to human language with advanced NLP capabilities.",
-        },
-        businessToolIntegration: {
-          title: "Business Tool Integration",
-          description: "Seamlessly integrate with popular business tools and platforms.",
-        },
-        secureDataHandling: {
-          title: "Secure Data Handling",
-          description: "Ensure data privacy and compliance with secure handling practices.",
-        },
-      },
-    },
     about: {
       title: "About Botic Partners",
       subtitle: "Revolutionizing tech recruitment with AI and data",
@@ -281,39 +226,6 @@ export const translations = {
       contact: "Contact",
       followUs: "Follow Us",
       rights: "All rights reserved.",
-    },
-    process: {
-      title: "Our Recruitment Process",
-      subtitle: "Discover how our AI-powered recruitment process helps find the perfect match for your team",
-      analyze: {
-        title: "Request Analysis",
-        description:
-          "We carefully analyze your requirements to understand the technical and cultural fit needed for your team.",
-      },
-      match: {
-        title: "AI Profile Matching",
-        description:
-          "Our AI system searches and matches profiles across multiple platforms to find the best potential candidates.",
-      },
-      candidates: {
-        title: "Candidate Selection",
-        description: "We present you with a curated set of pre-qualified candidates that match your requirements.",
-      },
-      interview: {
-        title: "AI-Assisted Interview",
-        description:
-          "Our AI agent conducts technical interviews alongside our Talent Consultant to assess candidates' skills.",
-      },
-      scoring: {
-        title: "AI Scoring System",
-        description:
-          "Candidates are ranked using our comprehensive AI scoring system, providing detailed analysis reports.",
-      },
-      decision: {
-        title: "Hiring Decision",
-        description:
-          "We guide you through the final selection process with data-driven insights to make the best hiring decision.",
-      },
     },
     chatbot: {
       title: "AI Assistant",
@@ -388,11 +300,13 @@ export const translations = {
       jobs: {
         seniorFullStack: {
           title: "SENIOR FULLSTACK DEVELOPER",
-          description: "Are you comfortable working in both the backend and frontend? We're looking for a senior profile to lead the development of new features for tech products with a global impact. Typical stack: Node.js, React, Typescript, MongoDB. Experience with scalable architectures, CI/CD, and technical leadership is a plus.",
+          description:
+            "Are you comfortable working in both the backend and frontend? We're looking for a senior profile to lead the development of new features for tech products with a global impact. Typical stack: Node.js, React, Typescript, MongoDB. Experience with scalable architectures, CI/CD, and technical leadership is a plus.",
         },
         aiResearchScientist: {
           title: "FRONTEND LEAD",
-          description: "Are you passionate about creating powerful and scalable visual experiences? This role is for you. You'll lead the front-end development of a growing SaaS platform, making key decisions about the stack, performance, and UX. Experience with modern frameworks (React, Vue, Angular) and a product vision are required.",
+          description:
+            "Are you passionate about creating powerful and scalable visual experiences? This role is for you. You'll lead the front-end development of a growing SaaS platform, making key decisions about the stack, performance, and UX. Experience with modern frameworks (React, Vue, Angular) and a product vision are required.",
         },
         healthcareDataAnalyst: {
           title: "Healthcare Data Analyst",
@@ -404,11 +318,13 @@ export const translations = {
         },
         semiconductorProcessEngineer: {
           title: "SEMICONDUCTOR PROCESS ENGINEER",
-          description: "We are seeking a process engineer with experience in semiconductor manufacturing. You will participate in the development and optimization of key processes (lithography, etching, deposition, etc.), working closely with the design and testing team. Knowledge of cleanroom and high-precision production environments is essential.",
+          description:
+            "We are seeking a process engineer with experience in semiconductor manufacturing. You will participate in the development and optimization of key processes (lithography, etching, deposition, etc.), working closely with the design and testing team. Knowledge of cleanroom and high-precision production environments is essential.",
         },
         asicDesignEngineer: {
           title: "ASIC DESIGN ENGINEER",
-          description: "Is chip design your game? We're looking for an ASIC engineer with experience in RTL design, verification, and full development workflows. You'll work for a leading company with projects related to AI, communications, and data processing. Experience with Verilog/VHDL, Synopsys, or Cadence is a plus.",
+          description:
+            "Is chip design your game? We're looking for an ASIC engineer with experience in RTL design, verification, and full development workflows. You'll work for a leading company with projects related to AI, communications, and data processing. Experience with Verilog/VHDL, Synopsys, or Cadence is a plus.",
         },
         photolithographySpecialist: {
           title: "Photolithography Specialist",
@@ -437,7 +353,8 @@ export const translations = {
         },
         embeddedSystemsEngineer: {
           title: "FIELD APPLICATION ENGINEER",
-          description: "¿Te apasiona la tecnología y el trato con cliente? Este rol combina conocimiento técnico profundo con habilidades comerciales. Serás el nexo entre el equipo de ingeniería y los clientes, ayudando a implementar soluciones de hardware avanzadas y resolviendo retos técnicos en campo. Ideal para perfiles con background en electrónica y vocación de servicio.",
+          description:
+            "¿Te apasiona la tecnología y el trato con cliente? Este rol combina conocimiento técnico profundo con habilidades comerciales. Serás el nexo entre el equipo de ingeniería y los clientes, ayudando a implementar soluciones de hardware avanzadas y resolviendo retos técnicos en campo. Ideal para perfiles con background en electrónica y vocación de servicio.",
         },
         constructionProjectManager: {
           title: "INDUSTRIAL CONSTRUCTION MANAGER",
@@ -446,23 +363,28 @@ export const translations = {
         },
         bimSpecialist: {
           title: "CONSTRUCTION TECHNICIAN",
-          description: "Are you an expert in analyzing projects and identifying risks from the initial phase? This role requires a technical background with a keen eye for detail and mastery of measurements, budgets, and planning. You will participate in preparing bids for large construction projects, collaborating with the construction and management teams to ensure technical and economic viability.",
+          description:
+            "Are you an expert in analyzing projects and identifying risks from the initial phase? This role requires a technical background with a keen eye for detail and mastery of measurements, budgets, and planning. You will participate in preparing bids for large construction projects, collaborating with the construction and management teams to ensure technical and economic viability.",
         },
         smartBuildingEngineer: {
           title: "DIRECTOR OF DATA CENTER FACILITIES",
-          description: "We are seeking a senior profile with experience in the design, execution, and commissioning of critical installations (HVAC, electrical, BMS) in data centers. You will be responsible for compliance with technical standards, energy efficiency, and coordination with engineering firms and contractors. A key position for leading projects in a rapidly growing sector.",
+          description:
+            "We are seeking a senior profile with experience in the design, execution, and commissioning of critical installations (HVAC, electrical, BMS) in data centers. You will be responsible for compliance with technical standards, energy efficiency, and coordination with engineering firms and contractors. A key position for leading projects in a rapidly growing sector.",
         },
         supplyChainAnalyst: {
           title: "SUPPLY CHAIN ​​ANALYST",
-          description: "Analyze and optimize supply chain operations to identify inefficiencies, improve processes, and reduce costs. Collaborate with internal teams to implement data-driven improvements, optimize inventories, and ensure efficient flow of materials and products, thereby driving operational efficiency and achieving strategic objectives.",
+          description:
+            "Analyze and optimize supply chain operations to identify inefficiencies, improve processes, and reduce costs. Collaborate with internal teams to implement data-driven improvements, optimize inventories, and ensure efficient flow of materials and products, thereby driving operational efficiency and achieving strategic objectives.",
         },
         logisticsOperationsManager: {
           title: "LOGISTIC OPERATIONS MANAGER",
-          description: "Oversee and coordinate logistics operations to ensure the efficient and timely movement of goods and materials throughout the supply chain, optimizing transportation, storage, and distribution processes to meet quality standards, delivery times, and operational efficiency objectives.",
+          description:
+            "Oversee and coordinate logistics operations to ensure the efficient and timely movement of goods and materials throughout the supply chain, optimizing transportation, storage, and distribution processes to meet quality standards, delivery times, and operational efficiency objectives.",
         },
         warehouseAutomationSpecialist: {
           title: "WAREHOUSE AUTOMATION SPECIALIST",
-          description: "Implement and maintain automated systems to optimize warehouse operations and inventory management, ensuring accurate stock control, streamlining receiving, storage, and dispatch processes, and improving overall efficiency through the use of advanced technologies.",
+          description:
+            "Implement and maintain automated systems to optimize warehouse operations and inventory management, ensuring accurate stock control, streamlining receiving, storage, and dispatch processes, and improving overall efficiency through the use of advanced technologies.",
         },
       },
       sectors: {
@@ -862,16 +784,51 @@ export const translations = {
   es: {
     nav: {
       services: "Servicios",
-      industries: "Industrias", // Update this line
-      process: "Proceso", // Changed from 'solution' to 'process'
-      solution: "Nuestra Solución",
-      about: "Nosotros",
-      contact: "Contacto",
-      careers: "Vacantes",
+      industries: "Industrias",
+      process: "Proceso",
+      careers: "Carreras",
+      contact: "Contáctanos",
       blog: {
-        title: "Nuestro Blog",
+        title: "Blog",
         subtitle: "Perspectivas y conocimientos sobre reclutamiento impulsado por IA y crecimiento empresarial",
       },
+    },
+    talentMatchingHero: {
+      badge: "Reclutamiento Impulsado por IA",
+      title: "Matching de Talento y Aceleración de Negocios Impulsados por IA",
+      description:
+        "En Botic Partners, optimizamos el reclutamiento con precisión impulsada por IA. Nuestros agentes de IA procesan miles de perfiles y preseleccionan a los mejores talentos, mientras nuestros expertos headhunters realizan entrevistas, garantizando una contratación más rápida e inteligente.",
+      highlightBox: {
+        title: "En menos de 2 días tus candidatos en una llamada",
+        description:
+          "Nuestro sistema de matching impulsado por IA entrega candidatos calificados más rápido que los métodos de reclutamiento tradicionales. Experimenta el futuro del reclutamiento con nuestra avanzada tecnología de IA.",
+        button: "Descubrir",
+      },
+    },
+    recruitment: {
+      title: "Nuestro Proceso de Reclutamiento",
+      steps: [
+        {
+          title: "01. Análisis Inteligente del Perfil",
+          description:
+            "Analizamos requisitos técnicos y culturales con IA para definir el ajuste ideal. Evaluamos habilidades blandas desde el inicio.",
+        },
+        {
+          title: "02. Búsqueda Predictiva y Evaluación Automatizada",
+          description:
+            "Matching, búsqueda de talento pasivo y evaluación de soft skills, todo potenciado por IA. Análisis automático de CVs y perfiles incluidos.",
+        },
+        {
+          title: "03. Entrevistas Técnicas y Benchmark de Mercado",
+          description:
+            "Usamos IA para entrevistas asistidas y aplicamos sistemas de puntuación con informes claros. Incluye benchmarking salarial en tiempo real.",
+        },
+        {
+          title: "04. Selección Ágil y Contratación",
+          description:
+            "Te presentamos una terna validada y te guiamos con datos para tomar la mejor decisión. Contratación en 15 días (80% más rápido que el estándar).",
+        },
+      ],
     },
     coreServices: {
       whatWeDo: "Lo Que Hacemos",
@@ -900,13 +857,13 @@ export const translations = {
       acquisitionOpportunity: "Evaluación de oportunidades de adquisición",
     },
     hero: {
-      title: "El talento ideal, potenciado por IA",
+      title: "Matching de Talento con IA",
       subtitle:
-        "Transforma tu proceso de contratación con nuestra solución de reclutamiento basada en IA. Encuentra el talento perfecto más rápido y eficientemente.",
+        "Transforma tu proceso de reclutamiento con nuestra solución de matching de talento impulsada por IA. Encuentra el talento perfecto de forma más rápida y eficiente.",
       cta: "Comenzar",
       demo: "Ver Demo",
-      getStartedSubject: "Comenzar con Botic Partners",
-      watchDemoSubject: "Solicitar una Demostración de Botic Partners",
+      getStartedSubject: "Consulta: Empezar con Botic Partners",
+      watchDemoSubject: "Solicitud: Demo de la Plataforma Botic Partners",
     },
     services: {
       title: "Nuestros Servicios",
@@ -924,7 +881,7 @@ export const translations = {
         whyDifferent: "¿Por qué nuestro headhunting es diferente?",
         points: [
           "Rápido y preciso – Filtramos candidatos ideales en segundos.",
-          "Automatización inteligente – Mejoramos la eficiencia con herramientas avanzadas de IA.",
+          "Automatización inteligente – Melhoramos la eficiencia con herramientas avanzadas de IA.",
           "Ahorro significativo de costos – Reducimos los costos y el tiempo de contratación.",
         ],
         conclusion:
@@ -994,118 +951,6 @@ export const translations = {
       ctaText: "Programar una Consulta",
       consultationSubject: "Consultation Request",
     },
-    solution: {
-      title: "Nuestra Solución vs. Reclutamiento Tradicional",
-      subtitle: "Vea cómo Botic Partners se destaca de los métodos de reclutamiento tradicionales",
-      feature: "Característica",
-      traditional: "Reclutamiento Tradicional",
-      features: {
-        "AI-Powered Predictive Matching": "Matching Predictivo Basado en IA",
-        "AI-Driven Soft Skills Analysis": "Análisis de Soft Skills con IA",
-        "AI-Powered Passive Talent Identification": "Identificación de Talento Pasivo con IA",
-        "AI-Personalized Messaging for Engagement": "Mensajería Personalizada con IA para Engagement",
-        "Real-Time Salary and Market Benchmarking": "Benchmarking Salarial y de Mercado en Tiempo Real",
-        "Automated CV and Profile Evaluation": "Evaluación Automática de CVs y Perfiles",
-        "Hiring Bias Detection": "Detección de Sesgos en la Contratación",
-        "Sentiment Analysis in Interviews y Feedback": "Análisis de Sentimiento en Entrevistas y Feedback",
-        "Automated Candidate Tracking and Relationship Management":
-          "Automatización del Seguimiento y Relación con Candidatos",
-        "Market Intelligence for Hiring Strategies": "Inteligencia de Mercado para Estrategias de Contratación",
-        "AI-Powered Matching": "Matching Impulsado por IA",
-        "Extensive Talent Network": "Red de Talento Extensa",
-        "Proven Success Metrics": "Métricas de Éxito Comprobadas",
-        "Fast and Precise": "Rápido y Preciso",
-        "Smart Automation": "Automatización Inteligente",
-        "Significant Cost Savings": "Ahorro Significativo de Costos",
-        "Technical Skills": "Habilidades Técnicas",
-        "Team Fit": "Ajuste de Equipo",
-        "Overall Match": "Coincidencia General",
-        "Successful Placements": "Colocaciones Exitosas",
-        "Employee Retention": "Retención de Empleados",
-        "Reduced Hiring Costs": "Reducción de Costos de Contratación",
-        "Professionals in Network": "Profesionales en la Red",
-        "Client Satisfaction": "Satisfacción del Cliente",
-        "AI Matching Algorithm": "Algoritmo de Matching con IA",
-        "Performance Metrics": "Métricas de Rendimiento",
-        Placements: "Colocaciones",
-        Retention: "Retención",
-        Cost: "Costo",
-        Network: "Red",
-      },
-      aiPoweredAdvantage: "Ventaja Impulsada por IA",
-      moreEfficient: "80% Más Eficiente",
-      traditionalTimeToHire: "Tiempo de Contratación Tradicional",
-      traditionalDays: "45 Días",
-      boticTimeToHire: "Tiempo de Contratación de Botic Partners",
-      boticDays: "15 Días",
-      fasterRecruitment: "El reclutamiento impulsado por IA es 3 veces más rápido que los métodos tradicionales",
-      realTimeData: "Datos de Reclutamiento IA en Tiempo Real",
-      aiEnhanced: "Mejorado con IA",
-      aiAgents: {
-        title: "Agentes de IA y KPIs de Aceleración",
-        description: "Revoluciona tu negocio con inteligencia artificial y acelera tus procesos.",
-        realTimeData: "Datos en tiempo real",
-        insights: "Feed de Insights de IA",
-        features: "Características Clave Impulsadas por IA",
-        exploreButton: "Explorar Soluciones de IA",
-        consultantCommunity: {
-          title: "Comunidad de Consultores de IA",
-          description:
-            "Nuestra comunidad de consultores de IA aceleran nuestros procesos, proporcionando conocimientos expertos y soluciones de vanguardia.",
-        },
-        virtualAssistants: {
-          title: "Asistentes Virtuales Inteligentes",
-          description:
-            "En AI Workforce, nuestros asistentes virtuales inteligentes liberan tu mente de tareas repetitivas. Siente la libertad de enfocarte en lo esencial, ahorra tiempo valioso y simplifica tu rutina diaria. ¡Aumenta tu productividad y disfruta de un futuro más brillante hoy!",
-        },
-        matchQuality: "Calidad de Coincidencia IA",
-        excellentMatch: "90%+ Coincidencia Excelente",
-        goodMatch: "85-90% Buena Coincidencia",
-        potentialMatch: "80-85% Coincidencia Potencial",
-        reviewRequired: "<80% Revisión Requerida",
-        processingStats: "Estadísticas de Procesamiento IA",
-        profilesAnalyzed: "Perfiles Analizados:",
-        interviewsConducted: "Entrevistas Realizadas:",
-        matchAccuracy: "Precisión de Coincidencia:",
-        talentDashboard: "Panel de Talento IA",
-        aiMatchingCore: "Núcleo de Coincidencia IA",
-        transformRecruitment: "En menos de 2 días tus candidatos en una llamada",
-        discoverSolutions:
-          "Nuestro sistema de matching impulsado por IA entrega candidatos cualificados más rápido que los métodos de reclutamiento tradicionales.",
-        scheduleConsultation: "Programar una Consulta",
-        automatedTalentSourcing: "Búsqueda Automatizada de Talento",
-        automatedTalentDescription:
-          "Los agentes de IA escanean múltiples plataformas para identificar candidatos ideales.",
-        naturalLanguageProcessing: "Procesamiento de Lenguaje Natural",
-        naturalLanguageDescription: "Comprende y analiza las comunicaciones y respuestas de los candidatos.",
-        predictiveAnalytics: "Análisis Predictivo",
-        predictiveAnalyticsDescription: "Predice el éxito y la retención de candidatos basándose en patrones de datos.",
-        secureDataHandling: "Manejo Seguro de Datos",
-        secureDataDescription: "Garantiza el cumplimiento y la seguridad de los datos durante todo el proceso.",
-        learnMore: "Aprender más",
-      },
-      aiFeatures: {
-        title: "Potentes Características para tu Negocio",
-        description:
-          "Nuestros agentes de IA vienen equipados con todo lo que necesitas para optimizar tus operaciones:",
-        automatedTaskManagement: {
-          title: "Gestión Automatizada de Tareas",
-          description: "Gestiona y programa tareas de manera eficiente con automatización impulsada por IA.",
-        },
-        naturalLanguageProcessing: {
-          title: "Procesamiento del Lenguaje Natural",
-          description: "Comprende y responde al lenguaje humano con capacidades avanzadas de PLN.",
-        },
-        businessToolIntegration: {
-          title: "Integración con Herramientas de Negocio",
-          description: "Integración perfecta con herramientas y plataformas empresariales populares.",
-        },
-        secureDataHandling: {
-          title: "Manejo Seguro de Datos",
-          description: "Garantiza la privacidad de los datos y el cumplimiento con prácticas seguras de manejo.",
-        },
-      },
-    },
     about: {
       title: "Sobre Botic Partners",
       subtitle: "Revolucionando el reclutamiento tech con IA y experiencia",
@@ -1164,40 +1009,6 @@ export const translations = {
       contact: "Contacto",
       followUs: "Síguenos",
       rights: "Todos los derechos reservados.",
-    },
-    process: {
-      title: "Nuestro Proceso de Reclutamiento",
-      subtitle:
-        "Descubre cómo nuestro proceso de reclutamiento impulsado por IA ayuda a encontrar el candidato perfecto",
-      analyze: {
-        title: "Análisis de Requisitos",
-        description:
-          "Analizamos cuidadosamente sus requisitos para entender el ajuste técnico y cultural necesario para su equipo.",
-      },
-      match: {
-        title: "Match con IA",
-        description:
-          "Nuestro sistema de IA busca y encuentra perfiles en múltiples plataformas para encontrar los mejores candidatos.",
-      },
-      candidates: {
-        title: "Selección de Candidatos",
-        description:
-          "Presentamos un conjunto seleccionado de candidatos precalificados que cumplen con sus requisitos.",
-      },
-      interview: {
-        title: "Entrevista Asistida por IA",
-        description: "Nuestro agente de IA realiza entrevistas técnicas junto con nuestro Consultor de Talento.",
-      },
-      scoring: {
-        title: "Sistema de Puntuación IA",
-        description:
-          "Los candidatos son clasificados mediante nuestro sistema de puntuación IA, proporcionando informes detallados.",
-      },
-      decision: {
-        title: "Decisión de Contratación",
-        description:
-          "Le guiamos en el proceso de selección final con información basada en datos para tomar la mejor decisión.",
-      },
     },
     chatbot: {
       title: "Asistente IA",
@@ -1294,7 +1105,8 @@ export const translations = {
         },
         semiconductorProcessEngineer: {
           title: "SEMICONDUCTOR PROCESS ENGINEER",
-          description: "Buscamos un/a ingeniero/a de procesos con experiencia en fabricación de semiconductores. Participarás en el desarrollo y optimización de procesos clave (lithography, etching, deposition…) colaborando estrechamente con el equipo de diseño y test. Imprescindible conocimiento en cleanroom y entornos de producción de alta precisión.",
+          description:
+            "Buscamos un/a ingeniero/a de procesos con experiencia en fabricación de semiconductores. Participarás en el desarrollo y optimización de procesos clave (lithography, etching, deposition…) colaborando estrechamente con el equipo de diseño y test. Imprescindible conocimiento en cleanroom y entornos de producción de alta precisión.",
         },
         asicDesignEngineer: {
           title: "ASIC DESIGN ENGINEER",
@@ -1330,7 +1142,8 @@ export const translations = {
         },
         embeddedSystemsEngineer: {
           title: "FIELD APPLICATION ENGINEER",
-          description: "¿Te apasiona la tecnología y el trato con cliente? Este rol combina conocimiento técnico profundo con habilidades comerciales. Serás el nexo entre el equipo de ingeniería y los clientes, ayudando a implementar soluciones de hardware avanzadas y resolviendo retos técnicos en campo. Ideal para perfiles con background en electrónica y vocación de servicio.",
+          description:
+            "¿Te apasiona la tecnología y el trato con cliente? Este rol combina conocimiento técnico profundo con habilidades comerciales. Serás el nexo entre el equipo de ingeniería y los clientes, ayudando a implementar soluciones de hardware avanzadas y resolviendo retos técnicos en campo. Ideal para perfiles con background en electrónica y vocación de servicio.",
         },
         constructionProjectManager: {
           title: "JEFE DE OBRA INDUSTRIAL ",
@@ -1503,7 +1316,7 @@ export const translations = {
       reduceTimeToHire: "Reduce el tiempo de contratación hasta en un 60%",
       accessToTalent: "Acceso a más de 10,000 profesionales pre-evaluados",
       retentionRate: "82% de tasa de retención después de 2+ años",
-      aiPoweredRecruitment: "Reclutamiento Impulsado por IA"
+      aiPoweredRecruitment: "Reclutamiento Impulsado por IA",
     },
     aiAgents: {
       realTimeData: "Datos en tiempo real",

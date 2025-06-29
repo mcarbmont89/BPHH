@@ -36,7 +36,6 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen pt-20 overflow-hidden bg-transparent">
-      {/* Reduced hero background opacity - even less on mobile */}
       <div className={`curved-gradient absolute inset-0 -z-10 ${isMobile ? "opacity-10" : "opacity-20"}`} />
 
       <div className="container lg:max-w-[1280px] mx-auto min-h-[calc(100vh-5rem)] px-4 sm:px-8 flex flex-col lg:grid lg:grid-cols-2 lg:place-items-center items-center justify-center gap-8 lg:gap-12 pt-10 pb-10">
