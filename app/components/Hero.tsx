@@ -1,6 +1,4 @@
 "use client"
-
-import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 import { motion } from "framer-motion"
 import { DynamicMatchCard } from "./DynamicMatchCard"
@@ -36,7 +34,15 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen pt-20 overflow-hidden bg-transparent">
-      <div className={`curved-gradient absolute inset-0 -z-10 ${isMobile ? "opacity-10" : "opacity-20"}`} />
+      {/* Background Video */}
+      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-[-3]">
+        <source src="/placeholder.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      {/* Curved Gradient */}
+      <div className={`curved-gradient absolute inset-0 z-[-2] ${isMobile ? "opacity-10" : "opacity-20"}`} />
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 bg-black/50 z-[-1]" />
 
       <div className="container lg:max-w-[1280px] mx-auto min-h-[calc(100vh-5rem)] px-4 sm:px-8 flex flex-col lg:grid lg:grid-cols-2 lg:place-items-center items-center justify-center gap-8 lg:gap-12 pt-10 pb-10">
         <motion.div
@@ -51,19 +57,6 @@ export default function Hero() {
           <p className="text-lg sm:text-xl mb-8 text-white/95 max-w-2xl mx-auto lg:mx-0 drop-shadow-md">
             {t("hero.subtitle")}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Button size="lg" variant="secondary" onClick={handleGetStarted} className="w-full sm:w-auto">
-              {t("hero.cta")}
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-white/20 text-white hover:text-white border-white/30 hover:bg-white/30 w-full sm:w-auto backdrop-blur-sm"
-              onClick={handleWatchDemo}
-            >
-              {t("hero.demo")}
-            </Button>
-          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 20 }}
