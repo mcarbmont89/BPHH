@@ -35,20 +35,20 @@ export default function RootLayout({
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-30 blur-[1px]"
+            className="absolute inset-0 w-full h-full object-cover opacity-50 sm:opacity-30 blur-[1px]"
             style={{
-              filter: "brightness(0.7) contrast(1.1)",
+              filter: "brightness(0.8) contrast(1.2)",
             }}
           >
             <source src="/placeholder.mp4" type="video/mp4" />
           </video>
 
           {/* Fallback animated background for browsers that don't support video */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 via-blue-500/20 to-purple-600/20 animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-400/30 via-blue-500/30 to-purple-600/30 animate-pulse" />
         </div>
 
-        {/* Semi-transparent overlay to ensure content readability */}
-        <div className="fixed inset-0 bg-white/20 backdrop-blur-[0.5px] pointer-events-none z-[-1]" />
+        {/* Reduced overlay for mobile to show more video */}
+        <div className="fixed inset-0 bg-white/10 sm:bg-white/20 backdrop-blur-[0.5px] pointer-events-none z-[-1]" />
 
         <LanguageProvider>
           <div className="relative z-10">{children}</div>

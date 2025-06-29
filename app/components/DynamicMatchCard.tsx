@@ -99,29 +99,31 @@ export function DynamicMatchCard() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
-        className="bg-gradient-to-br from-primary/30 to-primary/30 rounded-xl p-6 text-white backdrop-blur-lg shadow-lg w-full max-w-md"
+        className="bg-gradient-to-br from-primary/30 to-primary/30 rounded-xl p-4 sm:p-6 text-white backdrop-blur-lg shadow-lg w-full max-w-md mx-auto"
       >
-        <div className="flex items-center gap-4 mb-6">
-          <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-            <CheckCircle className="w-6 h-6 text-white" />
+        <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+            <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </div>
-          <div>
+          <div className="min-w-0 flex-1">
             <motion.h3
               key={`title-${currentIndex}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="font-semibold"
+              className="font-semibold text-sm sm:text-base leading-tight"
             >
               {t(currentMatch.titleKey)}
             </motion.h3>
-            <p className="text-white/80 text-sm">{t("dynamicMatchCard.latestMatch")}</p>
+            <p className="text-white/80 text-xs sm:text-sm">{t("dynamicMatchCard.latestMatch")}</p>
           </div>
         </div>
 
-        <div className="space-y-4">
-          <div className="bg-white/10 rounded-lg p-4">
-            <h4 className="text-white/90 text-sm font-medium mb-2">{t("dynamicMatchCard.overallMatchScore")}</h4>
+        <div className="space-y-3 sm:space-y-4">
+          <div className="bg-white/10 rounded-lg p-3 sm:p-4">
+            <h4 className="text-white/90 text-xs sm:text-sm font-medium mb-2">
+              {t("dynamicMatchCard.overallMatchScore")}
+            </h4>
             <motion.div
               className="w-full bg-white/20 rounded-full h-2 overflow-hidden"
               initial={{ opacity: 0 }}
@@ -136,25 +138,27 @@ export function DynamicMatchCard() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white/10 rounded-lg p-4">
-              <h4 className="text-white/90 text-sm font-medium mb-1">{t("dynamicMatchCard.technicalSkills")}</h4>
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="bg-white/10 rounded-lg p-3 sm:p-4">
+              <h4 className="text-white/90 text-xs sm:text-sm font-medium mb-1">
+                {t("dynamicMatchCard.technicalSkills")}
+              </h4>
               <motion.p
                 key={`tech-${currentIndex}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-white text-lg font-semibold"
+                className="text-white text-base sm:text-lg font-semibold"
               >
                 {currentMatch.technicalSkills}%
               </motion.p>
             </div>
-            <div className="bg-white/10 rounded-lg p-4">
-              <h4 className="text-white/90 text-sm font-medium mb-1">{t("dynamicMatchCard.teamFit")}</h4>
+            <div className="bg-white/10 rounded-lg p-3 sm:p-4">
+              <h4 className="text-white/90 text-xs sm:text-sm font-medium mb-1">{t("dynamicMatchCard.teamFit")}</h4>
               <motion.p
                 key={`fit-${currentIndex}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-white text-lg font-semibold"
+                className="text-white text-base sm:text-lg font-semibold"
               >
                 {currentMatch.teamFit}%
               </motion.p>
@@ -165,12 +169,12 @@ export function DynamicMatchCard() {
             key={`skills-${currentIndex}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="flex flex-wrap gap-2"
+            className="flex flex-wrap gap-1 sm:gap-2"
           >
             {t(currentMatch.skillsKey)
               .split(", ")
               .map((skill, index) => (
-                <span key={index} className="px-2 py-1 rounded-full bg-white/10 text-white/90 text-sm">
+                <span key={index} className="px-2 py-1 rounded-full bg-white/10 text-white/90 text-xs sm:text-sm">
                   {skill}
                 </span>
               ))}
