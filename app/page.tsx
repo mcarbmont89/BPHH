@@ -20,16 +20,16 @@ export default function Home() {
       <main>
         <Hero />
         <CoreServicesSection />
-        <TalentMatchingHero />
         <section id="services">
           <Services />
           <HeadhuntingSection />
           <PartnershipsSection />
         </section>
-        <section id="industries">
+        <RecruitmentTimeline />
+         <section id="industries">
           <Industries />
         </section>
-        <RecruitmentTimeline />
+        <TalentMatchingHero />
         <ContactForm />
       </main>
       <Footer />

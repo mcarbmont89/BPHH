@@ -1,7 +1,6 @@
 "use client"
 
-import type React from "react"
-
+import * as React from "react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 import Image from "next/image"
@@ -21,87 +20,72 @@ export function Header() {
       setIsScrolled(window.scrollY > 10)
     }
     window.addEventListener("scroll", handleScroll)
-
-    // Handle process link click
-    const handleProcessLinkClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
-      if (target.tagName === "A" && target.getAttribute("href") === "#process") {
-        e.preventDefault()
-        const processSection = document.getElementById("ai-powered-recruitment")
-        if (processSection) {
-          processSection.scrollIntoView({ behavior: "smooth" })
-        }
-      }
-    }
-    document.addEventListener("click", handleProcessLinkClick)
-
-    // Handle solution link click
-    const handleSolutionLinkClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
-      if (target.tagName === "A" && target.getAttribute("href") === "#solution") {
-        e.preventDefault()
-        const solutionSection = document.getElementById("solution-comparison")
-        if (solutionSection) {
-          solutionSection.scrollIntoView({ behavior: "smooth" })
-        }
-      }
-    }
-    document.addEventListener("click", handleSolutionLinkClick)
-
     return () => {
       window.removeEventListener("scroll", handleScroll)
-      document.removeEventListener("click", handleProcessLinkClick)
-      document.removeEventListener("click", handleSolutionLinkClick)
     }
   }, [])
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
-  const handleProcessClick = (e: React.MouseEvent) => {
+  const handleScrollTo = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault()
+    setIsMenuOpen(false) // Close menu on click
 
-    // Verificar si estamos en la página principal
-    if (window.location.pathname !== "/") {
-      // Si no estamos en la página principal, redirigir primero
-      window.location.href = "/#ai-powered-recruitment"
+    if (path !== "/") {
+      window.location.href = `/#${sectionId}`
       return
     }
 
-    const processSection = document.getElementById("ai-powered-recruitment")
-    if (processSection) {
-      processSection.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
-  const handleSolutionClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-
-    // Verificar si estamos en la página principal
-    if (window.location.pathname !== "/") {
-      // Si no estamos en la página principal, redirigir primero
-      window.location.href = "/#solution-comparison"
-      return
-    }
-
-    const solutionSection = document.getElementById("solution-comparison")
-    if (solutionSection) {
-      solutionSection.scrollIntoView({ behavior: "smooth" })
+    const section = document.getElementById(sectionId)
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
     }
   }
 
   const navItems = [
-    { href: "/#industries", label: t("nav.industries") },
-    { href: "/#process", label: t("nav.process"), onClick: handleProcessClick },
-    //{ href: "/#solution", label: t("nav.solution"), onClick: handleSolutionClick },
-    // { href: "/#about", label: t("nav.about") },
-    { href: "/careers", label: t("nav.careers") },
-    { href: "/blog", label: t("nav.blog.title") },
+    { href: "/", label: t("nav.home"), isLink: true },
+    {
+      href: "/#core-services",
+      label: t("nav.services"),
+      onClick: (e: React.MouseEvent) => handleScrollTo(e, "core-services"),
+    },
+    {
+      href: "/#industries",
+      label: t("nav.industries"),
+      onClick: (e: React.MouseEvent) => handleScrollTo(e, "industries"),
+    },
+    {
+      href: "/#process",
+      label: t("nav.process"),
+      onClick: (e: React.MouseEvent) => handleScrollTo(e, "ai-powered-recruitment"),
+    },
+    { href: "/careers", label: t("nav.careers"), isLink: true },
+    { href: "/blog", label: t("nav.blog.title"), isLink: true },
   ]
 
   const handleContact = () => {
     window.open(
       "https://outlook.office.com/bookwithme/user/5dc7b4ad41ef41dfa5e4f1053f4710b8@boticpartners.com/meetingtype/n6FtRriP-0afMrnBYzgN9w2?anonymous&ep=mlink",
       "_blank",
+    )
+  }
+
+  const renderNavItem = (item: any, isMobile = false) => {
+    const className = isMobile
+      ? "text-sm font-medium text-gray-600 hover:text-primary transition-colors"
+      : `text-sm font-medium ${path === "/" && !isScrolled ? "text-gray-100 hover:text-white" : "text-gray-600 hover:text-primary"} ${isScrolled ? "text-gray-600 hover:text-primary" : ""} transition-colors`
+
+    if (item.isLink) {
+      return (
+        <Link href={item.href} className={className} onClick={() => setIsMenuOpen(false)}>
+          {item.label}
+        </Link>
+      )
+    }
+    return (
+      <a href={item.href} className={className} onClick={item.onClick as any}>
+        {item.label}
+      </a>
     )
   }
 
@@ -123,14 +107,7 @@ export function Header() {
         </Link>
         <nav className="hidden md:flex space-x-8">
           {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={`text-sm font-medium ${path === "/" && !isScrolled ? "text-gray-100 hover:text-white" : "text-gray-600 hover:text-primary"} ${isScrolled ? "text-gray-600 hover:text-primary" : ""} transition-colors`}
-              onClick={item.onClick || (() => setIsMenuOpen(false))}
-            >
-              {item.label}
-            </a>
+            <React.Fragment key={item.href}>{renderNavItem(item)}</React.Fragment>
           ))}
         </nav>
         <div className="flex items-center space-x-4">
@@ -151,7 +128,7 @@ export function Header() {
             {t("nav.contact")}
           </Button>
           <button className="md:hidden" onClick={toggleMenu}>
-            <Menu className="h-6 w-6" />
+            <Menu className={`h-6 w-6 ${isScrolled || path !== "/" ? "text-gray-700" : "text-white"}`} />
           </button>
         </div>
       </div>
@@ -160,26 +137,19 @@ export function Header() {
         <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
           <nav className="flex flex-col space-y-4">
             {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
-                onClick={item.onClick || (() => setIsMenuOpen(false))}
-              >
-                {item.label}
-              </a>
+              <React.Fragment key={item.href}>{renderNavItem(item, true)}</React.Fragment>
             ))}
           </nav>
-          <div className="mt-4 md:hidden flex justify-between">
+          <div className="mt-4 flex justify-between items-center">
             <button
-              className={`relative hidden md:inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary bg-primary text-white`}
+              className={`relative flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary bg-primary text-white`}
               onClick={() => setLanguage(language === "en" ? "es" : "en")}
             >
               <span className="pointer-events-none absolute inset-0 flex items-center justify-center w-full px-2 text-xs">
                 {language === "en" ? "ES" : "EN"}
               </span>
             </button>
-            <Button variant={`${isScrolled ? "default" : "secondary"}`} size="sm" onClick={handleContact}>
+            <Button variant="default" size="sm" onClick={handleContact}>
               {t("nav.contact")}
             </Button>
           </div>
