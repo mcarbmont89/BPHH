@@ -23,8 +23,8 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen pt-20 overflow-hidden">
-      <div className="curved-gradient absolute inset-0 -z-10" />
+    <section className="relative min-h-screen pt-20 overflow-hidden bg-transparent">
+      <div className="curved-gradient absolute inset-0 -z-10 opacity-35" />
       <div className="container lg:max-w-[1280px] mx-auto h-[calc(100vh-25rem)] px-8 flex flex-col lg:grid grid-cols-2 lg:place-items-center items-center justify-between pt-10">
         <motion.div
           initial={{ opacity: 0, x: -20 }}

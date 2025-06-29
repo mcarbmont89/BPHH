@@ -99,7 +99,7 @@ export function DynamicMatchCard() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
-        className="bg-gradient-to-br from-primary/80 to-primary rounded-xl p-6 text-white backdrop-blur-lg shadow-lg w-full max-w-md"
+        className="bg-gradient-to-br from-primary/30 to-primary/30 rounded-xl p-6 text-white backdrop-blur-lg shadow-lg w-full max-w-md"
       >
         <div className="flex items-center gap-4 mb-6">
           <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
