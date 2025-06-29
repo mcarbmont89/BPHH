@@ -7,9 +7,9 @@ import { LanguageProvider } from "@/lib/i18n/LanguageContext"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Botic Partners - AI-Powered Recruitment Solutions",
+  title: "Botic Partners - AI-Powered Talent Matching",
   description:
-    "Transform your recruitment process with our AI-powered talent matching platform. Find the perfect talent faster and more efficiently.",
+    "Transform your recruitment process with our AI-powered talent matching solution. Find the perfect talent faster and more efficiently.",
     generator: 'v0.dev'
 }
 
@@ -21,37 +21,45 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" type="image/png" href="/placeholder-logo.png" />
+        <link
+          rel="icon"
+          href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/botic%20long-Uu1ik81vsOqA55IYRxP8xIzHs4xpzU.png"
+          type="image/png"
+        />
       </head>
-      <body className={`${inter.className} relative`}>
-        {/* Background Video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          webkit-playsinline="true"
-          x5-playsinline="true"
-          preload="auto"
-          className="fixed top-0 left-0 w-full h-full object-cover z-[-2] opacity-60 md:opacity-60 brightness-110 contrast-110 saturate-110"
-          style={{ filter: "blur(0px)" }}
-          onLoadStart={() => console.log("Video loading started")}
-          onCanPlay={() => console.log("Video can play")}
-          onError={(e) => console.log("Video error:", e)}
-        >
-          <source src="/placeholder.mp4" type="video/mp4" />
-        </video>
+      <body className={`${inter.className} relative min-h-screen`}>
+        {/* Background Video - Enhanced for mobile */}
+        <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-[-2]">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover opacity-70 sm:opacity-60"
+            style={{
+              filter: "brightness(1.1) contrast(1.3) saturate(1.2)",
+            }}
+          >
+            <source src="/placeholder.mp4" type="video/mp4" />
+          </video>
 
-        {/* Fallback animated background for when video doesn't load */}
-        <div className="fixed inset-0 z-[-3] bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 opacity-80">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/3 to-transparent animate-pulse delay-1000"></div>
+          {/* Enhanced fallback for mobile when video doesn't load */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-400/50 via-blue-500/50 to-purple-600/50 animate-pulse opacity-30" />
+
+          {/* Additional animated background for mobile */}
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"
+            style={{ animationDuration: "3s" }}
+          />
         </div>
 
-        {/* Main content overlay */}
-        <div className="relative z-0 bg-black/5 backdrop-blur-[0.5px] min-h-screen">
-          <LanguageProvider>{children}</LanguageProvider>
-        </div>
+        {/* Very light overlay to ensure readability */}
+        <div className="fixed inset-0 bg-black/5 pointer-events-none z-[-1]" />
+
+        <LanguageProvider>
+          <div className="relative z-10">{children}</div>
+        </LanguageProvider>
       </body>
     </html>
   )
