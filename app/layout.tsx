@@ -28,27 +28,28 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} relative min-h-screen`}>
-        {/* Background Video */}
-        <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-[-1]">
+        {/* Background Video - Increased visibility */}
+        <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-[-2]">
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-50 sm:opacity-30 blur-[1px]"
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover opacity-70 sm:opacity-60"
             style={{
-              filter: "brightness(0.8) contrast(1.2)",
+              filter: "brightness(1.1) contrast(1.3) saturate(1.2)",
             }}
           >
             <source src="/placeholder.mp4" type="video/mp4" />
           </video>
 
-          {/* Fallback animated background for browsers that don't support video */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-400/30 via-blue-500/30 to-purple-600/30 animate-pulse" />
+          {/* Fallback animated background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-400/40 via-blue-500/40 to-purple-600/40 animate-pulse" />
         </div>
 
-        {/* Reduced overlay for mobile to show more video */}
-        <div className="fixed inset-0 bg-white/10 sm:bg-white/20 backdrop-blur-[0.5px] pointer-events-none z-[-1]" />
+        {/* Much lighter overlay to let video show through */}
+        <div className="fixed inset-0 bg-black/5 pointer-events-none z-[-1]" />
 
         <LanguageProvider>
           <div className="relative z-10">{children}</div>

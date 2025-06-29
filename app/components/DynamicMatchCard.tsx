@@ -99,10 +99,10 @@ export function DynamicMatchCard() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
-        className="bg-gradient-to-br from-primary/30 to-primary/30 rounded-xl p-4 sm:p-6 text-white backdrop-blur-lg shadow-lg w-full max-w-md mx-auto"
+        className="bg-gradient-to-br from-primary/25 to-primary/25 rounded-xl p-4 sm:p-6 text-white backdrop-blur-md shadow-xl w-full max-w-md mx-auto border border-white/10"
       >
         <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/25 flex items-center justify-center flex-shrink-0">
             <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </div>
           <div className="min-w-0 flex-1">
@@ -111,26 +111,26 @@ export function DynamicMatchCard() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="font-semibold text-sm sm:text-base leading-tight"
+              className="font-semibold text-sm sm:text-base leading-tight drop-shadow-sm"
             >
               {t(currentMatch.titleKey)}
             </motion.h3>
-            <p className="text-white/80 text-xs sm:text-sm">{t("dynamicMatchCard.latestMatch")}</p>
+            <p className="text-white/90 text-xs sm:text-sm drop-shadow-sm">{t("dynamicMatchCard.latestMatch")}</p>
           </div>
         </div>
 
         <div className="space-y-3 sm:space-y-4">
-          <div className="bg-white/10 rounded-lg p-3 sm:p-4">
-            <h4 className="text-white/90 text-xs sm:text-sm font-medium mb-2">
+          <div className="bg-white/15 rounded-lg p-3 sm:p-4 backdrop-blur-sm">
+            <h4 className="text-white/95 text-xs sm:text-sm font-medium mb-2 drop-shadow-sm">
               {t("dynamicMatchCard.overallMatchScore")}
             </h4>
             <motion.div
-              className="w-full bg-white/20 rounded-full h-2 overflow-hidden"
+              className="w-full bg-white/25 rounded-full h-2 overflow-hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
               <motion.div
-                className="bg-white h-full rounded-full"
+                className="bg-white h-full rounded-full shadow-sm"
                 initial={{ width: 0 }}
                 animate={{ width: `${currentMatch.overallMatch}%` }}
                 transition={{ duration: 1, ease: "easeOut" }}
@@ -139,26 +139,28 @@ export function DynamicMatchCard() {
           </div>
 
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
-            <div className="bg-white/10 rounded-lg p-3 sm:p-4">
-              <h4 className="text-white/90 text-xs sm:text-sm font-medium mb-1">
+            <div className="bg-white/15 rounded-lg p-3 sm:p-4 backdrop-blur-sm">
+              <h4 className="text-white/95 text-xs sm:text-sm font-medium mb-1 drop-shadow-sm">
                 {t("dynamicMatchCard.technicalSkills")}
               </h4>
               <motion.p
                 key={`tech-${currentIndex}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-white text-base sm:text-lg font-semibold"
+                className="text-white text-base sm:text-lg font-semibold drop-shadow-sm"
               >
                 {currentMatch.technicalSkills}%
               </motion.p>
             </div>
-            <div className="bg-white/10 rounded-lg p-3 sm:p-4">
-              <h4 className="text-white/90 text-xs sm:text-sm font-medium mb-1">{t("dynamicMatchCard.teamFit")}</h4>
+            <div className="bg-white/15 rounded-lg p-3 sm:p-4 backdrop-blur-sm">
+              <h4 className="text-white/95 text-xs sm:text-sm font-medium mb-1 drop-shadow-sm">
+                {t("dynamicMatchCard.teamFit")}
+              </h4>
               <motion.p
                 key={`fit-${currentIndex}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-white text-base sm:text-lg font-semibold"
+                className="text-white text-base sm:text-lg font-semibold drop-shadow-sm"
               >
                 {currentMatch.teamFit}%
               </motion.p>
@@ -174,7 +176,10 @@ export function DynamicMatchCard() {
             {t(currentMatch.skillsKey)
               .split(", ")
               .map((skill, index) => (
-                <span key={index} className="px-2 py-1 rounded-full bg-white/10 text-white/90 text-xs sm:text-sm">
+                <span
+                  key={index}
+                  className="px-2 py-1 rounded-full bg-white/15 text-white/95 text-xs sm:text-sm backdrop-blur-sm drop-shadow-sm"
+                >
                   {skill}
                 </span>
               ))}
