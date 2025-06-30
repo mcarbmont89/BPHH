@@ -60,7 +60,7 @@ export function Header() {
       onClick: (e: React.MouseEvent) => handleScrollTo(e, "ai-powered-recruitment"),
     },
     { href: "/careers", label: t("nav.careers"), isLink: true },
-    { href: "/blog", label: t("nav.blog.title"), isLink: true },
+    { href: "/blog", label: t("nav.blog"), isLink: true },
   ]
 
   const handleContact = () => {

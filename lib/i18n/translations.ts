@@ -4,17 +4,15 @@ export const translations = {
     langName: "English",
     nav: {
       home: "Home",
+      about: "About Us",
       services: "Services",
+      freelance: "Freelance Talent",
+      permanent: "Permanent Talent",
+      ma: "M&A Services",
       industries: "Industries",
-      process: "Process",
+      process: "Our Process",
       careers: "Careers",
-      blog: {
-        title: "Blog",
-        post1: "The Rise of AI in Recruitment",
-        post2: "Data-Driven Decisions in HR",
-        post3: "The Future of Work is Hybrid",
-        description: "Insights and news from Botic.",
-      },
+      blog: "Blog",
       contact: "Contact",
       language: "Language",
     },
@@ -30,16 +28,15 @@ export const translations = {
     },
     footer: {
       title: "Botic Partners",
-      description: "Botic is an AI-powered talent acquisition firm that helps companies find the best talent.",
+      description: "AI-Powered Talent Acquisition.",
       services: "Services",
-      permanentTalent: "Permanent Talent",
-      freelanceTalent: "Freelance Talent",
-      maServices: "M&A Services",
+      freelance: "Freelance Talent",
+      permanent: "Permanent Talent",
+      ma: "M&A Services",
       company: "Company",
       about: "About Us",
-      blog: "Blog",
       careers: "Careers",
-      contact: "Contact Us",
+      blog: "Blog",
       legal: "Legal",
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
@@ -48,14 +45,20 @@ export const translations = {
       contactEmail: "admin@boticpartners.com",
       followUs: "Follow Us",
       rights: "All rights reserved.",
+      privacy: "Privacy Policy",
+      terms: "Terms of Service",
+      contact: "Contact Us",
+      rights: "All rights reserved.",
     },
     home: {
       hero: {
         title: "AI-Powered Talent Acquisition",
-        subtitle: "We find the best talent for your company, powered by AI.",
+        subtitle:
+          "We connect top-tier talent with leading companies, leveraging cutting-edge AI to ensure the perfect match.",
         lastMatch: "Last Match",
         jobTitle: "Senior Backend Engineer",
-        jobDescription: "A leading fintech company is looking for a Senior Backend Engineer to join their team.",
+        jobDescription:
+          "A leading fintech company is looking for a skilled engineer to build and scale their core infrastructure.",
         generalScore: "General Score",
         technicalSkills: "Technical Skills",
         teamFit: "Team Fit",
@@ -166,47 +169,60 @@ export const translations = {
     },
     recruitment: {
       title: "Our Recruitment Process",
+      subtitle: "A streamlined and efficient process to find the best talent for your needs.",
       steps: [
         {
-          title: "Smart Profile Analysis",
+          id: "01",
+          title: "Client Brief & Role Definition",
           description:
-            "We analyze technical and cultural requirements using AI to define the ideal fit. We assess soft skills from the beginning.",
+            "We work with you to understand your needs, culture, and the specific requirements for the role.",
+          image: "/images/recruitment/client-brief.png",
         },
         {
-          title: "Predictive Search and Automated Evaluation",
+          id: "02",
+          title: "AI-Powered Search & Shortlisting",
           description:
-            "Matching, passive talent search, and soft skills evaluation powered by AI. Includes automated CV and profile analysis.",
+            "Our AI scans thousands of profiles to identify the best candidates based on skills, experience, and cultural fit.",
+          image: "/images/recruitment/search-shortlist.png",
         },
         {
-          title: "AI-Assisted Interviews and Market Benchmark",
+          id: "03",
+          title: "Interview & Decision",
           description:
-            "We use AI for interviews and apply scoring systems with clear reports. Real-time salary and market benchmarking included.",
+            "We conduct initial screenings and present you with a shortlist of top candidates for you to interview.",
+          image: "/images/recruitment/interview-decision.png",
         },
         {
-          title: "Agile Selection and Hiring",
-          description:
-            "We present a validated shortlist and guide your decision with data. Hiring in 15 days (80% faster than the standard).",
+          id: "04",
+          title: "Offer & Onboarding",
+          description: "We assist with the offer process and ensure a smooth onboarding experience for your new hire.",
+          image: "/images/recruitment/offer-onboarding.png",
         },
       ],
     },
     recruitmentTimeline: {
       title: "Our Recruitment Process",
-      step1: {
-        title: "Client Brief & Strategy",
-        description: "We start by understanding your needs, culture, and the specific requirements for the role.",
-      },
-      step2: {
-        title: "Market Search & Shortlist",
-        description: "Using our AI-powered platform, we scan the market to identify and vet the best candidates.",
-      },
-      step3: {
-        title: "Interview & Decision",
-        description: "We manage the interview process, providing you with a curated list of top-tier talent.",
-      },
-      step4: {
-        title: "Offer & Onboarding",
-        description: "We assist with the offer negotiation and ensure a smooth onboarding process for the new hire.",
-      },
+      steps: [
+        {
+          title: "Client Brief & Role Definition",
+          description:
+            "We work with you to understand your needs, culture, and the specific requirements for the role.",
+        },
+        {
+          title: "AI-Powered Search & Shortlisting",
+          description: "Our AI scans thousands of profiles to find the best candidates, which our experts then vet.",
+        },
+        {
+          title: "Interview & Decision",
+          description:
+            "We manage the interview process, providing you with detailed feedback to help you make the right choice.",
+        },
+        {
+          title: "Offer & Onboarding",
+          description:
+            "We assist with the offer negotiation and support the candidate through their onboarding process.",
+        },
+      ],
     },
     hero: {
       title: "The Future of Talent Acquisition is Here",
@@ -466,7 +482,7 @@ export const translations = {
     },
     careers: {
       title: "Join Our Team",
-      subtitle: "We are always looking for talented individuals to join our team. Explore our open positions below.",
+      subtitle: "We're always looking for talented individuals to join our team. Explore our open positions below.",
       openPositions: "Open Positions",
       searchPlaceholder: "Search for a job...",
       noResults: "No jobs found.",
@@ -757,7 +773,7 @@ export const translations = {
       technicalProjectManagers: "Technical Project Managers",
       agileCoaches: "Agile Coaches",
       digitalTransformationLeads: "Digital Transformation Leads",
-      specializedConsultants: "Specialized Consultants",
+      specializedConsultants: "Consultores Especializados",
       technologyStrategyConsultants: "Technology Strategy Consultants",
       digitalInnovationSpecialists: "Digital Innovation Specialists",
       technicalDueDiligenceExperts: "Technical Due Diligence Experts",
@@ -918,14 +934,15 @@ export const translations = {
     langName: "Español",
     nav: {
       home: "Inicio",
+      about: "Sobre Nosotros",
       services: "Servicios",
+      freelance: "Talento Freelance",
+      permanent: "Talento Permanente",
+      ma: "Servicios M&A",
       industries: "Industrias",
-      process: "Proceso",
+      process: "Nuestro Proceso",
       careers: "Carreras",
-      blog: {
-        title: "Blog",
-        description: "Ideas y noticias de Botic.",
-      },
+      blog: "Blog",
       contact: "Contacto",
       language: "Idioma",
     },
@@ -941,17 +958,15 @@ export const translations = {
     },
     footer: {
       title: "Botic Partners",
-      description:
-        "Botic es una firma de adquisición de talento impulsada por IA que ayuda a las empresas a encontrar el mejor talento.",
+      description: "Adquisición de Talento Potenciada por IA.",
       services: "Servicios",
-      permanentTalent: "Talento Permanente",
-      freelanceTalent: "Talento Freelance",
-      maServices: "Servicios M&A",
+      freelance: "Talento Freelance",
+      permanent: "Talento Permanente",
+      ma: "Servicios M&A",
       company: "Empresa",
       about: "Sobre Nosotros",
-      blog: "Blog",
       careers: "Carreras",
-      contact: "Contáctanos",
+      blog: "Blog",
       legal: "Legal",
       privacyPolicy: "Política de Privacidad",
       termsOfService: "Términos de Servicio",
@@ -960,14 +975,20 @@ export const translations = {
       contactEmail: "admin@boticpartners.com",
       followUs: "Síguenos",
       rights: "Todos los derechos reservados.",
+      privacy: "Política de Privacidad",
+      terms: "Términos de Servicio",
+      contact: "Contáctanos",
+      rights: "Todos los derechos reservados.",
     },
     home: {
       hero: {
-        title: "Adquisición de Talento con IA",
-        subtitle: "Encontramos el mejor talento para tu empresa, impulsado por IA.",
+        title: "Adquisición de Talento Potenciada por IA",
+        subtitle:
+          "Conectamos talento de primer nivel con empresas líderes, aprovechando la IA de vanguardia para asegurar la combinación perfecta.",
         lastMatch: "Último Match",
-        jobTitle: "Ingeniero Backend Senior",
-        jobDescription: "Una empresa fintech líder busca un Ingeniero Backend Senior para unirse a su equipo.",
+        jobTitle: "Ingeniero de Backend Senior",
+        jobDescription:
+          "Una empresa líder en fintech busca un ingeniero calificado para construir y escalar su infraestructura central.",
         generalScore: "Puntaje General",
         technicalSkills: "Habilidades Técnicas",
         teamFit: "Ajuste de Equipo",
@@ -1082,50 +1103,62 @@ export const translations = {
     },
     recruitment: {
       title: "Nuestro Proceso de Reclutamiento",
+      subtitle: "Un proceso optimizado y eficiente para encontrar el mejor talento para sus necesidades.",
       steps: [
         {
-          title: "Análisis de Perfiles con IA",
+          id: "01",
+          title: "Briefing del Cliente y Definición del Rol",
           description:
-            "Analizamos los requisitos técnicos y culturales utilizando IA para definir el ajuste ideal. Evaluamos las habilidades blandas desde el principio.",
+            "Trabajamos con usted para comprender sus necesidades, cultura y los requisitos específicos para el puesto.",
+          image: "/images/recruitment/client-brief.png",
         },
         {
-          title: "Búsqueda Predictiva y Evaluación Automatizada",
+          id: "02",
+          title: "Búsqueda y Selección con IA",
           description:
-            "Matching, búsqueda de talento pasivo y evaluación de habilidades blandas impulsada por IA. Incluye análisis automatizado de CV y perfiles.",
+            "Nuestra IA escanea miles de perfiles para identificar a los mejores candidatos en función de sus habilidades, experiencia y adecuación cultural.",
+          image: "/images/recruitment/search-shortlist.png",
         },
         {
-          title: "Entrevistas Asistidas por IA y Benchmark de Mercado",
+          id: "03",
+          title: "Entrevista y Decisión",
           description:
-            "Utilizamos IA para las entrevistas y aplicamos sistemas de puntuación con informes claros. Incluye benchmarking salarial y de mercado en tiempo real.",
+            "Realizamos selecciones iniciales y le presentamos una lista de los mejores candidatos para que los entreviste.",
+          image: "/images/recruitment/interview-decision.png",
         },
         {
-          title: "Selección Ágil y Contratación",
+          id: "04",
+          title: "Oferta e Incorporación",
           description:
-            "Presentamos una lista de finalistas validados y guiamos tu decisión con datos. Contratación en 15 días (80% más rápido que el estándar).",
+            "Ayudamos con el proceso de oferta y aseguramos una experiencia de incorporación fluida para su nuevo empleado.",
+          image: "/images/recruitment/offer-onboarding.png",
         },
       ],
     },
     recruitmentTimeline: {
       title: "Nuestro Proceso de Reclutamiento",
-      step1: {
-        title: "Briefing y Estrategia con el Cliente",
-        description: "Comenzamos por comprender sus necesidades, cultura y los requisitos específicos para el puesto.",
-      },
-      step2: {
-        title: "Búsqueda de Mercado y Selección",
-        description:
-          "Utilizando nuestra plataforma impulsada por IA, exploramos el mercado para identificar y evaluar a los mejores candidatos.",
-      },
-      step3: {
-        title: "Entrevista y Decisión",
-        description:
-          "Gestionamos el proceso de entrevistas, proporcionándole una lista seleccionada de talentos de primer nivel.",
-      },
-      step4: {
-        title: "Oferta e Incorporación",
-        description:
-          "Ayudamos con la negociación de la oferta y aseguramos un proceso de incorporación fluido para el nuevo empleado.",
-      },
+      steps: [
+        {
+          title: "Brief del Cliente y Definición del Rol",
+          description:
+            "Trabajamos con usted para comprender sus necesidades, cultura y los requisitos específicos para el puesto.",
+        },
+        {
+          title: "Búsqueda y Selección con IA",
+          description:
+            "Nuestra IA escanea miles de perfiles para encontrar los mejores candidatos, que luego nuestros expertos evalúan.",
+        },
+        {
+          title: "Entrevista y Decisión",
+          description:
+            "Gestionamos el proceso de entrevistas, proporcionándole comentarios detallados para ayudarle a tomar la decisión correcta.",
+        },
+        {
+          title: "Oferta e Incorporación",
+          description:
+            "Ayudamos con la negociación de la oferta y apoyamos al candidato durante su proceso de incorporación.",
+        },
+      ],
     },
     hero: {
       title: "El Futuro de la Adquisición de Talento está Aquí",
@@ -1692,13 +1725,13 @@ export const translations = {
           description: "Traiga talento especializado para proyectos con plazos definidos y entregables específicos",
         },
         {
-          title: "Brechas de Experiencia Técnica",
+          title: "Technical Expertise Gaps",
           description:
-            "Acceda a habilidades especializadas que no se necesitan a tiempo completo pero que son críticas para el éxito",
+            "Acceda a habilidades especializadas que no se necesitan a tiempo completo, pero son críticas para el éxito",
         },
         {
-          title: "Liderazgo Interino",
-          description: "Cubra las brechas de liderazgo durante las transiciones o cambios organizacionales",
+          title: "Interim Leadership",
+          description: "Supere las brechas de liderazgo durante las transiciones o los cambios organizacionales",
         },
       ],
       examples: "Ejemplos",
@@ -1713,13 +1746,13 @@ export const translations = {
         },
         {
           quote:
-            "El arquitecto de la nube freelance que Botic nos conectó transformó nuestro enfoque de infraestructura, logrando un 40% de ahorro de costos y un mejor rendimiento.",
+            "El arquitecto de la nube freelance con el que Botic nos conectó transformó nuestro enfoque de infraestructura, ofreciendo un ahorro de costos del 40% y un rendimiento mejorado.",
           author: "JUAN PEÑA",
-          position: "VP de Ingeniería, TechScale",
+          position: "VP Engineering, TechScale",
         },
         {
           quote:
-            "Cuando necesitamos liderazgo interino durante nuestra transición de CTO, Botic nos encontró el líder temporal perfecto que mantuvo nuestro plan de trabajo en marcha.",
+            "Cuando necesitamos un liderazgo interino durante nuestra transición de CTO, Botic nos encontró el líder temporal perfecto que mantuvo nuestra hoja de ruta en marcha.",
           author: "ANTONIO LÓPEZ",
           position: "CEO, InnovateTech",
         },
@@ -1731,7 +1764,7 @@ export const translations = {
     },
     maServices: {
       title: "Servicios Estratégicos de M&A",
-      subtitle: "Conectando empresas para adquisiciones estratégicas, asociaciones y oportunidades de crecimiento",
+      subtitle: "Conectando negocios para adquisiciones estratégicas, asociaciones y oportunidades de crecimiento",
       confidentialRepresentation: "Representación confidencial",
       strategicTargetIdentification: "Identificación estratégica de objetivos",
       exploreOpportunities: "Explorar Oportunidades de M&A",
@@ -1838,5 +1871,3 @@ export const translations = {
     },
   },
 }
-
-export type TranslationKeys = keyof (typeof translations)["en"]

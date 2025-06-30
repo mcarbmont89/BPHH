@@ -12,21 +12,27 @@ export default function Hero() {
   const [emailSubject, setEmailSubject] = useState("")
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden text-white">
-      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0">
-        <source src="/placeholder.mp4" type="video/mp4" />
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden text-white bg-[#1A1A2E]">
+      {" "}
+      {/* Added a fallback background color matching the screenshot */}
+      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover -z-10">
+        <source src="/hero-background.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-
-      <div className="absolute inset-0 bg-black/60 z-10" />
-
-      <div className="relative z-20 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
         <div className="space-y-6 text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">{t("home.hero.title")}</h1>
-          <p className="text-lg md:text-xl text-gray-200">{t("home.hero.subtitle")}</p>
+          <h1
+            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+            style={{ textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)" }}
+          >
+            {t("home.hero.title")}
+          </h1>
+          <p className="text-lg md:text-xl text-gray-200" style={{ textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)" }}>
+            {t("home.hero.subtitle")}
+          </p>
         </div>
         <div className="flex justify-center md:justify-end">
-          <Card className="w-full max-w-md bg-white/10 backdrop-blur-md text-white shadow-lg border border-white/20">
+          <Card className="w-full max-w-md bg-black/30 text-white shadow-lg border border-white/20">
             <CardContent className="p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <Badge className="bg-primary/80 text-white px-3 py-1 rounded-full text-sm">
