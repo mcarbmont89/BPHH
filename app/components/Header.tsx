@@ -105,22 +105,22 @@ export function Header() {
             className="h-8 w-auto drop-shadow"
           />
         </Link>
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
             <React.Fragment key={item.href}>{renderNavItem(item)}</React.Fragment>
           ))}
         </nav>
         <div className="flex items-center space-x-4">
           <button
-            className={`relative hidden md:inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary bg-primary text-white`}
+            className={`relative hidden md:inline-flex items-center justify-center flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary bg-primary text-white`}
             onClick={() => setLanguage(language === "en" ? "es" : "en")}
           >
-            <span className="pointer-events-none absolute inset-0 flex items-center justify-center w-full px-2 text-xs">
+            <span className="absolute inset-0 flex items-center justify-center w-full text-xs font-semibold">
               {language === "en" ? "ES" : "EN"}
             </span>
           </button>
           <Button
-            variant={`${isScrolled ? "default" : "secondary"}`}
+            variant={`${isScrolled || path !== "/" ? "default" : "secondary"}`}
             size="sm"
             className="hidden md:inline-flex"
             onClick={handleContact}
@@ -158,5 +158,3 @@ export function Header() {
     </header>
   )
 }
-
-export default Header

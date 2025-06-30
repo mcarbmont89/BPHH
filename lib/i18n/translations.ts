@@ -7,46 +7,55 @@ export const translations = {
       services: "Services",
       industries: "Industries",
       process: "Process",
-      solution: "Solution",
-      about: "About Us",
       careers: "Careers",
-      contact: "Contact",
       blog: {
         title: "Blog",
+        post1: "The Rise of AI in Recruitment",
+        post2: "Data-Driven Decisions in HR",
+        post3: "The Future of Work is Hybrid",
         description: "Insights and news from Botic.",
       },
+      contact: "Contact",
       language: "Language",
     },
     header: {
-      whatWeDo: "What We Do",
+      services: "Services",
       permanentTalent: "Permanent Talent",
       freelanceTalent: "Freelance Talent",
       maServices: "M&A Services",
-      aiAgents: "AI Agents",
-      whoWeAre: "Who We Are",
-      aboutUs: "About Us",
+      about: "About",
       blog: "Blog",
       careers: "Careers",
-      contactUs: "Contact Us",
+      contact: "Contact",
     },
     footer: {
-      title: "Botic Partners",
-      description: "Powering companies with top tech talent through AI-driven solutions.",
-      quickLinks: "Quick Links",
-      contact: "Contact",
-      contactEmail: "admin@boticpartners.com",
-      followUs: "Follow Us",
-      rights: "All rights reserved.",
+      description: "Botic is an AI-powered talent acquisition firm that helps companies find the best talent.",
+      services: "Services",
+      permanentTalent: "Permanent Talent",
+      freelanceTalent: "Freelance Talent",
+      maServices: "M&A Services",
+      company: "Company",
+      about: "About Us",
+      blog: "Blog",
+      careers: "Careers",
+      contact: "Contact Us",
+      legal: "Legal",
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
+      rightsReserved: "© 2024 Botic Partners. All rights reserved.",
     },
     home: {
       hero: {
-        title: "The Future of Talent Acquisition is Here",
-        subtitle:
-          "We leverage AI and deep industry expertise to connect you with exceptional talent in Software, Hardware, Construction, and Logistics.",
-        cta: "Find Talent",
-        secondaryCta: "Explore Careers",
+        title: "AI-Powered Talent Acquisition",
+        subtitle: "We find the best talent for your company, powered by AI.",
+        lastMatch: "Last Match",
+        jobTitle: "Senior Backend Engineer",
+        jobDescription: "A leading fintech company is looking for a Senior Backend Engineer to join their team.",
+        generalScore: "General Score",
+        technicalSkills: "Technical Skills",
+        teamFit: "Team Fit",
+        ctaPrimary: "Get Started",
+        ctaSecondary: "Watch Demo",
       },
       trustedBy: {
         title: "Trusted by Industry Leaders",
@@ -174,6 +183,25 @@ export const translations = {
             "We present a validated shortlist and guide your decision with data. Hiring in 15 days (80% faster than the standard).",
         },
       ],
+    },
+    recruitmentTimeline: {
+      title: "Our Recruitment Process",
+      step1: {
+        title: "Client Brief & Strategy",
+        description: "We start by understanding your needs, culture, and the specific requirements for the role.",
+      },
+      step2: {
+        title: "Market Search & Shortlist",
+        description: "Using our AI-powered platform, we scan the market to identify and vet the best candidates.",
+      },
+      step3: {
+        title: "Interview & Decision",
+        description: "We manage the interview process, providing you with a curated list of top-tier talent.",
+      },
+      step4: {
+        title: "Offer & Onboarding",
+        description: "We assist with the offer negotiation and ensure a smooth onboarding process for the new hire.",
+      },
     },
     hero: {
       title: "The Future of Talent Acquisition is Here",
@@ -432,88 +460,16 @@ export const translations = {
       testimonialAuthor: "CEO - Satisfied Client",
     },
     careers: {
-      title: "Join Our Network of Innovators",
-      subtitle: "Explore opportunities at the intersection of technology and industry.",
-      filterByIndustry: "Filter by Industry",
-      allIndustries: "All Industries",
-      sector: "Sector",
-      learnMore: "Learn More & Apply",
-      jobDetails: "Job Details",
-      jobDetailsDescription: "Review the details of this position before applying.",
-      apply: "Apply Now",
-      applyModalDescription: "How would you like to apply for the {{jobTitle}} position?",
-      useDefaultEmail: "Use Default Email",
-      useGmail: "Use Gmail",
-      backToCareers: "Back to All Job Openings",
+      title: "Join Our Team",
+      subtitle: "We are always looking for talented individuals to join our team. Explore our open positions below.",
+      openPositions: "Open Positions",
+      searchPlaceholder: "Search for a job...",
+      noResults: "No jobs found.",
+      applyNow: "Apply Now",
       jobDescription: "Job Description",
-      readyToApply: "Ready to Apply?",
-      jobNotFound: {
-        title: "Job Not Found",
-        description: "Sorry, the job you are looking for does not exist or has been filled.",
-        backButton: "See Other Openings",
-      },
-      jobs: {
-        seniorFullStack: {
-          title: "Senior Full-Stack Engineer",
-          description:
-            "Build and maintain scalable web applications using modern technologies. Expertise in both front-end and back-end development is required.",
-        },
-        aiResearchScientist: {
-          title: "AI Research Scientist",
-          description:
-            "Conduct cutting-edge research in machine learning and artificial intelligence to develop new models and algorithms for our core products.",
-        },
-        dataScientist: {
-          title: "Data Scientist",
-          description:
-            "Analyze large, complex datasets to extract valuable insights, build predictive models, and inform strategic business decisions.",
-        },
-        semiconductorProcessEngineer: {
-          title: "Semiconductor Process Engineer",
-          description:
-            "Develop and optimize fabrication processes for next-generation semiconductor devices. Hands-on experience in a cleanroom environment is essential.",
-        },
-        asicDesignEngineer: {
-          title: "ASIC Design Engineer",
-          description:
-            "Design and verify high-performance Application-Specific Integrated Circuits (ASICs) from specification to tape-out.",
-        },
-        embeddedSystemsEngineer: {
-          title: "Embedded Systems Engineer",
-          description:
-            "Develop firmware and software for embedded systems, working closely with hardware teams to bring devices to life.",
-        },
-        constructionProjectManager: {
-          title: "Construction Project Manager",
-          description:
-            "Oversee large-scale construction projects from planning to completion, ensuring they are delivered on time and within budget.",
-        },
-        bimSpecialist: {
-          title: "BIM Specialist",
-          description:
-            "Utilize Building Information Modeling (BIM) software to create and manage 3D models for construction projects, improving collaboration and efficiency.",
-        },
-        smartBuildingEngineer: {
-          title: "Smart Building Engineer",
-          description:
-            "Design and implement IoT and automation systems for commercial buildings to enhance efficiency, comfort, and sustainability.",
-        },
-        supplyChainAnalyst: {
-          title: "Supply Chain Analyst",
-          description:
-            "Analyze and optimize supply chain processes to improve efficiency, reduce costs, and enhance resilience using data-driven methods.",
-        },
-        logisticsOperationsManager: {
-          title: "Logistics Operations Manager",
-          description:
-            "Manage and coordinate the storage, transportation, and delivery of goods, overseeing the entire logistics lifecycle.",
-        },
-        warehouseAutomationSpecialist: {
-          title: "Warehouse Automation Specialist",
-          description:
-            "Implement and maintain robotic and automated systems in warehouse environments to increase throughput and accuracy.",
-        },
-      },
+      responsibilities: "Responsibilities",
+      qualifications: "Qualifications",
+      niceToHave: "Nice to Have",
     },
     blog: {
       title: "Insights & Perspectives",
@@ -841,7 +797,7 @@ export const translations = {
       ],
       needSpecializedTalent: "¿Necesitas Talento Especializado Rápidamente?",
       ourNetworkOfTalent:
-        "Our network of pre-vetted freelance professionals can start contributing to your projects in a matter of days.",
+        "Nuestra red de profesionales freelance pre-evaluados puede comenzar a contribuir a sus proyectos en cuestión de días.",
       accessOurTalentNetwork: "Access Our Talent Network",
     },
     maServices: {
@@ -886,8 +842,7 @@ export const translations = {
     },
     solution: {
       title: "A Tailored Solution for Every Need",
-      subtitle:
-        "Our proprietary AI, combined with human oversight, delivers unparalleled precision in talent matching.",
+      subtitle: "Our proprietary AI, combined with human oversight, offers unparalleled precision in talent matching.",
       tabs: {
         companies: "For Companies",
         candidates: "For Candidates",
@@ -930,22 +885,24 @@ export const translations = {
       },
     },
     whyChooseBotic: {
-      title: "Why Choose Botic?",
+      title: "¿Por Qué Elegir Botic?",
       speed: {
-        title: "Speed & Efficiency",
-        description: "Reduce time-to-hire by up to 50% with our AI-driven process.",
+        title: "Velocidad y Eficiencia",
+        description: "Reduce el tiempo de contratación hasta en un 50% con nuestro proceso impulsado por IA.",
       },
       quality: {
-        title: "Unmatched Quality",
-        description: "Access the top 5% of talent in your industry, thoroughly vetted by our experts.",
+        title: "Calidad Inigualable",
+        description: "Accede al 5% superior del talento en tu industria, rigurosamente evaluado por nuestros expertos.",
       },
       precision: {
-        title: "Precision Matching",
-        description: "Our AI goes beyond keywords to match for technical skills, soft skills, and cultural fit.",
+        title: "Precisión en la Selección",
+        description:
+          "Nuestra IA va más allá de las palabras clave para encontrar coincidencias por habilidades técnicas, blandas y ajuste cultural.",
       },
       partnership: {
-        title: "Strategic Partnership",
-        description: "We work as an extension of your team to understand your unique needs and deliver results.",
+        title: "Asociación Estratégica",
+        description:
+          "Trabajamos como una extensión de tu equipo para entender tus necesidades únicas y entregar resultados.",
       },
     },
   },
@@ -957,46 +914,53 @@ export const translations = {
       services: "Servicios",
       industries: "Industrias",
       process: "Proceso",
-      solution: "Solución",
-      about: "Sobre Nosotros",
       careers: "Carreras",
-      contact: "Contacto",
       blog: {
         title: "Blog",
         description: "Ideas y noticias de Botic.",
       },
+      contact: "Contacto",
       language: "Idioma",
     },
     header: {
-      whatWeDo: "Qué Hacemos",
+      services: "Servicios",
       permanentTalent: "Talento Permanente",
       freelanceTalent: "Talento Freelance",
       maServices: "Servicios M&A",
-      aiAgents: "Agentes IA",
-      whoWeAre: "Quiénes Somos",
-      aboutUs: "Sobre Nosotros",
+      about: "Nosotros",
       blog: "Blog",
       careers: "Carreras",
-      contactUs: "Contáctanos",
+      contact: "Contacto",
     },
     footer: {
-      title: "Botic Partners",
-      description: "Potenciando empresas con el mejor talento tecnológico a través de soluciones impulsadas por IA.",
-      quickLinks: "Enlaces Rápidos",
-      contact: "Contacto",
-      contactEmail: "admin@boticpartners.com",
-      followUs: "Síguenos",
-      rights: "Todos los derechos reservados.",
+      description:
+        "Botic es una firma de adquisición de talento impulsada por IA que ayuda a las empresas a encontrar el mejor talento.",
+      services: "Servicios",
+      permanentTalent: "Talento Permanente",
+      freelanceTalent: "Talento Freelance",
+      maServices: "Servicios M&A",
+      company: "Empresa",
+      about: "Sobre Nosotros",
+      blog: "Blog",
+      careers: "Carreras",
+      contact: "Contáctanos",
+      legal: "Legal",
       privacyPolicy: "Política de Privacidad",
       termsOfService: "Términos de Servicio",
+      rightsReserved: "© 2024 Botic Partners. Todos los derechos reservados.",
     },
     home: {
       hero: {
-        title: "El Futuro de la Adquisición de Talento está Aquí",
-        subtitle:
-          "Aprovechamos la IA y una profunda experiencia en la industria para conectarte con talento excepcional en Software, Hardware, Construcción y Logística.",
-        cta: "Encontrar Talento",
-        secondaryCta: "Explorar Carreras",
+        title: "Adquisición de Talento con IA",
+        subtitle: "Encontramos el mejor talento para tu empresa, impulsado por IA.",
+        lastMatch: "Último Match",
+        jobTitle: "Ingeniero Backend Senior",
+        jobDescription: "Una empresa fintech líder busca un Ingeniero Backend Senior para unirse a su equipo.",
+        generalScore: "Puntaje General",
+        technicalSkills: "Habilidades Técnicas",
+        teamFit: "Ajuste de Equipo",
+        ctaPrimary: "Comenzar",
+        ctaSecondary: "Ver Demo",
       },
       trustedBy: {
         title: "Con la Confianza de Líderes de la Industria",
@@ -1128,6 +1092,28 @@ export const translations = {
             "Presentamos una lista de finalistas validados y guiamos tu decisión con datos. Contratación en 15 días (80% más rápido que el estándar).",
         },
       ],
+    },
+    recruitmentTimeline: {
+      title: "Nuestro Proceso de Reclutamiento",
+      step1: {
+        title: "Briefing y Estrategia con el Cliente",
+        description: "Comenzamos por comprender sus necesidades, cultura y los requisitos específicos para el puesto.",
+      },
+      step2: {
+        title: "Búsqueda de Mercado y Selección",
+        description:
+          "Utilizando nuestra plataforma impulsada por IA, exploramos el mercado para identificar y evaluar a los mejores candidatos.",
+      },
+      step3: {
+        title: "Entrevista y Decisión",
+        description:
+          "Gestionamos el proceso de entrevistas, proporcionándole una lista seleccionada de talentos de primer nivel.",
+      },
+      step4: {
+        title: "Oferta e Incorporación",
+        description:
+          "Ayudamos con la negociación de la oferta y aseguramos un proceso de incorporación fluido para el nuevo empleado.",
+      },
     },
     hero: {
       title: "El Futuro de la Adquisición de Talento está Aquí",
@@ -1374,88 +1360,16 @@ export const translations = {
     },
     careers: {
       title: "Únete a Nuestro Equipo",
-      subtitle: "Explora emocionantes oportunidades de carrera en Botic.",
-      filterByIndustry: "Filtrar por Industria",
-      allIndustries: "Todas las Industrias",
-      sector: "Sector",
-      learnMore: "Saber Más y Aplicar",
-      jobDetails: "Detalles del Puesto",
-      jobDetailsDescription: "Revisa los detalles de esta posición antes de aplicar.",
-      apply: "Aplicar Ahora",
-      applyModalDescription: "¿Cómo te gustaría aplicar para el puesto de {{jobTitle}}?",
-      useDefaultEmail: "Usar Email por Defecto",
-      useGmail: "Usar Gmail",
-      backToCareers: "Volver a todas las vacantes",
+      subtitle:
+        "Siempre estamos buscando personas con talento para unirse a nuestro equipo. Explora nuestras posiciones abiertas a continuación.",
+      openPositions: "Posiciones Abiertas",
+      searchPlaceholder: "Buscar un trabajo...",
+      noResults: "No se encontraron trabajos.",
+      applyNow: "Aplica ya",
       jobDescription: "Descripción del Puesto",
-      readyToApply: "¿Listo para aplicar?",
-      jobNotFound: {
-        title: "Puesto no Encontrado",
-        description:
-          "Lo sentimos, no pudimos encontrar el puesto que estás buscando. Puede que ya haya sido cubierto o eliminado.",
-        backButton: "Volver a Carreras",
-      },
-      jobs: {
-        seniorFullStack: {
-          title: "Ingeniero Full-Stack Senior",
-          description:
-            "Buscamos un Ingeniero Full-Stack Senior para unirse a nuestro equipo. Serás responsable de diseñar, desarrollar y mantener nuestras aplicaciones web. Trabajarás con un equipo de ingenieros talentosos para construir productos de alta calidad.",
-        },
-        aiResearchScientist: {
-          title: "Científico de Investigación en IA",
-          description:
-            "Buscamos un Científico de Investigación en IA para unirse a nuestro equipo. Serás responsable de realizar investigación y desarrollo en el campo de la inteligencia artificial. Trabajarás con un equipo de ingenieros talentosos para construir productos de alta calidad.",
-        },
-        dataScientist: {
-          title: "Científico de Datos",
-          description:
-            "Buscamos un Científico de Datos para unirse a nuestro equipo. Serás responsable de analizar conjuntos de datos grandes y complejos para extraer información valiosa. Trabajarás con un equipo de ingenieros talentosos para construir productos de alta calidad.",
-        },
-        semiconductorProcessEngineer: {
-          title: "Ingeniero de Procesos de Semiconductores",
-          description:
-            "Buscamos un Ingeniero de Procesos de Semiconductores para unirse a nuestro equipo. Serás responsable de desarrollar y optimizar los procesos de fabricación de semiconductores. Trabajarás con un equipo de ingenieros talentosos para construir productos de alta calidad.",
-        },
-        asicDesignEngineer: {
-          title: "Ingeniero de Diseño ASIC",
-          description:
-            "Buscamos un Ingeniero de Diseño ASIC para unirse a nuestro equipo. Serás responsable de diseñar y verificar circuitos integrados de aplicación específica (ASICs). Trabajarás con un equipo de ingenieros talentosos para construir productos de alta calidad.",
-        },
-        embeddedSystemsEngineer: {
-          title: "Ingeniero de Sistemas Embebidos",
-          description:
-            "Buscamos un Ingeniero de Sistemas Embebidos para unirse a nuestro equipo. Serás responsable de diseñar y desarrollar software embebido para nuestros productos de hardware. Trabajarás con un equipo de ingenieros talentosos para construir productos de alta calidad.",
-        },
-        constructionProjectManager: {
-          title: "Gerente de Proyectos de Construcción",
-          description:
-            "Buscamos un Gerente de Proyectos de Construcción para unirse a nuestro equipo. Serás responsable de planificar, coordinar y supervisar proyectos de construcción de principio a fin. Trabajarás con un equipo de ingenieros talentosos para construir productos de alta calidad.",
-        },
-        bimSpecialist: {
-          title: "Especialista en BIM",
-          description:
-            "Buscamos un Especialista en BIM para unirse a nuestro equipo. Serás responsable de crear y gestionar Modelos de Información de Construcción (BIM) para nuestros proyectos de construcción. Trabajarás con un equipo de ingenieros talentosos para construir productos de alta calidad.",
-        },
-        smartBuildingEngineer: {
-          title: "Ingeniero de Edificios Inteligentes",
-          description:
-            "Buscamos un Ingeniero de Edificios Inteligentes para unirse a nuestro equipo. Serás responsable de diseñar e implementar soluciones de edificios inteligentes para nuestros clientes. Trabajarás con un equipo de ingenieros talentosos para construir productos de alta calidad.",
-        },
-        supplyChainAnalyst: {
-          title: "Analista de Cadena de Suministro",
-          description:
-            "Buscamos un Analista de Cadena de Suministro para unirse a nuestro equipo. Serás responsable de analizar y optimizar nuestras operaciones de la cadena de suministro. Trabajarás con un equipo de ingenieros talentosos para construir productos de alta calidad.",
-        },
-        logisticsOperationsManager: {
-          title: "Gerente de Operaciones Logísticas",
-          description:
-            "Buscamos un Gerente de Operaciones Logísticas para unirse a nuestro equipo. Serás responsable de gestionar nuestras operaciones de logística y transporte. Trabajarás con un equipo de ingenieros talentosos para construir productos de alta calidad.",
-        },
-        warehouseAutomationSpecialist: {
-          title: "Especialista en Automatización de Almacenes",
-          description:
-            "Buscamos un Especialista en Automatización de Almacenes para unirse a nuestro equipo. Serás responsable de diseñar e implementar sistemas automatizados para nuestros almacenes. Trabajarás con un equipo de ingenieros talentosos para construir productos de alta calidad.",
-        },
-      },
+      responsibilities: "Responsabilidades",
+      qualifications: "Cualificaciones",
+      niceToHave: "Es bueno tener",
     },
     blog: {
       title: "Ideas y Perspectivas",
