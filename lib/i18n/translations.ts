@@ -29,6 +29,7 @@ export const translations = {
       contact: "Contact",
     },
     footer: {
+      title: "Botic Partners",
       description: "Botic is an AI-powered talent acquisition firm that helps companies find the best talent.",
       services: "Services",
       permanentTalent: "Permanent Talent",
@@ -43,6 +44,10 @@ export const translations = {
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
       rightsReserved: "© 2024 Botic Partners. All rights reserved.",
+      quickLinks: "Quick Links",
+      contactEmail: "admin@boticpartners.com",
+      followUs: "Follow Us",
+      rights: "All rights reserved.",
     },
     home: {
       hero: {
@@ -803,84 +808,86 @@ export const translations = {
     maServices: {
       title: "Strategic M&A Services",
       subtitle: "Connecting businesses for strategic acquisitions, partnerships, and growth opportunities",
-      confidentialRepresentation: "Confidential representation",
-      strategicTargetIdentification: "Strategic target identification",
-      exploreOpportunities: "Explore M&A Opportunities",
-      ourServices: "Our M&A Services",
-      ourServicesDescription: "Comprehensive support for strategic business connections and opportunities for growth",
-      targetId: "Target Identification",
+      confidentialRepresentation: "Representación confidencial",
+      strategicTargetIdentification: "Identificación estratégica de objetivos",
+      exploreOpportunities: "Explorar Oportunidades de M&A",
+      ourServices: "Nuestros Servicios de M&A",
+      ourServicesDescription:
+        "Soporte integral para conexiones comerciales estratégicas y oportunidades de crecimiento",
+      targetId: "Identificación de Objetivos",
       targetIdDesc:
-        "We leverage our extensive network and AI-powered search capabilities to identify ideal acquisition targets or strategic partners that align with your business objectives.",
-      partnership: "Strategic Partnership Facilitation",
+        "Aprovechamos nuestra extensa red y capacidades de búsqueda impulsadas por IA para identificar objetivos de adquisición ideales o socios estratégicos que se alineen con sus objetivos comerciales.",
+      partnership: "Facilitación de Alianzas Estratégicas",
       partnershipDesc:
-        "We connect businesses for mutually beneficial partnerships, joint ventures, and collaborative opportunities that drive growth and innovation.",
-      opportunityAssessment: "Acquisition Opportunity Assessment",
+        "Conectamos empresas para asociaciones mutuamente beneficiosas, empresas conjuntas y oportunidades de colaboración que impulsan el crecimiento y la innovación.",
+      opportunityAssessment: "Evaluación de Oportunidades de Adquisición",
       opportunityAssessmentDesc:
-        "Our team conducts thorough evaluations of potential acquisition targets, assessing technical capabilities, team quality, and strategic fit.",
-      confidentialRep: "Confidential Representation",
+        "Nuestro equipo realiza evaluaciones exhaustivas de posibles objetivos de adquisición, evaluando las capacidades técnicas, la calidad del equipo y el ajuste estratégico.",
+      confidentialRep: "Representación Confidencial",
       confidentialRepDesc:
-        "We act as your confidential representative in the market, protecting your identity while exploring strategic opportunities.",
-      ourProcess: "Our M&A Process",
-      ourProcessDescription: "A structured approach to identifying and facilitating strategic business connections",
-      consultation: "Strategic Consultation",
+        "Actuamos como su representante confidencial en el mercado, protegiendo su identidad mientras exploramos oportunidades estratégicas.",
+      ourProcess: "Nuestro Proceso de M&A",
+      ourProcessDescription: "Un enfoque estructurado para identificar y facilitar conexiones comerciales estratégicas",
+      consultation: "Consulta Estratégica",
       consultationDesc:
-        "We begin with a thorough understanding of your business objectives, growth strategy, and specific criteria for potential targets or partners.",
-      research: "Market Research & Target Identification",
+        "Comenzamos con una comprensión profunda de sus objetivos comerciales, estrategia de crecimiento y criterios específicos para posibles objetivos o socios.",
+      research: "Investigación de Mercado e Identificación de Objetivos",
       researchDesc:
-        "Our team conducts comprehensive market research to identify potential acquisition targets or strategic partners that align with your criteria.",
-      outreach: "Confidential Outreach",
+        "Nuestro equipo realiza una investigación de mercado exhaustiva para identificar posibles objetivos de adquisición o socios estratégicos que se alineen con sus criterios.",
+      outreach: "Contacto Confidencial",
       outreachDesc:
-        "We make discreet, professional approaches to identified targets, maintaining your confidentiality while gauging interest and potential fit.",
-      introductions: "Facilitated Introductions",
+        "Realizamos acercamientos discretos y profesionales a los objetivos identificados, manteniendo su confidencialidad mientras evaluamos el interés y el posible ajuste.",
+      introductions: "Introducciones Facilitadas",
       introductionsDesc:
-        "For interested parties, we arrange and facilitate initial discussions, helping both sides explore potential synergies and opportunities.",
-      advisory: "Strategic Advisory",
+        "Para las partes interesadas, organizamos y facilitamos las discusiones iniciales, ayudando a ambas partes a explorar posibles sinergias y oportunidades.",
+      advisory: "Asesoramiento Estratégico",
       advisoryDesc:
-        "Throughout the process, we provide strategic guidance and support to help you evaluate opportunities and make informed decisions.",
-      successStories: "Success Stories",
-      successStoriesDescription: "Real results from our strategic M&A and partnership solutions.",
+        "A lo largo del proceso, brindamos orientación y apoyo estratégico para ayudarlo a evaluar oportunidades y tomar decisiones informadas.",
+      successStories: "Casos de Éxito",
+      successStoriesDescription: "Resultados reales de nuestras soluciones estratégicas de M&A y asociaciones.",
     },
     solution: {
-      title: "A Tailored Solution for Every Need",
-      subtitle: "Our proprietary AI, combined with human oversight, offers unparalleled precision in talent matching.",
+      title: "Una Solución a Medida para Cada Necesidad",
+      subtitle:
+        "Nuestra IA propietaria, combinada con la supervisión humana, ofrece una precisión inigualable en la búsqueda de talento.",
       tabs: {
-        companies: "For Companies",
-        candidates: "For Candidates",
+        companies: "Para Empresas",
+        candidates: "Para Candidatos",
       },
       companies: {
         step1: {
-          title: "Define Your Needs",
-          description: "Submit your job requirements and company culture profile.",
+          title: "Define tus Necesidades",
+          description: "Envía tus requerimientos de trabajo y el perfil cultural de tu empresa.",
         },
         step2: {
-          title: "AI-Powered Sourcing",
-          description: "Our system scans millions of data points to find ideal candidates.",
+          title: "Búsqueda con IA",
+          description: "Nuestro sistema escanea millones de puntos de datos para encontrar candidatos ideales.",
         },
         step3: {
-          title: "Expert Vetting",
-          description: "Our specialists conduct in-depth interviews and assessments.",
+          title: "Evaluación Experta",
+          description: "Nuestros especialistas realizan entrevistas y evaluaciones exhaustivas.",
         },
         step4: {
-          title: "Receive Your Shortlist",
-          description: "Get a curated list of top-tier, ready-to-interview candidates.",
+          title: "Recibe tu Selección",
+          description: "Obtén una lista curada de candidatos de primer nivel, listos para entrevistar.",
         },
       },
       candidates: {
         step1: {
-          title: "Create Your Profile",
-          description: "Showcase your skills, experience, and career aspirations.",
+          title: "Crea tu Perfil",
+          description: "Muestra tus habilidades, experiencia y aspiraciones profesionales.",
         },
         step2: {
-          title: "AI Matching",
-          description: "Our AI connects you with opportunities that align with your profile.",
+          title: "Matching con IA",
+          description: "Nuestra IA te conecta con oportunidades que se alinean con tu perfil.",
         },
         step3: {
-          title: "Personalized Coaching",
-          description: "Receive guidance from our experts to ace your interviews.",
+          title: "Coaching Personalizado",
+          description: "Recibe orientación de nuestros expertos para triunfar en tus entrevistas.",
         },
         step4: {
-          title: "Land Your Dream Job",
-          description: "Join innovative companies that value your unique talents.",
+          title: "Consigue tu Trabajo Soñado",
+          description: "Únete a empresas innovadoras que valoran tus talentos únicos.",
         },
       },
     },
@@ -933,6 +940,7 @@ export const translations = {
       contact: "Contacto",
     },
     footer: {
+      title: "Botic Partners",
       description:
         "Botic es una firma de adquisición de talento impulsada por IA que ayuda a las empresas a encontrar el mejor talento.",
       services: "Servicios",
@@ -948,6 +956,10 @@ export const translations = {
       privacyPolicy: "Política de Privacidad",
       termsOfService: "Términos de Servicio",
       rightsReserved: "© 2024 Botic Partners. Todos los derechos reservados.",
+      quickLinks: "Enlaces Rápidos",
+      contactEmail: "admin@boticpartners.com",
+      followUs: "Síguenos",
+      rights: "Todos los derechos reservados.",
     },
     home: {
       hero: {
