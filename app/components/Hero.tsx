@@ -16,7 +16,7 @@ export default function Hero() {
       {" "}
       {/* Added a fallback background color matching the screenshot */}
       <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover -z-10">
-        <source src="/hero-background.mp4" type="video/mp4" />
+        <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_kmKpEerLR5UVGAGv3RIbXm25jWx5/HhEg2NI_bQpl4Nhs-vtWCB/public/hero-background.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
