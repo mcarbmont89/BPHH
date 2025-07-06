@@ -72,8 +72,8 @@ export function Header() {
 
   const renderNavItem = (item: any, isMobile = false) => {
     const className = isMobile
-      ? "text-sm font-medium text-gray-600 hover:text-primary transition-colors"
-      : `text-sm font-medium ${path === "/" && !isScrolled ? "text-gray-100 hover:text-white" : "text-gray-600 hover:text-primary"} ${isScrolled ? "text-gray-600 hover:text-primary" : ""} transition-colors`
+      ? "text-sm font-medium text-shadow text-gray-600 hover:text-primary transition-colors"
+      : `text-sm font-medium text-shadow ${path === "/" && !isScrolled ? "text-gray-100 hover:text-white" : "text-gray-100 hover:text-primary"} ${isScrolled ? "text-gray-600 hover:text-primary" : ""} transition-colors`
 
     if (item.isLink) {
       return (
@@ -120,9 +120,10 @@ export function Header() {
             </span>
           </button>
           <Button
-            variant={`${isScrolled || path !== "/" ? "default" : "secondary"}`}
+            // variant={`${isScrolled && path !== "/" ? "default" : "secondary"}`}
+            variant="default"
             size="sm"
-            className="hidden md:inline-flex"
+            className="hidden md:inline-flex text-white"
             onClick={handleContact}
           >
             {t("nav.contact")}
