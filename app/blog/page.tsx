@@ -10,114 +10,34 @@ import { Search, Calendar, ArrowRight } from "lucide-react"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { fetchPosts } from "@/app/api/posts"
 
-// Update the blog page to use the translated content based on the selected language
-
-// First, update the BlogPost interface to include translations
-interface BlogPost {
-  id: string
-  titleKey: string
-  excerptKey: string
-  date: string
-  category: string
-  imageUrl: string
+interface Post {
+    id: string
+    title: string
+    excerpt: string
+    createdAt: string
+    content: string
+    image: string
 }
-
-const blogPosts: BlogPost[] = [
-  {
-    id: "recruitment-process",
-    titleKey: "blog.posts.recruitmentProcess.title",
-    excerptKey: "blog.posts.recruitmentProcess.excerpt",
-    date: "2025-01-15",
-    category: "Recruitment",
-    imageUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%207%20abr%202025%2C%2014_56_15-9G8Pl56e7GyYUUquCqdMyWiTfMpQxG.png",
-  },
-  {
-    id: "connecting-companies",
-    titleKey: "blog.posts.connectingCompanies.title",
-    excerptKey: "blog.posts.connectingCompanies.excerpt",
-    date: "2025-01-15",
-    category: "Business Growth",
-    imageUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%207%20abr%202025%2C%2012_27_18-ANHdHODVQFX0EsM4a7FyXlKx8cRoDb.png",
-  },
-  {
-    id: "ai-agents-implementation",
-    titleKey: "blog.posts.aiAgentsImplementation.title",
-    excerptKey: "blog.posts.aiAgentsImplementation.excerpt",
-    date: "2025-03-15",
-    category: "AI Technology",
-    imageUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%207%20abr%202025%2C%2015_32_15-39a4zY9RPLXSTRXLrM6PtC743trwfW.png",
-  },
-]
-
-// Add more blog posts for a more complete look
-const additionalPosts: BlogPost[] = [
-  {
-    id: "ai-recruitment-trends",
-    titleKey: "blog.posts.aiRecruitmentTrends.title",
-    excerptKey: "blog.posts.aiRecruitmentTrends.excerpt",
-    date: "2025-02-10",
-    category: "Industry Trends",
-    imageUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%207%20abr%202025%2C%2015_52_25-l7QNyXnPwAO5G9cRMRtnpM8g5Z5ZtY.png",
-  },
-  {
-    id: "talent-retention-strategies",
-    titleKey: "blog.posts.talentRetentionStrategies.title",
-    excerptKey: "blog.posts.talentRetentionStrategies.excerpt",
-    date: "2025-02-22",
-    category: "Talent Management",
-    imageUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%207%20abr%202025%2C%2012_51_58-bstYWBgRPMl0ZqJWW149VZ71DkaVXi.png",
-  },
-  {
-    id: "future-of-work",
-    titleKey: "blog.posts.futureOfWork.title",
-    excerptKey: "blog.posts.futureOfWork.excerpt",
-    date: "2025-03-05",
-    category: "Future Insights",
-    imageUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%207%20abr%202025%2C%2015_52_08-Sq8nfJEM4qzpzIn4rkQ58amsR7bPzz.png",
-  },
-]
-
-const allPosts = [...blogPosts, ...additionalPosts]
-
-// Categories for filter
-const categories = [
-  "All",
-  "Recruitment",
-  "Business Growth",
-  "AI Technology",
-  "Industry Trends",
-  "Talent Management",
-  "Future Insights",
-]
 
 export default function Blog() {
   const { t, language } = useLanguage()
   const [searchQuery, setSearchQuery] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("All")
   const [mounted, setMounted] = useState(false)
+  const [posts, setPosts] = useState<Post[]>([])
 
   // Use useEffect to ensure component is mounted before rendering
   useEffect(() => {
+    fetchPosts().then((data) => setPosts(data.docs).then(() => console.log(data.docs)))
     setMounted(true)
   }, [])
 
-  // Update the filteredPosts mapping to use the correct translations
-  const filteredPosts = allPosts.filter((post) => {
-    const matchesSearch =
-      searchQuery === "" ||
-      t(post.titleKey).toLowerCase().includes(searchQuery.toLowerCase()) ||
-      t(post.excerptKey).toLowerCase().includes(searchQuery.toLowerCase())
-
-    const matchesCategory = selectedCategory === "All" || post.category === selectedCategory
-
-    return matchesSearch && matchesCategory
+  // Filter posts by search query
+  const filteredPosts = posts?.filter((post: Post) => {
+    return searchQuery === "" ||
+      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
   })
 
   // Don't render anything until component is mounted to avoid hydration issues
@@ -134,7 +54,7 @@ export default function Blog() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground"
+              className="text-4xl py-4 mt-8 md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -142,13 +62,13 @@ export default function Blog() {
               {t("blog.title")}
             </motion.h1>
             <motion.div
-              className="w-24 h-1 bg-primary mx-auto mb-6"
+              className="w-24 h-1 bg-primary/50 mx-auto mb-6"
               initial={{ width: 0 }}
               animate={{ width: 96 }}
               transition={{ duration: 0.7, delay: 0.3 }}
             />
             <motion.p
-              className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto"
+              className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -190,11 +110,11 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Search and filter section */}
+      {/* Search section */}
       <section className="py-8 bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="relative w-full md:w-1/3">
+          <div className="max-w-2xl mx-auto">
+            <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
               <input
                 type="text"
@@ -204,79 +124,13 @@ export default function Blog() {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
-
-            <div className="flex flex-wrap gap-2 w-full md:w-auto">
-              <Button
-                key="All"
-                variant={selectedCategory === "All" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory("All")}
-                className="text-sm"
-              >
-                {t("blog.categories.all")}
-              </Button>
-              <Button
-                key="Recruitment"
-                variant={selectedCategory === "Recruitment" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory("Recruitment")}
-                className="text-sm"
-              >
-                {t("blog.categories.recruitment")}
-              </Button>
-              <Button
-                key="Business Growth"
-                variant={selectedCategory === "Business Growth" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory("Business Growth")}
-                className="text-sm"
-              >
-                {t("blog.categories.businessGrowth")}
-              </Button>
-              <Button
-                key="AI Technology"
-                variant={selectedCategory === "AI Technology" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory("AI Technology")}
-                className="text-sm"
-              >
-                {t("blog.categories.aiTechnology")}
-              </Button>
-              <Button
-                key="Industry Trends"
-                variant={selectedCategory === "Industry Trends" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory("Industry Trends")}
-                className="text-sm"
-              >
-                {t("blog.categories.industryTrends")}
-              </Button>
-              <Button
-                key="Talent Management"
-                variant={selectedCategory === "Talent Management" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory("Talent Management")}
-                className="text-sm"
-              >
-                {t("blog.categories.talentManagement")}
-              </Button>
-              <Button
-                key="Future Insights"
-                variant={selectedCategory === "Future Insights" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory("Future Insights")}
-                className="text-sm"
-              >
-                {t("blog.categories.futureInsights")}
-              </Button>
-            </div>
           </div>
         </div>
       </section>
 
       <main className="flex-grow py-12 bg-gray-50">
         <div className="container mx-auto px-4">
-          {filteredPosts.length > 0 ? (
+          {filteredPosts?.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post, index) => (
                 <motion.div
@@ -289,24 +143,21 @@ export default function Blog() {
                     <Card className="h-full overflow-hidden hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-primary/30 group">
                       <div className="relative h-48 overflow-hidden">
                         <Image
-                          src={post.imageUrl || "/placeholder.svg"}
-                          alt={t(post.titleKey)}
+                          src={post.image || "/placeholder.svg"}
+                          alt={post.title}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute top-4 left-4 bg-primary/90 text-white text-xs font-medium px-2 py-1 rounded">
-                          {post.category}
-                        </div>
                       </div>
                       <CardContent className="p-6">
                         <div className="flex items-center text-sm text-gray-500 mb-3">
                           <Calendar className="h-4 w-4 mr-1" />
-                          <span>{new Date(post.date).toLocaleDateString(language === "es" ? "es-ES" : "en-US")}</span>
+                          <span>{new Date(post.createdAt).toLocaleDateString(language === "es" ? "es-ES" : "en-US")}</span>
                         </div>
                         <h2 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                          {t(post.titleKey)}
+                          {post.title}
                         </h2>
-                        <p className="text-gray-600 mb-4 line-clamp-3">{t(post.excerptKey)}</p>
+                        <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
                         <div className="flex items-center text-primary font-medium">
                           <span>{t("blog.readMore")}</span>
                           <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -326,7 +177,6 @@ export default function Blog() {
                 <Button
                   onClick={() => {
                     setSearchQuery("")
-                    setSelectedCategory("All")
                   }}
                 >
                   {t("blog.clearFilters")}
