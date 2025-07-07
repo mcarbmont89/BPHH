@@ -48,7 +48,6 @@ export const translations = {
       privacy: "Privacy Policy",
       terms: "Terms of Service",
       contact: "Contact Us",
-      rights: "All rights reserved.",
     },
     home: {
       hero: {
@@ -481,16 +480,92 @@ export const translations = {
       testimonialAuthor: "CEO - Satisfied Client",
     },
     careers: {
-      title: "Join Our Team",
-      subtitle: "We're always looking for talented individuals to join our team. Explore our open positions below.",
-      openPositions: "Open Positions",
-      searchPlaceholder: "Search for a job...",
-      noResults: "No jobs found.",
-      applyNow: "Apply Now",
+      title: "Explore Opportunities at Botic",
+      subtitle: "Find your next role in a company that's shaping the future of AI-powered talent acquisition.",
+      filterByIndustry: "Filter by Industry",
+      allIndustries: "All Industries",
+      sector: "Sector",
+      learnMore: "Learn More",
+      backToCareers: "Back to all careers",
       jobDescription: "Job Description",
-      responsibilities: "Responsibilities",
-      qualifications: "Qualifications",
-      niceToHave: "Nice to Have",
+      readyToApply: "Ready to Apply?",
+      useDefaultEmail: "Use Default Email App",
+      useGmail: "Apply with Gmail",
+      jobNotFound: {
+        title: "Job Not Found",
+        description: "The position you are looking for does not exist or has been filled.",
+        backButton: "Back to Careers",
+      },
+      jobs: {
+        seniorFullStack: {
+          title: "Senior Full Stack Developer",
+          description:
+            "Develop and maintain web applications, ensuring high performance and responsiveness across various platforms.",
+        },
+        aiResearchScientist: {
+          title: "AI Research Scientist",
+          description:
+            "Conduct cutting-edge research in artificial intelligence and machine learning, contributing to innovative solutions.",
+        },
+        dataScientist: {
+          title: "Data Scientist",
+          description:
+            "Analyze complex datasets to extract actionable insights and build predictive models for business optimization.",
+        },
+        devOpsEngineer: {
+          title: "DevOps Engineer",
+          description:
+            "Implement and manage continuous integration and deployment pipelines, ensuring smooth software delivery.",
+        },
+        productManager: {
+          title: "Product Manager",
+          description: "Define product vision, strategy, and roadmap, guiding development from conception to launch.",
+        },
+        uxDesigner: {
+          title: "UX Designer",
+          description: "Design intuitive and engaging user experiences, conducting research and usability testing.",
+        },
+        semiconductorProcessEngineer: {
+          title: "Semiconductor Process Engineer",
+          description: "Design and optimize semiconductor manufacturing processes to improve yield and performance.",
+        },
+        asicDesignEngineer: {
+          title: "ASIC Design Engineer",
+          description:
+            "Join our hardware team to design and verify high-performance Application-Specific Integrated Circuits (ASICs).",
+        },
+        embeddedSystemsEngineer: {
+          title: "Embedded Systems Engineer",
+          description: "Develop firmware and software for our next-generation embedded hardware devices.",
+        },
+        constructionProjectManager: {
+          title: "Construction Project Manager",
+          description:
+            "Oversee and manage large-scale construction projects, ensuring they are completed on time and within budget.",
+        },
+        bimSpecialist: {
+          title: "BIM Specialist",
+          description:
+            "Utilize Building Information Modeling (BIM) to create and manage digital models for construction projects.",
+        },
+        smartBuildingEngineer: {
+          title: "Smart Building Engineer",
+          description: "Design and implement IoT and automation solutions for modern, intelligent buildings.",
+        },
+        supplyChainAnalyst: {
+          title: "Supply Chain Analyst",
+          description: "Analyze and optimize supply chain operations to increase efficiency and reduce costs.",
+        },
+        logisticsOperationsManager: {
+          title: "Logistics Operations Manager",
+          description:
+            "Manage and coordinate the daily operations of our logistics network, including transportation and warehousing.",
+        },
+        warehouseAutomationSpecialist: {
+          title: "Warehouse Automation Specialist",
+          description: "Implement and maintain robotic and automation systems within our warehouse facilities.",
+        },
+      },
     },
     blog: {
       title: "Insights & Perspectives",
@@ -978,7 +1053,6 @@ export const translations = {
       privacy: "Política de Privacidad",
       terms: "Términos de Servicio",
       contact: "Contáctanos",
-      rights: "Todos los derechos reservados.",
     },
     home: {
       hero: {
@@ -1285,7 +1359,7 @@ export const translations = {
         methods: [
           "Sin plataformas, sin automatización – Aprovechamos nuestra red directa validada.",
           "Rápido y flexible – Adaptamos nuestro enfoque a cada caso, asegurando presentaciones de alto valor.",
-          "Enfoque basado en la confianza – Cada conexión es relevante y tiene un potencial real.",
+          "Confianza – Cada conexión es relevante y tiene un potencial real.",
         ],
         cta: "¿Buscas la conexión adecuada para hacer crecer tu negocio? Hablemos.",
         letsTalk: "Hablemos",
@@ -1302,7 +1376,7 @@ export const translations = {
         point2: "Encontramos tu pareja ideal, combinando IA de vanguardia con experiencia humana.",
         point3: "Construimos relaciones duraderas que impulsan el éxito de tu negocio.",
         description:
-          "Más que solo reclutamiento, construimos una red valiosa para tu futuro, asegurando el éxito y crecimiento a largo plazo tanto para empresas como para talentos.",
+          "Más que solo reclutamiento, construimos una red valiosa para tu futuro, asegurando long-term success and growth for both companies and talent.",
       },
       vision: {
         title: "Nuestra Visión",
@@ -1317,7 +1391,7 @@ export const translations = {
         innovation: {
           title: "Innovación",
           description:
-            "Aprovechamos la última tecnología para encontrar tu talento perfecto, de forma rápida y precisa.",
+            "Aprovechamos la última tecnología para encontrar tu talento perfecto, rápidamente y con precisión.",
         },
         efficiency: {
           title: "Eficiencia",
@@ -1404,51 +1478,134 @@ export const translations = {
       testimonialAuthor: "CEO - Cliente Satisfecho",
     },
     careers: {
-      title: "Únete a Nuestro Equipo",
+      title: "Explora Oportunidades en Botic",
       subtitle:
-        "Siempre estamos buscando personas con talento para unirse a nuestro equipo. Explora nuestras posiciones abiertas a continuación.",
-      openPositions: "Posiciones Abiertas",
-      searchPlaceholder: "Buscar un trabajo...",
-      noResults: "No se encontraron trabajos.",
-      applyNow: "Aplica ya",
+        "Encuentra tu próximo rol en una empresa que está dando forma al futuro de la adquisición de talento impulsada por IA.",
+      filterByIndustry: "Filtrar por Industria",
+      allIndustries: "Todas las Industrias",
+      sector: "Sector",
+      learnMore: "Saber Más",
+      backToCareers: "Volver a todas las carreras",
       jobDescription: "Descripción del Puesto",
-      responsibilities: "Responsabilidades",
-      qualifications: "Cualificaciones",
-      niceToHave: "Es bueno tener",
+      readyToApply: "¿Listo para Aplicar?",
+      useDefaultEmail: "Usar la Aplicación de Correo Predeterminada",
+      useGmail: "Aplicar con Gmail",
+      jobNotFound: {
+        title: "Puesto No Encontrado",
+        description: "El puesto que está buscando no existe o ha sido cubierto.",
+        backButton: "Volver a Carreras",
+      },
+      jobs: {
+        seniorFullStack: {
+          title: "Ingeniero Senior de Full-Stack",
+          description:
+            "Desarrollar y mantener nuestra plataforma central, trabajando en toda la pila para entregar características de alta calidad.",
+        },
+        aiResearchScientist: {
+          title: "Científico de Investigación de IA",
+          description:
+            "Realizar investigaciones de vanguardia en aprendizaje automático y procesamiento del lenguaje natural para mejorar nuestros modelos de IA.",
+        },
+        dataScientist: {
+          title: "Científico de Datos",
+          description:
+            "Analizar conjuntos de datos complejos para extraer información valiosa y ayudar a impulsar decisiones empresariales estratégicas.",
+        },
+        devOpsEngineer: {
+          title: "Ingeniero DevOps",
+          description:
+            "Implementar y gestionar pipelines de integración y despliegue continuos, asegurando una entrega de software fluida.",
+        },
+        productManager: {
+          title: "Gerente de Producto",
+          description:
+            "Definir la visión, estrategia y hoja de ruta del producto, guiando el desarrollo desde la concepción hasta el lanzamiento.",
+        },
+        uxDesigner: {
+          title: "Diseñador UX",
+          description:
+            "Diseñar experiencias de usuario intuitivas y atractivas, realizando investigación y pruebas de usabilidad.",
+        },
+        semiconductorProcessEngineer: {
+          title: "Ingeniero de Procesos de Semiconductores",
+          description:
+            "Diseñar y optimizar procesos de fabricación de semiconductores para mejorar el rendimiento y la producción.",
+        },
+        asicDesignEngineer: {
+          title: "Ingeniero de Diseño ASIC",
+          description:
+            "Únete a nuestro equipo de hardware para diseñar y verificar Circuitos Integrados de Aplicación Específica (ASIC) de alto rendimiento.",
+        },
+        embeddedSystemsEngineer: {
+          title: "Ingeniero de Sistemas Embebidos",
+          description:
+            "Desarrollar firmware y software para nuestros dispositivos de hardware embebido de próxima generación.",
+        },
+        constructionProjectManager: {
+          title: "Gerente de Proyecto de Construcción",
+          description:
+            "Supervisar y gestionar proyectos de construcción a gran escala, asegurando que se completen a tiempo y dentro del presupuesto.",
+        },
+        bimSpecialist: {
+          title: "Especialista en BIM",
+          description:
+            "Utilizar el Modelado de Información de Construcción (BIM) para crear y gestionar modelos digitales para proyectos de construcción.",
+        },
+        smartBuildingEngineer: {
+          title: "Ingeniero de Edificios Inteligentes",
+          description:
+            "Diseñar e implementar soluciones de IoT y automatización para edificios modernos e inteligentes.",
+        },
+        supplyChainAnalyst: {
+          title: "Analista de la Cadena de Suministro",
+          description:
+            "Analizar y optimizar las operaciones de la cadena de suministro para aumentar la eficiencia y reducir los costos.",
+        },
+        logisticsOperationsManager: {
+          title: "Gerente de Operaciones de Logística",
+          description:
+            "Gestionar y coordinar las operaciones diarias de nuestra red de logística, incluyendo el transporte y el almacenamiento.",
+        },
+        warehouseAutomationSpecialist: {
+          title: "Especialista en Automatización de Almacenes",
+          description:
+            "Implementar y mantener sistemas robóticos y de automatización dentro de nuestras instalaciones de almacén.",
+        },
+      },
     },
     blog: {
-      title: "Ideas y Perspectivas",
+      title: "Perspectivas y Análisis",
       subtitle:
-        "Análisis de expertos y liderazgo de opinión sobre reclutamiento impulsado por IA y crecimiento empresarial",
+        "Análisis experto y liderazgo de pensamiento sobre el reclutamiento impulsado por IA y el crecimiento empresarial",
       searchPlaceholder: "Buscar artículos...",
       readMore: "Leer Más",
       noResults: "No se encontraron artículos",
-      tryDifferentSearch: "Pruebe un término de búsqueda o categoría diferente",
-      clearFilters: "Limpiar Filtros",
+      tryDifferentSearch: "Pruebe con un término o categoría de búsqueda diferente",
+      clearFilters: "Borrar Filtros",
       categories: {
         all: "Todos",
         recruitment: "Reclutamiento",
         businessGrowth: "Crecimiento Empresarial",
         aiTechnology: "Tecnología de IA",
         industryTrends: "Tendencias de la Industria",
-        talentManagement: "Gestión de Talento",
+        talentManagement: "Gestión del Talento",
         futureInsights: "Perspectivas Futuras",
       },
       newsletter: {
         title: "Suscríbete a Nuestro Boletín",
         description:
-          "Manténgase actualizado con las últimas ideas y noticias sobre IA en reclutamiento y crecimiento empresarial",
+          "Manténgase actualizado con las últimas novedades y noticias sobre la IA en el reclutamiento y el crecimiento empresarial",
         placeholder: "Tu dirección de correo electrónico",
         subscribe: "Suscribirse",
       },
       postNotFound: "Artículo No Encontrado",
-      postNotFoundMessage: "El artículo que busca no existe o ha sido movido.",
+      postNotFoundMessage: "El artículo que está buscando no existe o ha sido movido.",
       backToBlog: "Volver al Blog",
       posts: {
         recruitmentProcess: {
           title: "Nuestro Proceso de Reclutamiento Impulsado por IA: Un Cambio de Juego en la Contratación Tecnológica",
           excerpt:
-            "Descubra cómo nuestro innovador proceso de reclutamiento impulsado por IA está revolucionando la forma en que las empresas encuentran y contratan al mejor talento tecnológico.",
+            "Descubra cómo nuestro innovador proceso de reclutamiento impulsado por IA está revolucionando la forma en que las empresas encuentran y contratan a los mejores talentos tecnológicos.",
         },
         connectingCompanies: {
           title: "Conectando Empresas, Impulsando el Crecimiento: El Enfoque de Botic Partners",
@@ -1456,19 +1613,19 @@ export const translations = {
             "Aprenda cómo conectamos a las empresas con el talento adecuado y las oportunidades estratégicas para impulsar el crecimiento sostenible y la innovación.",
         },
         aiAgentsImplementation: {
-          title: "Implementación de Agentes de IA: Transformando sus Procesos de Negocio",
+          title: "Implementando Agentes de IA: Transformando Sus Procesos Empresariales",
           excerpt:
             "Explore cómo los agentes de IA pueden optimizar sus operaciones, mejorar la toma de decisiones y crear ventajas competitivas.",
         },
         aiRecruitmentTrends: {
-          title: "Tendencias de Reclutamiento con IA para 2025: Lo que Sigue en la Adquisición de Talento",
+          title: "Tendencias de Reclutamiento de IA 2025: Lo Que Sigue en la Adquisición de Talento",
           excerpt:
             "Manténgase a la vanguardia con nuestro análisis de las tendencias emergentes en el reclutamiento impulsado por IA y las estrategias de adquisición de talento.",
         },
         talentRetentionStrategies: {
-          title: "Estrategias de Retención de Talento Mejoradas con IA que Realmente Funcionan",
+          title: "Estrategias de Retención de Talento Mejoradas con IA Que Realmente Funcionan",
           excerpt:
-            "Descubra estrategias probadas para retener al mejor talento utilizando conocimientos impulsados por IA y enfoques de compromiso personalizados.",
+            "Descubra estrategias probadas para retener a los mejores talentos utilizando información impulsada por IA y enfoques de compromiso personalizados.",
         },
         futureOfWork: {
           title:
@@ -1479,8 +1636,8 @@ export const translations = {
       },
     },
     dynamicMatchCard: {
-      latestMatch: "Última Posición Coincidente con IA",
-      overallMatchScore: "Puntuación General de Coincidencia",
+      latestMatch: "Última Posición Emparejada por IA",
+      overallMatchScore: "Puntaje General de Coincidencia",
       technicalSkills: "Habilidades Técnicas",
       teamFit: "Ajuste de Equipo",
       positions: {
@@ -1496,14 +1653,15 @@ export const translations = {
       skills: {
         vpMemsEngineer: "Diseño MEMS, Liderazgo de Equipo, Gestión de Proyectos, Industria de Semiconductores",
         processEngineer:
-          "Optimización de Procesos, Mejora de Rendimiento, Análisis Estadístico, Mantenimiento de Equipos",
-        asicEngineer: "Diseño ASIC, Verilog, FPGA, Procesamiento de Señales Digitales",
+          "Optimización de Procesos, Mejora del Rendimiento, Análisis Estadístico, Mantenimiento de Equipos",
+        asicEngineer: "Diseño ASIC, Verilog, FPGA, Procesamiento Digital de Señales",
         directorGeneral: "Planificación Estratégica, Desarrollo de Negocios, Liderazgo de Equipo, Gestión Financiera",
         directorComercial:
           "Estrategia de Ventas, Análisis de Mercado, Relaciones con Clientes, Crecimiento de Ingresos",
         fieldApplicationsEngineer:
-          "Soporte Técnico, Conocimiento del Producto, Relaciones con Clientes, Resolución de Problemas",
-        marketingDirector: "Gestión de Marca, Investigación de Mercado, Marketing Digital, Posicionamiento de Producto",
+          "Soporte Técnico, Conocimiento del Producto, Relaciones con el Cliente, Resolución de Problemas",
+        marketingDirector:
+          "Gestión de Marca, Investigación de Mercado, Marketing Digital, Posicionamiento del Producto",
         directorPrevencion:
           "Evaluación de Riesgos, Protocolos de Seguridad, Cumplimiento Normativo, Planificación de Emergencias",
       },
@@ -1511,57 +1669,54 @@ export const translations = {
     stats: {
       title: "Transformando el Reclutamiento con IA",
       description:
-        "Estamos revolucionando la forma en que las empresas encuentran y se conectan con el mejor talento a través de nuestro innovador enfoque impulsado por IA.",
+        "Estamos revolucionando la forma en que las empresas encuentran y se conectan con los mejores talentos a través de nuestro innovador enfoque impulsado por IA.",
     },
     emailOptions: {
-      title: "¿Cómo te gustaría proceder?",
-      description: "Elige tu cliente de correo preferido para abrir el borrador de la aplicación.",
+      title: "¿Cómo le gustaría proceder?",
+      description: "Elija su cliente de correo electrónico preferido para abrir el borrador de la solicitud.",
       useOutlook: "Usar Outlook",
       useGmail: "Aplicar con Gmail",
-      default: "Usar App de Correo por Defecto",
-    },
-    header: {
-      contactSubject: "Solicitud de Contacto",
+      default: "Usar la Aplicación de Correo Predeterminada",
     },
     contact: {
       title: "Construyamos el Futuro, Juntos.",
-      subtitle: "Ya sea que estés buscando talento o tu próxima gran oportunidad, estamos aquí para ayudar.",
+      subtitle: "Ya sea que esté buscando talento o su próxima gran oportunidad, estamos aquí para ayudarle.",
       name: "Nombre",
       email: "Correo Electrónico",
-      emailPlaceholder: "tu.email@empresa.com",
-      inquiry: "Consulta de Negocio",
-      inquiryPlaceholder: "Cuéntanos sobre tus necesidades de reclutamiento...",
+      emailPlaceholder: "tu.correo@empresa.com",
+      inquiry: "Consulta Comercial",
+      inquiryPlaceholder: "Cuéntenos sobre sus necesidades de reclutamiento...",
       aiInterest: "Interés en IA",
-      selectInterest: "Selecciona tu interés",
+      selectInterest: "Seleccione su interés",
       talentMatching: "Matching de Talento con IA",
-      recruitmentAutomation: "Automatización de Reclutamiento",
+      recruitmentAutomation: "Automatización del Reclutamiento",
       executiveSearch: "Búsqueda de Ejecutivos",
       strategicPartnerships: "Alianzas Estratégicas",
       other: "Otro",
       getInTouch: "Ponerse en Contacto",
-      whyPartnerWithUs: "Por Qué Asociarse con Nosotros",
+      whyPartnerWithUs: "Por Qué Asociarse Con Nosotros",
       aiTalentMatching: "Matching de talento con IA con un 93% de precisión",
-      reduceTimeToHire: "Reduce el tiempo de contratación hasta en un 60%",
+      reduceTimeToHire: "Reduzca el tiempo de contratación hasta en un 60%",
       accessToTalent: "Acceso a más de 10,000 profesionales pre-evaluados",
       retentionRate: "Tasa de retención del 82% después de más de 2 años",
-      aiPoweredRecruitment: "Reclutamiento Potenciado por IA",
+      aiPoweredRecruitment: "Reclutamiento Impulsado por IA",
       form: {
         name: {
           label: "Nombre",
-          placeholder: "Tu Nombre",
+          placeholder: "Su Nombre",
         },
         email: {
           label: "Correo Electrónico",
-          placeholder: "tu.email@ejemplo.com",
+          placeholder: "tu.correo@ejemplo.com",
         },
         iam: {
-          label: "Soy un...",
+          label: "Soy una...",
           company: "Empresa buscando talento",
-          candidate: "Candidato buscando trabajo",
+          candidate: "Candidato buscando un trabajo",
         },
         message: {
           label: "Mensaje",
-          placeholder: "¿Cómo podemos ayudarte?",
+          placeholder: "¿Cómo podemos ayudarle?",
         },
         submit: "Enviar Mensaje",
       },
@@ -1583,25 +1738,25 @@ export const translations = {
         "Construyendo equipos de alto rendimiento con líderes ejecutivos y técnicos que impulsan la innovación y el crecimiento",
       retentionRate: "Tasa de retención del 93% después de 2 años",
       timeToHire: "Tiempo promedio de contratación de 21 días",
-      discussNeeds: "Discuta sus Necesidades de Talento",
-      strategicRolesTitle: "Roles Estratégicos en los que Sobresalimos",
+      discussNeeds: "Discuta Sus Necesidades de Talento",
+      strategicRolesTitle: "Roles Estratégicos en los Que Destacamos",
       strategicRolesSubtitle:
-        "Nos especializamos en colocar talento permanente de alto impacto en posiciones clave que impulsan el éxito organizacional",
+        "Nos especializamos en la colocación de talento permanente de alto impacto en puestos clave que impulsan el éxito organizacional",
       executiveLeadership: "Liderazgo Ejecutivo",
       executiveLeadershipDescription:
-        "Roles de C-suite y liderazgo senior que establecen la dirección estratégica e impulsan la transformación organizacional",
+        "Roles de alta dirección y liderazgo sénior que establecen la dirección estratégica e impulsan la transformación organizacional",
       technicalLeadership: "Liderazgo Técnico",
       technicalLeadershipDescription:
         "Líderes de nivel medio que unen la estrategia y la ejecución, gestionando equipos y entregando resultados técnicos",
       specializedTechnicalTalent: "Talento Técnico Especializado",
       specializedTechnicalTalentDescription:
-        "Colaboradores individuales altamente cualificados con experiencia especializada en tecnologías emergentes",
+        "Contribuyentes individuales altamente cualificados con experiencia especializada en tecnologías emergentes",
       cto: "Director de Tecnología (CTO)",
       cpo: "Director de Producto (CPO)",
       vpEngineering: "VP de Ingeniería",
       directorTechnology: "Director de Tecnología",
       engineeringManager: "Gerente de Ingeniería",
-      technicalProjectManager: "Gerente de Proyectos Técnicos",
+      technicalProjectManager: "Gerente de Proyecto Técnico",
       productManager: "Gerente de Producto",
       technicalTeamLead: "Líder de Equipo Técnico",
       aiMlEngineers: "Ingenieros de IA/ML",
@@ -1610,27 +1765,27 @@ export const translations = {
       securitySpecialists: "Especialistas en Seguridad",
       methodologyTitle: "Nuestra Metodología de Talento Permanente",
       methodologySubtitle:
-        "Un enfoque único que combina la búsqueda impulsada por IA con la experiencia humana para ofrecer un talento excepcional",
+        "Un enfoque único que combina la búsqueda impulsada por IA con la experiencia humana para entregar un talento excepcional",
       methodologySteps: {
         strategicAnalysis: {
-          title: "Análisis de Necesidades Estratégicas",
+          title: "Análisis Estratégico de Necesidades",
           description:
-            "Realizamos un análisis en profundidad de los objetivos estratégicos, la cultura y los requisitos técnicos de su organización para definir el perfil de candidato perfecto.",
+            "Realizamos un análisis en profundidad de los objetivos estratégicos, la cultura y los requisitos técnicos de su organización para definir el perfil perfecto del candidato.",
         },
         aiSearch: {
           title: "Búsqueda Impulsada por IA",
           description:
-            "Nuestros algoritmos de IA patentados escanean millones de perfiles en múltiples plataformas para identificar candidatos con las habilidades y experiencia precisas que necesita.",
+            "Nuestros algoritmos de IA patentados escanean millones de perfiles en múltiples plataformas para identificar candidatos con las habilidades y la experiencia precisas que necesita.",
         },
         humanExpertise: {
-          title: "Validación por Expertos Humanos",
+          title: "Validación de la Experiencia Humana",
           description:
-            "Nuestros especialistas de la industria evalúan personalmente a cada candidato seleccionado por IA, evaluando el ajuste cultural y la alineación de la carrera.",
+            "Nuestros especialistas de la industria evalúan personalmente a cada candidato seleccionado por la IA, evaluando el ajuste cultural y la alineación profesional.",
         },
         qualification: {
           title: "Calificación Rigurosa",
           description:
-            "Los candidatos se someten a evaluaciones técnicas exhaustivas y entrevistas conductuales adaptadas a sus requisitos específicos.",
+            "Los candidatos se someten a evaluaciones técnicas exhaustivas y entrevistas de comportamiento adaptadas a sus requisitos específicos.",
         },
         acceleratedPlacement: {
           title: "Colocación Acelerada",
@@ -1644,11 +1799,11 @@ export const translations = {
       challenge: "Desafío",
       solution: "Solución",
       result: "Resultado",
-      ctaTitle: "¿Listo para Construir su Equipo de Ensueño?",
+      ctaTitle: "¿Listo para Construir el Equipo de Sus Sueños?",
       ctaSubtitle:
-        "Hablemos de cómo nuestros servicios de adquisición de talento permanente pueden ayudarle a encontrar los candidatos perfectos para impulsar su negocio",
+        "Hablemos de cómo nuestros servicios de adquisición de talento permanente pueden ayudarle a encontrar a los candidatos perfectos para impulsar su negocio",
       scheduleConsultation: "Programar una Consulta",
-      averageMatchScore: "Puntuación Media de Coincidencia",
+      averageMatchScore: "Puntaje Promedio de Coincidencia",
     },
     freelanceTalent: {
       title: "Talento Freelance Bajo Demanda",
@@ -1656,53 +1811,52 @@ export const translations = {
         "Acceda a experiencia especializada exactamente cuando la necesite, sin el compromiso de contrataciones permanentes",
       talentMatching: "Matching de talento en 48 horas",
       specialists: "Más de 5,000 especialistas pre-evaluados",
-      findTalent: "Encontrar Talento Especializado",
-      avgTimeToStart: "Tiempo promedio para empezar",
+      findTalent: "Encuentre Talento Especializado",
+      avgTimeToStart: "Tiempo promedio para comenzar",
       whyChoose: "¿Por Qué Elegir Talento Freelance?",
-      flexibleExpertise:
-        "Experiencia flexible que se adapta a las necesidades de su negocio y los requisitos del proyecto",
+      flexibleExpertise: "Experiencia flexible que se adapta a sus necesidades empresariales y requisitos del proyecto",
       benefits: [
         {
-          title: "Despliegue Rápido",
-          description: "Acceda a talento especializado en días, no en semanas o meses",
+          title: "Implementación Rápida",
+          description: "Acceda a talento especializado en cuestión de días, no semanas o meses",
         },
         {
           title: "Experiencia Especializada",
-          description: "Obtenga acceso inmediato a habilidades de nicho para proyectos e iniciativas específicas",
+          description: "Obtenga acceso inmediato a habilidades especializadas para proyectos e iniciativas específicas",
         },
         {
           title: "Escalado Flexible",
           description:
-            "Escale fácilmente su equipo hacia arriba o hacia abajo según las demandas del proyecto y los ciclos de negocio",
+            "Escale fácilmente su equipo hacia arriba o hacia abajo en función de las demandas del proyecto y los ciclos empresariales",
         },
         {
           title: "Perspectivas Frescas",
-          description: "Traiga experiencia externa para despertar la innovación y resolver desafíos complejos",
+          description: "Incorpore experiencia externa para impulsar la innovación y resolver desafíos complejos",
         },
       ],
       specializedExpertise: "Experiencia Especializada Bajo Demanda",
       networkIncludes:
-        "Nuestra red incluye los mejores talentos freelance en una amplia gama de especialidades técnicas",
+        "Nuestra red incluye a los mejores talentos freelance en una amplia gama de especialidades técnicas",
       technicalExpertise: "Experiencia Técnica",
       leadershipSpecializedRoles: "Liderazgo y Roles Especializados",
       softwareDevelopment: "Desarrollo de Software",
-      fullStackEngineers: "Ingenieros Full Stack",
+      fullStackEngineers: "Ingenieros de Full Stack",
       mobileDevelopers: "Desarrolladores Móviles",
-      frontendSpecialists: "Especialistas en Frontend",
+      frontendSpecialists: "Especialistas de Frontend",
       backendArchitects: "Arquitectos de Backend",
       dataAI: "Datos e IA",
       dataScientists: "Científicos de Datos",
       mlEngineers: "Ingenieros de ML",
       dataEngineers: "Ingenieros de Datos",
-      aiSpecialists: "Especialistas en IA",
+      aiSpecialists: "Especialistas de IA",
       infrastructure: "Infraestructura",
-      devOpsEngineers: "Ingenieros DevOps",
+      devOpsEngineers: "DevOps Engineers",
       cloudArchitects: "Arquitectos de la Nube",
-      sreSpecialists: "Especialistas en SRE",
+      sreSpecialists: "Especialistas de SRE",
       securityExperts: "Expertos en Seguridad",
       productDesign: "Diseño de Producto",
       productManagers: "Gerentes de Producto",
-      uxuiDesigners: "Diseñadores UX/UI",
+      uxuiDesigners: "Diseñadores de UX/UI",
       productDesigners: "Diseñadores de Producto",
       researchSpecialists: "Especialistas en Investigación",
       interimLeadership: "Liderazgo Interino",
@@ -1711,32 +1865,33 @@ export const translations = {
       temporaryProductLeaders: "Líderes de Producto Temporales",
       projectManagement: "Gestión de Proyectos",
       technicalProjectManagers: "Gerentes de Proyectos Técnicos",
-      agileCoaches: "Coaches Ágiles",
+      agileCoaches: "Coaches de Agile",
       digitalTransformationLeads: "Líderes de Transformación Digital",
       specializedConsultants: "Consultores Especializados",
       technologyStrategyConsultants: "Consultores de Estrategia Tecnológica",
       digitalInnovationSpecialists: "Especialistas en Innovación Digital",
-      technicalDueDiligenceExperts: "Expertos en Diligencia Debida Técnica",
+      technicalDueDiligenceExperts: "Expertos en Due Diligence Técnica",
       whenToUse: "Cuándo Usar Talento Freelance",
       strategicScenarios: "Escenarios estratégicos donde el talento freelance ofrece el máximo valor",
       useCases: [
         {
           title: "Iniciativas Basadas en Proyectos",
-          description: "Traiga talento especializado para proyectos con plazos definidos y entregables específicos",
-        },
-        {
-          title: "Technical Expertise Gaps",
           description:
-            "Acceda a habilidades especializadas que no se necesitan a tiempo completo, pero son críticas para el éxito",
+            "Incorpore talento especializado para proyectos de duración limitada con entregables específicos",
         },
         {
-          title: "Interim Leadership",
+          title: "Brechas de Experiencia Técnica",
+          description:
+            "Acceda a habilidades especializadas que no se necesitan a tiempo completo pero que son críticas para el éxito",
+        },
+        {
+          title: "Liderazgo Interino",
           description: "Supere las brechas de liderazgo durante las transiciones o los cambios organizacionales",
         },
       ],
       examples: "Ejemplos",
       clientSuccessStories: "Casos de Éxito de Clientes",
-      hearFromCompanies: "Escuche a las empresas que han aprovechado nuestras soluciones de talento freelance",
+      hearFromCompanies: "Escuche a empresas que han aprovechado nuestras soluciones de talento freelance",
       testimonials: [
         {
           quote:
@@ -1748,11 +1903,11 @@ export const translations = {
           quote:
             "El arquitecto de la nube freelance con el que Botic nos conectó transformó nuestro enfoque de infraestructura, ofreciendo un ahorro de costos del 40% y un rendimiento mejorado.",
           author: "JUAN PEÑA",
-          position: "VP Engineering, TechScale",
+          position: "VP Ingeniería, TechScale",
         },
         {
           quote:
-            "Cuando necesitamos un liderazgo interino durante nuestra transición de CTO, Botic nos encontró el líder temporal perfecto que mantuvo nuestra hoja de ruta en marcha.",
+            "Cuando necesitamos liderazgo interino durante nuestra transición de CTO, Botic nos encontró el líder temporal perfecto que mantuvo nuestra hoja de ruta en el camino correcto.",
           author: "ANTONIO LÓPEZ",
           position: "CEO, InnovateTech",
         },
@@ -1760,7 +1915,7 @@ export const translations = {
       needSpecializedTalent: "¿Necesitas Talento Especializado Rápidamente?",
       ourNetworkOfTalent:
         "Nuestra red de profesionales freelance pre-evaluados puede comenzar a contribuir a sus proyectos en cuestión de días.",
-      accessOurTalentNetwork: "Acceda a Nuestra Red de Talentos",
+      accessOurTalentNetwork: "Access Our Talent Network",
     },
     maServices: {
       title: "Servicios Estratégicos de M&A",

@@ -1,98 +1,118 @@
+import type React from "react"
+import { Code, Cpu, Building2, Truck, Filter } from "lucide-react"
+
 export interface Job {
-  titleKey: string
-  sector: string
   id: string
+  titleKey: string
+  sectorKey: string
   descriptionKey: string
+  industry: string
+  icon: React.ElementType // Use React.ElementType for Lucide icons
 }
 
-// Organize jobs by the four industry sectors shown in the image
-export const jobsByIndustry = {
-  Software: [
-    {
-      titleKey: "careers.jobs.seniorFullStack.title",
-      sector: "Software",
-      id: "SFS001",
-      descriptionKey: "careers.jobs.seniorFullStack.description",
-    },
-    {
-      titleKey: "careers.jobs.aiResearchScientist.title",
-      sector: "Software",
-      id: "AIRS001",
-      descriptionKey: "careers.jobs.aiResearchScientist.description",
-    },
-    {
-      titleKey: "careers.jobs.dataScientist.title",
-      sector: "Software",
-      id: "DS001",
-      descriptionKey: "careers.jobs.dataScientist.description",
-    },
-  ],
-  Hardware: [
-    {
-      titleKey: "careers.jobs.semiconductorProcessEngineer.title",
-      sector: "Hardware",
-      id: "SPE001",
-      descriptionKey: "careers.jobs.semiconductorProcessEngineer.description",
-    },
-    {
-      titleKey: "careers.jobs.asicDesignEngineer.title",
-      sector: "Hardware",
-      id: "ADE001",
-      descriptionKey: "careers.jobs.asicDesignEngineer.description",
-    },
-    {
-      titleKey: "careers.jobs.embeddedSystemsEngineer.title",
-      sector: "Hardware",
-      id: "ESE001",
-      descriptionKey: "careers.jobs.embeddedSystemsEngineer.description",
-    },
-  ],
-  Construction: [
-    {
-      titleKey: "careers.jobs.constructionProjectManager.title",
-      sector: "Construction",
-      id: "CPM001",
-      descriptionKey: "careers.jobs.constructionProjectManager.description",
-    },
-    {
-      titleKey: "careers.jobs.bimSpecialist.title",
-      sector: "Construction",
-      id: "BIM001",
-      descriptionKey: "careers.jobs.bimSpecialist.description",
-    },
-    {
-      titleKey: "careers.jobs.smartBuildingEngineer.title",
-      sector: "Construction",
-      id: "SBE001",
-      descriptionKey: "careers.jobs.smartBuildingEngineer.description",
-    },
-  ],
-  Logistics: [
-    {
-      titleKey: "careers.jobs.supplyChainAnalyst.title",
-      sector: "Logistics",
-      id: "SCA001",
-      descriptionKey: "careers.jobs.supplyChainAnalyst.description",
-    },
-    {
-      titleKey: "careers.jobs.logisticsOperationsManager.title",
-      sector: "Logistics",
-      id: "LOM001",
-      descriptionKey: "careers.jobs.logisticsOperationsManager.description",
-    },
-    {
-      titleKey: "careers.jobs.warehouseAutomationSpecialist.title",
-      sector: "Logistics",
-      id: "WAS001",
-      descriptionKey: "careers.jobs.warehouseAutomationSpecialist.description",
-    },
-  ],
-}
+export const jobs: Job[] = [
+  {
+    id: "1",
+    titleKey: "careers.jobs.seniorFullStack.title",
+    sectorKey: "careers.sector",
+    descriptionKey: "careers.jobs.seniorFullStack.description",
+    industry: "Software (AI and Development)",
+    icon: Code,
+  },
+  {
+    id: "2",
+    titleKey: "careers.jobs.aiResearchScientist.title",
+    sectorKey: "careers.sector",
+    descriptionKey: "careers.jobs.aiResearchScientist.description",
+    industry: "Software (AI and Development)",
+    icon: Code,
+  },
+  {
+    id: "3",
+    titleKey: "careers.jobs.dataScientist.title",
+    sectorKey: "careers.sector",
+    descriptionKey: "careers.jobs.dataScientist.description",
+    industry: "Software (AI and Development)",
+    icon: Code,
+  },
+  {
+    id: "4",
+    titleKey: "careers.jobs.semiconductorProcessEngineer.title",
+    sectorKey: "careers.sector",
+    descriptionKey: "careers.jobs.semiconductorProcessEngineer.description",
+    industry: "Hardware (Deep Tech)",
+    icon: Cpu,
+  },
+  {
+    id: "5",
+    titleKey: "careers.jobs.asicDesignEngineer.title",
+    sectorKey: "careers.sector",
+    descriptionKey: "careers.jobs.asicDesignEngineer.description",
+    industry: "Hardware (Deep Tech)",
+    icon: Cpu,
+  },
+  {
+    id: "6",
+    titleKey: "careers.jobs.embeddedSystemsEngineer.title",
+    sectorKey: "careers.sector",
+    descriptionKey: "careers.jobs.embeddedSystemsEngineer.description",
+    industry: "Hardware (Deep Tech)",
+    icon: Cpu,
+  },
+  {
+    id: "7",
+    titleKey: "careers.jobs.constructionProjectManager.title",
+    sectorKey: "careers.sector",
+    descriptionKey: "careers.jobs.constructionProjectManager.description",
+    industry: "Construction & Real Estate",
+    icon: Building2,
+  },
+  {
+    id: "8",
+    titleKey: "careers.jobs.bimSpecialist.title",
+    sectorKey: "careers.sector",
+    descriptionKey: "careers.jobs.bimSpecialist.description",
+    industry: "Construction & Real Estate",
+    icon: Building2,
+  },
+  {
+    id: "9",
+    titleKey: "careers.jobs.smartBuildingEngineer.title",
+    sectorKey: "careers.sector",
+    descriptionKey: "careers.jobs.smartBuildingEngineer.description",
+    industry: "Construction & Real Estate",
+    icon: Building2,
+  },
+  {
+    id: "10",
+    titleKey: "careers.jobs.supplyChainAnalyst.title",
+    sectorKey: "careers.sector",
+    descriptionKey: "careers.jobs.supplyChainAnalyst.description",
+    industry: "Logistics",
+    icon: Truck,
+  },
+  {
+    id: "11",
+    titleKey: "careers.jobs.logisticsOperationsManager.title",
+    sectorKey: "careers.sector",
+    descriptionKey: "careers.jobs.logisticsOperationsManager.description",
+    industry: "Logistics",
+    icon: Truck,
+  },
+  {
+    id: "12",
+    titleKey: "careers.jobs.warehouseAutomationSpecialist.title",
+    sectorKey: "careers.sector",
+    descriptionKey: "careers.jobs.warehouseAutomationSpecialist.description",
+    industry: "Logistics",
+    icon: Truck,
+  },
+]
 
-// Update the industry titles mapping to match the image
-export const industryTitles = {
-  Software: "Software (AI and Development)",
-  Hardware: "Hardware (Deep Tech)",
-  Construction: "Construction & Real Estate",
-  Logistics: "Logistics",
-}
+export const industries = [
+  { id: "all", nameKey: "careers.allIndustries", icon: Filter },
+  { id: "Software (AI and Development)", nameKey: "Software (AI and Development)", icon: Code },
+  { id: "Hardware (Deep Tech)", nameKey: "Hardware (Deep Tech)", icon: Cpu },
+  { id: "Construction & Real Estate", nameKey: "Construction & Real Estate", icon: Building2 },
+  { id: "Logistics", nameKey: "Logistics", icon: Truck },
+]

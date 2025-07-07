@@ -77,7 +77,7 @@ export default function JobDetailsPage() {
                 <h1 className="text-3xl font-bold text-primary">{t(job.titleKey)}</h1>
                 <p className="text-gray-500 mt-1">{industryTitles[job.sector as keyof typeof industryTitles]}</p>
               </div>
-              <span className="text-sm text-gray-400 flex-shrink-0 ml-4">ID: {job.id}</span>
+              <span className="text-sm text-gray-500 flex-shrink-0 ml-4">ID: {job.id}</span>
             </div>
 
             <div className="border-t border-gray-200 my-6"></div>
