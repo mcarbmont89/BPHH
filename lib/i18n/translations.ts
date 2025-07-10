@@ -1478,9 +1478,9 @@ export const translations = {
       testimonialAuthor: "CEO - Cliente Satisfecho",
     },
     careers: {
-      title: "Explora Oportunidades en Botic",
+      title: "Explora Oportunidades",
       subtitle:
-        "Encuentra tu próximo rol en una empresa que está dando forma al futuro de la adquisición de talento impulsada por IA.",
+        "Encuentra tu próximo rol acompañado por la tecnología de Botic Partners, líder en adquisición de talento impulsada por IA.",
       filterByIndustry: "Filtrar por Industria",
       allIndustries: "Todas las Industrias",
       sector: "Sector",

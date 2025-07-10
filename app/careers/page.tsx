@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Filter } from "lucide-react"
 import { jobs, industries } from "./data"
+import { motion } from "framer-motion"
+
+import Header from "../components/Header"
 
 export default function CareersPage() {
   const { t } = useLanguage()
@@ -19,6 +22,70 @@ export default function CareersPage() {
   }, [selectedIndustry])
 
   return (
+    <div className="flex flex-col min-h-screen">
+          <Header />
+
+          {/* Hero section with background */}
+      <section className="relative bg-[#1A1A2E] py-20">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.h1
+              className="text-4xl py-4 mt-8 md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              {t("careers.title")}
+            </motion.h1>
+            <motion.div
+              className="w-24 h-1 bg-primary/50 mx-auto mb-6"
+              initial={{ width: 0 }}
+              animate={{ width: 96 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+            />
+            <motion.p
+              className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              {t("careers.subtitle")}
+            </motion.p>
+          </div>
+        </div>
+
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(10)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute rounded-full bg-primary/10"
+              initial={{
+                x: Math.random() * 100,
+                y: Math.random() * 100,
+                opacity: 0,
+              }}
+              animate={{
+                x: [Math.random() * 100, Math.random() * 100 + 50],
+                y: [Math.random() * 100, Math.random() * 100 + 50],
+                opacity: [0, 0.3, 0],
+              }}
+              transition={{
+                duration: Math.random() * 5 + 5,
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "reverse",
+              }}
+              style={{
+                width: Math.random() * 100 + 50,
+                height: Math.random() * 100 + 50,
+                left: `${Math.random() * 90}%`,
+                top: `${Math.random() * 90}%`,
+              }}
+            />
+          ))}
+        </div>
+      </section>
+
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="mb-8 text-center">
         <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground flex items-center justify-center gap-2">
@@ -77,6 +144,7 @@ export default function CareersPage() {
           </Card>
         ))}
       </div>
+    </div>
     </div>
   )
 }
