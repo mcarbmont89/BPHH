@@ -88,7 +88,7 @@ export default function CareersPage() {
 
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="mb-8 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground flex items-center justify-center gap-2">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 flex items-center justify-center gap-2">
           <Filter className="w-6 h-6 md:w-8 md:h-8" />
           {t("careers.filterByIndustry")}
         </h1>
@@ -117,7 +117,7 @@ export default function CareersPage() {
       </div>
 
       <div className="mb-8 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground flex items-center justify-center gap-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 flex items-center justify-center gap-2">
           {selectedIndustry === "all"
             ? t("careers.allIndustries")
             : t(industries.find((i) => i.id === selectedIndustry)?.nameKey || "")}
