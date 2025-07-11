@@ -12,20 +12,11 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { fetchPosts } from "@/app/api/posts"
 
-interface Post {
-    id: string
-    title: string
-    excerpt: string
-    createdAt: string
-    content: string
-    image: string
-}
-
 export default function Blog() {
   const { t, language } = useLanguage()
   const [searchQuery, setSearchQuery] = useState("")
   const [mounted, setMounted] = useState(false)
-  const [posts, setPosts] = useState<Post[]>([])
+  const [posts, setPosts] = useState([])
 
   // Use useEffect to ensure component is mounted before rendering
   useEffect(() => {
@@ -34,7 +25,7 @@ export default function Blog() {
   }, [])
 
   // Filter posts by search query
-  const filteredPosts = posts?.filter((post: Post) => {
+  const filteredPosts = posts?.filter((post) => {
     return searchQuery === "" ||
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())

@@ -1,25 +1,39 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Filter } from "lucide-react"
-import { jobs, industries } from "./data"
+import { industries } from "./data"
 import { motion } from "framer-motion"
+import Link from "next/link"
+import { fetchCareers } from "@/app/api/careers"
 
 import Header from "../components/Header"
 
 export default function CareersPage() {
   const { t } = useLanguage()
-  const [selectedIndustry, setSelectedIndustry] = useState<string>("all")
+  const [selectedIndustry, setSelectedIndustry] = useState("all")
+    const [careers, setCareers] = useState([])
+    const [mounted, setMounted] = useState(false)
+    
+    // Use useEffect to ensure component is mounted before rendering
+    useEffect(() => {
+      fetchCareers().then((data) => setCareers(data.docs).then(() => console.log(data.docs)))
+      setMounted(true)
+    }, [])
 
-  const filteredJobs = useMemo(() => {
-    if (selectedIndustry === "all") {
-      return jobs
+    // Don't render anything until component is mounted to avoid hydration issues
+    if (!mounted) {
+      return null
     }
-    return jobs.filter((job) => job.industry === selectedIndustry)
-  }, [selectedIndustry])
+    
+    // Filter careers by search query
+    const filteredCareers = careers?.filter((career) => {
+      return selectedIndustry === "all" || career.sector === selectedIndustry
+    })
+  
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -125,21 +139,28 @@ export default function CareersPage() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredJobs.map((job) => (
-          <Card key={job.id} className="flex flex-col justify-between h-full">
+        {filteredCareers.map((career) => (
+          <Card key={career.id} className="flex flex-col justify-between h-full">
             <CardHeader>
-              <CardTitle className="text-xl font-semibold text-foreground">{t(job.titleKey)}</CardTitle>
-              <CardDescription className="text-muted-foreground text-sm">
-                {t(job.sectorKey)}: {job.industry.split(" ")[0]}
-              </CardDescription>
+              <div className="flex items-center gap-4">
+              {career.company_url && (
+                <img src={`https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("www.", "")}`} alt=' ' className="w-12 h-12"/>
+              )}
+                <div>
+                  <CardTitle className="text-xl font-semibold text-foreground">{career.position}</CardTitle>
+                  <CardDescription className="text-muted-foreground text-sm">
+                    {career.company}
+                  </CardDescription>
+                </div>
+              </div>
             </CardHeader>
             <CardContent className="flex-grow">
-              <p className="text-sm text-foreground">{t(job.descriptionKey)}</p>
+              <p className="text-sm text-foreground">{career.company}</p>
             </CardContent>
             <CardFooter>
-              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+              <Link href={`/careers/${career.id}`} className="w-full bg-primary py-2 text-center rounded-lg text-primary-foreground hover:bg-primary/90">
                 {t("careers.learnMore")}
-              </Button>
+              </Link>
             </CardFooter>
           </Card>
         ))}
