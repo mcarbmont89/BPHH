@@ -144,7 +144,7 @@ export default function CareersPage() {
             <CardHeader>
               <div className="flex items-center gap-4">
               {career.company_url && (
-                <img src={`https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("www.", "")}`} alt=' ' className="w-12 h-12"/>
+                <img src={career.company.toLowerCase() === "botic partners" ? "/boticlogo.png" : `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("www.", "")}`} alt=' ' className="w-12 h-12"/>
               )}
                 <div>
                   <CardTitle className="text-xl font-semibold text-foreground">{career.position}</CardTitle>
