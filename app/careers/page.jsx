@@ -154,8 +154,9 @@ export default function CareersPage() {
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="flex-grow">
-              <p className="text-sm text-foreground">{career.company}</p>
+            <CardContent className="flex-grow flex flex-col gap-2">
+              {career.location && <p className="text-sm text-foreground"><b>Ubicación:</b> {career.location}</p>}
+              {career.salary && <p className="text-sm text-foreground"><b>Salario:</b> {new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(career.salary)}</p>}
             </CardContent>
             <CardFooter>
               <Link href={`/careers/${career.id}`} className="w-full bg-primary py-2 text-center rounded-lg text-primary-foreground hover:bg-primary/90">

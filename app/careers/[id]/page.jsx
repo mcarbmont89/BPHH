@@ -143,7 +143,7 @@ export default function JobDetailsPage() {
             {career.salary && (
               <div className="flex gap-4 items-center mb-2">
                 <h2 className="font-semibold">Salario</h2>
-                <p className="text-gray-700">${career.salary}</p>
+                <p className="text-gray-700">{new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(career.salary)}</p>
               </div>
             )}
 
