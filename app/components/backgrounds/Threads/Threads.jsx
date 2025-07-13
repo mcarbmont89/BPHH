@@ -1,7 +1,3 @@
-/*
-	Installed from https://reactbits.dev/tailwind/
-*/
-
 import { useEffect, useRef } from "react";
 import { Renderer, Program, Mesh, Triangle, Color } from "ogl";
 
@@ -144,22 +140,20 @@ const Threads = ({
     container.appendChild(gl.canvas);
 
     const geometry = new Triangle(gl);
+
+    const iResolution = new Float32Array([1, 1, 1]); // placeholder
+    const uMouse = new Float32Array([0.5, 0.5]);
+
     const program = new Program(gl, {
       vertex: vertexShader,
       fragment: fragmentShader,
       uniforms: {
         iTime: { value: 0 },
-        iResolution: {
-          value: new Color(
-            gl.canvas.width,
-            gl.canvas.height,
-            gl.canvas.width / gl.canvas.height,
-          ),
-        },
+        iResolution: { value: iResolution },
         uColor: { value: new Color(...color) },
         uAmplitude: { value: amplitude },
         uDistance: { value: distance },
-        uMouse: { value: new Float32Array([0.5, 0.5]) },
+        uMouse: { value: uMouse },
       },
     });
 
@@ -167,11 +161,19 @@ const Threads = ({
 
     function resize() {
       const { clientWidth, clientHeight } = container;
-      renderer.setSize(clientWidth, clientHeight);
-      program.uniforms.iResolution.value.r = clientWidth;
-      program.uniforms.iResolution.value.g = clientHeight;
-      program.uniforms.iResolution.value.b = clientWidth / clientHeight;
+      const scale = 0.7;
+      const width = Math.floor(clientWidth * scale);
+      const height = Math.floor(clientHeight * scale);
+
+      renderer.setSize(width, height);
+      gl.canvas.style.width = `${clientWidth}px`;
+      gl.canvas.style.height = `${clientHeight}px`;
+
+      iResolution[0] = width;
+      iResolution[1] = height;
+      iResolution[2] = width / height;
     }
+
     window.addEventListener("resize", resize);
     resize();
 
@@ -184,30 +186,44 @@ const Threads = ({
       const y = 1.0 - (e.clientY - rect.top) / rect.height;
       targetMouse = [x, y];
     }
+
     function handleMouseLeave() {
       targetMouse = [0.5, 0.5];
     }
+
     if (enableMouseInteraction) {
       container.addEventListener("mousemove", handleMouseMove);
       container.addEventListener("mouseleave", handleMouseLeave);
     }
 
+    const targetFPS = 30;
+    const frameDuration = 1000 / targetFPS;
+    let lastFrameTime = 0;
+
     function update(t) {
+      animationFrameId.current = requestAnimationFrame(update);
+
+      if (document.hidden) return;
+
+      const delta = t - lastFrameTime;
+      if (delta < frameDuration) return;
+      lastFrameTime = t;
+
       if (enableMouseInteraction) {
         const smoothing = 0.05;
         currentMouse[0] += smoothing * (targetMouse[0] - currentMouse[0]);
         currentMouse[1] += smoothing * (targetMouse[1] - currentMouse[1]);
-        program.uniforms.uMouse.value[0] = currentMouse[0];
-        program.uniforms.uMouse.value[1] = currentMouse[1];
+        uMouse[0] = currentMouse[0];
+        uMouse[1] = currentMouse[1];
       } else {
-        program.uniforms.uMouse.value[0] = 0.5;
-        program.uniforms.uMouse.value[1] = 0.5;
+        uMouse[0] = 0.5;
+        uMouse[1] = 0.5;
       }
-      program.uniforms.iTime.value = t * 0.001;
 
+      program.uniforms.iTime.value = t * 0.001;
       renderer.render({ scene: mesh });
-      animationFrameId.current = requestAnimationFrame(update);
     }
+
     animationFrameId.current = requestAnimationFrame(update);
 
     return () => {
@@ -224,9 +240,7 @@ const Threads = ({
     };
   }, [color, amplitude, distance, enableMouseInteraction]);
 
-  return (
-    <div ref={containerRef} className="w-full h-full relative" {...rest} />
-  );
+  return <div ref={containerRef} className="w-full h-full relative" {...rest} />;
 };
 
 export default Threads;
