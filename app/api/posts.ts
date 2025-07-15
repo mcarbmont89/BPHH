@@ -20,7 +20,5 @@ export const fetchRelatedPosts = async (id: string) => {
     const res = await fetch(`${API_URL}?where={tags: {id: {eq: "${id}"}}}`)
     const posts = await res.json()
 
-    console.log(posts)
-
-    return posts
+    return posts.docs.filter((post: any) => post.id !== parseInt(id))
 }
