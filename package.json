@@ -11,6 +11,8 @@
   "dependencies": {
     "@ai-sdk/openai": "latest",
     "@emotion/is-prop-valid": "latest",
+    "@hookform/resolvers": "^5.1.1",
+    "@payloadcms/richtext-lexical": "latest",
     "@radix-ui/react-accordion": "latest",
     "@radix-ui/react-alert-dialog": "latest",
     "@radix-ui/react-aspect-ratio": "latest",
@@ -52,7 +54,6 @@
     "next": "14.2.16",
     "next-themes": "latest",
     "ogl": "latest",
-    "@payloadcms/richtext-lexical": "latest",
     "react": "^18",
     "react-day-picker": "latest",
     "react-dom": "^18",

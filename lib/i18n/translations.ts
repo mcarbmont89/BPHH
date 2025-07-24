@@ -488,7 +488,7 @@ export const translations = {
       learnMore: "Learn More",
       backToCareers: "Back to all careers",
       jobDescription: "Job Description",
-      readyToApply: "Ready to Apply?",
+      readyToApply: "Apply now",
       useDefaultEmail: "Use Default Email App",
       useGmail: "Apply with Gmail",
       jobNotFound: {
@@ -1487,7 +1487,7 @@ export const translations = {
       learnMore: "Saber Más",
       backToCareers: "Volver a todas las carreras",
       jobDescription: "Descripción del Puesto",
-      readyToApply: "¿Listo para Aplicar?",
+      readyToApply: "¡Inscríbete!",
       useDefaultEmail: "Usar la Aplicación de Correo Predeterminada",
       useGmail: "Aplicar con Gmail",
       jobNotFound: {

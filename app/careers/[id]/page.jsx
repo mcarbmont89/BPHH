@@ -12,6 +12,9 @@ import { useEffect } from "react"
 import { fetchCareerById } from "@/app/api/careers"
 import RichTextComponent from "@/components/RichText"
 import { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical"
+import Loading from "./loading"
+import { ApplicationModal } from "@/app/components/application-modal"
+import { ThankYouModal } from "@/app/components/thank-you-modal"
 
 // // Helper function to find a job by ID
 // const findJobById = (id: string): Job | undefined => {
@@ -35,24 +38,40 @@ export default function JobDetailsPage() {
   const jobId = params.id
   // const job = findJobById(jobId)
   const [career, setCareer] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+  const [showThankYouModal, setShowThankYouModal] = useState(false)
+  const [candidateName, setCandidateName] = useState("")
 
   useEffect(() => {
-    fetchCareerById(jobId).then((data) => setCareer(data))
+    fetchCareerById(jobId).then((data) => {
+      setCareer(data)
+      setIsLoading(false)
+    })
   }, [jobId])
 
-  const handleApply = (useGmail) => {
-    if (!career) return
-    setIsLoading(true)
-    const subject = encodeURIComponent(`Application for ${career.position} - ${career.company}`)
-    const email = "admin@boticpartners.com"
-    const mailtoLink = `mailto:${email}?subject=${subject}`
-    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}`
+  const handleSuccessfulSubmission = (name) => {
+    setCandidateName(name)
+    setShowThankYouModal(true) 
+  }
 
-    setTimeout(() => {
-      window.open(useGmail ? gmailLink : mailtoLink, "_blank")
-      setIsLoading(false)
-    }, 500)
+
+  // const handleApply = (useGmail) => {
+  //   if (!career) return
+  //   setIsLoading(true)
+  //   const subject = encodeURIComponent(`Application for ${career.position} - ${career.company}`)
+  //   const email = "admin@boticpartners.com"
+  //   const mailtoLink = `mailto:${email}?subject=${subject}`
+  //   const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}`
+
+  //   setTimeout(() => {
+  //     window.open(useGmail ? gmailLink : mailtoLink, "_blank")
+  //     setIsLoading(false)
+  //   }, 500)
+  // }
+
+  if (isLoading) {
+    return <Loading />
   }
 
   if (!career) {
@@ -150,7 +169,7 @@ export default function JobDetailsPage() {
             <div className="border-t border-gray-200 my-6"></div>
 
             <div className="mt-8 text-center">
-              <h3 className="text-lg font-semibold mb-4">{t("careers.readyToApply")}</h3>
+              {/* <h3 className="text-lg font-semibold mb-4">{t("careers.readyToApply")}</h3> */}
               <div className="flex justify-center space-x-4">
                 {career.linkedIn && career.linkedIn !== "" && (
                   <Link href={career.linkedIn} target="_blank" rel="noopener noreferrer">
@@ -159,8 +178,8 @@ export default function JobDetailsPage() {
                     </Button>
                   </Link>
                 )}
-                <Button onClick={() => handleApply(true)} disabled={isLoading}>
-                  {t("careers.useGmail")}
+                <Button onClick={() => setIsModalOpen(true)} disabled={isLoading}>
+                  {t("careers.readyToApply")}
                 </Button>
               </div>
             </div>
@@ -168,6 +187,9 @@ export default function JobDetailsPage() {
         </div>
       </main>
       <Footer />
+
+      <ApplicationModal open={isModalOpen} career={career} onOpenChange={setIsModalOpen} onSuccess={handleSuccessfulSubmission} />
+      <ThankYouModal open={showThankYouModal} onOpenChange={setShowThankYouModal} candidateName={candidateName} />
     </div>
   )
 }
