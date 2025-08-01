@@ -143,20 +143,20 @@ export default function CareersPage() {
           <Card key={career.id} className="flex flex-col justify-between h-full">
             <CardHeader>
               <div className="flex items-center gap-4">
-              {career.company_url && (
+              {career.company_url && !career.ocultar_empresa && (
                 <img src={career.company.toLowerCase() === "botic partners" ? "/boticlogo.png" : `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("www.", "")}`} alt=' ' className="w-12 h-12"/>
               )}
                 <div>
                   <CardTitle className="text-xl font-semibold text-foreground">{career.position}</CardTitle>
                   <CardDescription className="text-muted-foreground text-sm">
-                    {career.company}
+                    {career.ocultar_empresa ? 'Confidencial' : career.company}
                   </CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent className="flex-grow flex flex-col gap-2">
               {career.location && <p className="text-sm text-foreground"><b>Ubicación:</b> {career.location}</p>}
-              {career.salary && <p className="text-sm text-foreground"><b>Salario:</b> {new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(career.salary)}</p>}
+              {career.salary && !career.ocultar_salario && <p className="text-sm text-foreground"><b>Salario:</b> {new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(career.salary)}</p>}
             </CardContent>
             <CardFooter>
               <Link href={`/careers/${career.id}`} className="w-full bg-primary py-2 text-center rounded-lg text-primary-foreground hover:bg-primary/90">

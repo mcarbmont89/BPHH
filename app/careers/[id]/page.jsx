@@ -111,13 +111,13 @@ export default function JobDetailsPage() {
               )}
               <div>
                 <h1 className="text-3xl font-bold text-primary">{career.position}</h1>
-                {career.company_url && (
+                {career.company_url && !career.ocultar_empresa && (
                   <Link href={completeUrl(career.company_url)} target="_blank" rel="noopener noreferrer">
                     <p className="text-gray-500 mt-1 hover:underline">{career.company}</p>
                   </Link>
                 )}
                 {!career.company_url && (
-                  <p className="text-gray-500 mt-1">{career.company}</p>
+                  <p className="text-gray-500 mt-1">{career.ocultar_empresa ? 'Confidencial' : career.company}</p>
                 )}
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function JobDetailsPage() {
             {career.salary && (
               <div className="flex gap-4 items-center mb-2">
                 <h2 className="font-semibold">Salario</h2>
-                <p className="text-gray-700">{new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(career.salary)}</p>
+                <p className="text-gray-700">{career.ocultar_salario ? 'Confidencial' : new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(career.salary)}</p>
               </div>
             )}
 
