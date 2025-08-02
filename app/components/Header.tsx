@@ -50,14 +50,14 @@ export function Header() {
       onClick: (e: React.MouseEvent) => handleScrollTo(e, "core-services"),
     },
     {
+      href: "/#process",
+      label: t("nav.process"),
+      onClick: (e: React.MouseEvent) => handleScrollTo(e, "process"),
+    },
+    {
       href: "/#industries",
       label: t("nav.industries"),
       onClick: (e: React.MouseEvent) => handleScrollTo(e, "industries"),
-    },
-    {
-      href: "/#process",
-      label: t("nav.process"),
-      onClick: (e: React.MouseEvent) => handleScrollTo(e, "ai-powered-recruitment"),
     },
     { href: "/careers", label: t("nav.careers"), isLink: true },
     { href: "/blog", label: t("nav.blog"), isLink: true },

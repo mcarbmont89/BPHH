@@ -54,7 +54,7 @@ export const translations = {
         title: "AI-Powered Talent Acquisition",
         subtitle:
           "We connect top-tier talent with leading companies, leveraging cutting-edge AI to ensure the perfect match.",
-        lastMatch: "Last Match",
+        lastMatch: "Last Matches",
         jobTitle: "Senior Backend Engineer",
         jobDescription:
           "A leading fintech company is looking for a skilled engineer to build and scale their core infrastructure.",
@@ -1059,7 +1059,7 @@ export const translations = {
         title: "Adquisición de Talento Potenciada por IA",
         subtitle:
           "Conectamos talento de primer nivel con empresas líderes, aprovechando la IA de vanguardia para asegurar la combinación perfecta.",
-        lastMatch: "Último Match",
+        lastMatch: "Últimos Matches",
         jobTitle: "Ingeniero de Backend Senior",
         jobDescription:
           "Una empresa líder en fintech busca un ingeniero calificado para construir y escalar su infraestructura central.",

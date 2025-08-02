@@ -25,7 +25,9 @@ export default function Home() {
           <HeadhuntingSection />
           <PartnershipsSection />
         </section>
-        <RecruitmentTimeline />
+        <section id="process">
+          <RecruitmentTimeline />
+        </section>
          <section id="industries">
           <Industries />
         </section>
