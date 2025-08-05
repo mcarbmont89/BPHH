@@ -1243,7 +1243,7 @@ export const translations = {
       cta: "Encontrar Talento",
       cta2: "Únete a Nosotros",
       primaryAction: "Encontrar Talento",
-      secondaryAction: "Explorar Carreras",
+      secondaryAction: "Explorar Vacantes",
       getStartedSubject: "Consulta: Empezando con Botic Partners",
       watchDemoSubject: "Solicitud: Demo de la Plataforma Botic Partners",
     },
@@ -1413,7 +1413,7 @@ export const translations = {
       },
       impact: {
         title: "Nuestro Impacto",
-        description: "En Botic Partners, no solo estamos cubriendo puestos; estamos transformando negocios y carreras:",
+        description: "En Botic Partners, no solo estamos cubriendo puestos; estamos transformando negocios y carreras profesionales:",
         point1: "Reducción del tiempo de contratación en un 50% para nuestros clientes",
         point2: "Aumento de la diversidad en roles tecnológicos en un 35%",
         point3: "El 93% de nuestras colocaciones resultan en empleo a largo plazo",
@@ -1485,7 +1485,7 @@ export const translations = {
       allIndustries: "Todas las Industrias",
       sector: "Sector",
       learnMore: "Saber Más",
-      backToCareers: "Volver a todas las carreras",
+      backToCareers: "Volver a todas las vacantes",
       jobDescription: "Descripción del Puesto",
       readyToApply: "¡Inscríbete!",
       useDefaultEmail: "Usar la Aplicación de Correo Predeterminada",
@@ -1493,7 +1493,7 @@ export const translations = {
       jobNotFound: {
         title: "Puesto No Encontrado",
         description: "El puesto que está buscando no existe o ha sido cubierto.",
-        backButton: "Volver a Carreras",
+        backButton: "Volver a Vacantes",
       },
       jobs: {
         seniorFullStack: {
