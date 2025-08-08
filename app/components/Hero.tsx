@@ -77,7 +77,7 @@ export default function Hero() {
   const currentJob = jobPositions[currentJobIndex]
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden text-white bg-[#1A1A2E]">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden text-white bg-[#1A1A2E]">
       {" "}
       {/* Added a fallback background color matching the screenshot */}
       {/* <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover -z-10">
@@ -97,7 +97,7 @@ export default function Hero() {
             {t("home.hero.subtitle")}
           </p>
         </div>
-        <div className="flex justify-center md:justify-end mt-24 md:mt-0">
+        <div className="flex justify-center md:justify-end mt-24 md:mt-0 mb-8 md:mb-0">
           <Card className="w-full max-w-md bg-black/70 text-white shadow-lg border border-white/20">
             <CardContent className="p-6 space-y-4">
               <div className="flex items-center justify-between">
