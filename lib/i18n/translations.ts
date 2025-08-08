@@ -1012,7 +1012,7 @@ export const translations = {
       about: "Sobre Nosotros",
       services: "Servicios",
       freelance: "Talento Freelance",
-      permanent: "Talento Permanente",
+      permanent: "Talento en Plantilla",
       ma: "Servicios M&A",
       industries: "Industrias",
       process: "Nuestro Proceso",
@@ -1023,7 +1023,7 @@ export const translations = {
     },
     header: {
       services: "Servicios",
-      permanentTalent: "Talento Permanente",
+      permanentTalent: "Talento en Plantilla",
       freelanceTalent: "Talento Freelance",
       maServices: "Servicios M&A",
       about: "Nosotros",
@@ -1036,7 +1036,7 @@ export const translations = {
       description: "Adquisición de Talento Potenciada por IA.",
       services: "Servicios",
       freelance: "Talento Freelance",
-      permanent: "Talento Permanente",
+      permanent: "Talento en Plantilla",
       ma: "Servicios M&A",
       company: "Empresa",
       about: "Sobre Nosotros",
@@ -1045,7 +1045,7 @@ export const translations = {
       legal: "Legal",
       privacyPolicy: "Política de Privacidad",
       termsOfService: "Términos de Servicio",
-      rightsReserved: "© 2024 Botic Partners. Todos los derechos reservados.",
+      rightsReserved: "© 2025 Botic Partners. Todos los derechos reservados.",
       quickLinks: "Enlaces Rápidos",
       contactEmail: "admin@boticpartners.com",
       followUs: "Síguenos",
@@ -1075,7 +1075,7 @@ export const translations = {
       services: {
         title: "Nuestros Servicios Principales",
         permanent: {
-          title: "Talento Permanente",
+          title: "Talento en Plantilla",
           description:
             "Encontrar el ajuste adecuado a largo plazo es crucial. Nuestro proceso impulsado por IA identifica candidatos que no solo tienen las habilidades adecuadas, sino que también se alinean con la cultura de tu empresa.",
           cta: "Saber Más",
@@ -1243,7 +1243,7 @@ export const translations = {
       cta: "Encontrar Talento",
       cta2: "Únete a Nosotros",
       primaryAction: "Encontrar Talento",
-      secondaryAction: "Explorar Carreras",
+      secondaryAction: "Explorar Vacantes",
       getStartedSubject: "Consulta: Empezando con Botic Partners",
       watchDemoSubject: "Solicitud: Demo de la Plataforma Botic Partners",
     },
@@ -1413,7 +1413,7 @@ export const translations = {
       },
       impact: {
         title: "Nuestro Impacto",
-        description: "En Botic Partners, no solo estamos cubriendo puestos; estamos transformando negocios y carreras:",
+        description: "En Botic Partners, no solo estamos cubriendo puestos; estamos transformando negocios y carreras profesionales:",
         point1: "Reducción del tiempo de contratación en un 50% para nuestros clientes",
         point2: "Aumento de la diversidad en roles tecnológicos en un 35%",
         point3: "El 93% de nuestras colocaciones resultan en empleo a largo plazo",
@@ -1485,7 +1485,7 @@ export const translations = {
       allIndustries: "Todas las Industrias",
       sector: "Sector",
       learnMore: "Saber Más",
-      backToCareers: "Volver a todas las carreras",
+      backToCareers: "Volver a todas las vacantes",
       jobDescription: "Descripción del Puesto",
       readyToApply: "¡Inscríbete!",
       useDefaultEmail: "Usar la Aplicación de Correo Predeterminada",
@@ -1493,7 +1493,7 @@ export const translations = {
       jobNotFound: {
         title: "Puesto No Encontrado",
         description: "El puesto que está buscando no existe o ha sido cubierto.",
-        backButton: "Volver a Carreras",
+        backButton: "Volver a Vacantes",
       },
       jobs: {
         seniorFullStack: {
@@ -1694,7 +1694,7 @@ export const translations = {
       strategicPartnerships: "Alianzas Estratégicas",
       other: "Otro",
       getInTouch: "Ponerse en Contacto",
-      whyPartnerWithUs: "Por Qué Asociarse Con Nosotros",
+      whyPartnerWithUs: "Por Qué Trabajar Con Nosotros",
       aiTalentMatching: "Matching de talento con IA con un 93% de precisión",
       reduceTimeToHire: "Reduzca el tiempo de contratación hasta en un 60%",
       accessToTalent: "Acceso a más de 10,000 profesionales pre-evaluados",
@@ -1795,14 +1795,14 @@ export const translations = {
       },
       successStoriesTitle: "Casos de Éxito",
       successStoriesSubtitle:
-        "Resultados reales de nuestras colocaciones de talento permanente en todas las industrias",
+        "Resultados reales de nuestros placements en todas las industrias",
       challenge: "Desafío",
       solution: "Solución",
       result: "Resultado",
-      ctaTitle: "¿Listo para Construir el Equipo de Sus Sueños?",
+      ctaTitle: "¿Listo para construir el equipo de tus sueños?",
       ctaSubtitle:
-        "Hablemos de cómo nuestros servicios de adquisición de talento permanente pueden ayudarle a encontrar a los candidatos perfectos para impulsar su negocio",
-      scheduleConsultation: "Programar una Consulta",
+        "Hablemos de cómo nuestros servicios de adquisición de talento pueden ayudarle a encontrar a los candidatos perfectos para impulsar su negocio",
+      scheduleConsultation: "Agendar una reunión",
       averageMatchScore: "Puntaje Promedio de Coincidencia",
     },
     freelanceTalent: {
@@ -1959,7 +1959,7 @@ export const translations = {
       successStoriesDescription: "Resultados reales de nuestras soluciones estratégicas de M&A y asociaciones.",
     },
     solution: {
-      title: "Una Solución a Medida para Cada Necesidad",
+      title: "Una solución a medida para cada necesidad",
       subtitle:
         "Nuestra IA propietaria, combinada con la supervisión humana, ofrece una precisión inigualable en la búsqueda de talento.",
       tabs: {
@@ -1980,7 +1980,7 @@ export const translations = {
           description: "Nuestros especialistas realizan entrevistas y evaluaciones exhaustivas.",
         },
         step4: {
-          title: "Recibe tu Selección",
+          title: "Recibe a tus candidatos",
           description: "Obtén una lista curada de candidatos de primer nivel, listos para entrevistar.",
         },
       },
