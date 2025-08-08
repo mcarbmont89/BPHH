@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main>
+      <main className="pt-[64px] bg-[#1A1A2E]">
         <Hero />
         <CoreServicesSection />
         <section id="services">
