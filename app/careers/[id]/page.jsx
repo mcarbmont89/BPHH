@@ -1,20 +1,19 @@
-"use client"
+"use client";
 
-import { useParams } from "next/navigation"
-import Link from "next/link"
-import { useState } from "react"
-import { useLanguage } from "@/lib/i18n/LanguageContext"
-import Header from "@/app/components/Header"
-import Footer from "@/app/components/Footer"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft } from "lucide-react"
-import { useEffect } from "react"
-import { fetchCareerById } from "@/app/api/careers"
-import RichTextComponent from "@/components/RichText"
-import { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical"
-import Loading from "./loading"
-import { ApplicationModal } from "@/app/components/application-modal"
-import { ThankYouModal } from "@/app/components/thank-you-modal"
+import { useParams } from "next/navigation";
+import Link from "next/link";
+import { useState } from "react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
+import { useEffect } from "react";
+import { fetchCareerById } from "@/app/api/careers";
+import RichTextComponent from "@/components/RichText";
+import Loading from "./loading";
+import { ApplicationModal } from "@/app/components/application-modal";
+import { ThankYouModal } from "@/app/components/thank-you-modal";
 
 // // Helper function to find a job by ID
 // const findJobById = (id: string): Job | undefined => {
@@ -27,34 +26,42 @@ import { ThankYouModal } from "@/app/components/thank-you-modal"
 
 const completeUrl = (url) => {
   if (url.startsWith("http://") || url.startsWith("https://")) {
-    return url
+    return url;
   }
-  return `https://${url}`
-}
+  return `https://${url}`;
+};
 
 export default function JobDetailsPage() {
-  const { t } = useLanguage()
-  const params = useParams()
-  const jobId = params.id
+  const { t, language: ctxLang } = useLanguage();
+  const params = useParams();
+  const jobId = params.id;
   // const job = findJobById(jobId)
-  const [career, setCareer] = useState(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-  const [showThankYouModal, setShowThankYouModal] = useState(false)
-  const [candidateName, setCandidateName] = useState("")
+  const [career, setCareer] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showThankYouModal, setShowThankYouModal] = useState(false);
+  const [candidateName, setCandidateName] = useState("");
 
   useEffect(() => {
-    fetchCareerById(jobId).then((data) => {
-      setCareer(data)
-      setIsLoading(false)
-    })
-  }, [jobId])
+    let alive = true;
+    const lang = (typeof window !== "undefined" && window.localStorage?.getItem("lang")) || ctxLang || "es";
+    fetchCareerById(jobId, lang)
+      .then((data) => {
+        if (alive) {
+          setCareer(data);
+          setIsLoading(false);
+        }
+      })
+      .catch(() => setIsLoading(false));
+    return () => {
+      alive = false;
+    };
+  }, [jobId, ctxLang]);
 
   const handleSuccessfulSubmission = (name) => {
-    setCandidateName(name)
-    setShowThankYouModal(true) 
-  }
-
+    setCandidateName(name);
+    setShowThankYouModal(true);
+  };
 
   // const handleApply = (useGmail) => {
   //   if (!career) return
@@ -69,9 +76,13 @@ export default function JobDetailsPage() {
   //     setIsLoading(false)
   //   }, 500)
   // }
+  const lang = (typeof window !== "undefined" && window.localStorage?.getItem("lang")) || ctxLang || "es";
+  const locale = lang === "en" ? "en-US" : "es-ES";
+  const salaryLabel = lang === "en" ? "Salary" : "Salario";
+  const locationLabel = lang === "en" ? "Location" : "Ubicación";
 
   if (isLoading) {
-    return <Loading />
+    return <Loading />;
   }
 
   if (!career) {
@@ -90,7 +101,7 @@ export default function JobDetailsPage() {
         </main>
         <Footer />
       </div>
-    )
+    );
   }
 
   return (
@@ -106,18 +117,32 @@ export default function JobDetailsPage() {
 
           <div className="bg-white rounded-lg border border-gray-200 p-8">
             <div className="flex gap-6 items-center mb-4">
-              {career.company_url && (
-                <img src={`https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("www.", "")}`} alt='' className="w-16 h-16"/>
+              {!career["Ocultar empresa"] && (
+                <img
+                  src={(() => {
+                    const server = process.env.NEXT_PUBLIC_CMS_URL || "";
+                    const url = career?.logo?.url;
+
+                    if (url) return url.startsWith("http") ? url : `${server}${url}`;
+                    if ((career.company || "").toLowerCase() === "botic partners") return "/boticlogo.png";
+                    if (career.company_url) {
+                      return `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("http://", "").replace("www.", "")}`;
+                    }
+                    return "/placeholder-company.png";
+                  })()}
+                  alt={career.company || "Company logo"}
+                  className="w-16 h-16"
+                />
               )}
               <div>
                 <h1 className="text-3xl font-bold text-primary">{career.position}</h1>
-                {career.company_url && !career.ocultar_empresa && (
+
+                {career.company_url && !career["Ocultar empresa"] ? (
                   <Link href={completeUrl(career.company_url)} target="_blank" rel="noopener noreferrer">
                     <p className="text-gray-500 mt-1 hover:underline">{career.company}</p>
                   </Link>
-                )}
-                {!career.company_url && (
-                  <p className="text-gray-500 mt-1">{career.ocultar_empresa ? 'Confidencial' : career.company}</p>
+                ) : (
+                  <p className="text-gray-500 mt-1">{career["Ocultar empresa"] ? "Confidencial" : career.company}</p>
                 )}
               </div>
             </div>
@@ -133,7 +158,7 @@ export default function JobDetailsPage() {
               <div className="border-t border-gray-200 my-6">
                 <h2 className="text-xl font-semibold my-4">Requisitos</h2>
                 <ul className="flex flex-col gap-2 list-disc ml-6 text-gray-700">
-                  {career.requirements.map(({requirement}, index) => (
+                  {career.requirements.map(({ requirement }, index) => (
                     <li key={index}>{requirement}</li>
                   ))}
                 </ul>
@@ -144,7 +169,7 @@ export default function JobDetailsPage() {
               <div className="border-t border-gray-200 my-6">
                 <h2 className="text-xl font-semibold my-4">Beneficios</h2>
                 <ul className="flex flex-col gap-2 list-disc ml-6 text-gray-700">
-                  {career.benefits.map(({benefit}, index) => (
+                  {career.benefits.map(({ benefit }, index) => (
                     <li key={index}>{benefit}</li>
                   ))}
                 </ul>
@@ -155,14 +180,37 @@ export default function JobDetailsPage() {
 
             {career.location && (
               <div className="flex gap-4 items-center mb-2">
-                <h2 className="font-semibold">Ubicación</h2>
+                <h2 className="font-semibold">{locationLabel}</h2>
                 <p className="text-gray-700">{career.location}</p>
               </div>
             )}
             {career.salary && (
               <div className="flex gap-4 items-center mb-2">
-                <h2 className="font-semibold">Salario</h2>
-                <p className="text-gray-700">{career.ocultar_salario ? 'Confidencial' : new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(career.salary)}</p>
+                <h2 className="font-semibold">{salaryLabel}</h2>
+                <p className="text-gray-700">
+                  {career["Ocultar salario"]
+                    ? "Confidencial"
+                    : (() => {
+                        const amount =
+                          typeof career.salary === "number"
+                            ? career.salary
+                            : Number(
+                                String(career.salary)
+                                  .replace(/[^\d.-]/g, "")
+                                  .replace(",", ".")
+                              );
+
+                        const localeForNumber = locale;
+
+                        const numberOnly = new Intl.NumberFormat(localeForNumber, {
+                          style: "decimal",
+                          minimumFractionDigits: 0,
+                          maximumFractionDigits: 0,
+                        }).format(amount);
+
+                        return `${numberOnly} €`;
+                      })()}
+                </p>
               </div>
             )}
 
@@ -191,5 +239,5 @@ export default function JobDetailsPage() {
       <ApplicationModal open={isModalOpen} career={career} onOpenChange={setIsModalOpen} onSuccess={handleSuccessfulSubmission} />
       <ThankYouModal open={showThankYouModal} onOpenChange={setShowThankYouModal} candidateName={candidateName} />
     </div>
-  )
+  );
 }

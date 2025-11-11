@@ -28,7 +28,7 @@ export default function Home() {
         <section id="process">
           <RecruitmentTimeline />
         </section>
-         <section id="industries">
+          <section id="industries">
           <Industries />
         </section>
         <TalentMatchingHero />
