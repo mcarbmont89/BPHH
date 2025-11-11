@@ -1,4 +1,4 @@
-const API_URL = `${process.env.NEXT_PUBLIC_CMS_URL || 'http://localhost:4000'}/api/careers`
+const API_URL = `${process.env.NEXT_PUBLIC_CMS_URL}/api/careers`
 
 export const fetchCareers = async (locale: 'es' | 'en' = 'es') => {
     const res = await fetch(`${API_URL}?depth=1&locale=${locale}`, { cache: 'no-store' })
