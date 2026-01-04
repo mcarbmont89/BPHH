@@ -39,9 +39,16 @@ export default function CareersPage() {
   }
 
   // Filter careers by search query
-  const filteredCareers = careers?.filter((career) => {
-    return selectedIndustry === "all" || career.sector === selectedIndustry;
-  });
+const filteredCareers = careers?.filter((career) => {
+  const status = String(career?.status ?? "active").toLowerCase();
+  const isActive = status === "active";
+
+  const matchesIndustry =
+    selectedIndustry === "all" || career.sector === selectedIndustry;
+
+  return isActive && matchesIndustry;
+});
+
   const lang = (typeof window !== "undefined" && window.localStorage?.getItem("lang")) || ctxLang || "es";
   const locale = lang === "en" ? "en-US" : "es-ES";
   const currency = lang === "en" ? "USD" : "EUR";

@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { CheckCircle, Clock, Zap, Users, Sparkles } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import Image from "next/image"
-import { useState } from "react"
-import { EmailOptionsModal } from "../components/EmailOptionsModal"
+import { motion } from "framer-motion";
+import { CheckCircle, Clock, Zap, Users, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Image from "next/image";
+import { useState } from "react";
+import { EmailOptionsModal } from "../components/EmailOptionsModal";
 
 // Import useLanguage at the top of the file
-import { useLanguage } from "@/lib/i18n/LanguageContext"
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 // Freelance talent benefits
 const benefits = [
@@ -34,7 +34,7 @@ const benefits = [
     title: "Fresh Perspectives",
     description: "Bring in outside expertise to spark innovation and solve complex challenges",
   },
-]
+];
 
 // Use cases
 const useCases = [
@@ -53,44 +53,41 @@ const useCases = [
     description: "Bridge leadership gaps during transitions or organizational changes",
     examples: ["Interim CTO", "Acting Engineering Director", "Temporary Product Lead", "Project Management"],
   },
-]
+];
 
 // Testimonials
 const testimonials = [
   {
-    quote:
-      "Botic Partners found us a specialized AI engineer in just 3 days when we urgently needed expertise for a critical client project. The quality was exceptional.",
+    quote: "Botic Partners found us a specialized AI engineer in just 3 days when we urgently needed expertise for a critical client project. The quality was exceptional.",
     author: "Maria Rodriguez",
     position: "CTO, Digital Solutions Inc.",
     image: "/placeholder.svg?height=60&width=60",
   },
   {
-    quote:
-      "The freelance cloud architect Botic connected us with transformed our infrastructure approach, delivering 40% cost savings and improved performance.",
+    quote: "The freelance cloud architect Botic connected us with transformed our infrastructure approach, delivering 40% cost savings and improved performance.",
     author: "James Chen",
     position: "VP Engineering, TechScale",
     image: "/placeholder.svg?height=60&width=60",
   },
   {
-    quote:
-      "When we needed interim leadership during our CTO transition, Botic found us the perfect temporary leader who kept our roadmap on track.",
+    quote: "When we needed interim leadership during our CTO transition, Botic found us the perfect temporary leader who kept our roadmap on track.",
     author: "Sarah Johnson",
     position: "CEO, InnovateTech",
     image: "/placeholder.svg?height=60&width=60",
   },
-]
+];
 
 export default function FreelanceTalent() {
-  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
-  const [emailSubject, setEmailSubject] = useState("")
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
+  const [emailSubject, setEmailSubject] = useState("");
 
   // Inside the component, add this line near the top:
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   const handleContactRequest = () => {
-    setEmailSubject("Freelance Talent Inquiry")
-    setIsEmailModalOpen(true)
-  }
+    setEmailSubject("Freelance Talent Inquiry");
+    setIsEmailModalOpen(true);
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -102,11 +99,7 @@ export default function FreelanceTalent() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-10 md:mb-0">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                   <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">{t("freelanceTalent.title")}</h1>
                   <p className="text-xl text-gray-700 mb-8">{t("freelanceTalent.subtitle")}</p>
                   <div className="flex flex-wrap gap-4 mb-8">
@@ -119,28 +112,15 @@ export default function FreelanceTalent() {
                       <span className="text-gray-800">{t("freelanceTalent.specialists")}</span>
                     </div>
                   </div>
-                  <Button
-                    onClick={handleContactRequest}
-                    className="bg-boticPurple hover:bg-boticPurple/90 text-white px-6 py-3"
-                  >
+                  <Button onClick={handleContactRequest} className="bg-boticPurple hover:bg-boticPurple/90 text-white px-6 py-3">
                     {t("freelanceTalent.findTalent")}
                   </Button>
                 </motion.div>
               </div>
               <div className="md:w-1/2">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="relative"
-                >
+                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className="relative">
                   <div className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-xl">
-                    <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/freelancers-iGI0kFjX5v8wMpdkcwv3ubUob7POqf.webp"
-                      alt="Freelance professionals collaborating"
-                      fill
-                      className="object-cover"
-                    />
+                    <Image src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/freelancers-iGI0kFjX5v8wMpdkcwv3ubUob7POqf.webp" alt="Freelance professionals collaborating" fill className="object-cover" />
                   </div>
                   <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
                     <div className="flex items-center gap-3">
@@ -169,24 +149,17 @@ export default function FreelanceTalent() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {benefits.map((benefit, index) => {
-                const Icon = benefit.icon
+                const Icon = benefit.icon;
 
                 return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-white p-6 rounded-xl shadow-md border border-gray-100"
-                  >
+                  <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }} className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
                     <div className="w-14 h-14 bg-boticPurple/10 rounded-full flex items-center justify-center mb-4">
                       <Icon className="h-7 w-7 text-boticPurple" />
                     </div>
                     <h3 className="text-xl font-bold mb-3">{t(`freelanceTalent.benefits.${index}.title`)}</h3>
                     <p className="text-gray-600">{t(`freelanceTalent.benefits.${index}.description`)}</p>
                   </motion.div>
-                )
+                );
               })}
             </div>
           </div>
@@ -202,13 +175,7 @@ export default function FreelanceTalent() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Technical Expertise */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="bg-white p-8 rounded-xl shadow-md border border-gray-100"
-              >
+              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white p-8 rounded-xl shadow-md border border-gray-100">
                 <h3 className="text-2xl font-bold mb-6 text-boticPurple">{t("freelanceTalent.technicalExpertise")}</h3>
 
                 <div className="grid grid-cols-2 gap-4">
@@ -303,16 +270,8 @@ export default function FreelanceTalent() {
               </motion.div>
 
               {/* Leadership & Specialized Roles */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-md border border-gray-100"
-              >
-                <h3 className="text-2xl font-bold mb-6 text-boticPurple">
-                  {t("freelanceTalent.leadershipSpecializedRoles")}
-                </h3>
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                <h3 className="text-2xl font-bold mb-6 text-boticPurple">{t("freelanceTalent.leadershipSpecializedRoles")}</h3>
 
                 <div className="grid grid-cols-1 gap-6">
                   <div>
@@ -384,14 +343,7 @@ export default function FreelanceTalent() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {useCases.map((useCase, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white p-6 rounded-xl shadow-md border border-gray-100"
-                >
+                <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }} className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
                   <div className="w-14 h-14 bg-boticPurple/10 rounded-full flex items-center justify-center mb-4">
                     <span className="text-2xl font-bold text-boticPurple">{index + 1}</span>
                   </div>
@@ -423,38 +375,51 @@ export default function FreelanceTalent() {
               <p className="text-gray-600 max-w-3xl mx-auto">{t("freelanceTalent.hearFromCompanies")}</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white p-6 rounded-xl shadow-md border border-gray-100"
-                >
-                  <div className="mb-6">
-                    <p className="text-gray-600 italic">"{testimonial.quote}"</p>
-                  </div>
+            {/* Carousel */}
+            <div className="relative overflow-hidden">
+              {/* Fade edges */}
+              <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-gray-50 to-transparent z-10" />
+              <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-gray-50 to-transparent z-10" />
 
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                      <Image
-                        src={testimonial.image || "/placeholder.svg"}
-                        alt={testimonial.author}
-                        width={48}
-                        height={48}
-                        className="object-cover"
-                      />
+              {/* Track */}
+              <div
+                className="
+          flex w-max gap-6
+          animate-[testimonial-scroll_35s_linear_infinite]
+          hover:[animation-play-state:paused]
+        "
+              >
+                {[...testimonials, ...testimonials].map((testimonial, index) => (
+                  <div key={`${testimonial.author}-${index}`} className="w-[320px] sm:w-[360px] bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div className="mb-6">
+                      <p className="text-gray-600 italic leading-relaxed">"{testimonial.quote}"</p>
                     </div>
-                    <div>
-                      <h4 className="font-semibold">{testimonial.author}</h4>
-                      <p className="text-gray-600 text-sm">{testimonial.position}</p>
+
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <Image src={testimonial.image || "/placeholder.svg"} alt={testimonial.author} width={48} height={48} className="object-cover" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">{testimonial.author}</h4>
+                        <p className="text-gray-600 text-sm">{testimonial.position}</p>
+                      </div>
                     </div>
                   </div>
-                </motion.div>
-              ))}
+                ))}
+              </div>
             </div>
+
+            {/* Keyframes */}
+            <style jsx global>{`
+              @keyframes testimonial-scroll {
+                from {
+                  transform: translateX(0);
+                }
+                to {
+                  transform: translateX(-50%);
+                }
+              }
+            `}</style>
           </div>
         </section>
 
@@ -463,10 +428,7 @@ export default function FreelanceTalent() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">{t("freelanceTalent.needSpecializedTalent")}</h2>
             <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">{t("freelanceTalent.ourNetworkOfTalent")}</p>
-            <Button
-              onClick={handleContactRequest}
-              className="bg-boticPurple hover:bg-boticPurple/90 text-white px-8 py-3 text-lg"
-            >
+            <Button onClick={handleContactRequest} className="bg-boticPurple hover:bg-boticPurple/90 text-white px-8 py-3 text-lg">
               {t("freelanceTalent.accessOurTalentNetwork")}
             </Button>
           </div>
@@ -476,5 +438,5 @@ export default function FreelanceTalent() {
       <Footer />
       <EmailOptionsModal isOpen={isEmailModalOpen} onClose={() => setIsEmailModalOpen(false)} subject={emailSubject} />
     </div>
-  )
+  );
 }

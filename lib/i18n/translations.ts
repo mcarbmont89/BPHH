@@ -40,7 +40,7 @@ export const translations = {
       legal: "Legal",
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
-      rightsReserved: "© 2024 Botic Partners. All rights reserved.",
+      rightsReserved: "© 2025 Botic Partners. All rights reserved.",
       quickLinks: "Quick Links",
       contactEmail: "admin@boticpartners.com",
       followUs: "Follow Us",
@@ -52,12 +52,10 @@ export const translations = {
     home: {
       hero: {
         title: "AI-Powered Talent Acquisition",
-        subtitle:
-          "We connect top-tier talent with leading companies, leveraging cutting-edge AI to ensure the perfect match.",
+        subtitle: "We connect top-tier talent with leading companies, leveraging cutting-edge AI to ensure the perfect match.",
         lastMatch: "Last Matches",
         jobTitle: "Senior Backend Engineer",
-        jobDescription:
-          "A leading fintech company is looking for a skilled engineer to build and scale their core infrastructure.",
+        jobDescription: "A leading fintech company is looking for a skilled engineer to build and scale their core infrastructure.",
         generalScore: "General Score",
         technicalSkills: "Technical Skills",
         teamFit: "Team Fit",
@@ -71,22 +69,19 @@ export const translations = {
         title: "Our Core Services",
         permanent: {
           title: "Permanent Talent",
-          description:
-            "Finding the right long-term fit is crucial. Our AI-powered process identifies candidates who not only have the right skills but also align with your company culture.",
+          description: "Finding the right long-term fit is crucial. Our AI-powered process identifies candidates who not only have the right skills but also align with your company culture.",
           cta: "Learn More",
           learnMore: "Learn More",
         },
         freelance: {
           title: "Freelance Talent",
-          description:
-            "Access a curated network of top-tier freelancers for project-based work. Our platform ensures you get the right expertise, right when you need it.",
+          description: "Access a curated network of top-tier freelancers for project-based work. Our platform ensures you get the right expertise, right when you need it.",
           cta: "Learn More",
           learnMore: "Learn More",
         },
         ma: {
           title: "M&A Services",
-          description:
-            "Navigating a merger or acquisition? We provide talent due diligence and integration strategies to ensure a smooth transition and long-term success.",
+          description: "Navigating a merger or acquisition? We provide talent due diligence and integration strategies to ensure a smooth transition and long-term success.",
           cta: "Learn More",
           learnMore: "Learn More",
         },
@@ -100,8 +95,7 @@ export const translations = {
       },
       whyChooseBotic: {
         title: "Why Choose Botic?",
-        description:
-          "Our AI-driven approach, combined with deep industry expertise, ensures we find not just a candidate, but the right talent to drive your company forward.",
+        description: "Our AI-driven approach, combined with deep industry expertise, ensures we find not just a candidate, but the right talent to drive your company forward.",
         points: [
           {
             title: "AI-Powered Precision",
@@ -125,18 +119,15 @@ export const translations = {
         title: "What Our Partners Say",
         list: [
           {
-            quote:
-              "Botic's AI-driven approach found us a candidate we wouldn't have discovered otherwise. The process was efficient, and the fit is perfect.",
+            quote: "Botic's AI-driven approach found us a candidate we wouldn't have discovered otherwise. The process was efficient, and the fit is perfect.",
             author: "Jane Doe, CTO at Innovatech",
           },
           {
-            quote:
-              "The team at Botic understands the specific needs of the hardware industry. They are our go-to partner for critical hires.",
+            quote: "The team at Botic understands the specific needs of the hardware industry. They are our go-to partner for critical hires.",
             author: "John Smith, VP of Engineering at QuantumLeap",
           },
           {
-            quote:
-              "For our M&A activities, Botic's strategic talent assessment was invaluable. They helped us integrate a new team seamlessly.",
+            quote: "For our M&A activities, Botic's strategic talent assessment was invaluable. They helped us integrate a new team seamlessly.",
             author: "Emily White, Head of Corporate Development at BuildRight",
           },
         ],
@@ -157,12 +148,10 @@ export const translations = {
     talentMatchingHero: {
       badge: "AI-Powered Recruitment",
       title: "AI-Powered Talent Matching & Business Acceleration",
-      description:
-        "At Botic Partners, we optimize recruitment with AI-driven precision. Our AI agents process thousands of profiles and shortlist top talent, while our expert headhunters conduct interviews—ensuring faster, smarter hiring.",
+      description: "At Botic Partners, we optimize recruitment with AI-driven precision. Our AI agents process thousands of profiles and shortlist top talent, while our expert headhunters conduct interviews—ensuring faster, smarter hiring.",
       highlightBox: {
-        title: "In less than 2 days your candidates in a call",
-        description:
-          "Our AI-powered matching system delivers qualified candidates faster than traditional recruitment methods. Experience the future of recruitment with our advanced AI technology.",
+        title: "In less than 2 days, candidates ready for a call",
+        description: "Our AI-powered matching system delivers qualified candidates faster than traditional recruitment methods. Experience the future of recruitment with our advanced AI technology.",
         button: "Discover",
       },
     },
@@ -173,22 +162,19 @@ export const translations = {
         {
           id: "01",
           title: "Client Brief & Role Definition",
-          description:
-            "We work with you to understand your needs, culture, and the specific requirements for the role.",
+          description: "We work with you to understand your needs, culture, and the specific requirements for the role.",
           image: "/images/recruitment/client-brief.png",
         },
         {
           id: "02",
           title: "AI-Powered Search & Shortlisting",
-          description:
-            "Our AI scans thousands of profiles to identify the best candidates based on skills, experience, and cultural fit.",
+          description: "Our AI scans thousands of profiles to identify the best candidates based on skills, experience, and cultural fit.",
           image: "/images/recruitment/search-shortlist.png",
         },
         {
           id: "03",
           title: "Interview & Decision",
-          description:
-            "We conduct initial screenings and present you with a shortlist of top candidates for you to interview.",
+          description: "We conduct initial screenings and present you with a shortlist of top candidates for you to interview.",
           image: "/images/recruitment/interview-decision.png",
         },
         {
@@ -204,8 +190,7 @@ export const translations = {
       steps: [
         {
           title: "Client Brief & Role Definition",
-          description:
-            "We work with you to understand your needs, culture, and the specific requirements for the role.",
+          description: "We work with you to understand your needs, culture, and the specific requirements for the role.",
         },
         {
           title: "AI-Powered Search & Shortlisting",
@@ -213,20 +198,17 @@ export const translations = {
         },
         {
           title: "Interview & Decision",
-          description:
-            "We manage the interview process, providing you with detailed feedback to help you make the right choice.",
+          description: "We manage the interview process, providing you with detailed feedback to help you make the right choice.",
         },
         {
           title: "Offer & Onboarding",
-          description:
-            "We assist with the offer negotiation and support the candidate through their onboarding process.",
+          description: "We assist with the offer negotiation and support the candidate through their onboarding process.",
         },
       ],
     },
     hero: {
       title: "The Future of Talent Acquisition is Here",
-      subtitle:
-        "We leverage AI and deep industry expertise to connect you with exceptional talent in Software, Hardware, Construction, and Logistics.",
+      subtitle: "We leverage AI and deep industry expertise to connect you with exceptional talent in Software, Hardware, Construction, and Logistics.",
       getStarted: "Get Started",
       learnMore: "Learn More",
       cta: "Find Talent",
@@ -275,51 +257,30 @@ export const translations = {
       subtitle: "Driving business growth through AI-powered talent and strategic partnerships.",
       aiTalentMatching: {
         title: "AI-Powered Talent Matching & Business Acceleration",
-        subtitle:
-          "At Botic Partners, we optimize recruitment with AI-driven precision. Our AI agents process thousands of profiles and shortlist top talent, while our expert headhunters conduct interviews—ensuring faster, smarter hiring.",
+        subtitle: "At Botic Partners, we optimize recruitment with AI-driven precision. Our AI agents process thousands of profiles and shortlist top talent, while our expert headhunters conduct interviews—ensuring faster, smarter hiring.",
       },
       headhunting: {
         title: "Headhunting & Executive Search",
         description: "Find top tech talent quickly and efficiently.",
-        longDescription:
-          "At Botic Partners, we use a data-driven and AI-powered approach to identify, assess, and connect the best talent in hardware, software, and advanced technology.",
+        longDescription: "At Botic Partners, we use a data-driven and AI-powered approach to identify, assess, and connect the best talent in hardware, software, and advanced technology.",
         whyDifferent: "Why is our headhunting different?",
-        points: [
-          "Fast and precise – We filter ideal candidates in seconds.",
-          "Smart automation – We enhance efficiency with advanced AI tools.",
-          "Significant cost savings – We reduce hiring costs and time.",
-        ],
-        conclusion:
-          "If you're looking for tech specialists or executive leaders, Botic Partners is your strategic recruitment partner.",
+        points: ["Fast and precise – We filter ideal candidates in seconds.", "Smart automation – We enhance efficiency with advanced AI tools.", "Significant cost savings – We reduce hiring costs and time."],
+        conclusion: "If you're looking for tech specialists or executive leaders, Botic Partners is your strategic recruitment partner.",
         expertiseTitle: "Our Areas of Expertise",
-        expertiseAreas: [
-          "Software Development & Engineering",
-          "Hardware & Semiconductor Design",
-          "AI & Machine Learning",
-          "Cloud Architecture & DevOps",
-          "Technical Leadership & CTO roles",
-        ],
+        expertiseAreas: ["Software Development & Engineering", "Hardware & Semiconductor Design", "AI & Machine Learning", "Cloud Architecture & DevOps", "Technical Leadership & CTO roles"],
         metricsTitle: "Our Success Metrics",
-        metrics: [
-          " successful placement rate within 15 days",
-          " of placed candidates stay 2+ years",
-          " reduction in hiring costs",
-          "Access to 10,000+ pre-vetted tech professionals",
-        ],
+        metrics: [" successful placement rate within 15 days", " of placed candidates stay 2+ years", " reduction in hiring costs", "Access to 10,000+ pre-vetted tech professionals"],
         testimonials: [
           {
-            quote:
-              "Botic Partners reduced our time-to-hire by 60% while improving candidate quality. Their AI-powered approach is revolutionary.",
+            quote: "Botic Partners reduced our time-to-hire by 60% while improving candidate quality. Their AI-powered approach is revolutionary.",
             author: "CTO, Leading Tech Company",
           },
           {
-            quote:
-              "We found exceptional talent in record time. The AI matching was incredibly accurate for our specialized roles.",
+            quote: "We found exceptional talent in record time. The AI matching was incredibly accurate for our specialized roles.",
             author: "VP of Engineering, Software Startup",
           },
           {
-            quote:
-              "The quality of candidates and speed of placement exceeded our expectations. A game-changer for our hiring process.",
+            quote: "The quality of candidates and speed of placement exceeded our expectations. A game-changer for our hiring process.",
             author: "HR Director, Enterprise Tech",
           },
         ],
@@ -335,25 +296,16 @@ export const translations = {
         company: "Company",
         partner: "Partner",
         investor: "Investor",
-        longDescription:
-          "At Botic Partners, we do more than just finding talent. We connect companies with the right strategic partners to drive their growth.",
-        whatWeDo: "¿What do we do?",
+        longDescription: "At Botic Partners, we do more than just find talent. We connect companies with the right strategic partners to drive growth.",
+        whatWeDo: "What do we do?",
         weConnect: "We facilitate high-value connections between companies seeking:",
-        connectionTypes: [
-          "New clients or strategic partners",
-          "Investors or potential buyers",
-          "Collaboration opportunities in key industries",
-        ],
+        connectionTypes: ["New clients or strategic partners", "Investors or potential buyers", "Collaboration opportunities in key industries"],
         howWeDoIt: "How do we do it?",
-        methods: [
-          "No platforms, no automation – We leverage our validated direct network.",
-          "Fast and flexible – We tailor our approach to each case, ensuring high-value introductions.",
-          "Trust-based approach – Every connection is relevant and has real potential.",
-        ],
+        methods: ["No platforms, no automation – We leverage our validated direct network.", "Fast and flexible – We tailor our approach to each case, ensuring high-value introductions.", "Trust-based approach – Every connection is relevant and has real potential."],
         cta: "Looking for the right connection to grow your business? Let's talk.",
-        letsTalk: "Let's Talk",
+        letsTalk: "Learn more",
       },
-      ctaText: "Schedule a Consultation",
+      ctaText: "Learn more",
       consultationSubject: "Consultation Request",
     },
     about: {
@@ -364,16 +316,14 @@ export const translations = {
         point1: "We drive your growth by connecting you with top talent and strategic opportunities.",
         point2: "We find your ideal match, blending cutting-edge AI with human expertise.",
         point3: "We build lasting relationships that power your business success.",
-        description:
-          "More than just recruitment, we construct a valuable network for your future, ensuring long-term success and growth for both companies and talent.",
+        description: "More than just recruitment, we construct a valuable network for your future, ensuring long-term success and growth for both companies and talent.",
       },
       vision: {
         title: "Our Vision",
         point1: "We're reshaping headhunting in Europe and Latin America.",
         point2: "We lead with innovation, powerful connections, and a commitment to diversity.",
         point3: "Every connection we make delivers real impact.",
-        description:
-          "We envision a future where AI-powered recruitment is the norm, creating perfect matches that drive innovation and growth across industries.",
+        description: "We envision a future where AI-powered recruitment is the norm, creating perfect matches that drive innovation and growth across industries.",
       },
       valuesApproach: {
         title: "Values and Approach",
@@ -387,8 +337,7 @@ export const translations = {
         },
         strategicConnections: {
           title: "Strategic Connections",
-          description:
-            "We open doors to new business opportunities, linking you with key talent, partners, and clients. We create a collaborative ecosystem where companies connect to grow together.",
+          description: "We open doors to new business opportunities, linking you with key talent, partners, and clients. We create a collaborative ecosystem where companies connect to grow together.",
         },
         transparency: {
           title: "Transparency",
@@ -423,13 +372,11 @@ export const translations = {
         author: "Jane Doe, CTO at InnovateCorp",
       },
       testimonial2: {
-        quote:
-          "The quality of freelance talent is exceptional. We've been able to scale our development team on demand.",
+        quote: "The quality of freelance talent is exceptional. We've been able to scale our development team on demand.",
         author: "John Smith, Head of Engineering at TechSolutions",
       },
       testimonial3: {
-        quote:
-          "Their M&A talent diligence was invaluable. It gave us the confidence to move forward with our acquisition.",
+        quote: "Their M&A talent diligence was invaluable. It gave us the confidence to move forward with our acquisition.",
         author: "Emily White, CEO at FutureEnterprises",
       },
     },
@@ -450,8 +397,7 @@ export const translations = {
       subtitle: "Focused expertise in cutting-edge sectors",
       software: {
         title: "Software (AI & Development)",
-        description:
-          "From machine learning engineers to full-stack developers, we source the talent driving the digital revolution.",
+        description: "From machine learning engineers to full-stack developers, we source the talent driving the digital revolution.",
       },
       hardware: {
         title: "Hardware (Deep Tech)",
@@ -459,8 +405,7 @@ export const translations = {
       },
       construction: {
         title: "Construction & Real Estate",
-        description:
-          "Find the professionals shaping the future of our cities, from smart building engineers to project managers.",
+        description: "Find the professionals shaping the future of our cities, from smart building engineers to project managers.",
       },
       logistics: {
         title: "Logistics",
@@ -468,15 +413,13 @@ export const translations = {
       },
       expertise: {
         title: "Specialized Recruitment Expertise",
-        description:
-          "Our AI-powered global recruitment focuses on Software, Hardware, Construction & Real Estate, and Logistics. We provide tailored talent acquisition services, ensuring perfect matches in these high-demand, specialized sectors.",
+        description: "Our AI-powered global recruitment focuses on Software, Hardware, Construction & Real Estate, and Logistics. We provide tailored talent acquisition services, ensuring perfect matches in these high-demand, specialized sectors.",
       },
       exploreOpportunities: "Explore Opportunities",
     },
     clientCarousel: {
       title: "Trusted by Industry Leaders",
-      testimonial:
-        "Botic Partners is who we work with exclusively, as they have always provided us with incredibly good profiles, not only at a technical and aptitude level but also on a personal level. I advise you to work with them, as they will surely get you the best candidates that exist.",
+      testimonial: "Botic Partners is who we work with exclusively, as they have always provided us with incredibly good profiles, not only at a technical and aptitude level but also on a personal level. I advise you to work with them, as they will surely get you the best candidates that exist.",
       testimonialAuthor: "CEO - Satisfied Client",
     },
     careers: {
@@ -499,23 +442,19 @@ export const translations = {
       jobs: {
         seniorFullStack: {
           title: "Senior Full Stack Developer",
-          description:
-            "Develop and maintain web applications, ensuring high performance and responsiveness across various platforms.",
+          description: "Develop and maintain web applications, ensuring high performance and responsiveness across various platforms.",
         },
         aiResearchScientist: {
           title: "AI Research Scientist",
-          description:
-            "Conduct cutting-edge research in artificial intelligence and machine learning, contributing to innovative solutions.",
+          description: "Conduct cutting-edge research in artificial intelligence and machine learning, contributing to innovative solutions.",
         },
         dataScientist: {
           title: "Data Scientist",
-          description:
-            "Analyze complex datasets to extract actionable insights and build predictive models for business optimization.",
+          description: "Analyze complex datasets to extract actionable insights and build predictive models for business optimization.",
         },
         devOpsEngineer: {
           title: "DevOps Engineer",
-          description:
-            "Implement and manage continuous integration and deployment pipelines, ensuring smooth software delivery.",
+          description: "Implement and manage continuous integration and deployment pipelines, ensuring smooth software delivery.",
         },
         productManager: {
           title: "Product Manager",
@@ -531,8 +470,7 @@ export const translations = {
         },
         asicDesignEngineer: {
           title: "ASIC Design Engineer",
-          description:
-            "Join our hardware team to design and verify high-performance Application-Specific Integrated Circuits (ASICs).",
+          description: "Join our hardware team to design and verify high-performance Application-Specific Integrated Circuits (ASICs).",
         },
         embeddedSystemsEngineer: {
           title: "Embedded Systems Engineer",
@@ -540,13 +478,11 @@ export const translations = {
         },
         constructionProjectManager: {
           title: "Construction Project Manager",
-          description:
-            "Oversee and manage large-scale construction projects, ensuring they are completed on time and within budget.",
+          description: "Oversee and manage large-scale construction projects, ensuring they are completed on time and within budget.",
         },
         bimSpecialist: {
           title: "BIM Specialist",
-          description:
-            "Utilize Building Information Modeling (BIM) to create and manage digital models for construction projects.",
+          description: "Utilize Building Information Modeling (BIM) to create and manage digital models for construction projects.",
         },
         smartBuildingEngineer: {
           title: "Smart Building Engineer",
@@ -558,8 +494,7 @@ export const translations = {
         },
         logisticsOperationsManager: {
           title: "Logistics Operations Manager",
-          description:
-            "Manage and coordinate the daily operations of our logistics network, including transportation and warehousing.",
+          description: "Manage and coordinate the daily operations of our logistics network, including transportation and warehousing.",
         },
         warehouseAutomationSpecialist: {
           title: "Warehouse Automation Specialist",
@@ -589,6 +524,11 @@ export const translations = {
         description: "Stay updated with the latest insights and news about AI in recruitment and business growth",
         placeholder: "Your email address",
         subscribe: "Subscribe",
+
+        subscribing: "Subscribing... please wait.",
+        success: "Thanks for subscribing! We’ll send updates and insights straight to your inbox.",
+        alreadySubscribed: "You’re already subscribed with this email. Thanks for being with us!",
+        error: "Something went wrong. Please try again in a moment.",
       },
       postNotFound: "Article Not Found",
       postNotFoundMessage: "The article you're looking for doesn't exist or has been moved.",
@@ -596,33 +536,27 @@ export const translations = {
       posts: {
         recruitmentProcess: {
           title: "Our AI-Powered Recruitment Process: A Game-Changer in Tech Hiring",
-          excerpt:
-            "Discover how our innovative AI-driven recruitment process is revolutionizing the way companies find and hire top tech talent.",
+          excerpt: "Discover how our innovative AI-driven recruitment process is revolutionizing the way companies find and hire top tech talent.",
         },
         connectingCompanies: {
           title: "Connecting Companies, Fueling Growth: The Botic Partners Approach",
-          excerpt:
-            "Learn how we connect businesses with the right talent and strategic opportunities to drive sustainable growth and innovation.",
+          excerpt: "Learn how we connect businesses with the right talent and strategic opportunities to drive sustainable growth and innovation.",
         },
         aiAgentsImplementation: {
           title: "Implementing AI Agents: Transforming Your Business Processes",
-          excerpt:
-            "Explore how AI agents can streamline your operations, enhance decision-making, and create competitive advantages.",
+          excerpt: "Explore how AI agents can streamline your operations, enhance decision-making, and create competitive advantages.",
         },
         aiRecruitmentTrends: {
           title: "2025 AI Recruitment Trends: What's Next in Talent Acquisition",
-          excerpt:
-            "Stay ahead of the curve with our analysis of emerging trends in AI-powered recruitment and talent acquisition strategies.",
+          excerpt: "Stay ahead of the curve with our analysis of emerging trends in AI-powered recruitment and talent acquisition strategies.",
         },
         talentRetentionStrategies: {
           title: "AI-Enhanced Talent Retention Strategies That Actually Work",
-          excerpt:
-            "Discover proven strategies for retaining top talent using AI-driven insights and personalized engagement approaches.",
+          excerpt: "Discover proven strategies for retaining top talent using AI-driven insights and personalized engagement approaches.",
         },
         futureOfWork: {
           title: "The Future of Work: How AI is Reshaping Recruitment and Workforce Management",
-          excerpt:
-            "Explore how artificial intelligence is transforming workplace dynamics, talent acquisition, and strategic workforce planning.",
+          excerpt: "Explore how artificial intelligence is transforming workplace dynamics, talent acquisition, and strategic workforce planning.",
         },
       },
     },
@@ -654,8 +588,7 @@ export const translations = {
     },
     stats: {
       title: "Transforming Recruitment with AI",
-      description:
-        "We're revolutionizing how companies find and connect with top talent through our innovative AI-powered approach.",
+      description: "We're revolutionizing how companies find and connect with top talent through our innovative AI-powered approach.",
     },
     emailOptions: {
       title: "How would you like to proceed?",
@@ -725,17 +658,13 @@ export const translations = {
       timeToHire: "21-day average time-to-hire",
       discussNeeds: "Discuss Your Talent Needs",
       strategicRolesTitle: "Strategic Roles We Excel In",
-      strategicRolesSubtitle:
-        "We specialize in placing high-impact permanent talent in key positions that drive organizational success",
+      strategicRolesSubtitle: "We specialize in placing high-impact permanent talent in key positions that drive organizational success",
       executiveLeadership: "Executive Leadership",
-      executiveLeadershipDescription:
-        "C-suite and senior leadership roles that set strategic direction and drive organizational transformation",
+      executiveLeadershipDescription: "C-suite and senior leadership roles that set strategic direction and drive organizational transformation",
       technicalLeadership: "Technical Leadership",
-      technicalLeadershipDescription:
-        "Mid-level leaders who bridge strategy and execution, managing teams and delivering technical outcomes",
+      technicalLeadershipDescription: "Mid-level leaders who bridge strategy and execution, managing teams and delivering technical outcomes",
       specializedTechnicalTalent: "Specialized Technical Talent",
-      specializedTechnicalTalentDescription:
-        "Highly skilled individual contributors with specialized expertise in emerging technologies",
+      specializedTechnicalTalentDescription: "Highly skilled individual contributors with specialized expertise in emerging technologies",
       cto: "Chief Technology Officer (CTO)",
       cpo: "Chief Product Officer (CPO)",
       vpEngineering: "VP of Engineering",
@@ -748,47 +677,48 @@ export const translations = {
       dataScientists: "Data Scientists",
       cloudArchitects: "Cloud Architects",
       securitySpecialists: "Security Specialists",
-      methodologyTitle: "Our Permanent Talent Methodology",
-      methodologySubtitle:
-        "A unique approach that combines AI-powered search with human expertise to deliver exceptional talent",
+
+      methodologyTitle: "Our working methodology",
+      methodologySubtitle: "",
       methodologySteps: {
         strategicAnalysis: {
-          title: "Strategic Needs Analysis",
-          description:
-            "We conduct in-depth analysis of your organization's strategic goals, culture, and technical requirements to define the perfect candidate profile.",
+          title: "Strategic talent isn’t on job boards",
+          description: "Over 90% of profiles in industries like tech are passive talent. That’s why messaging and selection are critical.",
         },
         aiSearch: {
-          title: "AI-Powered Search",
-          description:
-            "Our proprietary AI algorithms scan millions of profiles across multiple platforms to identify candidates with the precise skills and experience you need.",
+          title: "AI and tech partnerships to move faster",
+          description: "We work with leading AI and data providers to analyze millions of profiles and drastically reduce search time.",
         },
         humanExpertise: {
-          title: "Human Expertise Validation",
-          description:
-            "Our industry specialists personally evaluate each AI-selected candidate, assessing cultural fit and career alignment.",
+          title: "Filtering well matters more than searching more",
+          description: "In tech, engineering, and leadership roles, fewer than 10% of candidates truly qualify. Our focus is finding that 10%.",
         },
         qualification: {
-          title: "Rigorous Qualification",
-          description:
-            "Candidates undergo comprehensive technical assessments and behavioral interviews tailored to your specific requirements.",
+          title: "Fewer options, better chosen",
+          description: "Our reports include the CV plus our interview notes and real evaluation so decision-making is easier.",
         },
         acceleratedPlacement: {
-          title: "Accelerated Placement",
-          description:
-            "We manage the entire hiring process, from initial contact through offer negotiation, ensuring a smooth and efficient experience.",
+          title: "Follow-up to ensure retention",
+          description: "Hiring doesn’t end with a signature. We follow up after onboarding to ensure fit, performance, and continuity.",
         },
       },
       successStoriesTitle: "Success Stories",
-      successStoriesSubtitle: "Real results from our permanent talent placements across industries",
+      successStoriesSubtitle: "Candidate testimonials will be added here (pending content from Borja).",
       challenge: "Challenge",
       solution: "Solution",
       result: "Result",
-      ctaTitle: "Ready to Build Your Dream Team?",
-      ctaSubtitle:
-        "Let's discuss how our permanent talent acquisition services can help you find the perfect candidates to drive your business forward",
-      scheduleConsultation: "Schedule a Consultation",
+
+      testimonialsPending: "Pending content (provided by Borja).",
+
+      ctaTitle: "Need to hire talent? Contact us!",
+      ctaSubtitle: "Fill out the form and your request will be sent to admin@boticpartners.com.",
+      scheduleConsultation: "Contact us",
+
+      mailSubject: "Permanent Talent - Contact Request",
+
       averageMatchScore: "Average Match Score",
     },
+
     freelanceTalent: {
       title: "On-Demand Freelance Talent",
       subtitle: "Access specialized expertise exactly when you need it, without the commitment of permanent hires",
@@ -873,28 +803,24 @@ export const translations = {
       hearFromCompanies: "Hear from companies that have leveraged our freelance talent solutions",
       testimonials: [
         {
-          quote:
-            "Botic Partners found us a specialized AI engineer in just 3 days when we urgently needed expertise for a critical client project. The quality was exceptional.",
+          quote: "Botic Partners found us a specialized AI engineer in just 3 days when we urgently needed expertise for a critical client project. The quality was exceptional.",
           author: "MARÍA RODRÍGUEZ",
           position: "CTO, Digital Solutions Inc.",
         },
         {
-          quote:
-            "The freelance cloud architect Botic connected us with transformed our infrastructure approach, delivering 40% cost savings and improved performance.",
+          quote: "The freelance cloud architect Botic connected us with transformed our infrastructure approach, delivering 40% cost savings and improved performance.",
           author: "JUAN PEÑA",
           position: "VP Engineering, TechScale",
         },
         {
-          quote:
-            "When we needed interim leadership during our CTO transition, Botic found us the perfect temporary leader who kept our roadmap on track.",
+          quote: "When we needed interim leadership during our CTO transition, Botic found us the perfect temporary leader who kept our roadmap on track.",
           author: "ANTONIO LÓPEZ",
           position: "CEO, InnovateTech",
         },
       ],
       needSpecializedTalent: "¿Necesitas Talento Especializado Rápidamente?",
-      ourNetworkOfTalent:
-        "Nuestra red de profesionales freelance pre-evaluados puede comenzar a contribuir a sus proyectos en cuestión de días.",
-      accessOurTalentNetwork: "Access Our Talent Network",
+      ourNetworkOfTalent: "Nuestra red de profesionales freelance pre-evaluados puede comenzar a contribuir a sus proyectos en cuestión de días.",
+      accessOurTalentNetwork: "Acceder a nuestra red de talento",
     },
     maServices: {
       title: "Strategic M&A Services",
@@ -903,44 +829,33 @@ export const translations = {
       strategicTargetIdentification: "Identificación estratégica de objetivos",
       exploreOpportunities: "Explorar Oportunidades de M&A",
       ourServices: "Nuestros Servicios de M&A",
-      ourServicesDescription:
-        "Soporte integral para conexiones comerciales estratégicas y oportunidades de crecimiento",
+      ourServicesDescription: "Soporte integral para conexiones comerciales estratégicas y oportunidades de crecimiento",
       targetId: "Identificación de Objetivos",
-      targetIdDesc:
-        "Aprovechamos nuestra extensa red y capacidades de búsqueda impulsadas por IA para identificar objetivos de adquisición ideales o socios estratégicos que se alineen con sus objetivos comerciales.",
+      targetIdDesc: "Aprovechamos nuestra extensa red y capacidades de búsqueda impulsadas por IA para identificar objetivos de adquisición ideales o socios estratégicos que se alineen con sus objetivos comerciales.",
       partnership: "Facilitación de Alianzas Estratégicas",
-      partnershipDesc:
-        "Conectamos empresas para asociaciones mutuamente beneficiosas, empresas conjuntas y oportunidades de colaboración que impulsan el crecimiento y la innovación.",
+      partnershipDesc: "Conectamos empresas para asociaciones mutuamente beneficiosas, empresas conjuntas y oportunidades de colaboración que impulsan el crecimiento y la innovación.",
       opportunityAssessment: "Evaluación de Oportunidades de Adquisición",
-      opportunityAssessmentDesc:
-        "Nuestro equipo realiza evaluaciones exhaustivas de posibles objetivos de adquisición, evaluando las capacidades técnicas, la calidad del equipo y el ajuste estratégico.",
+      opportunityAssessmentDesc: "Nuestro equipo realiza evaluaciones exhaustivas de posibles objetivos de adquisición, evaluando las capacidades técnicas, la calidad del equipo y el ajuste estratégico.",
       confidentialRep: "Representación Confidencial",
-      confidentialRepDesc:
-        "Actuamos como su representante confidencial en el mercado, protegiendo su identidad mientras exploramos oportunidades estratégicas.",
+      confidentialRepDesc: "Actuamos como su representante confidencial en el mercado, protegiendo su identidad mientras exploramos oportunidades estratégicas.",
       ourProcess: "Nuestro Proceso de M&A",
       ourProcessDescription: "Un enfoque estructurado para identificar y facilitar conexiones comerciales estratégicas",
       consultation: "Consulta Estratégica",
-      consultationDesc:
-        "Comenzamos con una comprensión profunda de sus objetivos comerciales, estrategia de crecimiento y criterios específicos para posibles objetivos o socios.",
+      consultationDesc: "Comenzamos con una comprensión profunda de sus objetivos comerciales, estrategia de crecimiento y criterios específicos para posibles objetivos o socios.",
       research: "Investigación de Mercado e Identificación de Objetivos",
-      researchDesc:
-        "Nuestro equipo realiza una investigación de mercado exhaustiva para identificar posibles objetivos de adquisición o socios estratégicos que se alineen con sus criterios.",
+      researchDesc: "Nuestro equipo realiza una investigación de mercado exhaustiva para identificar posibles objetivos de adquisición o socios estratégicos que se alineen con sus criterios.",
       outreach: "Contacto Confidencial",
-      outreachDesc:
-        "Realizamos acercamientos discretos y profesionales a los objetivos identificados, manteniendo su confidencialidad mientras evaluamos el interés y el posible ajuste.",
+      outreachDesc: "Realizamos acercamientos discretos y profesionales a los objetivos identificados, manteniendo su confidencialidad mientras evaluamos el interés y el posible ajuste.",
       introductions: "Introducciones Facilitadas",
-      introductionsDesc:
-        "Para las partes interesadas, organizamos y facilitamos las discusiones iniciales, ayudando a ambas partes a explorar posibles sinergias y oportunidades.",
+      introductionsDesc: "Para las partes interesadas, organizamos y facilitamos las discusiones iniciales, ayudando a ambas partes a explorar posibles sinergias y oportunidades.",
       advisory: "Asesoramiento Estratégico",
-      advisoryDesc:
-        "A lo largo del proceso, brindamos orientación y apoyo estratégico para ayudarlo a evaluar oportunidades y tomar decisiones informadas.",
+      advisoryDesc: "A lo largo del proceso, brindamos orientación y apoyo estratégico para ayudarlo a evaluar oportunidades y tomar decisiones informadas.",
       successStories: "Casos de Éxito",
       successStoriesDescription: "Resultados reales de nuestras soluciones estratégicas de M&A y asociaciones.",
     },
     solution: {
       title: "Una Solución a Medida para Cada Necesidad",
-      subtitle:
-        "Nuestra IA propietaria, combinada con la supervisión humana, ofrece una precisión inigualable en la búsqueda de talento.",
+      subtitle: "Nuestra IA propietaria, combinada con la supervisión humana, ofrece una precisión inigualable en la búsqueda de talento.",
       tabs: {
         companies: "Para Empresas",
         candidates: "Para Candidatos",
@@ -994,13 +909,11 @@ export const translations = {
       },
       precision: {
         title: "Precisión en la Selección",
-        description:
-          "Nuestra IA va más allá de las palabras clave para encontrar coincidencias por habilidades técnicas, blandas y ajuste cultural.",
+        description: "Nuestra IA va más allá de las palabras clave para encontrar coincidencias por habilidades técnicas, blandas y ajuste cultural.",
       },
       partnership: {
         title: "Asociación Estratégica",
-        description:
-          "Trabajamos como una extensión de tu equipo para entender tus necesidades únicas y entregar resultados.",
+        description: "Trabajamos como una extensión de tu equipo para entender tus necesidades únicas y entregar resultados.",
       },
     },
   },
@@ -1057,12 +970,10 @@ export const translations = {
     home: {
       hero: {
         title: "Adquisición de Talento Potenciada por IA",
-        subtitle:
-          "Conectamos talento de primer nivel con empresas líderes, aprovechando la IA de vanguardia para asegurar la combinación perfecta.",
+        subtitle: "Conectamos talento de primer nivel con empresas líderes, aprovechando la IA de vanguardia para asegurar la combinación perfecta.",
         lastMatch: "Últimos Matches",
         jobTitle: "Ingeniero de Backend Senior",
-        jobDescription:
-          "Una empresa líder en fintech busca un ingeniero calificado para construir y escalar su infraestructura central.",
+        jobDescription: "Una empresa líder en fintech busca un ingeniero calificado para construir y escalar su infraestructura central.",
         generalScore: "Puntaje General",
         technicalSkills: "Habilidades Técnicas",
         teamFit: "Ajuste de Equipo",
@@ -1076,22 +987,19 @@ export const translations = {
         title: "Nuestros Servicios Principales",
         permanent: {
           title: "Talento en Plantilla",
-          description:
-            "Encontrar el ajuste adecuado a largo plazo es crucial. Nuestro proceso impulsado por IA identifica candidatos que no solo tienen las habilidades adecuadas, sino que también se alinean con la cultura de tu empresa.",
+          description: "Encontrar el ajuste adecuado a largo plazo es crucial. Nuestro proceso impulsado por IA identifica candidatos que no solo tienen las habilidades adecuadas, sino que también se alinean con la cultura de tu empresa.",
           cta: "Saber Más",
           learnMore: "Saber Más",
         },
         freelance: {
           title: "Talento Freelance",
-          description:
-            "Accede a una red curada de freelancers de primer nivel para trabajos por proyecto. Nuestra plataforma asegura que obtengas la experiencia adecuada, justo cuando la necesitas.",
+          description: "Accede a una red curada de freelancers de primer nivel para trabajos por proyecto. Nuestra plataforma asegura que obtengas la experiencia adecuada, justo cuando la necesitas.",
           cta: "Saber Más",
           learnMore: "Saber Más",
         },
         ma: {
           title: "Servicios de M&A",
-          description:
-            "¿Navegando una fusión o adquisición? Ofrecemos due diligence de talento y estrategias de integración para asegurar una transición fluida y un éxito a largo plazo.",
+          description: "¿Navegando una fusión o adquisición? Ofrecemos due diligence de talento y estrategias de integración para asegurar una transición fluida y un éxito a largo plazo.",
           cta: "Saber Más",
           learnMore: "Saber Más",
         },
@@ -1105,18 +1013,15 @@ export const translations = {
       },
       whyChooseBotic: {
         title: "¿Por Qué Elegir Botic?",
-        description:
-          "Nuestro enfoque impulsado por IA, combinado con una profunda experiencia en la industria, asegura que no solo encontremos un candidato, sino el talento adecuado para impulsar tu empresa.",
+        description: "Nuestro enfoque impulsado por IA, combinado con una profunda experiencia en la industria, asegura que no solo encontremos un candidato, sino el talento adecuado para impulsar tu empresa.",
         points: [
           {
             title: "Precisión Impulsada por IA",
-            description:
-              "Nuestra IA patentada escanea, evalúa y empareja talento con una precisión y velocidad inigualables.",
+            description: "Nuestra IA patentada escanea, evalúa y empareja talento con una precisión y velocidad inigualables.",
           },
           {
             title: "Profunda Experiencia en la Industria",
-            description:
-              "Nuestros reclutadores son especialistas en sus campos, entendiendo los matices de tu industria.",
+            description: "Nuestros reclutadores son especialistas en sus campos, entendiendo los matices de tu industria.",
           },
           {
             title: "Red Global de Talentos",
@@ -1124,8 +1029,7 @@ export const translations = {
           },
           {
             title: "Asociación Estratégica",
-            description:
-              "Trabajamos como una extensión de tu equipo para entender tu cultura y tus metas a largo plazo.",
+            description: "Trabajamos como una extensión de tu equipo para entender tu cultura y tus metas a largo plazo.",
           },
         ],
       },
@@ -1133,26 +1037,22 @@ export const translations = {
         title: "Lo que Dicen Nuestros Socios",
         list: [
           {
-            quote:
-              "El enfoque de Botic impulsado por IA nos encontró un candidato que no habríamos descubierto de otra manera. El proceso fue eficiente y el ajuste es perfecto.",
+            quote: "El enfoque de Botic impulsado por IA nos encontró un candidato que no habríamos descubierto de otra manera. El proceso fue eficiente y el ajuste es perfecto.",
             author: "Jane Doe, CTO en Innovatech",
           },
           {
-            quote:
-              "El equipo de Botic entiende las necesidades específicas de la industria del hardware. Son nuestro socio de referencia para contrataciones críticas.",
+            quote: "El equipo de Botic entiende las necesidades específicas de la industria del hardware. Son nuestro socio de referencia para contrataciones críticas.",
             author: "John Smith, VP de Ingeniería en QuantumLeap",
           },
           {
-            quote:
-              "Para nuestras actividades de M&A, la evaluación estratégica de talento de Botic fue invaluable. Nos ayudaron a integrar un nuevo equipo sin problemas.",
+            quote: "Para nuestras actividades de M&A, la evaluación estratégica de talento de Botic fue invaluable. Nos ayudaron a integrar un nuevo equipo sin problemas.",
             author: "Emily White, Jefa de Desarrollo Corporativo en BuildRight",
           },
         ],
       },
       contact: {
         title: "Construyamos el Futuro, Juntos.",
-        description:
-          "¿Listo para encontrar el talento que definirá el futuro de tu empresa? Ponte en contacto con nosotros hoy.",
+        description: "¿Listo para encontrar el talento que definirá el futuro de tu empresa? Ponte en contacto con nosotros hoy.",
         form: {
           name: "Nombre",
           email: "Correo Electrónico",
@@ -1166,45 +1066,39 @@ export const translations = {
     talentMatchingHero: {
       badge: "Reclutamiento Potenciado por IA",
       title: "Matching de Talento y Aceleración de Negocios con IA",
-      description:
-        "En Botic Partners, optimizamos el reclutamiento con precisión impulsada por IA. Nuestros agentes de IA procesan miles de perfiles y preseleccionan a los mejores talentos, mientras nuestros headhunters expertos realizan las entrevistas, garantizando una contratación más rápida e inteligente.",
+      description: "En Botic Partners, optimizamos el reclutamiento con precisión impulsada por IA. Nuestros agentes de IA procesan miles de perfiles y preseleccionan a los mejores talentos, mientras nuestros headhunters expertos realizan las entrevistas, garantizando una contratación más rápida e inteligente.",
       highlightBox: {
         title: "En menos de 2 días tus candidatos en una llamada",
-        description:
-          "Nuestro sistema de matching impulsado por IA entrega candidatos calificados más rápido que los métodos de reclutamiento tradicionales. Experimenta el futuro del reclutamiento con nuestra avanzada tecnología de IA.",
+        description: "Nuestro sistema de matching impulsado por IA entrega candidatos calificados más rápido que los métodos de reclutamiento tradicionales. Experimenta el futuro del reclutamiento con nuestra avanzada tecnología de IA.",
         button: "Descubrir",
       },
     },
     recruitment: {
       title: "Nuestro Proceso de Reclutamiento",
-      subtitle: "Un proceso optimizado y eficiente para encontrar el mejor talento para sus necesidades.",
+      subtitle: "Un proceso optimizado y eficiente para encontrar el mejor talento para tus necesidades.",
       steps: [
         {
           id: "01",
           title: "Briefing del Cliente y Definición del Rol",
-          description:
-            "Trabajamos con usted para comprender sus necesidades, cultura y los requisitos específicos para el puesto.",
+          description: "Trabajamos contigo para comprender tus necesidades, tu cultura y los requisitos específicos para el puesto.",
           image: "/images/recruitment/client-brief.png",
         },
         {
           id: "02",
           title: "Búsqueda y Selección con IA",
-          description:
-            "Nuestra IA escanea miles de perfiles para identificar a los mejores candidatos en función de sus habilidades, experiencia y adecuación cultural.",
+          description: "Nuestra IA escanea miles de perfiles para identificar a los mejores candidatos en función de sus habilidades, experiencia y adecuación cultural.",
           image: "/images/recruitment/search-shortlist.png",
         },
         {
           id: "03",
           title: "Entrevista y Decisión",
-          description:
-            "Realizamos selecciones iniciales y le presentamos una lista de los mejores candidatos para que los entreviste.",
+          description: "Realizamos selecciones iniciales y te presentamos una lista de los mejores candidatos para que los entrevistes.",
           image: "/images/recruitment/interview-decision.png",
         },
         {
           id: "04",
           title: "Oferta e Incorporación",
-          description:
-            "Ayudamos con el proceso de oferta y aseguramos una experiencia de incorporación fluida para su nuevo empleado.",
+          description: "Ayudamos con el proceso de oferta y aseguramos una experiencia de incorporación fluida para tu nueva contratación.",
           image: "/images/recruitment/offer-onboarding.png",
         },
       ],
@@ -1214,30 +1108,26 @@ export const translations = {
       steps: [
         {
           title: "Brief del Cliente y Definición del Rol",
-          description:
-            "Trabajamos con usted para comprender sus necesidades, cultura y los requisitos específicos para el puesto.",
+          description: "Trabajamos contigo para comprender tus necesidades, tu cultura y los requisitos específicos para el puesto.",
         },
         {
           title: "Búsqueda y Selección con IA",
-          description:
-            "Nuestra IA escanea miles de perfiles para encontrar los mejores candidatos, que luego nuestros expertos evalúan.",
+          description: "Nuestra IA escanea miles de perfiles para encontrar los mejores candidatos, que luego nuestros expertos evalúan.",
         },
         {
           title: "Entrevista y Decisión",
-          description:
-            "Gestionamos el proceso de entrevistas, proporcionándole comentarios detallados para ayudarle a tomar la decisión correcta.",
+          description: "Gestionamos el proceso de entrevistas y te damos feedback detallado para que tomes la decisión correcta.",
         },
         {
           title: "Oferta e Incorporación",
-          description:
-            "Ayudamos con la negociación de la oferta y apoyamos al candidato durante su proceso de incorporación.",
+          description: "Ayudamos con la negociación de la oferta y apoyamos al candidato durante su proceso de incorporación.",
         },
       ],
     },
+
     hero: {
       title: "El Futuro de la Adquisición de Talento está Aquí",
-      subtitle:
-        "Aprovechamos la IA y una profunda experiencia en la industria para conectarte con talento excepcional en Software, Hardware, Construcción y Logística.",
+      subtitle: "Aprovechamos la IA y una profunda experiencia en la industria para conectarte con talento excepcional en Software, Hardware, Construcción y Logística.",
       getStarted: "Empezar",
       learnMore: "Saber Más",
       cta: "Encontrar Talento",
@@ -1251,27 +1141,27 @@ export const translations = {
       title: "Nuestros Servicios Principales",
       permanentStaff: {
         title: "Headhunting de Personal Permanente",
-        description: "Encontrar talento a largo plazo que se alinee con la cultura y los objetivos de su empresa.",
+        description: "Encontrar talento a largo plazo que se alinee con la cultura y los objetivos de tu empresa.",
       },
       freelanceTalent: {
-        title: "Headhunting de Talento Freelance",
-        description: "Búsqueda de expertos flexibles y bajo demanda para sus necesidades basadas en proyectos.",
+        title: "Automatización de Procesos con IA",
+        description: "Búsqueda de expertos flexibles y bajo demanda para tus necesidades basadas en proyectos.",
       },
       maServices: {
         title: "Servicios de M&A",
         description: "Apoyo estratégico para fusiones y adquisiciones para impulsar el crecimiento empresarial.",
       },
       whatWeDo: "Qué Hacemos",
-      subtitle: "Soluciones integrales para sus necesidades de talento y crecimiento.",
+      subtitle: "Soluciones integrales para tus necesidades de talento y crecimiento.",
       learnMore: "Saber Más",
-      readyToFind: "¿Listo para encontrar su pareja perfecta?",
-      readyToFindDesc: "Hablemos de cómo podemos ayudarle a alcanzar sus objetivos de negocio.",
+      readyToFind: "¿Listo para encontrar tu pareja perfecta?",
+      readyToFindDesc: "Hablemos de cómo podemos ayudarte a alcanzar tus objetivos de negocio.",
       getStarted: "Empezar",
-      permanentStaffDesc: "Encontrar talento a largo plazo que se alinee con la cultura y los objetivos de su empresa.",
+      permanentStaffDesc: "Encontrar talento a largo plazo que se alinee con la cultura y los objetivos de tu empresa.",
       executiveRecruitment: "Reclutamiento Ejecutivo",
       technicalSpecialists: "Especialistas Técnicos",
       teamBuilding: "Creación de Equipos Estratégicos",
-      freelanceTalentDesc: "Búsqueda de expertos flexibles y bajo demanda para sus necesidades basadas en proyectos.",
+      freelanceTalentDesc: "Búsqueda de expertos flexibles y bajo demanda para tus necesidades basadas en proyectos.",
       projectSpecific: "Expertos para Proyectos Específicos",
       interimManagement: "Gestión Interina",
       specializedConsultants: "Consultores Especializados",
@@ -1286,59 +1176,38 @@ export const translations = {
       subtitle: "Impulsando el crecimiento empresarial a través de talento impulsado por IA y alianzas estratégicas.",
       aiTalentMatching: {
         title: "Matching de Talento y Aceleración de Negocios con IA",
-        subtitle:
-          "En Botic Partners, optimizamos el reclutamiento con precisión impulsada por IA. Nuestros agentes de IA procesan miles de perfiles y preseleccionan a los mejores talentos, mientras nuestros headhunters expertos realizan las entrevistas, garantizando una contratación más rápida e inteligente.",
+        subtitle: "En Botic Partners, optimizamos el reclutamiento con precisión impulsada por IA. Nuestros agentes de IA procesan miles de perfiles y preseleccionan a los mejores talentos, mientras nuestros headhunters expertos realizan las entrevistas, garantizando una contratación más rápida e inteligente.",
       },
       headhunting: {
         title: "Headhunting y Búsqueda de Ejecutivos",
         description: "Encuentre el mejor talento tecnológico de forma rápida y eficiente.",
-        longDescription:
-          "En Botic Partners, utilizamos un enfoque basado en datos e impulsado por IA para identificar, evaluar y conectar al mejor talento en hardware, software y tecnología avanzada.",
+        longDescription: "En Botic Partners, utilizamos un enfoque basado en datos e impulsado por IA para identificar, evaluar y conectar al mejor talento en hardware, software y tecnología avanzada.",
         whyDifferent: "¿Por qué nuestro headhunting es diferente?",
-        points: [
-          "Rápido y preciso – Filtramos candidatos ideales en segundos.",
-          "Automatización inteligente – Mejoramos la eficiencia con herramientas avanzadas de IA.",
-          "Ahorro de costos significativo – Reducimos los costos y el tiempo de contratación.",
-        ],
-        conclusion:
-          "Si busca especialistas en tecnología o líderes ejecutivos, Botic Partners es su socio estratégico de reclutamiento.",
+        points: ["Rápido y preciso – Filtramos candidatos ideales en segundos.", "Automatización inteligente – Mejoramos la eficiencia con herramientas avanzadas de IA.", "Ahorro de costos significativo – Reducimos los costos y el tiempo de contratación."],
+        conclusion: "Si busca especialistas en tecnología o líderes ejecutivos, Botic Partners es su socio estratégico de reclutamiento.",
         expertiseTitle: "Nuestras Áreas de Especialización",
-        expertiseAreas: [
-          "Desarrollo e Ingeniería de Software",
-          "Diseño de Hardware y Semiconductores",
-          "IA y Aprendizaje Automático",
-          "Arquitectura en la Nube y DevOps",
-          "Liderazgo Técnico y roles de CTO",
-        ],
+        expertiseAreas: ["Desarrollo e Ingeniería de Software", "Diseño de Hardware y Semiconductores", "IA y Aprendizaje Automático", "Arquitectura en la Nube y DevOps", "Liderazgo Técnico y roles de CTO"],
         metricsTitle: "Nuestras Métricas de Éxito",
-        metrics: [
-          " tasa de colocación exitosa en 15 días",
-          " de los candidatos colocados permanecen más de 2 años",
-          " de reducción en los costos de contratación",
-          "Acceso a más de 10,000 profesionales tecnológicos pre-evaluados",
-        ],
+        metrics: [" tasa de colocación exitosa en 15 días", " de los candidatos colocados permanecen más de 2 años", " de reducción en los costos de contratación", "Acceso a más de 10,000 profesionales tecnológicos pre-evaluados"],
         testimonials: [
           {
-            quote:
-              "Botic Partners redujo nuestro tiempo de contratación en un 60% mientras mejoraba la calidad de los candidatos. Su enfoque impulsado por IA es revolucionario.",
+            quote: "Botic Partners redujo nuestro tiempo de contratación en un 60% mientras mejoraba la calidad de los candidatos. Su enfoque impulsado por IA es revolucionario.",
             author: "CTO, Empresa Tecnológica Líder",
           },
           {
-            quote:
-              "Encontramos talento excepcional en tiempo récord. El matching de IA fue increíblemente preciso para nuestros roles especializados.",
+            quote: "Encontramos talento excepcional en tiempo récord. El matching de IA fue increíblemente preciso para nuestros roles especializados.",
             author: "VP de Ingeniería, Startup de Software",
           },
           {
-            quote:
-              "La calidad de los candidatos y la velocidad de colocación superaron nuestras expectativas. Un cambio de juego para nuestro proceso de contratación.",
+            quote: "La calidad de los candidatos y la velocidad de colocación superaron nuestras expectativas. Un cambio de juego para nuestro proceso de contratación.",
             author: "Director de RRHH, Empresa Tecnológica",
           },
         ],
         dataApproach: "Nuestro enfoque basado en datos ofrece consistentemente resultados excepcionales.",
       },
       partnerships: {
-        title: "Alianzas Estratégicas y Crecimiento Empresarial",
-        subtitle: "Conexiones Estratégicas para la Expansión Empresarial",
+        title: "ALIANZAS ESTRATÉGICAS & M&A",
+        subtitle: "Identificamos y conectamos empresas con alto encaje estratégico para impulsar su crecimiento en Europa, siempre con un enfoque confidencial y muy selectivo.",
         description: "Conectando Oportunidades, Acelerando el Crecimiento Empresarial",
         marketGrowth: "Crecimiento del Mercado con Alianzas Estratégicas",
         livePartnershipData: "Datos de Alianzas en Vivo",
@@ -1346,25 +1215,16 @@ export const translations = {
         company: "Empresa",
         partner: "Socio",
         investor: "Inversor",
-        longDescription:
-          "En Botic Partners, hacemos más que solo encontrar talento. Conectamos empresas con los socios estratégicos adecuados para impulsar su crecimiento.",
+        longDescription: "En Botic Partners, hacemos más que solo encontrar talento. Conectamos empresas con los socios estratégicos adecuados para impulsar su crecimiento.",
         whatWeDo: "¿Qué hacemos?",
         weConnect: "Facilitamos conexiones de alto valor entre empresas que buscan:",
-        connectionTypes: [
-          "Nuevos clientes o socios estratégicos",
-          "Inversores o posibles compradores",
-          "Oportunidades de colaboración en industrias clave",
-        ],
+        connectionTypes: ["Nuevos clientes o socios estratégicos", "Inversores o posibles compradores", "Oportunidades de colaboración en industrias clave"],
         howWeDoIt: "¿Cómo lo hacemos?",
-        methods: [
-          "Sin plataformas, sin automatización – Aprovechamos nuestra red directa validada.",
-          "Rápido y flexible – Adaptamos nuestro enfoque a cada caso, asegurando presentaciones de alto valor.",
-          "Confianza – Cada conexión es relevante y tiene un potencial real.",
-        ],
+        methods: ["Sin plataformas, sin automatización – Aprovechamos nuestra red directa validada.", "Rápido y flexible – Adaptamos nuestro enfoque a cada caso, asegurando presentaciones de alto valor.", "Confianza – Cada conexión es relevante y tiene un potencial real."],
         cta: "¿Buscas la conexión adecuada para hacer crecer tu negocio? Hablemos.",
-        letsTalk: "Hablemos",
+        letsTalk: "Saber más",
       },
-      ctaText: "Programar una Consulta",
+      ctaText: "Saber más",
       consultationSubject: "Solicitud de Consulta",
     },
     about: {
@@ -1375,23 +1235,20 @@ export const translations = {
         point1: "Impulsamos tu crecimiento conectándote con el mejor talento y oportunidades estratégicas.",
         point2: "Encontramos tu pareja ideal, combinando IA de vanguardia con experiencia humana.",
         point3: "Construimos relaciones duraderas que impulsan el éxito de tu negocio.",
-        description:
-          "Más que solo reclutamiento, construimos una red valiosa para tu futuro, asegurando long-term success and growth for both companies and talent.",
+        description: "Más que solo reclutamiento, construimos una red valiosa para tu futuro, asegurando el éxito y el crecimiento a largo plazo tanto para las empresas como para el talento.",
       },
       vision: {
         title: "Nuestra Visión",
         point1: "Estamos remodelando el headhunting en Europa y América Latina.",
         point2: "Lideramos con innovación, conexiones potentes y un compromiso con la diversidad.",
         point3: "Cada conexión que hacemos genera un impacto real.",
-        description:
-          "Visualizamos un futuro donde el reclutamiento impulsado por IA sea la norma, creando coincidencias perfectas que impulsan la innovación y el crecimiento en todas las industrias.",
+        description: "Visualizamos un futuro donde el reclutamiento impulsado por IA sea la norma, creando coincidencias perfectas que impulsan la innovación y el crecimiento en todas las industrias.",
       },
       valuesApproach: {
         title: "Valores y Enfoque",
         innovation: {
           title: "Innovación",
-          description:
-            "Aprovechamos la última tecnología para encontrar tu talento perfecto, rápidamente y con precisión.",
+          description: "Aprovechamos la última tecnología para encontrar tu talento perfecto, rápidamente y con precisión.",
         },
         efficiency: {
           title: "Eficiencia",
@@ -1399,8 +1256,7 @@ export const translations = {
         },
         strategicConnections: {
           title: "Conexiones Estratégicas",
-          description:
-            "Abrimos puertas a nuevas oportunidades de negocio, vinculándote con talentos, socios y clientes clave. Creamos un ecosistema colaborativo donde las empresas se conectan para crecer juntas.",
+          description: "Abrimos puertas a nuevas oportunidades de negocio, vinculándote con talentos, socios y clientes clave. Creamos un ecosistema colaborativo donde las empresas se conectan para crecer juntas.",
         },
         transparency: {
           title: "Transparencia",
@@ -1429,8 +1285,7 @@ export const translations = {
     },
     testimonials: {
       title: "Lo que Dicen Nuestros Clientes",
-      subtitle:
-        "Descubra cómo Botic Partners está transformando el reclutamiento tecnológico para empresas de todo el mundo",
+      subtitle: "Descubra cómo Botic Partners está transformando el reclutamiento tecnológico para empresas de todo el mundo",
     },
     "Team Fit": "Ajuste de Equipo",
     video: {
@@ -1461,26 +1316,22 @@ export const translations = {
       },
       logistics: {
         title: "Logística",
-        description:
-          "Conectamos empresas de logística con expertos en tecnología de cadena de suministro y transporte.",
+        description: "Conectamos empresas de logística con expertos en tecnología de cadena de suministro y transporte.",
       },
       expertise: {
         title: "Experiencia en Reclutamiento Especializado",
-        description:
-          "Nuestro reclutamiento global impulsado por IA se enfoca en Software, Hardware, Construcción e Inmobiliaria, y Logística. Ofrecemos servicios de adquisición de talento a medida, asegurando el match perfecto en estos sectores especializados de alta demanda.",
+        description: "Nuestro reclutamiento global impulsado por IA se enfoca en Software, Hardware, Construcción e Inmobiliaria, y Logística. Ofrecemos servicios de adquisición de talento a medida, asegurando el match perfecto en estos sectores especializados de alta demanda.",
       },
       exploreOpportunities: "Explorar Oportunidades",
     },
     clientCarousel: {
       title: "Con la Confianza de Líderes de la Industria",
-      testimonial:
-        "Botic Partners es con quien trabajamos en exclusiva, ya que siempre nos han proporcionado perfiles increíblemente buenos, no solo a nivel técnico y de aptitud, sino también a nivel personal. Les aconsejo que trabajen con ellos, ya que seguramente les conseguirán los mejores candidatos que existen.",
+      testimonial: "Botic Partners es con quien trabajamos en exclusiva, ya que siempre nos han proporcionado perfiles increíblemente buenos, no solo a nivel técnico y de aptitud, sino también a nivel personal. Les aconsejo que trabajen con ellos, ya que seguramente les conseguirán los mejores candidatos que existen.",
       testimonialAuthor: "CEO - Cliente Satisfecho",
     },
     careers: {
       title: "Explora Oportunidades",
-      subtitle:
-        "Encuentra tu próximo rol acompañado por la tecnología de Botic Partners, líder en adquisición de talento impulsada por IA.",
+      subtitle: "Encuentra tu próximo rol acompañado por la tecnología de Botic Partners, líder en adquisición de talento impulsada por IA.",
       filterByIndustry: "Filtrar por Industria",
       allIndustries: "Todas las Industrias",
       sector: "Sector",
@@ -1498,85 +1349,69 @@ export const translations = {
       jobs: {
         seniorFullStack: {
           title: "Ingeniero Senior de Full-Stack",
-          description:
-            "Desarrollar y mantener nuestra plataforma central, trabajando en toda la pila para entregar características de alta calidad.",
+          description: "Desarrollar y mantener nuestra plataforma central, trabajando en toda la pila para entregar características de alta calidad.",
         },
         aiResearchScientist: {
           title: "Científico de Investigación de IA",
-          description:
-            "Realizar investigaciones de vanguardia en aprendizaje automático y procesamiento del lenguaje natural para mejorar nuestros modelos de IA.",
+          description: "Realizar investigaciones de vanguardia en aprendizaje automático y procesamiento del lenguaje natural para mejorar nuestros modelos de IA.",
         },
         dataScientist: {
           title: "Científico de Datos",
-          description:
-            "Analizar conjuntos de datos complejos para extraer información valiosa y ayudar a impulsar decisiones empresariales estratégicas.",
+          description: "Analizar conjuntos de datos complejos para extraer información valiosa y ayudar a impulsar decisiones empresariales estratégicas.",
         },
         devOpsEngineer: {
           title: "Ingeniero DevOps",
-          description:
-            "Implementar y gestionar pipelines de integración y despliegue continuos, asegurando una entrega de software fluida.",
+          description: "Implementar y gestionar pipelines de integración y despliegue continuos, asegurando una entrega de software fluida.",
         },
         productManager: {
           title: "Gerente de Producto",
-          description:
-            "Definir la visión, estrategia y hoja de ruta del producto, guiando el desarrollo desde la concepción hasta el lanzamiento.",
+          description: "Definir la visión, estrategia y hoja de ruta del producto, guiando el desarrollo desde la concepción hasta el lanzamiento.",
         },
         uxDesigner: {
           title: "Diseñador UX",
-          description:
-            "Diseñar experiencias de usuario intuitivas y atractivas, realizando investigación y pruebas de usabilidad.",
+          description: "Diseñar experiencias de usuario intuitivas y atractivas, realizando investigación y pruebas de usabilidad.",
         },
         semiconductorProcessEngineer: {
           title: "Ingeniero de Procesos de Semiconductores",
-          description:
-            "Diseñar y optimizar procesos de fabricación de semiconductores para mejorar el rendimiento y la producción.",
+          description: "Diseñar y optimizar procesos de fabricación de semiconductores para mejorar el rendimiento y la producción.",
         },
         asicDesignEngineer: {
           title: "Ingeniero de Diseño ASIC",
-          description:
-            "Únete a nuestro equipo de hardware para diseñar y verificar Circuitos Integrados de Aplicación Específica (ASIC) de alto rendimiento.",
+          description: "Únete a nuestro equipo de hardware para diseñar y verificar Circuitos Integrados de Aplicación Específica (ASIC) de alto rendimiento.",
         },
         embeddedSystemsEngineer: {
           title: "Ingeniero de Sistemas Embebidos",
-          description:
-            "Desarrollar firmware y software para nuestros dispositivos de hardware embebido de próxima generación.",
+          description: "Desarrollar firmware y software para nuestros dispositivos de hardware embebido de próxima generación.",
         },
         constructionProjectManager: {
           title: "Gerente de Proyecto de Construcción",
-          description:
-            "Supervisar y gestionar proyectos de construcción a gran escala, asegurando que se completen a tiempo y dentro del presupuesto.",
+          description: "Supervisar y gestionar proyectos de construcción a gran escala, asegurando que se completen a tiempo y dentro del presupuesto.",
         },
         bimSpecialist: {
           title: "Especialista en BIM",
-          description:
-            "Utilizar el Modelado de Información de Construcción (BIM) para crear y gestionar modelos digitales para proyectos de construcción.",
+          description: "Utilizar el Modelado de Información de Construcción (BIM) para crear y gestionar modelos digitales para proyectos de construcción.",
         },
         smartBuildingEngineer: {
           title: "Ingeniero de Edificios Inteligentes",
-          description:
-            "Diseñar e implementar soluciones de IoT y automatización para edificios modernos e inteligentes.",
+          description: "Diseñar e implementar soluciones de IoT y automatización para edificios modernos e inteligentes.",
         },
         supplyChainAnalyst: {
           title: "Analista de la Cadena de Suministro",
-          description:
-            "Analizar y optimizar las operaciones de la cadena de suministro para aumentar la eficiencia y reducir los costos.",
+          description: "Analizar y optimizar las operaciones de la cadena de suministro para aumentar la eficiencia y reducir los costos.",
         },
         logisticsOperationsManager: {
           title: "Gerente de Operaciones de Logística",
-          description:
-            "Gestionar y coordinar las operaciones diarias de nuestra red de logística, incluyendo el transporte y el almacenamiento.",
+          description: "Gestionar y coordinar las operaciones diarias de nuestra red de logística, incluyendo el transporte y el almacenamiento.",
         },
         warehouseAutomationSpecialist: {
           title: "Especialista en Automatización de Almacenes",
-          description:
-            "Implementar y mantener sistemas robóticos y de automatización dentro de nuestras instalaciones de almacén.",
+          description: "Implementar y mantener sistemas robóticos y de automatización dentro de nuestras instalaciones de almacén.",
         },
       },
     },
     blog: {
       title: "Perspectivas y Análisis",
-      subtitle:
-        "Análisis experto y liderazgo de pensamiento sobre el reclutamiento impulsado por IA y el crecimiento empresarial",
+      subtitle: "Análisis experto y liderazgo de pensamiento sobre el reclutamiento impulsado por IA y el crecimiento empresarial",
       searchPlaceholder: "Buscar artículos...",
       readMore: "Leer Más",
       noResults: "No se encontraron artículos",
@@ -1593,45 +1428,43 @@ export const translations = {
       },
       newsletter: {
         title: "Suscríbete a Nuestro Boletín",
-        description:
-          "Manténgase actualizado con las últimas novedades y noticias sobre la IA en el reclutamiento y el crecimiento empresarial",
+        description: "Mantente al día con las últimas novedades y noticias sobre la IA en el reclutamiento y el crecimiento empresarial",
         placeholder: "Tu dirección de correo electrónico",
         subscribe: "Suscribirse",
+
+        subscribing: "Suscribiendo... por favor esperá un momento.",
+        success: "¡Gracias por suscribirte! Te enviaremos novedades e insights directamente a tu correo.",
+        alreadySubscribed: "Ese correo ya está suscripto. ¡Gracias por seguirnos!",
+        error: "Algo salió mal. Por favor, intentá de nuevo en unos segundos.",
       },
+
       postNotFound: "Artículo No Encontrado",
       postNotFoundMessage: "El artículo que está buscando no existe o ha sido movido.",
       backToBlog: "Volver al Blog",
       posts: {
         recruitmentProcess: {
           title: "Nuestro Proceso de Reclutamiento Impulsado por IA: Un Cambio de Juego en la Contratación Tecnológica",
-          excerpt:
-            "Descubra cómo nuestro innovador proceso de reclutamiento impulsado por IA está revolucionando la forma en que las empresas encuentran y contratan a los mejores talentos tecnológicos.",
+          excerpt: "Descubra cómo nuestro innovador proceso de reclutamiento impulsado por IA está revolucionando la forma en que las empresas encuentran y contratan a los mejores talentos tecnológicos.",
         },
         connectingCompanies: {
           title: "Conectando Empresas, Impulsando el Crecimiento: El Enfoque de Botic Partners",
-          excerpt:
-            "Aprenda cómo conectamos a las empresas con el talento adecuado y las oportunidades estratégicas para impulsar el crecimiento sostenible y la innovación.",
+          excerpt: "Aprenda cómo conectamos a las empresas con el talento adecuado y las oportunidades estratégicas para impulsar el crecimiento sostenible y la innovación.",
         },
         aiAgentsImplementation: {
           title: "Implementando Agentes de IA: Transformando Sus Procesos Empresariales",
-          excerpt:
-            "Explore cómo los agentes de IA pueden optimizar sus operaciones, mejorar la toma de decisiones y crear ventajas competitivas.",
+          excerpt: "Explore cómo los agentes de IA pueden optimizar sus operaciones, mejorar la toma de decisiones y crear ventajas competitivas.",
         },
         aiRecruitmentTrends: {
           title: "Tendencias de Reclutamiento de IA 2025: Lo Que Sigue en la Adquisición de Talento",
-          excerpt:
-            "Manténgase a la vanguardia con nuestro análisis de las tendencias emergentes en el reclutamiento impulsado por IA y las estrategias de adquisición de talento.",
+          excerpt: "Manténgase a la vanguardia con nuestro análisis de las tendencias emergentes en el reclutamiento impulsado por IA y las estrategias de adquisición de talento.",
         },
         talentRetentionStrategies: {
           title: "Estrategias de Retención de Talento Mejoradas con IA Que Realmente Funcionan",
-          excerpt:
-            "Descubra estrategias probadas para retener a los mejores talentos utilizando información impulsada por IA y enfoques de compromiso personalizados.",
+          excerpt: "Descubra estrategias probadas para retener a los mejores talentos utilizando información impulsada por IA y enfoques de compromiso personalizados.",
         },
         futureOfWork: {
-          title:
-            "El Futuro del Trabajo: Cómo la IA está Remodelando el Reclutamiento y la Gestión de la Fuerza Laboral",
-          excerpt:
-            "Explore cómo la inteligencia artificial está transformando la dinámica del lugar de trabajo, la adquisición de talento y la planificación estratégica de la fuerza laboral.",
+          title: "El Futuro del Trabajo: Cómo la IA está Remodelando el Reclutamiento y la Gestión de la Fuerza Laboral",
+          excerpt: "Explore cómo la inteligencia artificial está transformando la dinámica del lugar de trabajo, la adquisición de talento y la planificación estratégica de la fuerza laboral.",
         },
       },
     },
@@ -1652,24 +1485,18 @@ export const translations = {
       },
       skills: {
         vpMemsEngineer: "Diseño MEMS, Liderazgo de Equipo, Gestión de Proyectos, Industria de Semiconductores",
-        processEngineer:
-          "Optimización de Procesos, Mejora del Rendimiento, Análisis Estadístico, Mantenimiento de Equipos",
+        processEngineer: "Optimización de Procesos, Mejora del Rendimiento, Análisis Estadístico, Mantenimiento de Equipos",
         asicEngineer: "Diseño ASIC, Verilog, FPGA, Procesamiento Digital de Señales",
         directorGeneral: "Planificación Estratégica, Desarrollo de Negocios, Liderazgo de Equipo, Gestión Financiera",
-        directorComercial:
-          "Estrategia de Ventas, Análisis de Mercado, Relaciones con Clientes, Crecimiento de Ingresos",
-        fieldApplicationsEngineer:
-          "Soporte Técnico, Conocimiento del Producto, Relaciones con el Cliente, Resolución de Problemas",
-        marketingDirector:
-          "Gestión de Marca, Investigación de Mercado, Marketing Digital, Posicionamiento del Producto",
-        directorPrevencion:
-          "Evaluación de Riesgos, Protocolos de Seguridad, Cumplimiento Normativo, Planificación de Emergencias",
+        directorComercial: "Estrategia de Ventas, Análisis de Mercado, Relaciones con Clientes, Crecimiento de Ingresos",
+        fieldApplicationsEngineer: "Soporte Técnico, Conocimiento del Producto, Relaciones con el Cliente, Resolución de Problemas",
+        marketingDirector: "Gestión de Marca, Investigación de Mercado, Marketing Digital, Posicionamiento del Producto",
+        directorPrevencion: "Evaluación de Riesgos, Protocolos de Seguridad, Cumplimiento Normativo, Planificación de Emergencias",
       },
     },
     stats: {
       title: "Transformando el Reclutamiento con IA",
-      description:
-        "Estamos revolucionando la forma en que las empresas encuentran y se conectan con los mejores talentos a través de nuestro innovador enfoque impulsado por IA.",
+      description: "Estamos revolucionando la forma en que las empresas encuentran y se conectan con los mejores talentos a través de nuestro innovador enfoque impulsado por IA.",
     },
     emailOptions: {
       title: "¿Cómo le gustaría proceder?",
@@ -1680,14 +1507,14 @@ export const translations = {
     },
     contact: {
       title: "Construyamos el Futuro, Juntos.",
-      subtitle: "Ya sea que esté buscando talento o su próxima gran oportunidad, estamos aquí para ayudarle.",
+      subtitle: "Ya sea que estés buscando talento o tu próxima gran oportunidad, estamos aquí para ayudarte.",
       name: "Nombre",
       email: "Correo Electrónico",
       emailPlaceholder: "tu.correo@empresa.com",
       inquiry: "Consulta Comercial",
-      inquiryPlaceholder: "Cuéntenos sobre sus necesidades de reclutamiento...",
+      inquiryPlaceholder: "Cuéntanos sobre tus necesidades de reclutamiento...",
       aiInterest: "Interés en IA",
-      selectInterest: "Seleccione su interés",
+      selectInterest: "Selecciona tu interés",
       talentMatching: "Matching de Talento con IA",
       recruitmentAutomation: "Automatización del Reclutamiento",
       executiveSearch: "Búsqueda de Ejecutivos",
@@ -1696,14 +1523,14 @@ export const translations = {
       getInTouch: "Ponerse en Contacto",
       whyPartnerWithUs: "Por Qué Trabajar Con Nosotros",
       aiTalentMatching: "Matching de talento con IA con un 93% de precisión",
-      reduceTimeToHire: "Reduzca el tiempo de contratación hasta en un 60%",
+      reduceTimeToHire: "Reduce el tiempo de contratación hasta en un 60%",
       accessToTalent: "Acceso a más de 10,000 profesionales pre-evaluados",
       retentionRate: "Tasa de retención del 82% después de más de 2 años",
       aiPoweredRecruitment: "Reclutamiento Impulsado por IA",
       form: {
         name: {
           label: "Nombre",
-          placeholder: "Su Nombre",
+          placeholder: "Tu Nombre",
         },
         email: {
           label: "Correo Electrónico",
@@ -1716,7 +1543,7 @@ export const translations = {
         },
         message: {
           label: "Mensaje",
-          placeholder: "¿Cómo podemos ayudarle?",
+          placeholder: "¿Cómo podemos ayudarte?",
         },
         submit: "Enviar Mensaje",
       },
@@ -1734,23 +1561,18 @@ export const translations = {
     },
     permanentTalent: {
       title: "Adquisición Estratégica de Talento Permanente",
-      subtitle:
-        "Construyendo equipos de alto rendimiento con líderes ejecutivos y técnicos que impulsan la innovación y el crecimiento",
+      subtitle: "Construyendo equipos de alto rendimiento con líderes ejecutivos y técnicos que impulsan la innovación y el crecimiento",
       retentionRate: "Tasa de retención del 93% después de 2 años",
       timeToHire: "Tiempo promedio de contratación de 21 días",
       discussNeeds: "Discuta Sus Necesidades de Talento",
       strategicRolesTitle: "Roles Estratégicos en los Que Destacamos",
-      strategicRolesSubtitle:
-        "Nos especializamos en la colocación de talento permanente de alto impacto en puestos clave que impulsan el éxito organizacional",
+      strategicRolesSubtitle: "Nos especializamos en la colocación de talento permanente de alto impacto en puestos clave que impulsan el éxito organizacional",
       executiveLeadership: "Liderazgo Ejecutivo",
-      executiveLeadershipDescription:
-        "Roles de alta dirección y liderazgo sénior que establecen la dirección estratégica e impulsan la transformación organizacional",
+      executiveLeadershipDescription: "Roles de alta dirección y liderazgo sénior que establecen la dirección estratégica e impulsan la transformación organizacional",
       technicalLeadership: "Liderazgo Técnico",
-      technicalLeadershipDescription:
-        "Líderes de nivel medio que unen la estrategia y la ejecución, gestionando equipos y entregando resultados técnicos",
+      technicalLeadershipDescription: "Líderes de nivel medio que unen la estrategia y la ejecución, gestionando equipos y entregando resultados técnicos",
       specializedTechnicalTalent: "Talento Técnico Especializado",
-      specializedTechnicalTalentDescription:
-        "Contribuyentes individuales altamente cualificados con experiencia especializada en tecnologías emergentes",
+      specializedTechnicalTalentDescription: "Contribuyentes individuales altamente cualificados con experiencia especializada en tecnologías emergentes",
       cto: "Director de Tecnología (CTO)",
       cpo: "Director de Producto (CPO)",
       vpEngineering: "VP de Ingeniería",
@@ -1763,52 +1585,51 @@ export const translations = {
       dataScientists: "Científicos de Datos",
       cloudArchitects: "Arquitectos de la Nube",
       securitySpecialists: "Especialistas en Seguridad",
-      methodologyTitle: "Nuestra Metodología de Talento Permanente",
-      methodologySubtitle:
-        "Un enfoque único que combina la búsqueda impulsada por IA con la experiencia humana para entregar un talento excepcional",
+
+      methodologyTitle: "Nuestra metodología de trabajo",
+      methodologySubtitle: "",
       methodologySteps: {
         strategicAnalysis: {
-          title: "Análisis Estratégico de Necesidades",
-          description:
-            "Realizamos un análisis en profundidad de los objetivos estratégicos, la cultura y los requisitos técnicos de su organización para definir el perfil perfecto del candidato.",
+          title: "Hoy el talento clave no busca trabajo",
+          description: "Más del 90 % del talento en sectores como tecnología es pasivo. Saber identificarlo y atraerlo es clave.",
         },
         aiSearch: {
-          title: "Búsqueda Impulsada por IA",
-          description:
-            "Nuestros algoritmos de IA patentados escanean millones de perfiles en múltiples plataformas para identificar candidatos con las habilidades y la experiencia precisas que necesita.",
+          title: "IA para ganar velocidad en un mercado saturado",
+          description: "Trabajamos con proveedores líderes de IA y data para analizar millones de perfiles y reducir tiempos de búsqueda.",
         },
         humanExpertise: {
-          title: "Validación de la Experiencia Humana",
-          description:
-            "Nuestros especialistas de la industria evalúan personalmente a cada candidato seleccionado por la IA, evaluando el ajuste cultural y la alineación profesional.",
+          title: "La escasez es real, el filtrado es crítico",
+          description: "En perfiles tech, ingeniería y dirección, menos del 10 % cumple realmente. Nuestro foco está ahí.",
         },
         qualification: {
-          title: "Calificación Rigurosa",
-          description:
-            "Los candidatos se someten a evaluaciones técnicas exhaustivas y entrevistas de comportamiento adaptadas a sus requisitos específicos.",
+          title: "Menos CVs, más criterio",
+          description: "Entregamos pocos perfiles, acompañados de nuestras notas y evaluación real.",
         },
         acceleratedPlacement: {
-          title: "Colocación Acelerada",
-          description:
-            "Gestionamos todo el proceso de contratación, desde el contacto inicial hasta la negociación de la oferta, asegurando una experiencia fluida y eficiente.",
+          title: "La contratación no termina con la firma",
+          description: "Hacemos seguimiento tras la incorporación para asegurar encaje, rendimiento y continuidad.",
         },
       },
+
       successStoriesTitle: "Casos de Éxito",
-      successStoriesSubtitle:
-        "Resultados reales de nuestros placements en todas las industrias",
+      successStoriesSubtitle: "Te compartiremos testimonios de candidatos incorporados (pendiente por parte de Borja).",
       challenge: "Desafío",
       solution: "Solución",
       result: "Resultado",
-      ctaTitle: "¿Listo para construir el equipo de tus sueños?",
-      ctaSubtitle:
-        "Hablemos de cómo nuestros servicios de adquisición de talento pueden ayudarle a encontrar a los candidatos perfectos para impulsar su negocio",
-      scheduleConsultation: "Agendar una reunión",
+
+      testimonialsPending: "Contenido pendiente (lo proporciona Borja).",
+
+      ctaTitle: "¿Necesitas incorporar talento? ¡Contacta con nosotros!",
+      ctaSubtitle: "Rellena el formulario y tu solicitud llegará a admin@boticpartners.com.",
+      scheduleConsultation: "Contactar",
+
+      mailSubject: "Talento Permanente - Solicitud de contacto",
+
       averageMatchScore: "Puntaje Promedio de Coincidencia",
     },
     freelanceTalent: {
       title: "Talento Freelance Bajo Demanda",
-      subtitle:
-        "Acceda a experiencia especializada exactamente cuando la necesite, sin el compromiso de contrataciones permanentes",
+      subtitle: "Acceda a experiencia especializada exactamente cuando la necesite, sin el compromiso de contrataciones permanentes",
       talentMatching: "Matching de talento en 48 horas",
       specialists: "Más de 5,000 especialistas pre-evaluados",
       findTalent: "Encuentre Talento Especializado",
@@ -1826,8 +1647,7 @@ export const translations = {
         },
         {
           title: "Escalado Flexible",
-          description:
-            "Escale fácilmente su equipo hacia arriba o hacia abajo en función de las demandas del proyecto y los ciclos empresariales",
+          description: "Escale fácilmente su equipo hacia arriba o hacia abajo en función de las demandas del proyecto y los ciclos empresariales",
         },
         {
           title: "Perspectivas Frescas",
@@ -1835,8 +1655,7 @@ export const translations = {
         },
       ],
       specializedExpertise: "Experiencia Especializada Bajo Demanda",
-      networkIncludes:
-        "Nuestra red incluye a los mejores talentos freelance en una amplia gama de especialidades técnicas",
+      networkIncludes: "Nuestra red incluye a los mejores talentos freelance en una amplia gama de especialidades técnicas",
       technicalExpertise: "Experiencia Técnica",
       leadershipSpecializedRoles: "Liderazgo y Roles Especializados",
       softwareDevelopment: "Desarrollo de Software",
@@ -1850,7 +1669,7 @@ export const translations = {
       dataEngineers: "Ingenieros de Datos",
       aiSpecialists: "Especialistas de IA",
       infrastructure: "Infraestructura",
-      devOpsEngineers: "DevOps Engineers",
+      devOpsEngineers: "Ingenieros DevOps",
       cloudArchitects: "Arquitectos de la Nube",
       sreSpecialists: "Especialistas de SRE",
       securityExperts: "Expertos en Seguridad",
@@ -1876,13 +1695,11 @@ export const translations = {
       useCases: [
         {
           title: "Iniciativas Basadas en Proyectos",
-          description:
-            "Incorpore talento especializado para proyectos de duración limitada con entregables específicos",
+          description: "Incorpore talento especializado para proyectos de duración limitada con entregables específicos",
         },
         {
           title: "Brechas de Experiencia Técnica",
-          description:
-            "Acceda a habilidades especializadas que no se necesitan a tiempo completo pero que son críticas para el éxito",
+          description: "Acceda a habilidades especializadas que no se necesitan a tiempo completo pero que son críticas para el éxito",
         },
         {
           title: "Liderazgo Interino",
@@ -1894,28 +1711,24 @@ export const translations = {
       hearFromCompanies: "Escuche a empresas que han aprovechado nuestras soluciones de talento freelance",
       testimonials: [
         {
-          quote:
-            "Botic Partners nos encontró un ingeniero de IA especializado en solo 3 días cuando necesitábamos urgentemente experiencia para un proyecto crítico de un cliente. La calidad fue excepcional.",
+          quote: "Botic Partners nos encontró un ingeniero de IA especializado en solo 3 días cuando necesitábamos urgentemente experiencia para un proyecto crítico de un cliente. La calidad fue excepcional.",
           author: "MARÍA RODRÍGUEZ",
           position: "CTO, Digital Solutions Inc.",
         },
         {
-          quote:
-            "El arquitecto de la nube freelance con el que Botic nos conectó transformó nuestro enfoque de infraestructura, ofreciendo un ahorro de costos del 40% y un rendimiento mejorado.",
+          quote: "El arquitecto de la nube freelance con el que Botic nos conectó transformó nuestro enfoque de infraestructura, ofreciendo un ahorro de costos del 40% y un rendimiento mejorado.",
           author: "JUAN PEÑA",
           position: "VP Ingeniería, TechScale",
         },
         {
-          quote:
-            "Cuando necesitamos liderazgo interino durante nuestra transición de CTO, Botic nos encontró el líder temporal perfecto que mantuvo nuestra hoja de ruta en el camino correcto.",
+          quote: "Cuando necesitamos liderazgo interino durante nuestra transición de CTO, Botic nos encontró el líder temporal perfecto que mantuvo nuestra hoja de ruta en el camino correcto.",
           author: "ANTONIO LÓPEZ",
           position: "CEO, InnovateTech",
         },
       ],
       needSpecializedTalent: "¿Necesitas Talento Especializado Rápidamente?",
-      ourNetworkOfTalent:
-        "Nuestra red de profesionales freelance pre-evaluados puede comenzar a contribuir a sus proyectos en cuestión de días.",
-      accessOurTalentNetwork: "Access Our Talent Network",
+      ourNetworkOfTalent: "Nuestra red de profesionales freelance pre-evaluados puede comenzar a contribuir a sus proyectos en cuestión de días.",
+      accessOurTalentNetwork: "Acceder a nuestra red de talento",
     },
     maServices: {
       title: "Servicios Estratégicos de M&A",
@@ -1924,44 +1737,33 @@ export const translations = {
       strategicTargetIdentification: "Identificación estratégica de objetivos",
       exploreOpportunities: "Explorar Oportunidades de M&A",
       ourServices: "Nuestros Servicios de M&A",
-      ourServicesDescription:
-        "Soporte integral para conexiones comerciales estratégicas y oportunidades de crecimiento",
+      ourServicesDescription: "Soporte integral para conexiones comerciales estratégicas y oportunidades de crecimiento",
       targetId: "Identificación de Objetivos",
-      targetIdDesc:
-        "Aprovechamos nuestra extensa red y capacidades de búsqueda impulsadas por IA para identificar objetivos de adquisición ideales o socios estratégicos que se alineen con sus objetivos comerciales.",
+      targetIdDesc: "Aprovechamos nuestra extensa red y capacidades de búsqueda impulsadas por IA para identificar objetivos de adquisición ideales o socios estratégicos que se alineen con sus objetivos comerciales.",
       partnership: "Facilitación de Alianzas Estratégicas",
-      partnershipDesc:
-        "Conectamos empresas para asociaciones mutuamente beneficiosas, empresas conjuntas y oportunidades de colaboración que impulsan el crecimiento y la innovación.",
+      partnershipDesc: "Conectamos empresas para asociaciones mutuamente beneficiosas, empresas conjuntas y oportunidades de colaboración que impulsan el crecimiento y la innovación.",
       opportunityAssessment: "Evaluación de Oportunidades de Adquisición",
-      opportunityAssessmentDesc:
-        "Nuestro equipo realiza evaluaciones exhaustivas de posibles objetivos de adquisición, evaluando las capacidades técnicas, la calidad del equipo y el ajuste estratégico.",
+      opportunityAssessmentDesc: "Nuestro equipo realiza evaluaciones exhaustivas de posibles objetivos de adquisición, evaluando las capacidades técnicas, la calidad del equipo y el ajuste estratégico.",
       confidentialRep: "Representación Confidencial",
-      confidentialRepDesc:
-        "Actuamos como su representante confidencial en el mercado, protegiendo su identidad mientras exploramos oportunidades estratégicas.",
+      confidentialRepDesc: "Actuamos como su representante confidencial en el mercado, protegiendo su identidad mientras exploramos oportunidades estratégicas.",
       ourProcess: "Nuestro Proceso de M&A",
       ourProcessDescription: "Un enfoque estructurado para identificar y facilitar conexiones comerciales estratégicas",
       consultation: "Consulta Estratégica",
-      consultationDesc:
-        "Comenzamos con una comprensión profunda de sus objetivos comerciales, estrategia de crecimiento y criterios específicos para posibles objetivos o socios.",
+      consultationDesc: "Comenzamos con una comprensión profunda de sus objetivos comerciales, estrategia de crecimiento y criterios específicos para posibles objetivos o socios.",
       research: "Investigación de Mercado e Identificación de Objetivos",
-      researchDesc:
-        "Nuestro equipo realiza una investigación de mercado exhaustiva para identificar posibles objetivos de adquisición o socios estratégicos que se alineen con sus criterios.",
+      researchDesc: "Nuestro equipo realiza una investigación de mercado exhaustiva para identificar posibles objetivos de adquisición o socios estratégicos que se alineen con sus criterios.",
       outreach: "Contacto Confidencial",
-      outreachDesc:
-        "Realizamos acercamientos discretos y profesionales a los objetivos identificados, manteniendo su confidencialidad mientras evaluamos el interés y el posible ajuste.",
+      outreachDesc: "Realizamos acercamientos discretos y profesionales a los objetivos identificados, manteniendo su confidencialidad mientras evaluamos el interés y el posible ajuste.",
       introductions: "Introducciones Facilitadas",
-      introductionsDesc:
-        "Para las partes interesadas, organizamos y facilitamos las discusiones iniciales, ayudando a ambas partes a explorar posibles sinergias y oportunidades.",
+      introductionsDesc: "Para las partes interesadas, organizamos y facilitamos las discusiones iniciales, ayudando a ambas partes a explorar posibles sinergias y oportunidades.",
       advisory: "Asesoramiento Estratégico",
-      advisoryDesc:
-        "A lo largo del proceso, brindamos orientación y apoyo estratégico para ayudarlo a evaluar oportunidades y tomar decisiones informadas.",
+      advisoryDesc: "A lo largo del proceso, brindamos orientación y apoyo estratégico para ayudarlo a evaluar oportunidades y tomar decisiones informadas.",
       successStories: "Casos de Éxito",
       successStoriesDescription: "Resultados reales de nuestras soluciones estratégicas de M&A y asociaciones.",
     },
     solution: {
       title: "Una solución a medida para cada necesidad",
-      subtitle:
-        "Nuestra IA propietaria, combinada con la supervisión humana, ofrece una precisión inigualable en la búsqueda de talento.",
+      subtitle: "Nuestra IA propietaria, combinada con la supervisión humana, ofrece una precisión inigualable en la búsqueda de talento.",
       tabs: {
         companies: "Para Empresas",
         candidates: "Para Candidatos",
@@ -2015,14 +1817,12 @@ export const translations = {
       },
       precision: {
         title: "Precisión en la Selección",
-        description:
-          "Nuestra IA va más allá de las palabras clave para encontrar coincidencias por habilidades técnicas, blandas y ajuste cultural.",
+        description: "Nuestra IA va más allá de las palabras clave para encontrar coincidencias por habilidades técnicas, blandas y ajuste cultural.",
       },
       partnership: {
         title: "Asociación Estratégica",
-        description:
-          "Trabajamos como una extensión de tu equipo para entender tus necesidades únicas y entregar resultados.",
+        description: "Trabajamos como una extensión de tu equipo para entender tus necesidades únicas y entregar resultados.",
       },
     },
   },
-}
+};

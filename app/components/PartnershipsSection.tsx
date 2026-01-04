@@ -130,7 +130,7 @@ export default function PartnershipsSection() {
                   className="inline-block"
                 >
                   <Button className="bg-boticPurple hover:bg-boticPurple/90 text-white px-6 py-6 rounded-md flex items-center">
-                    {t("services.partnerships.letsTalk")}
+                    {t("services.ctaText")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </a>

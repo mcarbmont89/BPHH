@@ -19,10 +19,10 @@ export default function Home() {
       <Header />
       <main className="pt-[64px] bg-[#1A1A2E]">
         <Hero />
-        <CoreServicesSection />
         <section id="services">
-          <Services />
           <HeadhuntingSection />
+        <CoreServicesSection />
+          <Services />
           <PartnershipsSection />
         </section>
         <section id="process">
