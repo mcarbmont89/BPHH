@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { useLanguage } from "@/lib/i18n/LanguageContext"
-import { Briefcase, Users, GitMerge } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { Briefcase, Users, GitMerge } from "lucide-react";
+import Link from "next/link";
 
 export default function CoreServicesSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   const services = [
     {
@@ -20,7 +20,8 @@ export default function CoreServicesSection() {
       icon: <Users className="h-8 w-8 text-primary" />,
       title: t("coreServices.freelanceTalent.title"),
       description: t("coreServices.freelanceTalent.description"),
-      link: "/freelance-talent",
+      /*       link: "/freelance-talent",
+       */
     },
     {
       icon: <GitMerge className="h-8 w-8 text-primary" />,
@@ -28,7 +29,7 @@ export default function CoreServicesSection() {
       description: t("coreServices.maServices.description"),
       link: "/ma-services",
     },
-  ]
+  ];
 
   return (
     <section id="core-services" className="py-12 md:py-24 bg-gray-50">
@@ -49,16 +50,22 @@ export default function CoreServicesSection() {
                 <CardDescription>{service.description}</CardDescription>
               </CardContent>
               <div className="p-6 pt-0">
-                <Link href={service.link} passHref>
-                  <Button variant="outline" className="w-full bg-transparent">
+                {service.link ? (
+                  <Link href={service.link}>
+                    <Button variant="outline" className="w-full bg-transparent">
+                      {t("coreServices.learnMore")}
+                    </Button>
+                  </Link>
+                ) : (
+                  <Button variant="outline" className="w-full bg-transparent" disabled>
                     {t("coreServices.learnMore")}
                   </Button>
-                </Link>
+                )}
               </div>
             </Card>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
