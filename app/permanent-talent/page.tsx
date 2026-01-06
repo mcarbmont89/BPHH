@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { submitTalentForm } from "@/app/api/talent";
 
 const candidateTestimonials: Array<{
   quote: string;
@@ -16,43 +17,37 @@ const candidateTestimonials: Array<{
   company?: string;
 }> = [
   {
-    quote:
-      "Botic Partners me presentó 3 oportunidades realmente alineadas con mi perfil. En menos de 3 semanas ya estaba firmando con una empresa de producto en Europa.",
+    quote: "Botic Partners me presentó 3 oportunidades realmente alineadas con mi perfil. En menos de 3 semanas ya estaba firmando con una empresa de producto en Europa.",
     name: "A. Martín (Candidate)",
     role: "Senior Full-Stack Engineer",
     company: "SaaS · Barcelona",
   },
   {
-    quote:
-      "El proceso fue muy claro y rápido: feedback concreto, entrevistas bien coordinadas y sin vueltas. Pasé de búsqueda activa a oferta en 18 días.",
+    quote: "El proceso fue muy claro y rápido: feedback concreto, entrevistas bien coordinadas y sin vueltas. Pasé de búsqueda activa a oferta en 18 días.",
     name: "L. Schneider (Candidate)",
     role: "Backend Engineer",
     company: "FinTech · Berlin",
   },
   {
-    quote:
-      "Lo que más valoro es que entendieron mis prioridades (remoto, stack y cultura). No fue volumen, fue precisión.",
+    quote: "Lo que más valoro es que entendieron mis prioridades (remoto, stack y cultura). No fue volumen, fue precisión.",
     name: "S. Rivas (Candidate)",
     role: "Product Designer",
     company: "Consumer App · Madrid",
   },
   {
-    quote:
-      "Me ayudaron a ajustar mi posicionamiento y a preparar las entrevistas. Sentí acompañamiento real durante todo el proceso.",
+    quote: "Me ayudaron a ajustar mi posicionamiento y a preparar las entrevistas. Sentí acompañamiento real durante todo el proceso.",
     name: "D. Moretti (Candidate)",
     role: "Data Scientist",
     company: "AI · Paris",
   },
   {
-    quote:
-      "Venía de varios procesos largos sin resultados. Con Botic Partners tuve entrevistas relevantes desde la primera semana.",
+    quote: "Venía de varios procesos largos sin resultados. Con Botic Partners tuve entrevistas relevantes desde la primera semana.",
     name: "C. Jensen (Candidate)",
     role: "DevOps Engineer",
     company: "Cloud · Amsterdam",
   },
   {
-    quote:
-      "La comunicación fue excelente y siempre supe en qué etapa estaba. Terminé aceptando una propuesta mejor de la que esperaba.",
+    quote: "La comunicación fue excelente y siempre supe en qué etapa estaba. Terminé aceptando una propuesta mejor de la que esperaba.",
     name: "M. Álvarez (Candidate)",
     role: "Engineering Manager",
     company: "B2B · London",
@@ -61,6 +56,9 @@ const candidateTestimonials: Array<{
 
 export default function PermanentTalent() {
   const { t } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitResult, setSubmitResult] = useState<"idle" | "success" | "error">("idle");
+  const [mailtoLink, setMailtoLink] = useState<string>("");
 
   const methodologySteps = useMemo(
     () => [
@@ -109,21 +107,38 @@ export default function PermanentTalent() {
 
   const current = hasTestimonials ? candidateTestimonials[activeTestimonial] : null;
 
-  // ✅ Formulario -> mailto: admin@boticpartners.com
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
 
-    const subject = t("permanentTalent.mailSubject");
-    const body = [`${t("contact.form.name.label")}: ${form.name}`, `${t("contact.form.email.label")}: ${form.email}`, "", `${t("contact.form.message.label")}:`, form.message].join("\n");
+    setIsSubmitting(true);
+    setSubmitResult("idle");
 
-    const mailto = `mailto:admin@boticpartners.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
+    try {
+      const saved = await submitTalentForm({
+        name: form.name,
+        email: form.email,
+        message: form.message,
+        source: "permanent-talent",
+      });
+
+      if (!saved.ok) {
+        console.error("Talent form save failed:", saved);
+        setSubmitResult("error");
+        return;
+      }
+
+      setSubmitResult("success");
+      setForm({ name: "", email: "", message: "" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -150,15 +165,8 @@ export default function PermanentTalent() {
                       <span className="text-gray-800">{t("permanentTalent.timeToHire")}</span>
                     </div>
                   </div>
-
-                  <Button
-                    className="bg-boticPurple hover:bg-boticPurple/90 text-white px-6 py-3"
-                    onClick={() => {
-                      const el = document.getElementById("permanent-talent-contact");
-                      el?.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }}
-                  >
-                    {t("permanentTalent.discussNeeds")}
+                  <Button type="submit" disabled={isSubmitting} className="w-full bg-boticPurple hover:bg-boticPurple/90 text-white px-8 py-3 text-lg">
+                    {isSubmitting ? "Sending..." : t("contact.form.submit")}
                   </Button>
                 </motion.div>
               </div>
