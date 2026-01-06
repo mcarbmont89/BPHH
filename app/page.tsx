@@ -20,10 +20,9 @@ export default function Home() {
       <main className="pt-[64px] bg-[#1A1A2E]">
         <Hero />
         <section id="services">
-          <HeadhuntingSection />
-        <CoreServicesSection />
+          <CoreServicesSection />
+          <HeadhuntingSection />        
           <Services />
-          <PartnershipsSection />
         </section>
         <section id="process">
           <RecruitmentTimeline />
@@ -32,6 +31,7 @@ export default function Home() {
           <Industries />
         </section>
         <TalentMatchingHero />
+        <PartnershipsSection />
         <ContactForm />
       </main>
       <Footer />
