@@ -27,7 +27,7 @@ export default function CoreServicesSection() {
       icon: <GitMerge className="h-8 w-8 text-primary" />,
       title: t("coreServices.maServices.title"),
       description: t("coreServices.maServices.description"),
-      link: "/ma-services",
+      link: "https://acquisition.boticpartners.com/",
     },
   ];
 

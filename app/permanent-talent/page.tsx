@@ -152,7 +152,8 @@ export default function PermanentTalent() {
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-10 md:mb-0">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                  <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">{t("permanentTalent.title")}</h1>
+                  <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight whitespace-pre-line">{t("permanentTalent.title")}</h1>
+
                   <p className="text-xl text-gray-700 mb-8">{t("permanentTalent.subtitle")}</p>
 
                   <div className="flex flex-wrap gap-4 mb-8">
@@ -176,18 +177,6 @@ export default function PermanentTalent() {
                   <div className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-xl">
                     <Image src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/permanent-h7I3Vv9zLwcd0AzsD0lOqy2yCvMmsk.webp" alt="Executive team meeting" fill className="object-cover" />
                   </div>
-
-                  <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
-                    <div className="flex items-center gap-3">
-                      <div className="bg-boticPurple/10 p-2 rounded-full">
-                        <BarChart className="h-6 w-6 text-boticPurple" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-600">{t("permanentTalent.averageMatchScore")}</p>
-                        <p className="text-xl font-bold text-gray-900">94%</p>
-                      </div>
-                    </div>
-                  </div>
                 </motion.div>
               </div>
             </div>
@@ -199,7 +188,6 @@ export default function PermanentTalent() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">{t("permanentTalent.methodologyTitle")}</h2>
-              <p className="text-gray-600 max-w-3xl mx-auto">{t("permanentTalent.methodologySubtitle")}</p>
             </div>
 
             <div className="relative">
@@ -240,7 +228,6 @@ export default function PermanentTalent() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">{t("permanentTalent.successStoriesTitle")}</h2>
-              <p className="text-gray-600 max-w-3xl mx-auto">{t("permanentTalent.successStoriesSubtitle")}</p>
             </div>
 
             <div className="max-w-4xl mx-auto">
@@ -252,9 +239,6 @@ export default function PermanentTalent() {
                 {!hasTestimonials ? (
                   <div className="text-center py-8">
                     <p className="text-gray-700 font-semibold mb-2">{t("permanentTalent.testimonialsPending")}</p>
-                    <p className="text-gray-500 text-sm">
-                      (TO DO POR BORJA) — cuando tengas los testimonios, pegarlos en <code>candidateTestimonials</code>.
-                    </p>
                   </div>
                 ) : (
                   <motion.div key={activeTestimonial} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
@@ -316,10 +300,6 @@ export default function PermanentTalent() {
                 <Button type="submit" className="w-full bg-boticPurple hover:bg-boticPurple/90 text-white px-8 py-3 text-lg">
                   {t("contact.form.submit")}
                 </Button>
-
-                <p className="text-xs text-gray-500 text-center">
-                  This will open your email client and send the message to <span className="font-semibold">admin@boticpartners.com</span>.
-                </p>
               </form>
             </div>
           </div>

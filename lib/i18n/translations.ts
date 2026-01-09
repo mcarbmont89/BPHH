@@ -652,8 +652,8 @@ export const translations = {
       alert: "Alert",
     },
     permanentTalent: {
-      title: "Strategic Permanent Talent Acquisition",
-      subtitle: "Building high-performing teams with executive and technical leaders who drive innovation and growth",
+      title: "Any industry. Any role. One method that works.",
+      subtitle: "Our AI-powered talent engine adapts to your needs, whether you are hiring a CTO, a project director, or scaling a new team across Europe or Latam.",
       retentionRate: "93% retention rate after 2 years",
       timeToHire: "21-day average time-to-hire",
       discussNeeds: "Discuss Your Talent Needs",
@@ -711,7 +711,7 @@ export const translations = {
       testimonialsPending: "Pending content (provided by Borja).",
 
       ctaTitle: "Need to hire talent? Contact us!",
-      ctaSubtitle: "Fill out the form and your request will be sent to admin@boticpartners.com.",
+      ctaSubtitle: "Fill out the form and we will process your request as soon as possible.",
       scheduleConsultation: "Contact us",
 
       mailSubject: "Permanent Talent - Contact Request",
@@ -838,8 +838,8 @@ export const translations = {
       opportunityAssessmentDesc: "Nuestro equipo realiza evaluaciones exhaustivas de posibles objetivos de adquisición, evaluando las capacidades técnicas, la calidad del equipo y el ajuste estratégico.",
       confidentialRep: "Representación Confidencial",
       confidentialRepDesc: "Actuamos como su representante confidencial en el mercado, protegiendo su identidad mientras exploramos oportunidades estratégicas.",
-      ourProcess: "Nuestro Proceso de M&A",
-      ourProcessDescription: "Un enfoque estructurado para identificar y facilitar conexiones comerciales estratégicas",
+      ourProcess: "OUR WORK METHOD",
+      ourProcessDescription: "A structured approach to identifying and facilitating strategic business connections",
       consultation: "Consulta Estratégica",
       consultationDesc: "Comenzamos con una comprensión profunda de sus objetivos comerciales, estrategia de crecimiento y criterios específicos para posibles objetivos o socios.",
       research: "Investigación de Mercado e Identificación de Objetivos",
@@ -852,7 +852,30 @@ export const translations = {
       advisoryDesc: "A lo largo del proceso, brindamos orientación y apoyo estratégico para ayudarlo a evaluar oportunidades y tomar decisiones informadas.",
       successStories: "Casos de Éxito",
       successStoriesDescription: "Resultados reales de nuestras soluciones estratégicas de M&A y asociaciones.",
+      processSteps: {
+        "01": {
+          title: "We define the right target",
+          description: "We work with you to define and continuously refine the ideal company profile based on technology, strategy, and business priorities. We don’t look for “interesting companies”—we look for the right ones.",
+        },
+        "02": {
+          title: "We explore and analyze the market",
+          description: "We actively prospect the European market and evaluate each opportunity based on technology, business model, intellectual property, and strategic fit—supported by automation and AI to move faster and smarter.",
+        },
+        "03": {
+          title: "We connect",
+          description: "We reach out to and meet with founders and CEOs of target companies to introduce your company and validate genuine fit and interest.",
+        },
+        "04": {
+          title: "We present results",
+          description: "We share a curated report of the most relevant companies to confirm fit and schedule the first meetings.",
+        },
+        "05": {
+          title: "And we support you throughout the entire process",
+          description: "We coordinate follow-ups with both sides across the full process and provide guidance whenever needed.",
+        },
+      },
     },
+
     solution: {
       title: "Una Solución a Medida para Cada Necesidad",
       subtitle: "Nuestra IA propietaria, combinada con la supervisión humana, ofrece una precisión inigualable en la búsqueda de talento.",
@@ -998,7 +1021,7 @@ export const translations = {
           learnMore: "Saber Más",
         },
         ma: {
-          title: "Servicios de M&A",
+          title: "Scouting estratégico de empresas",
           description: "¿Navegando una fusión o adquisición? Ofrecemos due diligence de talento y estrategias de integración para asegurar una transición fluida y un éxito a largo plazo.",
           cta: "Saber Más",
           learnMore: "Saber Más",
@@ -1140,16 +1163,16 @@ export const translations = {
     coreServices: {
       title: "Nuestros Servicios Principales",
       permanentStaff: {
-        title: "Headhunting de Personal Permanente",
-        description: "Encontrar talento a largo plazo que se alinee con la cultura y los objetivos de tu empresa.",
+        title: "HEADHUNTING ",
+        description: "BÚSQUEDA Y SELECCIÓN DEL MEJOR TALENTO, SIN BULSHIT Y A TIEMPO",
       },
       freelanceTalent: {
         title: "Automatización de Procesos con IA",
         description: "Búsqueda de expertos flexibles y bajo demanda para tus necesidades basadas en proyectos.",
       },
       maServices: {
-        title: "Servicios de M&A",
-        description: "Apoyo estratégico para fusiones y adquisiciones para impulsar el crecimiento empresarial.",
+        title: "Scouting estratégico de empresas",
+        description: "Apoyo estratégico en operaciones de crecimiento y expansión empresarial.",
       },
       whatWeDo: "Qué Hacemos",
       subtitle: "Soluciones integrales para tus necesidades de talento y crecimiento.",
@@ -1166,7 +1189,7 @@ export const translations = {
       interimManagement: "Gestión Interina",
       specializedConsultants: "Consultores Especializados",
       maSearch: "Búsqueda de M&A",
-      maSearchDesc: "Apoyo estratégico para fusiones y adquisiciones para impulsar el crecimiento empresarial.",
+      maSearchDesc: "Apoyo estratégico en operaciones de crecimiento y expansión empresarial.",
       targetCompany: "Identificación de Empresas Objetivo",
       strategicPartnership: "Búsqueda de Alianzas Estratégicas",
       acquisitionOpportunity: "Análisis de Oportunidades de Adquisición",
@@ -1560,8 +1583,8 @@ export const translations = {
       alert: "Alerta",
     },
     permanentTalent: {
-      title: "Adquisición Estratégica de Talento Permanente",
-      subtitle: "Construyendo equipos de alto rendimiento con líderes ejecutivos y técnicos que impulsan la innovación y el crecimiento",
+      title: "Cualquier industria.\nCualquier rol.\nUn método que funciona.",
+      subtitle: "Nuestro motor de talento impulsado por IA se adapta a tus necesidades, tanto si buscas incorporar un CTO, un director de proyectos o escalar un nuevo equipo en Europa o Latam.",
       retentionRate: "Tasa de retención del 93% después de 2 años",
       timeToHire: "Tiempo promedio de contratación de 21 días",
       discussNeeds: "Discuta Sus Necesidades de Talento",
@@ -1586,7 +1609,7 @@ export const translations = {
       cloudArchitects: "Arquitectos de la Nube",
       securitySpecialists: "Especialistas en Seguridad",
 
-      methodologyTitle: "Nuestra metodología de trabajo",
+      methodologyTitle: "NUESTRA ESTRATEGIA",
       methodologySubtitle: "",
       methodologySteps: {
         strategicAnalysis: {
@@ -1620,7 +1643,7 @@ export const translations = {
       testimonialsPending: "Contenido pendiente (lo proporciona Borja).",
 
       ctaTitle: "¿Necesitas incorporar talento? ¡Contacta con nosotros!",
-      ctaSubtitle: "Rellena el formulario y tu solicitud llegará a admin@boticpartners.com.",
+      ctaSubtitle: "Rellena el formulario y gestionaremos tu solicitud lo antes posible",
       scheduleConsultation: "Contactar",
 
       mailSubject: "Talento Permanente - Solicitud de contacto",
@@ -1746,7 +1769,7 @@ export const translations = {
       opportunityAssessmentDesc: "Nuestro equipo realiza evaluaciones exhaustivas de posibles objetivos de adquisición, evaluando las capacidades técnicas, la calidad del equipo y el ajuste estratégico.",
       confidentialRep: "Representación Confidencial",
       confidentialRepDesc: "Actuamos como su representante confidencial en el mercado, protegiendo su identidad mientras exploramos oportunidades estratégicas.",
-      ourProcess: "Nuestro Proceso de M&A",
+      ourProcess: "NUESTRO MÉTODO DE TRABAJO",
       ourProcessDescription: "Un enfoque estructurado para identificar y facilitar conexiones comerciales estratégicas",
       consultation: "Consulta Estratégica",
       consultationDesc: "Comenzamos con una comprensión profunda de sus objetivos comerciales, estrategia de crecimiento y criterios específicos para posibles objetivos o socios.",
@@ -1760,6 +1783,28 @@ export const translations = {
       advisoryDesc: "A lo largo del proceso, brindamos orientación y apoyo estratégico para ayudarlo a evaluar oportunidades y tomar decisiones informadas.",
       successStories: "Casos de Éxito",
       successStoriesDescription: "Resultados reales de nuestras soluciones estratégicas de M&A y asociaciones.",
+      processSteps: {
+        "01": {
+          title: "Definimos el target adecuado",
+          description: "Trabajamos contigo para definir y actualizar el perfil de empresa objetivo según prioridades tecnológicas, estratégicas y de negocio. No buscamos “empresas interesantes”, buscamos las correctas.",
+        },
+        "02": {
+          title: "Exploramos y analizamos el mercado",
+          description: "Prospectamos activamente el mercado europeo y evaluamos cada oportunidad en base a tecnología, modelo de negocio, propiedad intelectual y potencial de encaje. Todo con apoyo de automatización e IA para ir más rápido y mejor.",
+        },
+        "03": {
+          title: "Conectamos",
+          description: "Contactamos y nos reunimos con los fundadores y CEOs de las empresas objetivo para presentar tu empresa y validar el encaje e interés real.",
+        },
+        "04": {
+          title: "Presentamos resultados",
+          description: "Te presentamos nuestro informe de las empresas destacadas para confirmar el encaje y agendar las primeras reuniones.",
+        },
+        "05": {
+          title: "Y finalmente te acompañamos en todo el proceso",
+          description: "Hacemos seguimiento por ambas partes durante todo el proceso y damos asesoramiento en caso de requerirlo.",
+        },
+      },
     },
     solution: {
       title: "Una solución a medida para cada necesidad",
