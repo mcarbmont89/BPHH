@@ -65,7 +65,7 @@ const testimonials = [
   },
   {
     quote: "The freelance cloud architect Botic connected us with transformed our infrastructure approach, delivering 40% cost savings and improved performance.",
-    author: "James Chang",
+    author: "John Chang",
     position: "VP Engineering, TechScale",
     image: "/placeholder.svg?height=60&width=60",
   },
