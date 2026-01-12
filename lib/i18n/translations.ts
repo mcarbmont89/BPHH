@@ -1163,8 +1163,8 @@ export const translations = {
     coreServices: {
       title: "Nuestros Servicios Principales",
       permanentStaff: {
-        title: "HEADHUNTING ",
-        description: "BÚSQUEDA Y SELECCIÓN DEL MEJOR TALENTO, SIN BULSHIT Y A TIEMPO",
+        title: "Headhunting",
+        description: "Búsqueda y selección del mejor talento, sin bulshit y a tiempo",
       },
       freelanceTalent: {
         title: "Automatización de Procesos con IA",
@@ -1614,23 +1614,23 @@ export const translations = {
       methodologySteps: {
         strategicAnalysis: {
           title: "Hoy el talento clave no busca trabajo",
-          description: "Más del 90 % del talento en sectores como tecnología es pasivo. Saber identificarlo y atraerlo es clave.",
+          description: "Más del 90 % de los perfiles en determinadas industrias como la tecnológica, son talento pasivo. Por eso es muy importante saber cómo transmitir y seleccionar.",
         },
         aiSearch: {
           title: "IA para ganar velocidad en un mercado saturado",
-          description: "Trabajamos con proveedores líderes de IA y data para analizar millones de perfiles y reducir tiempos de búsqueda.",
+          description: "Trabajamos con proveedores líderes de IA y data que nos permiten analizar millones de perfiles y reducir drásticamente los tiempos de búsqueda.",
         },
         humanExpertise: {
           title: "La escasez es real, el filtrado es crítico",
-          description: "En perfiles tech, ingeniería y dirección, menos del 10 % cumple realmente. Nuestro foco está ahí.",
+          description: "En perfiles tech, ingeniería y dirección, menos del 10 % de los candidatos cumplen realmente. Nuestro foco está en identificar ese 10 %.",
         },
         qualification: {
           title: "Menos CVs, más criterio",
-          description: "Entregamos pocos perfiles, acompañados de nuestras notas y evaluación real.",
+          description: "Nuestros informes incluyen el CV y nuestras anotaciones de las entrevistas con los candidatos. Queremos hacerte la vida lo más fácil posible.",
         },
         acceleratedPlacement: {
           title: "La contratación no termina con la firma",
-          description: "Hacemos seguimiento tras la incorporación para asegurar encaje, rendimiento y continuidad.",
+          description: "El verdadero reto es la retención. Hacemos seguimiento tras la incorporación para asegurar encaje, rendimiento y continuidad.",
         },
       },
 
