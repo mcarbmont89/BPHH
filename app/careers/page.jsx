@@ -18,7 +18,7 @@ export default function CareersPage() {
   const [careers, setCareers] = useState([]);
   const [mounted, setMounted] = useState(false);
 
-  // Use useEffect to ensure component is mounted before rendering
+  // Use useEffect to ensure component is mounted before rendering the website
   useEffect(() => {
     let alive = true;
     const lang = (typeof window !== "undefined" && window.localStorage?.getItem("lang")) || ctxLang || "es";
