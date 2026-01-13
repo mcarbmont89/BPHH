@@ -23,7 +23,7 @@ export default function Blog() {
   const [posts, setPosts] = useState<any[]>([]);
   const [featured, setFeatured] = useState<any>(null);
 
-  // ✅ Newsletter state
+  //  Newsletter state
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterStatus, setNewsletterStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [newsletterMessage, setNewsletterMessage] = useState("");
