@@ -219,7 +219,7 @@ export const translations = {
       watchDemoSubject: "Request: Demo of Botic Partners Platform",
     },
     coreServices: {
-      title: "Our Core Services",
+      title: "At Botic Partners, we drive company growth by combining talent, technology, and strategic vision.\nWe do this through specialized headhunting, AI process automation, and support for growth and international expansion.",
       permanentStaff: {
         title: "Permanent Staff Headhunting",
         description: "Finding long-term talent that aligns with your company culture and goals.",
@@ -1093,7 +1093,7 @@ export const translations = {
       highlightBox: {
         title: "En menos de 2 días tus candidatos en una llamada",
         description: "Nuestro sistema de matching impulsado por IA entrega candidatos calificados más rápido que los métodos de reclutamiento tradicionales. Experimenta el futuro del reclutamiento con nuestra avanzada tecnología de IA.",
-        button: "Descubrir",
+        button: "Accede a nuestra demo",
       },
     },
     recruitment: {
@@ -1161,7 +1161,7 @@ export const translations = {
       watchDemoSubject: "Solicitud: Demo de la Plataforma Botic Partners",
     },
     coreServices: {
-      title: "Nuestros Servicios Principales",
+      title: "En Botic Partners impulsamos el crecimiento de las empresas combinando talento, tecnología y visión estratégica.\nLo hacemos a través de headhunting especializado, automatización de procesos con IA y apoyo en crecimiento y expansión internacional.",
       permanentStaff: {
         title: "Headhunting",
         description: "Búsqueda y selección del mejor talento, sin bulshit y a tiempo",
@@ -1642,7 +1642,7 @@ export const translations = {
 
       testimonialsPending: "Contenido pendiente (lo proporciona Borja).",
 
-      ctaTitle: "¿Necesitas incorporar talento? ¡Contacta con nosotros!",
+      ctaTitle: "¿Necesitas incorporar talento? ¿Estás valorando un cambio profesional?\nEscríbenos y veamos si podemos ayudarte.",
       ctaSubtitle: "Rellena el formulario y gestionaremos tu solicitud lo antes posible",
       scheduleConsultation: "Contactar",
 

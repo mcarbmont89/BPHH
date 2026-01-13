@@ -276,8 +276,7 @@ export default function PermanentTalent() {
         <section id="permanent-talent-contact" className="py-16 bg-boticPurple/10">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold mb-4">{t("permanentTalent.ctaTitle")}</h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto">{t("permanentTalent.ctaSubtitle")}</p>
+              <h2 className="text-3xl font-bold mb-4 whitespace-pre-line">{t("permanentTalent.ctaTitle")}</h2> <p className="text-xl text-gray-700 max-w-3xl mx-auto">{t("permanentTalent.ctaSubtitle")}</p>
             </div>
 
             <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-md border border-gray-100 p-8">

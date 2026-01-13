@@ -12,6 +12,7 @@ import PartnershipsSection from "./components/PartnershipsSection"
 import ContactForm from "./components/ContactForm"
 import CoreServicesSection from "./components/CoreServicesSection"
 import RecruitmentTimeline from "./components/RecruitmentTimeline"
+import AboutUs from "./components/AboutUs"
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <TalentMatchingHero />
         <PartnershipsSection />
         <ContactForm />
+        <AboutUs/>
       </main>
       <Footer />
       <Chatbot />

@@ -20,8 +20,7 @@ export default function CoreServicesSection() {
       icon: <Users className="h-8 w-8 text-primary" />,
       title: t("coreServices.freelanceTalent.title"),
       description: t("coreServices.freelanceTalent.description"),
-      /*       link: "/freelance-talent",
-       */
+      link: "https://botic-launchpad-magic.lovable.app",
     },
     {
       icon: <GitMerge className="h-8 w-8 text-primary" />,
@@ -35,8 +34,9 @@ export default function CoreServicesSection() {
     <section id="core-services" className="py-12 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("coreServices.title")}</h2>
+          <p className="max-w-4xl mx-auto text-lg md:text-xl text-gray-700 whitespace-pre-line">{t("coreServices.title")}</p>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="flex flex-col">
