@@ -33,9 +33,9 @@ export default function Home() {
         </section>
         <TalentMatchingHero />
         <PartnershipsSection />
-        <ContactForm />
         <AboutUs/>
-      </main>
+        <ContactForm />
+      </main>                                                                                                        
       <Footer />
       <Chatbot />
     </div>
