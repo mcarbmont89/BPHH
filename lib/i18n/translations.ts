@@ -717,6 +717,46 @@ export const translations = {
       mailSubject: "Permanent Talent - Contact Request",
 
       averageMatchScore: "Average Match Score",
+      successStories: {
+        title: "What our candidates say",
+        paragraphs: ["Finding a new professional challenge isn’t just about fitting a CV. It’s about feeling supported, understood, and well-informed at every step.", "At Botic Partners, we believe a great recruitment process should be clear, human, and transparent—from the first call to after the final interview. That’s why we truly listen, explain, and support you.", "Here’s what some professionals who have lived the experience with us think:"],
+        candidatesLabel: "Candidate testimonials",
+        clientsLabel: "Client testimonials",
+        candidates: [
+          {
+            quote: "The process was fast and very well supported. Borja was attentive at all times, answering my questions and guiding each step with clarity and closeness. I felt supported throughout the selection process and always got clear answers whenever I needed them.",
+            name: "Antonio Marquina Ospina",
+            role: "Strategy Manager – Kronos Homes",
+            image: "/images/AntonioMarquinaOspina.jpeg",
+          },
+          {
+            quote: "From the very beginning, the experience was excellent. The information was clear and precise, which was key to understanding what the company was looking for and what I could bring as a professional. It helped me prepare with a clear strategy. I especially value the transparency—something that doesn’t always happen in recruitment processes. I would 100% recommend Botic Partners.",
+            name: "Guillermo Sánchez García",
+            role: "Senior Project Manager – GSE",
+            image: "/images/GUILLERMOSANCHEZGSE.jpeg",
+          },
+          {
+            quote: "The experience was very positive from the first contact to the final stage. Communication was smooth and follow-up constant, clearing all my doubts. What I value most is the post-interview support, which makes a big difference and shows genuine candidate care.",
+            name: "Leonardo Soler Rangel",
+            role: "Operations Technician – CSP Spain",
+            image: "/images/LeonardoSolerRangel.jpeg",
+          },
+        ],
+        clients: [
+          {
+            quote: "Our experience with Botic Partners has been highly recommendable. After working with other headhunting firms, I can say their service level and expertise are among the best. One aspect I value most is the delivery of complete and detailed candidate reports—very useful and uncommon elsewhere. Plus, fast response time and adaptability to change have been a key advantage.",
+            name: "Adrián Menéndez Rubio",
+            role: "Lisbon Regional Director – Kronos Group",
+            image: "/images/ADRIANMENÉNDEZKRONOS.jpeg",
+          },
+          {
+            quote: "We work with Borja exclusively at Nanusens and the results have been exceptional. He consistently presents incredibly strong profiles—not only technically, but also on a personal and human level, which is key to building solid teams. His approach is different: he analyzes each candidate deeply, both technically and emotionally, and only sends a few profiles that truly fit. This saves us a lot of time and guarantees results. After working with other agencies, I can say with confidence that Borja is the best recruiter I’ve collaborated with, and I recommend him without any doubt for any strategic hiring process.",
+            name: "Josep Montanyà",
+            role: "CEO – Nanusens",
+            image: "/images/JOSEPMONTANYA.jpeg",
+          },
+        ],
+      },
     },
 
     freelanceTalent: {
@@ -1649,6 +1689,46 @@ export const translations = {
       mailSubject: "Talento Permanente - Solicitud de contacto",
 
       averageMatchScore: "Puntaje Promedio de Coincidencia",
+      successStories: {
+        title: "Lo que dicen nuestros candidatos",
+        paragraphs: ["Encontrar un nuevo reto profesional no va solo de encajar en un CV. Va de sentirte acompañado, entendido y bien informado en cada paso.", "En Botic Partners creemos que un buen proceso de selección debe ser claro, humano y transparente, desde la primera llamada hasta después de la entrevista final. Por eso escuchamos, explicamos y acompañamos de verdad.", "Esto es lo que opinan algunos de los profesionales que ya han vivido la experiencia con nosotros"],
+        candidatesLabel: "Testimonios de candidatos",
+        clientsLabel: "Testimonios de clientes",
+        candidates: [
+          {
+            quote: "El proceso fue rápido y muy bien acompañado. Borja estuvo pendiente en todo momento, resolviendo mis dudas y guiando cada paso con claridad y cercanía. Me sentí acompañado durante todo el proceso de selección y con respuestas claras siempre que lo necesité.",
+            name: "Antonio Marquina Ospina",
+            role: "Strategy Manager – Kronos Homes",
+            image: "/images/AntonioMarquinaOspina.jpeg",
+          },
+          {
+            quote: "Desde el primer momento el trato fue excelente. La información fue clara y precisa, algo clave para entender bien qué buscaba la empresa y qué podía aportar yo como profesional. Esto me permitió preparar la entrevista con una estrategia clara. Destaco especialmente la transparencia, algo que no siempre ocurre en los procesos de selección. Recomendaría el servicio de Botic Partners al 100%.",
+            name: "Guillermo Sánchez García",
+            role: "Senior Project Manager – GSE",
+            image: "/images/GUILLERMOSANCHEZGSE.jpeg",
+          },
+          {
+            quote: "La experiencia fue muy positiva desde la primera toma de contacto hasta el cierre del proceso. La comunicación fue fluida y el seguimiento constante, aclarando todas mis dudas. Lo que más valoro es el apoyo posterior a la entrevista, algo que marca una gran diferencia y demuestra un verdadero acompañamiento al candidato.",
+            name: "Leonardo Soler Rangel",
+            role: "Técnico de Operaciones – CSP Spain",
+            image: "/images/LeonardoSolerRangel.jpeg",
+          },
+        ],
+        clients: [
+          {
+            quote: "La experiencia con Botic Partners ha sido altamente recomendable. Tras haber trabajado con otras firmas de headhunting, puedo decir que el nivel de servicio y experiencia está entre los mejores. Uno de los aspectos que más valoro es la entrega de informes completos y detallados de cada candidato, algo muy útil y poco habitual en otras firmas. Además, la rapidez de respuesta y la capacidad de adaptación ante cambios han sido un plus clave.",
+            name: "Adrián Menéndez Rubio",
+            role: "Lisbon Regional Director – Kronos Group",
+            image: "/images/ADRIANMENÉNDEZKRONOS.jpeg",
+          },
+          {
+            quote: "Trabajamos con Borja en exclusiva en Nanusens y los resultados han sido excepcionales. Siempre nos ha presentado perfiles increíblemente buenos, no solo a nivel técnico, sino también en el plano personal y humano, algo clave para construir equipos sólidos. Su forma de trabajar marca una gran diferencia: analiza en profundidad a cada candidato, tanto desde el punto de vista técnico como emocional, y solo nos envía unos pocos perfiles que realmente encajan. Esto nos ahorra mucho tiempo y garantiza resultados. Después de haber trabajado con otras agencias, puedo decir con total seguridad que Borja es el mejor recruiter con el que he colaborado, y lo recomiendo sin ninguna duda para cualquier proceso estratégico.",
+            name: "Josep Montanyà",
+            role: "CEO – Nanusens",
+            image: "/images/JOSEPMONTANYA.jpeg",
+          },
+        ],
+      },
     },
     freelanceTalent: {
       title: "Talento Freelance Bajo Demanda",

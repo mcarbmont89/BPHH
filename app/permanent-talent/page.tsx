@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, CheckCircle, BarChart, Brain, Target, Clock, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { Users, CheckCircle, Brain, Target, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -9,50 +9,7 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { submitTalentForm } from "@/app/api/talent";
-
-const candidateTestimonials: Array<{
-  quote: string;
-  name: string;
-  role?: string;
-  company?: string;
-}> = [
-  {
-    quote: "Botic Partners me presentó 3 oportunidades realmente alineadas con mi perfil. En menos de 3 semanas ya estaba firmando con una empresa de producto en Europa.",
-    name: "A. Martín (Candidate)",
-    role: "Senior Full-Stack Engineer",
-    company: "SaaS · Barcelona",
-  },
-  {
-    quote: "El proceso fue muy claro y rápido: feedback concreto, entrevistas bien coordinadas y sin vueltas. Pasé de búsqueda activa a oferta en 18 días.",
-    name: "L. Schneider (Candidate)",
-    role: "Backend Engineer",
-    company: "FinTech · Berlin",
-  },
-  {
-    quote: "Lo que más valoro es que entendieron mis prioridades (remoto, stack y cultura). No fue volumen, fue precisión.",
-    name: "S. Rivas (Candidate)",
-    role: "Product Designer",
-    company: "Consumer App · Madrid",
-  },
-  {
-    quote: "Me ayudaron a ajustar mi posicionamiento y a preparar las entrevistas. Sentí acompañamiento real durante todo el proceso.",
-    name: "D. Moretti (Candidate)",
-    role: "Data Scientist",
-    company: "AI · Paris",
-  },
-  {
-    quote: "Venía de varios procesos largos sin resultados. Con Botic Partners tuve entrevistas relevantes desde la primera semana.",
-    name: "C. Jensen (Candidate)",
-    role: "DevOps Engineer",
-    company: "Cloud · Amsterdam",
-  },
-  {
-    quote: "La comunicación fue excelente y siempre supe en qué etapa estaba. Terminé aceptando una propuesta mejor de la que esperaba.",
-    name: "M. Álvarez (Candidate)",
-    role: "Engineering Manager",
-    company: "B2B · London",
-  },
-];
+import { SuccessStoriesSection } from "../components/SuccessStoriesSection";
 
 export default function PermanentTalent() {
   const { t } = useLanguage();
@@ -90,22 +47,6 @@ export default function PermanentTalent() {
     ],
     [t]
   );
-
-  // ✅ Carrusel
-  const hasTestimonials = candidateTestimonials.length > 0;
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-
-  const goPrev = () => {
-    if (!hasTestimonials) return;
-    setActiveTestimonial((prev) => (prev - 1 + candidateTestimonials.length) % candidateTestimonials.length);
-  };
-
-  const goNext = () => {
-    if (!hasTestimonials) return;
-    setActiveTestimonial((prev) => (prev + 1) % candidateTestimonials.length);
-  };
-
-  const current = hasTestimonials ? candidateTestimonials[activeTestimonial] : null;
 
   const [form, setForm] = useState({
     name: "",
@@ -222,55 +163,7 @@ export default function PermanentTalent() {
             </div>
           </div>
         </section>
-
-        {/* Success Stories Section -> Carrusel de testimonios */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t("permanentTalent.successStoriesTitle")}</h2>
-            </div>
-
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-white border border-gray-100 rounded-2xl shadow-md p-8 relative">
-                <div className="absolute -top-4 left-8 bg-boticPurple text-white p-3 rounded-xl shadow">
-                  <Quote className="h-5 w-5" />
-                </div>
-
-                {!hasTestimonials ? (
-                  <div className="text-center py-8">
-                    <p className="text-gray-700 font-semibold mb-2">{t("permanentTalent.testimonialsPending")}</p>
-                  </div>
-                ) : (
-                  <motion.div key={activeTestimonial} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
-                    <p className="text-gray-800 text-lg leading-relaxed mb-6">“{current?.quote}”</p>
-                    <div className="text-gray-700">
-                      <p className="font-bold">{current?.name}</p>
-                      <p className="text-sm text-gray-600">{[current?.role, current?.company].filter(Boolean).join(" · ")}</p>
-                    </div>
-                  </motion.div>
-                )}
-
-                <div className="flex items-center justify-between mt-8">
-                  <Button type="button" variant="outline" onClick={goPrev} disabled={!hasTestimonials} className="rounded-full" aria-label="Previous testimonial">
-                    <ChevronLeft className="h-4 w-4" />
-                  </Button>
-
-                  {hasTestimonials ? (
-                    <p className="text-sm text-gray-500">
-                      {activeTestimonial + 1} / {candidateTestimonials.length}
-                    </p>
-                  ) : (
-                    <p className="text-sm text-gray-400">—</p>
-                  )}
-
-                  <Button type="button" variant="outline" onClick={goNext} disabled={!hasTestimonials} className="rounded-full" aria-label="Next testimonial">
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <SuccessStoriesSection prefix="permanentTalent" />
 
         {/* CTA + Formulario (admin@boticpartners.com) */}
         <section id="permanent-talent-contact" className="py-16 bg-boticPurple/10">
