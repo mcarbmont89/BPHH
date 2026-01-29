@@ -225,8 +225,8 @@ export const translations = {
         description: "Finding long-term talent that aligns with your company culture and goals.",
       },
       freelanceTalent: {
-        title: "Freelance Talent Headhunting",
-        description: "Sourcing flexible, on-demand experts for your project-based needs.",
+        title: "Agentic Workflows",
+        description: "We teach you how to use automated workflows to make your day-to-day life more efficient.",
       },
       maServices: {
         title: "M&A Services",
