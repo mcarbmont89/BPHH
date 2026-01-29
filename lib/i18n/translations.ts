@@ -1208,7 +1208,7 @@ export const translations = {
       },
       freelanceTalent: {
         title: "Automatización de Procesos con IA",
-        description: "Búsqueda de expertos flexibles y bajo demanda para tus necesidades basadas en proyectos.",
+        description: "Te enseñamos a usar workflows automatizados para hacer más eficiente tu día día.",
       },
       maServices: {
         title: "Scouting estratégico de empresas",
