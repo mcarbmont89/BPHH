@@ -92,35 +92,49 @@ export default function PermanentTalent() {
 
       <main className="flex-grow pt-20">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-boticPurple/20 to-boticPurple/10">
+        <section className="relative py-12 md:py-20 bg-gradient-to-r from-boticPurple/20 to-boticPurple/10">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center">
-              <div className="md:w-1/2 mb-10 md:mb-0">
+            <div className="flex flex-col md:flex-row md:items-center">
+              <div className="md:w-1/2 md:pr-8 lg:pr-12 mb-8 md:mb-0">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                  <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight whitespace-pre-line">{t("permanentTalent.title")}</h1>
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-gray-900 leading-tight">{t("permanentTalent.title")}</h1>
 
-                  <p className="text-xl text-gray-700 mb-8">{t("permanentTalent.subtitle")}</p>
+                  <p className="text-lg sm:text-xl text-gray-700 mb-6 md:mb-8">{t("permanentTalent.subtitle")}</p>
 
-                  <div className="flex flex-wrap gap-4 mb-8">
+                  <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
                     <div className="flex items-center bg-white px-4 py-2 rounded-lg shadow-sm">
-                      <CheckCircle className="h-5 w-5 text-boticPurple mr-2" />
+                      <CheckCircle className="h-5 w-5 text-boticPurple mr-2 flex-shrink-0" />
                       <span className="text-gray-800">{t("permanentTalent.retentionRate")}</span>
                     </div>
                     <div className="flex items-center bg-white px-4 py-2 rounded-lg shadow-sm">
-                      <CheckCircle className="h-5 w-5 text-boticPurple mr-2" />
+                      <CheckCircle className="h-5 w-5 text-boticPurple mr-2 flex-shrink-0" />
                       <span className="text-gray-800">{t("permanentTalent.timeToHire")}</span>
                     </div>
                   </div>
-                  <Button onClick={handleMailClick} className="w-auto bg-boticPurple hover:bg-boticPurple/90 text-white px-8 py-3 text-lg">
+
+                  <Button onClick={handleMailClick} className="bg-boticPurple hover:bg-boticPurple/90 text-white px-8 py-3 text-lg w-full sm:w-auto">
                     {t("contact.form.submit")}
                   </Button>
                 </motion.div>
               </div>
 
               <div className="md:w-1/2">
-                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className="relative">
-                  <div className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-xl">
-                    <Image src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/permanent-h7I3Vv9zLwcd0AzsD0lOqy2yCvMmsk.webp" alt="Executive team meeting" fill className="object-cover" />
+                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className="relative w-full">
+                  <div className="relative w-full aspect-[4/3] md:aspect-square rounded-lg overflow-hidden shadow-xl">
+                    <Image
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/permanent-h7I3Vv9zLwcd0AzsD0lOqy2yCvMmsk.webp"
+                      alt="Executive team meeting"
+                      fill
+                      className="object-cover"
+                      priority
+                      onError={(e) => {
+                        console.error("Error loading image:", e);
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-boticPurple/10 rounded-lg flex items-center justify-center text-gray-500" style={{ display: "none" }}>
+                    Imagen no disponible
                   </div>
                 </motion.div>
               </div>
