@@ -16,9 +16,7 @@ const currencySymbol = (code: string) => {
   return map[(code || "").toUpperCase()] || (code ? code.toUpperCase() : "€");
 };
 
-const formatNumber = (n: number, locale: string) =>
-  new Intl.NumberFormat(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(n);
-
+const formatNumber = (n: number, locale: string) => new Intl.NumberFormat(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(n);
 
 const formatSalaryText = (salaryRaw: unknown, currencyCode: string, locale: string) => {
   if (salaryRaw === null || salaryRaw === undefined) return null;
@@ -91,12 +89,7 @@ export default function CareersPage() {
       <section className="relative bg-[#1A1A2E] py-20">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.h1
-              className="text-4xl py-4 mt-8 md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <motion.h1 className="text-4xl py-4 mt-8 md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               {t("careers.title")}
             </motion.h1>
             <motion.div className="w-24 h-1 bg-primary/50 mx-auto mb-6" initial={{ width: 0 }} animate={{ width: 96 }} transition={{ duration: 0.7, delay: 0.3 }} />
@@ -109,14 +102,7 @@ export default function CareersPage() {
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(10)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute rounded-full bg-primary/10"
-              initial={{ x: Math.random() * 100, y: Math.random() * 100, opacity: 0 }}
-              animate={{ x: [Math.random() * 100, Math.random() * 100 + 50], y: [Math.random() * 100, Math.random() * 100 + 50], opacity: [0, 0.3, 0] }}
-              transition={{ duration: Math.random() * 5 + 5, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
-              style={{ width: Math.random() * 100 + 50, height: Math.random() * 100 + 50, left: `${Math.random() * 90}%`, top: `${Math.random() * 90}%` }}
-            />
+            <motion.div key={i} className="absolute rounded-full bg-primary/10" initial={{ x: Math.random() * 100, y: Math.random() * 100, opacity: 0 }} animate={{ x: [Math.random() * 100, Math.random() * 100 + 50], y: [Math.random() * 100, Math.random() * 100 + 50], opacity: [0, 0.3, 0] }} transition={{ duration: Math.random() * 5 + 5, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }} style={{ width: Math.random() * 100 + 50, height: Math.random() * 100 + 50, left: `${Math.random() * 90}%`, top: `${Math.random() * 90}%` }} />
           ))}
         </div>
       </section>
@@ -134,14 +120,7 @@ export default function CareersPage() {
             const Icon = industry.icon;
             const isSelected = selectedIndustry === industry.id;
             return (
-              <Button
-                key={industry.id}
-                variant={isSelected ? "default" : "outline"}
-                onClick={() => setSelectedIndustry(industry.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm md:text-base ${
-                  isSelected ? "bg-primary text-primary-foreground hover:bg-primary/90" : "border border-input bg-background hover:bg-accent hover:text-accent-foreground"
-                }`}
-              >
+              <Button key={industry.id} variant={isSelected ? "default" : "outline"} onClick={() => setSelectedIndustry(industry.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm md:text-base ${isSelected ? "bg-primary text-primary-foreground hover:bg-primary/90" : "border border-input bg-background hover:bg-accent hover:text-accent-foreground"}`}>
                 {Icon && <Icon className="w-4 h-4" />}
                 {t(industry.nameKey)}
               </Button>
@@ -150,9 +129,7 @@ export default function CareersPage() {
         </div>
 
         <div className="mb-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 flex items-center justify-center gap-2">
-            {selectedIndustry === "all" ? t("careers.allIndustries") : t(industries.find((i) => i.id === selectedIndustry)?.nameKey || "")}
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 flex items-center justify-center gap-2">{selectedIndustry === "all" ? t("careers.allIndustries") : t(industries.find((i) => i.id === selectedIndustry)?.nameKey || "")}</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -161,57 +138,59 @@ export default function CareersPage() {
             const salaryText = hideSalary ? null : formatSalaryText(career?.salary, career?.currency_code, locale);
 
             return (
-              <Card key={career.id} className="flex flex-col justify-between h-full">
-                <CardHeader>
-                  <div className="flex items-center gap-4">
-                    {!career["Ocultar empresa"] && (
-                      <img
-                        src={(() => {
-                          const server = process.env.NEXT_PUBLIC_CMS_URL || "";
-                          const url = career?.logo?.url;
+              <motion.div whileHover={{ y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 200 }}>
+                <Card className="flex flex-col justify-between h-full">
+                  <CardHeader>
+                    <div className="flex items-center gap-4">
+                      {!career["Ocultar empresa"] && (
+                        <img
+                          src={(() => {
+                            const server = process.env.NEXT_PUBLIC_CMS_URL || "";
+                            const url = career?.logo?.url;
 
-                          if (url) return url.startsWith("http") ? url : `${server}${url}`;
-                          if ((career.company || "").toLowerCase() === "botic partners") return "/boticlogo.png";
-                          if (career.company_url) return `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("http://", "").replace("www.", "")}`;
-                          return "/placeholder-company.png";
-                        })()}
-                        alt={career.company || "Company logo"}
-                        className="w-12 h-12"
-                      />
-                    )}
-                    <div>
-                      <CardTitle className="text-xl font-semibold text-foreground">{career.position}</CardTitle>
-                      <CardDescription className="text-muted-foreground text-sm">{career["Ocultar empresa"] ? "Confidencial" : career.company}</CardDescription>
+                            if (url) return url.startsWith("http") ? url : `${server}${url}`;
+                            if ((career.company || "").toLowerCase() === "botic partners") return "/boticlogo.png";
+                            if (career.company_url) return `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("http://", "").replace("www.", "")}`;
+                            return "/placeholder-company.png";
+                          })()}
+                          alt={career.company || "Company logo"}
+                          className="w-12 h-12"
+                        />
+                      )}
+                      <div>
+                        <CardTitle className="text-xl font-semibold text-foreground">{career.position}</CardTitle>
+                        <CardDescription className="text-muted-foreground text-sm">{career["Ocultar empresa"] ? "Confidencial" : career.company}</CardDescription>
+                      </div>
                     </div>
-                  </div>
-                </CardHeader>
+                  </CardHeader>
 
-                <CardContent className="flex-grow flex flex-col gap-2">
-                  {career.location && (
-                    <p className="text-sm text-foreground">
-                      <b>{locationLabel}:</b> {career.location}
-                    </p>
-                  )}
+                  <CardContent className="flex-grow flex flex-col gap-2">
+                    {career.location && (
+                      <p className="text-sm text-foreground">
+                        <b>{locationLabel}:</b> {career.location}
+                      </p>
+                    )}
 
-                  {!hideSalary && salaryText && (
-                    <p className="text-sm text-foreground">
-                      <b>{salaryLabel}:</b> {salaryText}
-                    </p>
-                  )}
+                    {!hideSalary && salaryText && (
+                      <p className="text-sm text-foreground">
+                        <b>{salaryLabel}:</b> {salaryText}
+                      </p>
+                    )}
 
-                  {hideSalary && (
-                    <p className="text-sm text-foreground">
-                      <b>{salaryLabel}:</b> {lang === "en" ? "Confidential" : "Confidencial"}
-                    </p>
-                  )}
-                </CardContent>
+                    {hideSalary && (
+                      <p className="text-sm text-foreground">
+                        <b>{salaryLabel}:</b> {lang === "en" ? "Confidential" : "Confidencial"}
+                      </p>
+                    )}
+                  </CardContent>
 
-                <CardFooter>
-                  <Link href={`/careers/${career.id}`} className="w-full bg-primary py-2 text-center rounded-lg text-primary-foreground hover:bg-primary/90">
-                    {t("careers.learnMore")}
-                  </Link>
-                </CardFooter>
-              </Card>
+                  <CardFooter>
+                    <Link href={`/careers/${career.id}`} className="w-full bg-primary py-2 text-center rounded-lg text-primary-foreground hover:bg-primary/90">
+                      {t("careers.learnMore")}
+                    </Link>
+                  </CardFooter>
+                </Card>
+              </motion.div>
             );
           })}
         </div>

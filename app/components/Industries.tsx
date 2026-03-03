@@ -1,18 +1,17 @@
-"use client"
+"use client";
 
-import { useLanguage } from "@/lib/i18n/LanguageContext"
-import { motion, useAnimation, AnimatePresence, useInView } from "framer-motion"
-import { Code, Cpu, Building2, Truck } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { useState, useRef, useEffect } from "react"
-// First, import the EmailOptionsModal component at the top of the file
-import { EmailOptionsModal } from "./EmailOptionsModal"
+import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { motion, useAnimation, AnimatePresence, useInView } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { useState, useRef, useEffect } from "react";
+import { EmailOptionsModal } from "./EmailOptionsModal";
+import Image from "next/image";
 
 const industries = [
   {
-    icon: Code,
     titleKey: "industries.software.title",
     descriptionKey: "industries.software.description",
+    image: "/images/software.png",
     color: "from-blue-400 to-blue-600",
     bgColor: "bg-blue-50",
     borderColor: "border-blue-200",
@@ -25,9 +24,9 @@ const industries = [
     technologies: ["AI/ML", "Cloud", "DevOps", "Mobile", "Web"],
   },
   {
-    icon: Cpu,
     titleKey: "industries.hardware.title",
     descriptionKey: "industries.hardware.description",
+    image: "/images/hardware.png",
     color: "from-purple-400 to-purple-600",
     bgColor: "bg-purple-50",
     borderColor: "border-purple-200",
@@ -40,9 +39,9 @@ const industries = [
     technologies: ["Semiconductors", "ASIC", "FPGA", "IoT", "Embedded"],
   },
   {
-    icon: Building2,
     titleKey: "industries.construction.title",
     descriptionKey: "industries.construction.description",
+    image: "/images/construction.jpg",
     color: "from-orange-400 to-orange-600",
     bgColor: "bg-orange-50",
     borderColor: "border-orange-200",
@@ -55,9 +54,9 @@ const industries = [
     technologies: ["BIM", "PropTech", "Smart Buildings", "Sustainability", "Project Management"],
   },
   {
-    icon: Truck,
     titleKey: "industries.logistics.title",
     descriptionKey: "industries.logistics.description",
+    image: "/images/logistics.jpg",
     color: "from-green-400 to-green-600",
     bgColor: "bg-green-50",
     borderColor: "border-green-200",
@@ -69,7 +68,7 @@ const industries = [
     },
     technologies: ["Supply Chain", "Fleet Management", "Warehouse Automation", "Last-Mile", "Blockchain"],
   },
-]
+];
 
 // Particle animation points
 const particlePoints = Array.from({ length: 30 }, () => ({
@@ -77,119 +76,150 @@ const particlePoints = Array.from({ length: 30 }, () => ({
   y: Math.random() * 600,
   size: Math.random() * 4 + 2,
   speed: Math.random() * 3 + 2,
-}))
+}));
 
 export default function Industries() {
-  const { t } = useLanguage()
-  const [hoveredIndustry, setHoveredIndustry] = useState<number | null>(null)
-  const [expandedIndustry, setExpandedIndustry] = useState<number | null>(null)
-  const [animateParticles, setAnimateParticles] = useState(true)
+  const { t } = useLanguage();
+  const [hoveredIndustry, setHoveredIndustry] = useState<number | null>(null);
+  const [expandedIndustry, setExpandedIndustry] = useState<number | null>(null);
+  const [animateParticles, setAnimateParticles] = useState(true);
+  const [isAutoScrollEnabled, setIsAutoScrollEnabled] = useState(true);
   const [counters, setCounters] = useState({
     placements: 0,
     companies: 0,
     retention: 0,
-  })
-  // Add these state variables inside the Industries component, after the existing useState declarations
-  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
-  const [emailSubject, setEmailSubject] = useState("")
+  });
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
+  const [emailSubject, setEmailSubject] = useState("");
 
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 })
-  const controls = useAnimation()
+  const sectionRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const autoScrollRef = useRef<number>();
 
-  // Handle industry hover
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+  const controls = useAnimation();
+  const duplicatedIndustries = [...industries, ...industries];
+
   const handleIndustryHover = (index: number | null) => {
-    setHoveredIndustry(index)
+    setHoveredIndustry(index);
+
+    setIsAutoScrollEnabled(index === null);
 
     if (index !== null) {
-      const industry = industries[index]
+      const industry = industries[index];
       setCounters({
         placements: 0,
         companies: 0,
         retention: 0,
-      })
+      });
 
-      // Animate counters
-      let frame = 0
-      const frames = 30
+      let frame = 0;
+      const frames = 30;
       const interval = setInterval(() => {
-        frame++
+        frame++;
         setCounters({
           placements: Math.floor((industry.stats.placements * frame) / frames),
           companies: Math.floor((industry.stats.companies * frame) / frames),
           retention: Math.floor((industry.stats.retention * frame) / frames),
-        })
+        });
 
-        if (frame >= frames) clearInterval(interval)
-      }, 20)
+        if (frame >= frames) clearInterval(interval);
+      }, 20);
     }
-  }
+  };
 
-  // Toggle expanded industry
-  const toggleExpandedIndustry = (index: number) => {
-    setExpandedIndustry(expandedIndustry === index ? null : index)
-  }
-
-  // Add this function inside the Industries component, after the toggleExpandedIndustry function
-  // Eliminar o comentar la función handleContactRequest existente
-  // const handleContactRequest = (industryTitle: string) => {
-  //   setEmailSubject(`Inquiry about ${industryTitle} Industry Solutions`);
-  //   setIsEmailModalOpen(true);
-  // }
-
-  // Agregar esta nueva función que redirige a la página de careers con el filtro correspondiente
   const handleIndustryExplore = (index: number) => {
-    // Mapeo directo de índice a nombre de industria
-    const industryNames = ["Software", "Hardware", "Construction", "Logistics"]
-    const industryName = industryNames[index]
+    const industryNames = ["Software", "Hardware", "Construction", "Logistics"];
+    const industryName = industryNames[index % industries.length];
 
-    // Redirigir a la página de careers con el parámetro de industria
-    window.location.href = `/careers?industry=${industryName}`
-  }
+    window.location.href = `/careers?industry=${industryName}`;
+  };
 
-  // Add this useEffect after the other functions
+  const scrollLeft = () => {
+    const track = scrollRef.current;
+    if (!track) return;
+
+    setIsAutoScrollEnabled(false);
+    positionRef.current -= 400;
+    track.style.transform = `translateX(-${positionRef.current}px)`;
+
+    setTimeout(() => setIsAutoScrollEnabled(true), 3000);
+  };
+
+  const scrollRight = () => {
+    const track = scrollRef.current;
+    if (!track) return;
+
+    setIsAutoScrollEnabled(false);
+    positionRef.current += 400;
+    track.style.transform = `translateX(-${positionRef.current}px)`;
+
+    setTimeout(() => setIsAutoScrollEnabled(true), 3000);
+  };
+
+  const positionRef = useRef(0);
+
+  useEffect(() => {
+    const track = scrollRef.current;
+    if (!track) return;
+
+    let animationFrame: number;
+    let lastTime: number | null = null;
+
+    const speed = 40;
+    const totalWidth = track.scrollWidth / 2;
+
+    const animate = (time: number) => {
+      if (!isAutoScrollEnabled) return;
+
+      if (lastTime !== null) {
+        const delta = (time - lastTime) / 1000;
+        positionRef.current += speed * delta;
+        positionRef.current %= totalWidth;
+
+        track.style.transform = `translateX(-${positionRef.current}px)`;
+      }
+
+      lastTime = time;
+      animationFrame = requestAnimationFrame(animate);
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isAutoScrollEnabled]);
+
   useEffect(() => {
     if (isInView) {
-      // Set expandedIndustry to null since we'll show all expanded by default
-      setExpandedIndustry(null)
+      setExpandedIndustry(null);
 
-      // Animate counters for all industries
       industries.forEach((industry, index) => {
         setTimeout(() => {
-          setHoveredIndustry(index)
+          setHoveredIndustry(index);
 
-          let frame = 0
-          const frames = 30
+          let frame = 0;
+          const frames = 30;
           const interval = setInterval(() => {
-            frame++
+            frame++;
             setCounters({
               placements: Math.floor((industry.stats.placements * frame) / frames),
               companies: Math.floor((industry.stats.companies * frame) / frames),
               retention: Math.floor((industry.stats.retention * frame) / frames),
-            })
+            });
 
-            if (frame >= frames) clearInterval(interval)
-          }, 20)
-        }, index * 300) // Stagger the animations
-      })
+            if (frame >= frames) clearInterval(interval);
+          }, 20);
+        }, index * 300);
+      });
 
-      // Reset hoveredIndustry after all animations
-      setTimeout(
-        () => {
-          setHoveredIndustry(null)
-        },
-        industries.length * 300 + 1000,
-      )
+      setTimeout(() => {
+        setHoveredIndustry(null);
+      }, industries.length * 300 + 1000);
     }
-  }, [isInView])
+  }, [isInView]);
 
   return (
-    <section
-      id="industries"
-      className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
-      ref={sectionRef}
-    >
-      {/* Dynamic background with particles */}
+    <section id="industries" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden" ref={sectionRef}>
       <div className="absolute inset-0 overflow-hidden">
         <AnimatePresence>
           {animateParticles &&
@@ -217,130 +247,131 @@ export default function Industries() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-            {t("industries.title")}
-          </h2>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">{t("industries.title")}</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t("industries.subtitle")}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {industries.map((industry, index) => {
-            const Icon = industry.icon
-            const isHovered = hoveredIndustry === index
-            const isExpanded = expandedIndustry === index
+        <div className="relative">
+          <button onClick={scrollLeft} className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg p-3 rounded-full hover:scale-110 transition transform hover:shadow-xl" aria-label="Scroll left">
+            ←
+          </button>
 
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
-              >
-                <Card
-                  className={`h-full overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-xl ${
-                    isHovered === index
-                      ? `border-2 ${industry.borderColor} shadow-lg`
-                      : `border-2 ${industry.borderColor} shadow-md`
-                  }`}
-                  onMouseEnter={() => handleIndustryHover(index)}
-                  onMouseLeave={() => handleIndustryHover(null)}
-                >
-                  <CardContent className={`p-6 ${industry.bgColor} h-full`}>
-                    <div className="flex flex-col items-center text-center h-full justify-between">
-                      <motion.div
-                        className={`p-4 rounded-full mb-6 bg-gradient-to-br ${industry.color} group-hover:scale-110 transition-transform duration-300`}
-                        animate={
-                          isHovered === index
-                            ? {
-                                scale: [1, 1.2, 1],
-                                rotate: [0, 10, -10, 0],
-                              }
-                            : {}
-                        }
-                        transition={{ duration: 2, repeat: isHovered === index ? Number.POSITIVE_INFINITY : 0 }}
-                      >
-                        <Icon className="h-8 w-8 text-white" />
-                      </motion.div>
+          <button onClick={scrollRight} className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg p-3 rounded-full hover:scale-110 transition transform hover:shadow-xl" aria-label="Scroll right">
+            →
+          </button>
 
-                      <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
-                        {t(industry.titleKey)}
-                      </h3>
+          <div className="overflow-hidden">
+            <div ref={scrollRef} className="flex gap-6 py-4 will-change-transform">
+              {duplicatedIndustries.map((industry, index) => {
+                const isHovered = hoveredIndustry === index;
+                const isExpanded = expandedIndustry === index;
 
-                      <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300 mb-4">
-                        {t(industry.descriptionKey)}
-                      </p>
-
-                      {/* Stats section - always visible */}
-                      <div className="w-full">
-                        <div className="grid grid-cols-3 gap-2 my-4 text-center">
-                          <div className={`p-2 rounded-lg ${industry.bgColor}`}>
-                            <div className={`text-xl font-bold ${industry.iconColor}`}>
-                              {industry.stats.placements}+
-                            </div>
-                            <div className="text-xs text-gray-600">Placements</div>
-                          </div>
-                          <div className={`p-2 rounded-lg ${industry.bgColor}`}>
-                            <div className={`text-xl font-bold ${industry.iconColor}`}>{industry.stats.companies}+</div>
-                            <div className="text-xs text-gray-600">Companies</div>
-                          </div>
-                          <div className={`p-2 rounded-lg ${industry.bgColor}`}>
-                            <div className={`text-xl font-bold ${industry.iconColor}`}>{industry.stats.retention}%</div>
-                            <div className="text-xs text-gray-600">Retention</div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Technologies section - always visible */}
-                      <div className="w-full mt-2">
-                        <h4 className={`text-sm font-semibold mb-2 ${industry.iconColor}`}>Key Technologies</h4>
-                        <div className="flex flex-wrap justify-center gap-2">
-                          {industry.technologies.map((tech, techIndex) => (
-                            <motion.span
-                              key={techIndex}
-                              initial={{ opacity: 0, scale: 0.8 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              transition={{ delay: 0.2 + techIndex * 0.1 }}
-                              className={`px-2 py-1 text-xs rounded-full ${industry.bgColor} ${industry.iconColor} border ${industry.borderColor}`}
-                            >
-                              {tech}
-                            </motion.span>
-                          ))}
-                        </div>
-
-                        <div className="mt-4 pt-4 border-t border-gray-200">
-                          <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className={`px-4 py-2 rounded-full text-sm text-white bg-gradient-to-r ${industry.color} shadow-md`}
-                            onClick={(e) => {
-                              e.stopPropagation()
-                              handleIndustryExplore(index)
-                            }}
+                return (
+                  <motion.div 
+                    key={index} 
+                    initial={{ opacity: 0, y: 20 }} 
+                    whileInView={{ opacity: 1, y: 0 }} 
+                    viewport={{ once: true }} 
+                    transition={{ duration: 0.5, delay: index * 0.1 }} 
+                    className="relative w-[220px] md:w-[240px] lg:w-[260px] snap-center flex-shrink-0" 
+                    onMouseEnter={() => handleIndustryHover(index)} 
+                    onMouseLeave={() => handleIndustryHover(null)}
+                  >
+                    <Card className={`h-[700px] overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-xl ${isHovered ? `border-2 ${industry.borderColor} shadow-lg` : `border-2 ${industry.borderColor} shadow-md`}`}>
+                      <CardContent className={`p-4 ${industry.bgColor} h-full`}>
+                        <div className="flex flex-col items-center text-center h-full">
+                          
+                          <motion.div
+                            className={`w-14 h-14 rounded-full mb-3 bg-gradient-to-br ${industry.color} group-hover:scale-110 transition-transform duration-300 flex items-center justify-center overflow-hidden`}
+                            animate={
+                              isHovered
+                                ? {
+                                    scale: [1, 1.2, 1],
+                                    rotate: [0, 10, -10, 0],
+                                  }
+                                : {}
+                            }
+                            transition={{ duration: 2, repeat: isHovered ? Number.POSITIVE_INFINITY : 0 }}
                           >
-                            {t("industries.exploreOpportunities")}
-                          </motion.button>
-                        </div>
-                      </div>
+                            <Image
+                              src={industry.image}
+                              alt={t(industry.titleKey)}
+                              width={56}
+                              height={56}
+                              className="w-full h-full object-cover"
+                            />
+                          </motion.div>
 
-                      {/* Remove the expand/collapse indicator since content is always expanded */}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            )
-          })}
+                          {/* Título */}
+                          <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{t(industry.titleKey)}</h3>
+
+                          {/* Descripción */}
+                          <p className="text-gray-600 text-xs group-hover:text-gray-800 transition-colors duration-300 mb-3 line-clamp-3">
+                            {t(industry.descriptionKey)}
+                          </p>
+
+                          {/* Stats section */}
+                          <div className="w-full mb-3">
+                            <div className="grid grid-cols-3 gap-1 text-center">
+                              <div className={`p-1.5 rounded-lg ${industry.bgColor}`}>
+                                <div className={`text-base font-bold ${industry.iconColor}`}>{industry.stats.placements}+</div>
+                                <div className="text-[9px] text-gray-600">Placements</div>
+                              </div>
+                              <div className={`p-1.5 rounded-lg ${industry.bgColor}`}>
+                                <div className={`text-base font-bold ${industry.iconColor}`}>{industry.stats.companies}+</div>
+                                <div className="text-[9px] text-gray-600">Companies</div>
+                              </div>
+                              <div className={`p-1.5 rounded-lg ${industry.bgColor}`}>
+                                <div className={`text-base font-bold ${industry.iconColor}`}>{industry.stats.retention}%</div>
+                                <div className="text-[9px] text-gray-600">Retention</div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Technologies section */}
+                          <div className="w-full mb-3">
+                            <h4 className={`text-[10px] font-semibold mb-1.5 ${industry.iconColor}`}>Tecnologías clave</h4>
+                            <div className="flex flex-wrap justify-center gap-1">
+                              {industry.technologies.map((tech, techIndex) => (
+                                <motion.span 
+                                  key={techIndex} 
+                                  initial={{ opacity: 0, scale: 0.8 }} 
+                                  animate={{ opacity: 1, scale: 1 }} 
+                                  transition={{ delay: 0.2 + techIndex * 0.05 }} 
+                                  className={`px-1.5 py-0.5 text-[8px] rounded-full ${industry.bgColor} ${industry.iconColor} border ${industry.borderColor}`}
+                                >
+                                  {tech}
+                                </motion.span>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Botón */}
+                          <div className="mt-auto pt-3 w-full border-t border-gray-200">
+                            <motion.button
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              className={`w-full px-2 py-1.5 rounded-full text-[10px] text-white bg-gradient-to-r ${industry.color} shadow-md`}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleIndustryExplore(index);
+                              }}
+                            >
+                              {t("industries.exploreOpportunities")}
+                            </motion.button>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
       <EmailOptionsModal isOpen={isEmailModalOpen} onClose={() => setIsEmailModalOpen(false)} subject={emailSubject} />
     </section>
-  )
+  );
 }

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Brain, TrendingUp, Users, CheckCircle, Activity, Zap } from "lucide-react"
+import { Brain, TrendingUp, Users, CheckCircle, Activity, Zap, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 
@@ -18,11 +18,15 @@ export default function ContactForm() {
   const { t } = useLanguage()
   const [animateParticles, setAnimateParticles] = useState(true)
 
-  const handleSubmit = () => {
+  const handleSchedule = () => {
     window.open(
       "https://outlook.office.com/bookwithme/user/5dc7b4ad41ef41dfa5e4f1053f4710b8@boticpartners.com/meetingtype/n6FtRriP-0afMrnBYzgN9w2?anonymous&ep=mlink",
       "_blank",
     )
+  }
+
+  const handleCall = () => {
+    window.location.href = "tel:+34 651 56 27 72"
   }
 
   return (
@@ -43,70 +47,69 @@ export default function ContactForm() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
+                className="w-full"
               >
                 <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
                   {t("contact.title")}
                 </h2>
-                <p className="text-gray-600 mb-4">{t("contact.subtitle")}</p>
+                <p className="text-gray-600 mb-6">{t("contact.subtitle")}</p>
 
-                <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="pt-3"
-                >
-                  <Button
-                    onClick={handleSubmit}
-                    size="lg"
-                    className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg font-semibold shadow-lg shadow-primary/30 relative overflow-hidden group"
+                {/* Contenedor flex para los dos botones */}
+                <div className="flex gap-4 w-full pt-3">
+                  <motion.div
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    className="flex-1"
                   >
-                    <span className="relative z-10 flex items-center justify-center">
-                      {t("contact.getInTouch")}
-                      <Zap className="ml-2 h-5 w-5" />
-                    </span>
-                    <motion.span
-                      className="absolute inset-0 bg-primary-foreground z-0"
-                      initial={{ x: "-100%" }}
-                      whileHover={{ x: 0 }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
-                    />
-                  </Button>
-                </motion.div>
+                    <Button
+                      onClick={handleSchedule}
+                      size="lg"
+                      className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg font-semibold shadow-lg shadow-primary/30 relative overflow-hidden group"
+                    >
+                      <span className="relative z-10 flex items-center justify-center">
+                        {t("contact.getInTouch")}
+                        <Zap className="ml-2 h-5 w-5" />
+                      </span>
+                      <motion.span
+                        className="absolute inset-0 bg-primary-foreground z-0"
+                        initial={{ x: "-100%" }}
+                        whileHover={{ x: 0 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                      />
+                    </Button>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    className="flex-1"
+                  >
+                    <Button
+                      onClick={handleCall}
+                      size="lg"
+                      variant="outline"
+                      className="w-full border-2 border-primary text-primary hover:bg-primary/10 py-6 text-lg font-semibold relative overflow-hidden group"
+                    >
+                      <span className="relative z-10 flex items-center justify-center">
+                        {t("contact.callNow")}
+                        <Phone className="ml-2 h-5 w-5" />
+                      </span>
+                      <motion.span
+                        className="absolute inset-0 bg-primary/10 z-0"
+                        initial={{ x: "-100%" }}
+                        whileHover={{ x: 0 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                      />
+                    </Button>
+                  </motion.div>
+                </div>
               </motion.div>
             </div>
 
             {/* Right side - Animated visual */}
             <div className="bg-gradient-to-br from-primary/10 to-primary/30 p-8 md:p-10 relative overflow-hidden">
-              {/* Animated particles */}
-              {/* <AnimatePresence>
-                {animateParticles &&
-                  Array.from({ length: 20 }).map((_, index) => (
-                    <motion.div
-                      key={`contact-particle-${index}`}
-                      className="absolute rounded-full bg-primary/40"
-                      initial={{
-                        x: Math.random() * 100 + 250,
-                        y: Math.random() * 100 + 50,
-                        opacity: 0,
-                      }}
-                      animate={{
-                        x: [Math.random() * 100 + 150, Math.random() * 100 + 250, Math.random() * 100 + 150],
-                        y: [Math.random() * 300 + 0, Math.random() * 300 + 50, Math.random() * 300 + 0],
-                        opacity: [0, 0.7, 0],
-                      }}
-                      transition={{
-                        duration: Math.random() * 5 + 5,
-                        repeat: Number.POSITIVE_INFINITY,
-                        repeatType: "loop",
-                      }}
-                      style={{
-                        width: Math.random() * 6 + 3,
-                        height: Math.random() * 6 + 3,
-                      }}
-                    />
-                  ))}
-              </AnimatePresence> */}
-
               {/* Animated benefits */}
               <div className="relative z-10 h-full flex flex-col justify-center">
                 <motion.h3
@@ -148,24 +151,6 @@ export default function ContactForm() {
                     </motion.div>
                   ))}
                 </div>
-
-                {/* Live indicator */}
-                {/* <motion.div
-                  className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-sm rounded-md px-3 py-2 text-xs text-gray-700 flex items-center shadow-md"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                >
-                  <Activity className="h-3 w-3 text-primary mr-1 animate-pulse" />
-                  <span className="relative">
-                    {t("contact.aiPoweredRecruitment")}
-                    <span className="absolute -top-1 -right-1 flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                    </span>
-                  </span>
-                </motion.div> */}
               </div>
             </div>
           </div>

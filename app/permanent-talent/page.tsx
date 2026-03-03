@@ -10,12 +10,16 @@ import { useMemo, useState } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { submitTalentForm } from "@/app/api/talent";
 import { SuccessStoriesSection } from "../components/SuccessStoriesSection";
+import { ProcessSection } from "../components/ProcessSection";
 
 export default function PermanentTalent() {
   const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState<"idle" | "success" | "error">("idle");
   const [mailtoLink, setMailtoLink] = useState<string>("");
+  const handleMailClick = () => {
+    window.open("https://outlook.office.com/bookwithme/user/5dc7b4ad41ef41dfa5e4f1053f4710b8%40boticpartners.com/meetingtype/n6FtRriP-0afMrnBYzgN9w2?anonymous&ismsaljsauthenabled=true", "_blank");
+  };
 
   const methodologySteps = useMemo(
     () => [
@@ -45,7 +49,7 @@ export default function PermanentTalent() {
         description: t("permanentTalent.methodologySteps.acceleratedPlacement.description"),
       },
     ],
-    [t]
+    [t],
   );
 
   const [form, setForm] = useState({
@@ -107,8 +111,8 @@ export default function PermanentTalent() {
                       <span className="text-gray-800">{t("permanentTalent.timeToHire")}</span>
                     </div>
                   </div>
-                  <Button type="submit" disabled={isSubmitting} className="w-full bg-boticPurple hover:bg-boticPurple/90 text-white px-8 py-3 text-lg">
-                    {isSubmitting ? "Sending..." : t("contact.form.submit")}
+                  <Button onClick={handleMailClick} className="w-auto bg-boticPurple hover:bg-boticPurple/90 text-white px-8 py-3 text-lg">
+                    {t("contact.form.submit")}
                   </Button>
                 </motion.div>
               </div>
@@ -163,9 +167,11 @@ export default function PermanentTalent() {
             </div>
           </div>
         </section>
-        <SuccessStoriesSection prefix="permanentTalent" />
+        <ProcessSection />
+        <SuccessStoriesSection prefix="permanentTalent" filter="clients" showHeader={true} />
 
-        {/* CTA + Formulario (admin@boticpartners.com) */}
+        <SuccessStoriesSection prefix="permanentTalent" filter="candidates" showHeader={false} />
+
         <section id="permanent-talent-contact" className="py-16 bg-boticPurple/10">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
@@ -189,7 +195,7 @@ export default function PermanentTalent() {
                   <textarea value={form.message} onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))} placeholder={t("contact.form.message.placeholder")} className="w-full min-h-[140px] rounded-lg border border-gray-200 px-4 py-3 outline-none focus:ring-2 focus:ring-boticPurple/30" required />
                 </div>
 
-                <Button type="submit" className="w-full bg-boticPurple hover:bg-boticPurple/90 text-white px-8 py-3 text-lg">
+                <Button onClick={handleMailClick} className="mt-4 w-full sm:w-auto bg-boticPurple hover:bg-boticPurple/90 text-white px-6 py-3 text-base md:text-lg">
                   {t("contact.form.submit")}
                 </Button>
               </form>

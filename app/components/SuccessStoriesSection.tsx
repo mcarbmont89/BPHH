@@ -3,13 +3,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 type SuccessStoriesSectionProps = {
   prefix?: string;
   id?: string;
   className?: string;
+  filter?: "candidates" | "clients";
+  showHeader?: boolean;
 };
 
 type Testimonial = {
@@ -24,16 +26,14 @@ type Slide = Testimonial & {
 };
 
 function initials(name: string) {
-    
   const parts = name.trim().split(/\s+/);
   const a = parts[0]?.[0] ?? "";
   const b = parts[1]?.[0] ?? "";
   return (a + b).toUpperCase();
 }
 
-export function SuccessStoriesSection({ prefix = "services.partnerships", id, className = "" }: SuccessStoriesSectionProps) {
+export function SuccessStoriesSection({ prefix = "services.partnerships", id, className = "", filter, showHeader = true }: SuccessStoriesSectionProps) {
   const { t } = useLanguage();
-console.log("TITLE =>", t(`${prefix}.successStories.title`));
 
   const title = t(`${prefix}.successStories.title`);
   const paragraphs = t(`${prefix}.successStories.paragraphs`) as unknown as string[];
@@ -45,111 +45,242 @@ console.log("TITLE =>", t(`${prefix}.successStories.title`));
   const clients = t(`${prefix}.successStories.clients`) as unknown as Testimonial[];
 
   const slides: Slide[] = useMemo(() => {
-    const a = (Array.isArray(candidates) ? candidates : []).map((x) => ({ ...x, kind: "candidate" as const }));
-    const b = (Array.isArray(clients) ? clients : []).map((x) => ({ ...x, kind: "client" as const }));
-    return [...a, ...b];
-  }, [candidates, clients]);
+    const allSlides: Slide[] = [
+      ...(Array.isArray(candidates) ? candidates.map((x) => ({ ...x, kind: "candidate" as const })) : []),
+      ...(Array.isArray(clients) ? clients.map((x) => ({ ...x, kind: "client" as const })) : [])
+    ];
+
+    if (filter === "candidates") {
+      return allSlides.filter(slide => slide.kind === "candidate");
+    } else if (filter === "clients") {
+      return allSlides.filter(slide => slide.kind === "client");
+    }
+    
+    return allSlides;
+  }, [candidates, clients, filter]);
 
   const [active, setActive] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const current = slides[active];
+  const nextSlide = slides[(active + 1) % slides.length];
+  const prevSlide = slides[(active - 1 + slides.length) % slides.length];
 
   const next = () => setActive((i) => (slides.length ? (i + 1) % slides.length : 0));
   const prev = () => setActive((i) => (slides.length ? (i - 1 + slides.length) % slides.length : 0));
 
   const kindLabel = current?.kind === "candidate" ? candidatesLabel : clientsLabel;
 
+  useEffect(() => {
+    if (!slides.length || isHovered) return;
+    
+    const interval = setInterval(() => {
+      next();
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [slides.length, isHovered, active]);
+
+  if (!slides.length) return null;
+
   return (
-    <section id={id} className={`py-16 bg-white ${className}`}>
+    <section id={id} className={`py-16 bg-gradient-to-b from-white to-gray-50 ${className}`}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold mb-4">{title}</h2>
+        {showHeader && (
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-boticPurple">
+              {title}
+            </h2>
 
-          <div className="max-w-4xl mx-auto space-y-4">
-            {(Array.isArray(paragraphs) ? paragraphs : []).map((p, i) => (
-              <p key={i} className="text-gray-600">
-                {p}
-              </p>
-            ))}
+            <div className="max-w-4xl mx-auto space-y-4">
+              {(Array.isArray(paragraphs) ? paragraphs : []).map((p, i) => (
+                <p key={i} className="text-gray-600 text-lg">
+                  {p}
+                </p>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
-        {/* Carousel */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Controls */}
-            <button type="button" onClick={prev} className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 h-10 w-10 items-center justify-center rounded-full bg-white shadow-md border border-gray-100 hover:bg-gray-50" aria-label="Previous">
-              <ChevronLeft className="h-5 w-5 text-gray-700" />
-            </button>
+        <div 
+          className="max-w-6xl mx-auto relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          ref={containerRef}
+        >
+          <div className="relative h-[500px] md:h-[550px] flex items-center justify-center perspective-1000">
+            
+            {prevSlide && (
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 0.4, x: -80, scale: 0.85 }}
+                exit={{ opacity: 0, x: -150 }}
+                transition={{ duration: 0.5 }}
+                className="absolute left-0 hidden lg:block w-80 cursor-pointer"
+                style={{ zIndex: 5, filter: "blur(1px)" }}
+                onClick={prev}
+              >
+                <CardPreview slide={prevSlide} kindLabel={prevSlide.kind === "candidate" ? candidatesLabel : clientsLabel} />
+              </motion.div>
+            )}
 
-            <button type="button" onClick={next} className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 h-10 w-10 items-center justify-center rounded-full bg-white shadow-md border border-gray-100 hover:bg-gray-50" aria-label="Next">
-              <ChevronRight className="h-5 w-5 text-gray-700" />
-            </button>
-
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-              <AnimatePresence mode="wait">
-                {current && (
-                  <motion.div key={`${current.name}-${active}`} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.25 }} className="p-6 md:p-8">
-                    {/* Top row */}
-                    <div className="flex items-start gap-4">
-                      {/* Avatar */}
-                      <div className="relative h-14 w-14 flex-shrink-0">{current.image ? <Image src={current.image} alt={current.name} fill className="object-cover rounded-full border border-gray-200" /> : <div className="h-14 w-14 rounded-full border border-gray-200 bg-gray-50 flex items-center justify-center font-semibold text-gray-700">{initials(current.name)}</div>}</div>
+            <motion.div
+              key={`${current?.name}-${active}`}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.4 }}
+              className="relative z-10 w-full max-w-2xl"
+            >
+              {current && (
+                <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden transform transition-all duration-300 hover:shadow-3xl hover:-translate-y-1">
+                  <div className="p-8 md:p-10">
+                    <div className="flex items-start gap-5">
+                      <div className="relative h-16 w-16 flex-shrink-0">
+                        {current.image ? (
+                          <Image 
+                            src={current.image} 
+                            alt={current.name} 
+                            fill 
+                            className="object-cover rounded-full border-2 border-boticPurple/20 shadow-md" 
+                          />
+                        ) : (
+                          <div className="h-16 w-16 rounded-full bg-gradient-to-br from-boticPurple/10 to-boticPurple/30 flex items-center justify-center font-semibold text-boticPurple text-xl border-2 border-boticPurple/20">
+                            {initials(current.name)}
+                          </div>
+                        )}
+                      </div>
 
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-3">
-                          {/* 5 stars */}
                           <div className="flex items-center gap-1">
                             {Array.from({ length: 5 }).map((_, i) => (
-                              <Star key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" />
+                              <Star key={i} className="h-5 w-5 text-yellow-400" fill="currentColor" />
                             ))}
                           </div>
 
-                          {/* Badge */}
-                          <span className="text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 text-gray-700">{kindLabel}</span>
+                          <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-boticPurple/10 text-boticPurple border border-boticPurple/20">
+                            {kindLabel}
+                          </span>
                         </div>
 
-                        <div className="mt-3 font-semibold text-gray-900">{current.name}</div>
+                        <div className="mt-3 font-semibold text-gray-900 text-lg">{current.name}</div>
                         <div className="text-sm text-gray-500">{current.role}</div>
                       </div>
 
-                      <Quote className="hidden md:block h-7 w-7 text-boticPurple/30" />
+                      <Quote className="hidden md:block h-8 w-8 text-boticPurple/20" />
                     </div>
 
-                    {/* Quote */}
-                    <div className="mt-5">
-                      <p className="text-gray-700 leading-relaxed text-base md:text-lg">“{current.quote}”</p>
+                    <div className="mt-6">
+                      <p className="text-gray-700 leading-relaxed text-base md:text-lg min-h-[120px]">
+                        “{current.quote}”
+                      </p>
                     </div>
 
-                    {/* Mobile controls */}
                     <div className="flex md:hidden items-center justify-between mt-6">
-                      <button type="button" onClick={prev} className="h-10 px-4 rounded-full bg-white shadow-sm border border-gray-200">
+                      <button type="button" onClick={prev} className="h-10 px-4 rounded-full bg-white shadow-md border border-gray-200 hover:bg-gray-50">
                         <span className="flex items-center gap-2 text-gray-700">
                           <ChevronLeft className="h-5 w-5" />
                           Prev
                         </span>
                       </button>
 
-                      <button type="button" onClick={next} className="h-10 px-4 rounded-full bg-white shadow-sm border border-gray-200">
+                      <button type="button" onClick={next} className="h-10 px-4 rounded-full bg-white shadow-md border border-gray-200 hover:bg-gray-50">
                         <span className="flex items-center gap-2 text-gray-700">
                           Next
                           <ChevronRight className="h-5 w-5" />
                         </span>
                       </button>
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                  </div>
+                </div>
+              )}
+            </motion.div>
 
-            {/* Dots */}
-            <div className="flex items-center justify-center gap-2 mt-5">
-              {slides.map((_, i) => (
-                <button key={i} type="button" onClick={() => setActive(i)} className={`h-2.5 rounded-full transition-all ${i === active ? "w-6 bg-boticPurple" : "w-2.5 bg-gray-300 hover:bg-gray-400"}`} aria-label={`Go to slide ${i + 1}`} />
-              ))}
-            </div>
+            {nextSlide && (
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 0.4, x: 80, scale: 0.85 }}
+                exit={{ opacity: 0, x: 150 }}
+                transition={{ duration: 0.5 }}
+                className="absolute right-0 hidden lg:block w-80 cursor-pointer"
+                style={{ zIndex: 5, filter: "blur(1px)" }}
+                onClick={next}
+              >
+                <CardPreview slide={nextSlide} kindLabel={nextSlide.kind === "candidate" ? candidatesLabel : clientsLabel} />
+              </motion.div>
+            )}
+          </div>
+
+          <button
+            type="button"
+            onClick={prev}
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 h-12 w-12 items-center justify-center rounded-full bg-white shadow-xl border border-gray-200 hover:bg-gray-50 hover:scale-110 transition-all z-20"
+            aria-label="Previous"
+          >
+            <ChevronLeft className="h-6 w-6 text-boticPurple" />
+          </button>
+
+          <button
+            type="button"
+            onClick={next}
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 h-12 w-12 items-center justify-center rounded-full bg-white shadow-xl border border-gray-200 hover:bg-gray-50 hover:scale-110 transition-all z-20"
+            aria-label="Next"
+          >
+            <ChevronRight className="h-6 w-6 text-boticPurple" />
+          </button>
+
+          <div className="flex items-center justify-center gap-2 mt-8">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setActive(i)}
+                className={`h-3 rounded-full transition-all ${
+                  i === active 
+                    ? "w-8 bg-boticPurple shadow-md" 
+                    : "w-3 bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+      `}</style>
     </section>
+  );
+}
+
+function CardPreview({ slide, kindLabel }: { slide: Slide; kindLabel: string }) {
+  return (
+    <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden opacity-60 hover:opacity-80 transition-opacity">
+      <div className="p-6">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="relative h-10 w-10 flex-shrink-0">
+            {slide.image ? (
+              <Image src={slide.image} alt={slide.name} fill className="object-cover rounded-full" />
+            ) : (
+              <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center font-semibold text-gray-600 text-sm">
+                {initials(slide.name)}
+              </div>
+            )}
+          </div>
+          <div>
+            <div className="font-medium text-gray-900 text-sm">{slide.name}</div>
+            <span className="text-xs px-2 py-0.5 rounded-full bg-boticPurple/10 text-boticPurple">
+              {kindLabel}
+            </span>
+          </div>
+        </div>
+        <p className="text-gray-600 text-sm line-clamp-2">“{slide.quote.substring(0, 80)}…”</p>
+      </div>
+    </div>
   );
 }

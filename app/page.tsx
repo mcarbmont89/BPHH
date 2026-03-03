@@ -13,6 +13,7 @@ import ContactForm from "./components/ContactForm"
 import CoreServicesSection from "./components/CoreServicesSection"
 import RecruitmentTimeline from "./components/RecruitmentTimeline"
 import AboutUs from "./components/AboutUs"
+import TalentDemoBanner from "./components/banerTalent"
 
 export default function Home() {
   return (
@@ -22,8 +23,9 @@ export default function Home() {
         <Hero />
         <section id="services">
           <CoreServicesSection />
-          <HeadhuntingSection />        
-          <Services />
+          <TalentDemoBanner/>
+{/*           <HeadhuntingSection />        
+ */}          <Services />
         </section>
         <section id="process">
           <RecruitmentTimeline />
@@ -31,8 +33,8 @@ export default function Home() {
           <section id="industries">
           <Industries />
         </section>
-        <TalentMatchingHero />
-        <PartnershipsSection />
+{/*         <TalentMatchingHero />
+ */}        <PartnershipsSection />
         <AboutUs/>
         <ContactForm />
       </main>                                                                                                        

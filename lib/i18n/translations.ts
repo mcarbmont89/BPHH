@@ -155,6 +155,12 @@ export const translations = {
         button: "Discover",
       },
     },
+    talentDemoBanner: {
+      title: "Your candidates one click away",
+      description: "Discover how our AI-powered platform connects you with qualified candidates in seconds.",
+      cta: "View our demo",
+    },
+
     recruitment: {
       title: "Our Recruitment Process",
       subtitle: "A streamlined and efficient process to find the best talent for your needs.",
@@ -380,6 +386,11 @@ export const translations = {
         author: "Emily White, CEO at FutureEnterprises",
       },
     },
+    processSection: {
+      title: "A Clear, Human & Transparent Process",
+      description: "At Botic Partners, we believe a great recruitment process should be clear, human, and transparent—from the first call to after the final interview. That’s why we truly listen, explain, and support you.",
+    },
+
     "Team Fit": "Team Fit",
     video: {
       title: "Global AI-Powered Recruitment",
@@ -396,11 +407,11 @@ export const translations = {
       title: "Specialized in High-Growth Industries",
       subtitle: "Focused expertise in cutting-edge sectors",
       software: {
-        title: "Software (AI & Development)",
+        title: "Technology (AI & Development)",
         description: "From machine learning engineers to full-stack developers, we source the talent driving the digital revolution.",
       },
       hardware: {
-        title: "Hardware (Deep Tech)",
+        title: "Digital (Deep Tech)",
         description: "We connect you with experts in semiconductor design, robotics, and other deep tech fields.",
       },
       construction: {
@@ -408,7 +419,7 @@ export const translations = {
         description: "Find the professionals shaping the future of our cities, from smart building engineers to project managers.",
       },
       logistics: {
-        title: "Logistics",
+        title: "Finance",
         description: "Source the talent optimizing supply chains and revolutionizing global trade.",
       },
       expertise: {
@@ -428,7 +439,7 @@ export const translations = {
       filterByIndustry: "Filter by Industry",
       allIndustries: "All Industries",
       sector: "Sector",
-      learnMore: "Learn More",
+      learnMore: "View Offer",
       backToCareers: "Back to all careers",
       jobDescription: "Job Description",
       readyToApply: "Apply now",
@@ -598,6 +609,7 @@ export const translations = {
       default: "Use Default Email App",
     },
     contact: {
+      callNow: "Call Now",
       title: "Let's Build the Future, Together.",
       subtitle: "Whether you're looking for talent or your next big opportunity, we're here to help.",
       name: "Name",
@@ -719,7 +731,7 @@ export const translations = {
       averageMatchScore: "Average Match Score",
       successStories: {
         title: "What our candidates say",
-        paragraphs: ["Finding a new professional challenge isn’t just about fitting a CV. It’s about feeling supported, understood, and well-informed at every step.", "At Botic Partners, we believe a great recruitment process should be clear, human, and transparent—from the first call to after the final interview. That’s why we truly listen, explain, and support you.", "Here’s what some professionals who have lived the experience with us think:"],
+        paragraphs: ["Finding a new professional challenge isn’t just about fitting a CV. It’s about feeling supported, understood, and well-informed at every step.", "Here’s what some professionals who have lived the experience with us think:"],
         candidatesLabel: "Candidate testimonials",
         clientsLabel: "Client testimonials",
         candidates: [
@@ -1126,6 +1138,11 @@ export const translations = {
         },
       },
     },
+    processSection: {
+      title: "Un Proceso Claro, Humano y Transparente",
+      description: "En Botic Partners creemos que un buen proceso de selección debe ser claro, humano y transparente, desde la primera llamada hasta después de la entrevista final. Por eso escuchamos, explicamos y acompañamos de verdad.",
+    },
+
     talentMatchingHero: {
       badge: "Reclutamiento Potenciado por IA",
       title: "Matching de Talento y Aceleración de Negocios con IA",
@@ -1136,6 +1153,12 @@ export const translations = {
         button: "Accede a nuestra demo",
       },
     },
+    talentDemoBanner: {
+      title: "Tus candidatos a un clic",
+      description: "Descubrí cómo nuestra plataforma impulsada por IA te conecta con candidatos calificados en segundos.",
+      cta: "Mira nuestra demo",
+    },
+
     recruitment: {
       title: "Nuestro Proceso de Reclutamiento",
       subtitle: "Un proceso optimizado y eficiente para encontrar el mejor talento para tus necesidades.",
@@ -1204,7 +1227,7 @@ export const translations = {
       title: "En Botic Partners impulsamos el crecimiento de las empresas combinando talento, tecnología y visión estratégica.\nLo hacemos a través de headhunting especializado, automatización de procesos con IA y apoyo en crecimiento y expansión internacional.",
       permanentStaff: {
         title: "Headhunting",
-        description: "Búsqueda y selección del mejor talento, sin bulshit y a tiempo",
+        description: "Búsqueda y selección del mejor talento, sin bullshit y a tiempo",
       },
       freelanceTalent: {
         title: "Automatización de Procesos con IA",
@@ -1366,11 +1389,11 @@ export const translations = {
       title: "Nuestras Industrias Especializadas",
       subtitle: "Experiencia enfocada en sectores de vanguardia",
       software: {
-        title: "Software (IA y Desarrollo)",
+        title: "Technology (IA y Desarrollo)",
         description: "Conectamos empresas de software innovadoras con el mejor talento en IA y desarrollo.",
       },
       hardware: {
-        title: "Hardware (Deep Tech)",
+        title: "Digital (Deep Tech)",
         description: "Buscamos expertos para innovaciones revolucionarias en hardware y deep tech.",
       },
       construction: {
@@ -1378,7 +1401,7 @@ export const translations = {
         description: "Encontramos talento especializado para la tecnología moderna de construcción e inmobiliaria.",
       },
       logistics: {
-        title: "Logística",
+        title: "Finance",
         description: "Conectamos empresas de logística con expertos en tecnología de cadena de suministro y transporte.",
       },
       expertise: {
@@ -1398,7 +1421,7 @@ export const translations = {
       filterByIndustry: "Filtrar por Industria",
       allIndustries: "Todas las Industrias",
       sector: "Sector",
-      learnMore: "Saber Más",
+      learnMore: "Ver oferta",
       backToCareers: "Volver a todas las vacantes",
       jobDescription: "Descripción del Puesto",
       readyToApply: "¡Inscríbete!",
@@ -1569,6 +1592,7 @@ export const translations = {
       default: "Usar la Aplicación de Correo Predeterminada",
     },
     contact: {
+      callNow: "Llamar ahora",
       title: "Construyamos el Futuro, Juntos.",
       subtitle: "Ya sea que estés buscando talento o tu próxima gran oportunidad, estamos aquí para ayudarte.",
       name: "Nombre",
@@ -1583,7 +1607,7 @@ export const translations = {
       executiveSearch: "Búsqueda de Ejecutivos",
       strategicPartnerships: "Alianzas Estratégicas",
       other: "Otro",
-      getInTouch: "Ponerse en Contacto",
+      getInTouch: "Agendar reunión",
       whyPartnerWithUs: "Por Qué Trabajar Con Nosotros",
       aiTalentMatching: "Matching de talento con IA con un 93% de precisión",
       reduceTimeToHire: "Reduce el tiempo de contratación hasta en un 60%",
@@ -1691,7 +1715,7 @@ export const translations = {
       averageMatchScore: "Puntaje Promedio de Coincidencia",
       successStories: {
         title: "Lo que dicen nuestros candidatos",
-        paragraphs: ["Encontrar un nuevo reto profesional no va solo de encajar en un CV. Va de sentirte acompañado, entendido y bien informado en cada paso.", "En Botic Partners creemos que un buen proceso de selección debe ser claro, humano y transparente, desde la primera llamada hasta después de la entrevista final. Por eso escuchamos, explicamos y acompañamos de verdad.", "Esto es lo que opinan algunos de los profesionales que ya han vivido la experiencia con nosotros"],
+        paragraphs: ["Encontrar un nuevo reto profesional no va solo de encajar en un CV. Va de sentirte acompañado, entendido y bien informado en cada paso.", "Esto es lo que opinan algunos de los profesionales que ya han vivido la experiencia con nosotros"],
         candidatesLabel: "Testimonios de candidatos",
         clientsLabel: "Testimonios de clientes",
         candidates: [
