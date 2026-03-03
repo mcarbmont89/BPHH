@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Handshake, Network, ArrowRight, Building2, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-import Image from "next/image"
+import Image from "next/image";
 
 // Particle animation points for subtle background effect
 const particlePoints = Array.from({ length: 30 }, () => ({
@@ -101,9 +101,9 @@ export default function PartnershipsSection() {
               </div>
             </div>
 
-            <div className="flex-1">
-              <div className="relative w-full h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-md">
-                <Image src="/images/strategic-partnership.jpg" alt="Strategic Partnership" width={800} height={600} className="w-full h-full object-cover" priority />
+            <div className="flex-1 w-full">
+              <div className="relative w-full h-[420px] sm:h-[500px] md:h-[450px] rounded-2xl overflow-hidden shadow-md">
+                <Image src="/images/strategic-partnership.jpg" alt="Strategic Partnership" fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" priority />
               </div>
             </div>
           </div>

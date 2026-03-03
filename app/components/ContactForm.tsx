@@ -30,46 +30,48 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white relative">
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
           className="bg-white rounded-xl shadow-xl border-2 border-primary/20 overflow-hidden"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left side - Form */}
-            <div className="p-8 md:p-10 grid place-items-center">
+            <div className="p-6 sm:p-8 md:p-10 grid place-items-center order-2 lg:order-1">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="w-full"
+                className="w-full max-w-md mx-auto lg:max-w-full"
               >
-                <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground text-center lg:text-left">
                   {t("contact.title")}
                 </h2>
-                <p className="text-gray-600 mb-6">{t("contact.subtitle")}</p>
+                <p className="text-gray-600 mb-6 text-sm sm:text-base text-center lg:text-left">
+                  {t("contact.subtitle")}
+                </p>
 
-                {/* Contenedor flex para los dos botones */}
-                <div className="flex gap-4 w-full pt-3">
+                {/* Contenedor flex para los dos botones - Responsive */}
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full pt-3">
                   <motion.div
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     className="flex-1"
                   >
                     <Button
                       onClick={handleSchedule}
                       size="lg"
-                      className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg font-semibold shadow-lg shadow-primary/30 relative overflow-hidden group"
+                      className="w-full bg-primary hover:bg-primary/90 text-white py-4 sm:py-6 text-base sm:text-lg font-semibold shadow-lg shadow-primary/30 relative overflow-hidden group"
                     >
                       <span className="relative z-10 flex items-center justify-center">
                         {t("contact.getInTouch")}
-                        <Zap className="ml-2 h-5 w-5" />
+                        <Zap className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                       </span>
                       <motion.span
                         className="absolute inset-0 bg-primary-foreground z-0"
@@ -81,8 +83,8 @@ export default function ContactForm() {
                   </motion.div>
 
                   <motion.div
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     className="flex-1"
                   >
@@ -90,11 +92,11 @@ export default function ContactForm() {
                       onClick={handleCall}
                       size="lg"
                       variant="outline"
-                      className="w-full border-2 border-primary text-primary hover:bg-primary/10 py-6 text-lg font-semibold relative overflow-hidden group"
+                      className="w-full border-2 border-primary text-primary hover:bg-primary/10 py-4 sm:py-6 text-base sm:text-lg font-semibold relative overflow-hidden group"
                     >
                       <span className="relative z-10 flex items-center justify-center">
                         {t("contact.callNow")}
-                        <Phone className="ml-2 h-5 w-5" />
+                        <Phone className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                       </span>
                       <motion.span
                         className="absolute inset-0 bg-primary/10 z-0"
@@ -109,11 +111,11 @@ export default function ContactForm() {
             </div>
 
             {/* Right side - Animated visual */}
-            <div className="bg-gradient-to-br from-primary/10 to-primary/30 p-8 md:p-10 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-primary/10 to-primary/30 p-6 sm:p-8 md:p-10 relative overflow-hidden order-1 lg:order-2">
               {/* Animated benefits */}
               <div className="relative z-10 h-full flex flex-col justify-center">
                 <motion.h3
-                  className="text-2xl font-bold text-gray-800 mb-8"
+                  className="text-xl sm:text-2xl font-bold text-gray-800 mb-6 sm:mb-8 text-center lg:text-left"
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -122,7 +124,7 @@ export default function ContactForm() {
                   {t("contact.whyPartnerWithUs")}
                 </motion.h3>
 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6 max-w-md mx-auto lg:mx-0">
                   {[
                     { icon: Brain, text: t("contact.aiTalentMatching") },
                     { icon: TrendingUp, text: t("contact.reduceTimeToHire") },
@@ -138,16 +140,16 @@ export default function ContactForm() {
                       transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                     >
                       <motion.div
-                        className="p-2 rounded-full bg-white/80 mr-3 flex-shrink-0"
+                        className="p-1.5 sm:p-2 rounded-full bg-white/80 mr-3 flex-shrink-0"
                         animate={{
-                          scale: [1, 1.2, 1],
+                          scale: [1, 1.1, 1],
                           rotate: [0, 5, -5, 0],
                         }}
                         transition={{ duration: 3, delay: index * 0.5, repeat: Number.POSITIVE_INFINITY }}
                       >
-                        <item.icon className="h-5 w-5 text-primary" />
+                        <item.icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                       </motion.div>
-                      <p className="text-gray-800">{item.text}</p>
+                      <p className="text-sm sm:text-base text-gray-800">{item.text}</p>
                     </motion.div>
                   ))}
                 </div>
