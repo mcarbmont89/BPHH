@@ -88,10 +88,10 @@ export const translations = {
       },
       industries: {
         title: "Specialized in High-Growth Industries",
-        software: "Software (AI & Development)",
-        hardware: "Hardware (Deep Tech)",
+        software: "Technology (AI & Development)",
+        hardware: "Digital",
         construction: "Construction & Real Estate",
-        logistics: "Logistics",
+        logistics: "Finance",
       },
       whyChooseBotic: {
         title: "Why Choose Botic?",
