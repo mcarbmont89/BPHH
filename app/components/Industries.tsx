@@ -28,7 +28,7 @@ const industries = [
     borderColor: "border-purple-200",
     iconColor: "text-purple-500",
     stats: { placements: 8, companies: 3, retention: 91 },
-    technologies: ["Semiconductors", "ASIC", "FPGA", "IoT", "Embedded"],
+    technologies: ["Digital Marketing", "SEO", "CRM", "Automation", "Social Media"],
   },
   {
     titleKey: "industries.construction.title",
