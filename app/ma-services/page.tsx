@@ -51,7 +51,7 @@ const successStories = [
   },
   {
     title: "International Market Entry",
-    description: "Helped a European tech company enter Latin American markets through strategic local partnerships",
+    description: "Helped European tech companies enter Latin American markets through strategic local partnerships",
     results: ["Identified 8 potential partners across key Latin American markets", "Facilitated negotiations with 3 finalists", "Established partnership agreements with localization provisions", "Achieved 200% growth in target markets within 18 months"],
     industry: "Enterprise Technology / International Expansion",
   },
