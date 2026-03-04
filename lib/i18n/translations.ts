@@ -730,7 +730,9 @@ export const translations = {
 
       averageMatchScore: "Average Match Score",
       successStories: {
-        title: "What our candidates say",
+        title: "What our clients say",
+        candidatesTitle: "What our candidates say",
+
         paragraphs: ["Finding a new professional challenge isn’t just about fitting a CV. It’s about feeling supported, understood, and well-informed at every step.", "Here’s what some professionals who have lived the experience with us think:"],
         candidatesLabel: "Candidate testimonials",
         clientsLabel: "Client testimonials",
@@ -1714,7 +1716,8 @@ export const translations = {
 
       averageMatchScore: "Puntaje Promedio de Coincidencia",
       successStories: {
-        title: "Lo que dicen nuestros candidatos",
+        title: "Lo que dicen nuestros clientes",
+        candidatesTitle: "Lo que dicen nuestros candidatos",
         paragraphs: ["Encontrar un nuevo reto profesional no va solo de encajar en un CV. Va de sentirte acompañado, entendido y bien informado en cada paso.", "Esto es lo que opinan algunos de los profesionales que ya han vivido la experiencia con nosotros"],
         candidatesLabel: "Testimonios de candidatos",
         clientsLabel: "Testimonios de clientes",

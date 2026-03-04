@@ -184,7 +184,7 @@ export default function PermanentTalent() {
         <ProcessSection />
         <SuccessStoriesSection prefix="permanentTalent" filter="clients" showHeader={true} />
 
-        <SuccessStoriesSection prefix="permanentTalent" filter="candidates" showHeader={false} />
+        <SuccessStoriesSection prefix="permanentTalent" filter="candidates" showHeader={true} />
 
         <section id="permanent-talent-contact" className="py-16 bg-boticPurple/10">
           <div className="container mx-auto px-4">
