@@ -68,7 +68,7 @@ export function Header() {
   };
 
   const renderNavItem = (item: any, isMobile = false) => {
-    const baseClasses = "text-base font-semibold tracking-wide transition-colors duration-200";
+    const baseClasses = "text-lg font-semibold tracking-wide transition-colors duration-200";
 
     const desktopColor =
       path === "/"

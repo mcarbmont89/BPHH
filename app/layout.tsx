@@ -1,11 +1,11 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -29,7 +29,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Script>
       </head>
 
-      <body className={plusJakarta.className}>
+      <body className={inter.className}>
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW9Q6J66" height="0" width="0" style={{ display: "none", visibility: "hidden" }} />
         </noscript>
