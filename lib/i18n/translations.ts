@@ -404,8 +404,8 @@ export const translations = {
       },
     },
     industries: {
-      title: "Specialized in High-Growth Industries",
-      subtitle: "Focused expertise in cutting-edge sectors",
+      title: "Industries We Specialize In",
+      subtitle: "Technology, Digital Marketing & CRM, Finance, and more",
       software: {
         title: "Technology (AI & Development)",
         description: "From machine learning engineers to full-stack developers, we source the talent driving the digital revolution.",
@@ -1388,8 +1388,8 @@ export const translations = {
       },
     },
     industries: {
-      title: "Nuestras Industrias Especializadas",
-      subtitle: "Experiencia enfocada en sectores de vanguardia",
+      title: "Industrias donde nos especializamos",
+      subtitle: "Tecnología, Marketing Digital & CRM, Finanzas, y más",
       software: {
         title: "Tecnología (IA y Desarrollo)",
         description: "Desde ingenieros de machine learning hasta desarrolladores full-stack, conectamos el talento que impulsa la revolución digital.",
