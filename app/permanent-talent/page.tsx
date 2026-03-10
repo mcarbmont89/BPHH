@@ -94,8 +94,8 @@ export default function PermanentTalent() {
         {/* Hero Section */}
         <section className="relative py-12 md:py-20 bg-gradient-to-r from-boticPurple/20 to-boticPurple/10">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row md:items-center">
-              <div className="md:w-1/2 md:pr-8 lg:pr-12 mb-8 md:mb-0">
+            <div className="flex flex-col md:flex-row md:items-center gap-x-16 lg:gap-x-24">
+              <div className="md:w-1/2 mb-8 md:mb-0">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                   <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-gray-900 leading-tight">{t("permanentTalent.title")}</h1>
 
