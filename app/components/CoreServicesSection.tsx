@@ -36,10 +36,6 @@ export default function CoreServicesSection() {
   return (
     <section id="core-services" className="py-12 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <p className="max-w-4xl mx-auto text-lg md:text-xl text-gray-700 whitespace-pre-line">{t("coreServices.title")}</p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="flex flex-col bg-blue-50 border-blue-100 hover:bg-blue-100/70 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
