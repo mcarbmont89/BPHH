@@ -141,21 +141,21 @@ export default function Industries() {
 
         {/* Contenedor Carrusel */}
         <div className="relative group/carousel">
-          <div className="overflow-hidden touch-pan-y select-none">
+          <div className="overflow-hidden touch-pan-y select-none px-4">
             <motion.div
               ref={scrollRef}
               drag="x"
-              dragConstraints={{ left: -2000, right: 0 }}
+              dragConstraints={{ left: -3000, right: 0 }}
               onDragStart={() => setIsAutoScrollEnabled(false)}
               onDragEnd={() => setTimeout(() => setIsAutoScrollEnabled(true), 5000)}
-              className="flex will-change-transform cursor-grab active:cursor-grabbing"
+              className="flex will-change-transform cursor-grab active:cursor-grabbing snap-x snap-mandatory"
             >
               {duplicatedIndustries.map((industry, index) => {
                 const isHovered = hoveredIndustry === index;
                 return (
                   <div 
                     key={index} 
-                    className="w-[240px] md:w-[260px] flex-shrink-0 px-2 pb-8"
+                    className="w-[85vw] sm:w-[400px] md:w-[320px] flex-shrink-0 px-2 pb-8 snap-center"
                     onMouseEnter={() => {
                       setHoveredIndustry(index);
                       setIsAutoScrollEnabled(false);
@@ -167,36 +167,36 @@ export default function Industries() {
                   >
                     {/* Altura flexible con h-full y flex-col */}
                     <Card className={`h-full overflow-hidden transition-all duration-300 border-2 ${isHovered ? `shadow-xl ${industry.borderColor}` : 'border-transparent shadow-md'}`}>
-                      <CardContent className={`${industry.bgColor} p-4 h-full flex flex-col`}>
+                      <CardContent className={`${industry.bgColor} p-6 md:p-8 h-full flex flex-col`}>
                         <div className="flex flex-col items-center text-center h-full">
                           
-                          <div className={`w-12 h-12 rounded-full mb-3 bg-gradient-to-br ${industry.color} flex items-center justify-center overflow-hidden shadow-sm`}>
-                            <Image src={industry.image} alt={t(industry.titleKey)} width={48} height={48} className="w-full h-full object-cover" />
+                          <div className={`w-20 h-20 md:w-16 md:h-16 rounded-full mb-6 bg-gradient-to-br ${industry.color} flex items-center justify-center overflow-hidden shadow-sm`}>
+                            <Image src={industry.image} alt={t(industry.titleKey)} width={80} height={80} className="w-full h-full object-cover" />
                           </div>
 
-                          <h3 className="text-base font-bold mb-1">{t(industry.titleKey)}</h3>
-                          <p className="text-gray-600 text-xs mb-4 line-clamp-3">{t(industry.descriptionKey)}</p>
+                          <h3 className="text-2xl md:text-xl font-bold mb-3">{t(industry.titleKey)}</h3>
+                          <p className="text-gray-600 text-base md:text-sm mb-6 line-clamp-4">{t(industry.descriptionKey)}</p>
 
                           {/* Stats y Techs (flex-grow empuja el botón abajo) */}
-                          <div className="w-full space-y-3 mb-4 flex-grow flex flex-col justify-center">
-                            <div className="grid grid-cols-3 gap-1 border-y border-gray-200/50 py-3">
+                          <div className="w-full space-y-4 mb-6 flex-grow flex flex-col justify-center">
+                            <div className="grid grid-cols-3 gap-2 border-y border-gray-200/50 py-6 md:py-4">
                               <div>
-                                <div className={`text-lg font-bold ${industry.iconColor}`}>{industry.stats.placements}+</div>
-                                <div className="text-[10px] uppercase text-gray-500">Placements</div>
+                                <div className={`text-xl md:text-lg font-bold ${industry.iconColor}`}>{industry.stats.placements}+</div>
+                                <div className="text-[10px] md:text-[9px] uppercase text-gray-500">Placements</div>
                               </div>
                               <div>
-                                <div className={`text-lg font-bold ${industry.iconColor}`}>{industry.stats.companies}+</div>
-                                <div className="text-[10px] uppercase text-gray-500">Companies</div>
+                                <div className={`text-xl md:text-lg font-bold ${industry.iconColor}`}>{industry.stats.companies}+</div>
+                                <div className="text-[10px] md:text-[9px] uppercase text-gray-500">Companies</div>
                               </div>
                               <div>
-                                <div className={`text-lg font-bold ${industry.iconColor}`}>{industry.stats.retention}%</div>
-                                <div className="text-[10px] uppercase text-gray-500">Retention</div>
+                                <div className={`text-xl md:text-lg font-bold ${industry.iconColor}`}>{industry.stats.retention}%</div>
+                                <div className="text-[10px] md:text-[9px] uppercase text-gray-500">Retention</div>
                               </div>
                             </div>
 
-                            <div className="flex flex-wrap justify-center gap-1.5">
+                            <div className="flex flex-wrap justify-center gap-2">
                               {industry.technologies.map((tech, i) => (
-                                <span key={i} className={`px-2 py-1 text-[10px] rounded-md ${industry.bgColor} ${industry.iconColor} border ${industry.borderColor} font-medium`}>
+                                <span key={i} className={`px-3 py-1 text-xs md:text-[10px] rounded-md ${industry.bgColor} ${industry.iconColor} border ${industry.borderColor} font-medium`}>
                                   {tech}
                                 </span>
                               ))}
@@ -206,7 +206,7 @@ export default function Industries() {
                           {/* Botón siempre alineado */}
                           <button
                             onClick={(e) => { e.stopPropagation(); handleIndustryExplore(index); }}
-                            className={`w-full py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r ${industry.color} shadow-lg hover:scale-[1.02] transition-transform`}
+                            className={`w-full py-4 md:py-3 rounded-xl text-base md:text-sm font-bold text-white bg-gradient-to-r ${industry.color} shadow-lg hover:scale-[1.02] transition-transform`}
                           >
                             {t("industries.exploreOpportunities")}
                           </button>
