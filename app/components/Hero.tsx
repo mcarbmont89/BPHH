@@ -24,6 +24,7 @@ export default function Hero() {
   const [emailSubject, setEmailSubject] = useState("")
   const [currentJobIndex, setCurrentJobIndex] = useState(0)
   const [isVisible, setIsVisible] = useState(true)
+  const [threadsMounted, setThreadsMounted] = useState(false)
 
   // Sample job positions - you can replace these with your actual job data
   const jobPositions: JobPosition[] = [
@@ -74,6 +75,11 @@ export default function Hero() {
     return () => clearInterval(interval)
   }, [jobPositions.length])
 
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setThreadsMounted(true))
+    return () => cancelAnimationFrame(id)
+  }, [])
+
   const currentJob = jobPositions[currentJobIndex]
 
   return (
@@ -84,7 +90,9 @@ export default function Hero() {
         <source src="/hero-background.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video> */}
-      <Threads amplitude={0.2} className="absolute inset-0 w-full h-full object-cover -mt-4 md:mt-0" />
+      <div className={`absolute inset-0 transition-opacity duration-700 ${threadsMounted ? "opacity-100" : "opacity-0"}`}>
+        <Threads amplitude={0.2} className="w-full h-full object-cover -mt-4 md:mt-0" />
+      </div>
       <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center mt-20 md:mt-0">
         <div className="space-y-4 md:space-y-24 md:-mt-16 text-center md:text-left">
           <h1

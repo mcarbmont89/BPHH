@@ -411,16 +411,16 @@ export const translations = {
         description: "From machine learning engineers to full-stack developers, we source the talent driving the digital revolution.",
       },
       hardware: {
-        title: "Digital (Deep Tech)",
-        description: "We connect you with experts in semiconductor design, robotics, and other deep tech fields.",
+        title: "Digital & Marketing",
+        description: "We connect brands with top digital talent in performance marketing, SEO, CRM, and growth strategies.",
       },
       construction: {
         title: "Construction & Real Estate",
         description: "Find the professionals shaping the future of our cities, from smart building engineers to project managers.",
       },
       logistics: {
-        title: "Finance",
-        description: "Source the talent optimizing supply chains and revolutionizing global trade.",
+        title: "Finance & Fintech",
+        description: "Source top finance professionals and fintech innovators driving the future of banking and investment.",
       },
       expertise: {
         title: "Specialized Recruitment Expertise",
@@ -1391,20 +1391,20 @@ export const translations = {
       title: "Nuestras Industrias Especializadas",
       subtitle: "Experiencia enfocada en sectores de vanguardia",
       software: {
-        title: "Technology (IA y Desarrollo)",
-        description: "Conectamos empresas de software innovadoras con el mejor talento en IA y desarrollo.",
+        title: "Tecnología (IA y Desarrollo)",
+        description: "Desde ingenieros de machine learning hasta desarrolladores full-stack, conectamos el talento que impulsa la revolución digital.",
       },
       hardware: {
-        title: "Digital (Deep Tech)",
-        description: "Buscamos expertos para innovaciones revolucionarias en hardware y deep tech.",
+        title: "Digital & Marketing",
+        description: "Conectamos marcas con el mejor talento digital en marketing de rendimiento, SEO, CRM y estrategias de crecimiento.",
       },
       construction: {
         title: "Construcción e Inmobiliaria",
-        description: "Encontramos talento especializado para la tecnología moderna de construcción e inmobiliaria.",
+        description: "Encontramos los profesionales que dan forma al futuro de nuestras ciudades, desde ingenieros de edificios inteligentes hasta gestores de proyectos.",
       },
       logistics: {
-        title: "Finance",
-        description: "Conectamos empresas de logística con expertos en tecnología de cadena de suministro y transporte.",
+        title: "Finanzas & Fintech",
+        description: "Conectamos a los mejores profesionales financieros e innovadores fintech que impulsan el futuro de la banca y la inversión.",
       },
       expertise: {
         title: "Experiencia en Reclutamiento Especializado",
