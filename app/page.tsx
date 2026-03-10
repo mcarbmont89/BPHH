@@ -4,7 +4,7 @@ import { Header } from "@/app/components/Header"
 import Hero from "./components/Hero"
 import Services from "./components/Services"
 import Footer from "./components/Footer"
-import Chatbot from "./components/Chatbot"
+// import Chatbot from "./components/Chatbot"
 import Industries from "./components/Industries"
 import TalentMatchingHero from "./components/TalentMatchingHero"
 import HeadhuntingSection from "./components/HeadhuntingSection"
@@ -39,7 +39,7 @@ export default function Home() {
         <ContactForm />
       </main>                                                                                                        
       <Footer />
-      <Chatbot />
+      {/* <Chatbot /> */}
     </div>
   )
 }
