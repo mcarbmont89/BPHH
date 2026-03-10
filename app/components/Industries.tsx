@@ -155,7 +155,7 @@ export default function Industries() {
                 return (
                   <div 
                     key={index} 
-                    className="w-[280px] md:w-[320px] flex-shrink-0 px-3 pb-8"
+                    className="w-[240px] md:w-[260px] flex-shrink-0 px-2 pb-8"
                     onMouseEnter={() => {
                       setHoveredIndustry(index);
                       setIsAutoScrollEnabled(false);
@@ -167,19 +167,19 @@ export default function Industries() {
                   >
                     {/* Altura flexible con h-full y flex-col */}
                     <Card className={`h-full overflow-hidden transition-all duration-300 border-2 ${isHovered ? `shadow-xl ${industry.borderColor}` : 'border-transparent shadow-md'}`}>
-                      <CardContent className={`${industry.bgColor} p-6 h-full flex flex-col`}>
+                      <CardContent className={`${industry.bgColor} p-4 h-full flex flex-col`}>
                         <div className="flex flex-col items-center text-center h-full">
                           
-                          <div className={`w-16 h-16 rounded-full mb-4 bg-gradient-to-br ${industry.color} flex items-center justify-center overflow-hidden shadow-sm`}>
-                            <Image src={industry.image} alt={t(industry.titleKey)} width={64} height={64} className="w-full h-full object-cover" />
+                          <div className={`w-12 h-12 rounded-full mb-3 bg-gradient-to-br ${industry.color} flex items-center justify-center overflow-hidden shadow-sm`}>
+                            <Image src={industry.image} alt={t(industry.titleKey)} width={48} height={48} className="w-full h-full object-cover" />
                           </div>
 
-                          <h3 className="text-xl font-bold mb-2">{t(industry.titleKey)}</h3>
-                          <p className="text-gray-600 text-sm mb-6 line-clamp-4">{t(industry.descriptionKey)}</p>
+                          <h3 className="text-base font-bold mb-1">{t(industry.titleKey)}</h3>
+                          <p className="text-gray-600 text-xs mb-4 line-clamp-3">{t(industry.descriptionKey)}</p>
 
                           {/* Stats y Techs (flex-grow empuja el botón abajo) */}
-                          <div className="w-full space-y-4 mb-6 flex-grow flex flex-col justify-center">
-                            <div className="grid grid-cols-3 gap-2 border-y border-gray-200/50 py-4">
+                          <div className="w-full space-y-3 mb-4 flex-grow flex flex-col justify-center">
+                            <div className="grid grid-cols-3 gap-1 border-y border-gray-200/50 py-3">
                               <div>
                                 <div className={`text-lg font-bold ${industry.iconColor}`}>{industry.stats.placements}+</div>
                                 <div className="text-[10px] uppercase text-gray-500">Placements</div>
@@ -206,7 +206,7 @@ export default function Industries() {
                           {/* Botón siempre alineado */}
                           <button
                             onClick={(e) => { e.stopPropagation(); handleIndustryExplore(index); }}
-                            className={`w-full py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r ${industry.color} shadow-lg hover:scale-[1.02] transition-transform`}
+                            className={`w-full py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r ${industry.color} shadow-lg hover:scale-[1.02] transition-transform`}
                           >
                             {t("industries.exploreOpportunities")}
                           </button>
