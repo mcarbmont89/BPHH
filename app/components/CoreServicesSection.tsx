@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-import { Briefcase, Users, GitMerge } from "lucide-react";
 import Link from "next/link";
 
 export default function CoreServicesSection() {
@@ -11,21 +10,18 @@ export default function CoreServicesSection() {
 
   const services = [
     {
-      icon: <Briefcase className="h-8 w-8 text-primary" />,
       title: t("coreServices.permanentStaff.title"),
       description: t("coreServices.permanentStaff.description"),
       link: "/permanent-talent",
       external: false,
     },
     {
-      icon: <Users className="h-8 w-8 text-primary" />,
       title: t("coreServices.freelanceTalent.title"),
       description: t("coreServices.freelanceTalent.description"),
       link: "https://botic.lovable.app/",
       external: true,
     },
     {
-      icon: <GitMerge className="h-8 w-8 text-primary" />,
       title: t("coreServices.maServices.title"),
       description: t("coreServices.maServices.description"),
       link: "https://acquisition.boticpartners.com/",
@@ -40,7 +36,6 @@ export default function CoreServicesSection() {
           {services.map((service, index) => (
             <Card key={index} className="flex flex-col bg-blue-50 border-blue-100 hover:bg-blue-100/70 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <CardHeader className="flex flex-row items-start gap-4 space-y-0 pb-4">
-                <div className="p-2 bg-primary/10 rounded-full">{service.icon}</div>
                 <div className="flex-1">
                   <CardTitle>{service.title}</CardTitle>
                 </div>
