@@ -155,7 +155,7 @@ export default function Industries() {
                 return (
                   <div 
                     key={index} 
-                    className="w-[85vw] sm:w-[300px] md:w-[260px] flex-shrink-0 px-2 pb-8 snap-center md:snap-align-none"
+                    className="w-[65vw] sm:w-[250px] md:w-[210px] flex-shrink-0 px-2 pb-8 snap-center md:snap-align-none"
                     onMouseEnter={() => {
                       setHoveredIndustry(index);
                       setIsAutoScrollEnabled(false);
