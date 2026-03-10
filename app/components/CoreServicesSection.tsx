@@ -1,69 +1,124 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { Search, Brain, TrendingUp } from "lucide-react";
 import Link from "next/link";
+
+const services = [
+  {
+    icon: Search,
+    color: "from-blue-400 to-blue-600",
+    bgColor: "bg-blue-50",
+    borderColor: "border-blue-200",
+    iconColor: "text-blue-500",
+    stats: { placements: 120, speed: "4x", retention: 93 },
+    tags: ["Executive Search", "Tech Talent", "Sales", "C-Level", "Mid-Senior"],
+    link: "/permanent-talent",
+    external: false,
+    titleKey: "coreServices.permanentStaff.title",
+    descKey: "coreServices.permanentStaff.description",
+  },
+  {
+    icon: Brain,
+    color: "from-purple-400 to-purple-600",
+    bgColor: "bg-purple-50",
+    borderColor: "border-purple-200",
+    iconColor: "text-purple-500",
+    stats: { placements: 80, speed: "3x", retention: 88 },
+    tags: ["n8n", "Make", "Zapier", "AI Agents", "CRM Automation"],
+    link: "https://botic.lovable.app/",
+    external: true,
+    titleKey: "coreServices.freelanceTalent.title",
+    descKey: "coreServices.freelanceTalent.description",
+  },
+  {
+    icon: TrendingUp,
+    color: "from-orange-400 to-orange-600",
+    bgColor: "bg-orange-50",
+    borderColor: "border-orange-200",
+    iconColor: "text-orange-500",
+    stats: { placements: 40, speed: "2x", retention: 91 },
+    tags: ["M&A", "Market Research", "Due Diligence", "Expansion", "Strategy"],
+    link: "https://acquisition.boticpartners.com/",
+    external: false,
+    titleKey: "coreServices.maServices.title",
+    descKey: "coreServices.maServices.description",
+  },
+];
 
 export default function CoreServicesSection() {
   const { t } = useLanguage();
 
-  const services = [
-    {
-      title: t("coreServices.permanentStaff.title"),
-      description: t("coreServices.permanentStaff.description"),
-      link: "/permanent-talent",
-      external: false,
-    },
-    {
-      title: t("coreServices.freelanceTalent.title"),
-      description: t("coreServices.freelanceTalent.description"),
-      link: "https://botic.lovable.app/",
-      external: true,
-    },
-    {
-      title: t("coreServices.maServices.title"),
-      description: t("coreServices.maServices.description"),
-      link: "https://acquisition.boticpartners.com/",
-      external: false,
-    },
-  ];
-
   return (
-    <section id="core-services" className="py-12 md:py-24 bg-gray-50">
+    <section id="core-services" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="flex flex-col bg-blue-50 border-blue-100 hover:bg-blue-100/70 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <CardHeader className="flex flex-row items-start gap-4 space-y-0 pb-4">
-                <div className="flex-1">
-                  <CardTitle>{service.title}</CardTitle>
-                </div>
-              </CardHeader>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <Card
+                key={index}
+                className={`overflow-hidden border-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${service.borderColor}`}
+              >
+                <CardContent className={`${service.bgColor} p-6 flex flex-col items-center text-center h-full`}>
+                  {/* Icon */}
+                  <div className={`w-16 h-16 rounded-full mb-5 bg-gradient-to-br ${service.color} flex items-center justify-center shadow-md`}>
+                    <Icon className="h-7 w-7 text-white" />
+                  </div>
 
-              <CardContent className="flex-1">
-                <CardDescription>{service.description}</CardDescription>
-              </CardContent>
+                  {/* Title & Description */}
+                  <h3 className="text-xl font-bold mb-2">{t(service.titleKey)}</h3>
+                  <p className="text-gray-600 text-sm mb-5 leading-relaxed">{t(service.descKey)}</p>
 
-              <div className="p-6 pt-0">
-                {service.link ? (
-                  <Link href={service.link} target={service.external ? "_blank" : undefined} rel={service.external ? "noopener noreferrer" : undefined}>
-                    <Button
-                      variant="outline"
-                      className="w-full border-2 border-boticPurple text-boticPurple font-semibold 
-                      hover:bg-boticPurple hover:text-white transition-colors duration-200"
+                  {/* Stats */}
+                  <div className="w-full grid grid-cols-3 gap-1 border-y border-gray-200/60 py-4 mb-4">
+                    <div>
+                      <div className={`text-lg font-bold ${service.iconColor}`}>{service.stats.placements}+</div>
+                      <div className="text-[10px] uppercase text-gray-500">Placements</div>
+                    </div>
+                    <div>
+                      <div className={`text-lg font-bold ${service.iconColor}`}>{service.stats.speed}</div>
+                      <div className="text-[10px] uppercase text-gray-500">Faster</div>
+                    </div>
+                    <div>
+                      <div className={`text-lg font-bold ${service.iconColor}`}>{service.stats.retention}%</div>
+                      <div className="text-[10px] uppercase text-gray-500">Retention</div>
+                    </div>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="w-full mb-6">
+                    <p className={`text-xs font-semibold uppercase mb-2 ${service.iconColor}`}>Key Technologies</p>
+                    <div className="flex flex-wrap justify-center gap-1.5">
+                      {service.tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className={`px-2 py-1 text-[11px] rounded-md ${service.bgColor} ${service.iconColor} border ${service.borderColor} font-medium`}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Button */}
+                  <Link
+                    href={service.link}
+                    target={service.external ? "_blank" : undefined}
+                    rel={service.external ? "noopener noreferrer" : undefined}
+                    className="w-full"
+                  >
+                    <button
+                      className={`w-full py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r ${service.color} shadow-lg hover:scale-[1.02] transition-transform`}
                     >
                       {t("coreServices.learnMore")}
-                    </Button>
+                    </button>
                   </Link>
-                ) : (
-                  <Button variant="outline" className="w-full bg-transparent" disabled>
-                    {t("coreServices.learnMore")}
-                  </Button>
-                )}
-              </div>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
