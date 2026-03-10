@@ -53,7 +53,7 @@ export default function CoreServicesSection() {
   return (
     <section id="core-services" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
