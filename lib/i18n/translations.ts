@@ -1294,7 +1294,7 @@ export const translations = {
         dataApproach: "Nuestro enfoque basado en datos ofrece consistentemente resultados excepcionales.",
       },
       partnerships: {
-        title: "ALIANZAS ESTRATÉGICAS & M&A",
+        title: "Scouting estratégico de empresas",
         subtitle: "Identificamos y conectamos empresas con alto encaje estratégico para impulsar su crecimiento en Europa, siempre con un enfoque confidencial y muy selectivo.",
         description: "Conectando Oportunidades, Acelerando el Crecimiento Empresarial",
         marketGrowth: "Crecimiento del Mercado con Alianzas Estratégicas",
