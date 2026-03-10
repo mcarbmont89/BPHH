@@ -23,7 +23,7 @@ export default function AboutBorjaSection({
   const content =
     language === "es"
       ? {
-          title: "About us",
+          title: "Sobre nosotros",
           p1: "Borja Moreno-Luque es el fundador de Botic Partners. Tras más de ocho años liderando procesos de selección y desarrollo de negocio en firmas como Michael Page, Catenon o FED Group, y trabajando con empresas de distintos sectores y mercados, decidió crear su propia firma para acompañar el crecimiento empresarial desde una perspectiva AI-native.",
           p2: "Su enfoque combina experiencia en negocio, conocimiento del mercado y una forma de trabajar cercana y exigente, apoyándose en la tecnología para escalar resultados reales:",
           quote: "“La IA nos está permitiendo cuadruplicar la velocidad de contratación a la que yo estaba acostumbrado, y al mismo tiempo ampliar nuestro impacto en áreas como el scouting estratégico y la automatización de procesos.”",
