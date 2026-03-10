@@ -51,18 +51,13 @@ export default function PartnershipsSection() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center text-center mb-10">
-          <motion.div initial={{ opacity: 0, y: -10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="inline-flex items-center px-4 py-2 rounded-full bg-boticPurple/20 mb-6">
-            <Handshake className="h-4 w-4 text-boticPurple mr-2" />
-            <span className="text-sm font-medium text-boticPurple">{t("contact.strategicPartnerships")}</span>
-          </motion.div>
+          {/* Label "Alianzas estratégicas" removed */}
 
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="text-4xl font-bold mb-3 text-boticPurple">
             {t("services.partnerships.title")}
           </motion.h2>
 
-          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="text-lg text-gray-600">
-            {t("services.partnerships.subtitle")}
-          </motion.p>
+          {/* Subtitle removed */}
         </div>
 
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} className="max-w-6xl mx-auto border border-gray-200 rounded-2xl p-8 md:p-12 bg-white shadow-sm">
