@@ -60,9 +60,9 @@ export function Header() {
       onClick: (e: React.MouseEvent) => handleScrollTo(e, "industries"),
     },
     {
-      href: "/#about",
+      href: "/#about-us",
       label: t("nav.about"),
-      onClick: (e: React.MouseEvent) => handleScrollTo(e, "about"),
+      onClick: (e: React.MouseEvent) => handleScrollTo(e, "about-us"),
     },
     { href: "/careers", label: t("nav.careers"), isLink: true },
     { href: "/blog", label: t("nav.blog"), isLink: true },
