@@ -28,7 +28,7 @@ const industries = [
     borderColor: "border-purple-200",
     iconColor: "text-purple-500",
     stats: { placements: 8, companies: 3, retention: 91 },
-    technologies: ["Digital Marketing", "SEO", "CRM", "Social Media", "Growth"],
+    technologies: ["Digital Marketing", "SEO", "CRM", "Automation", "Social Media"],
   },
   {
     titleKey: "industries.construction.title",
@@ -50,7 +50,7 @@ const industries = [
     borderColor: "border-green-200",
     iconColor: "text-green-500",
     stats: { placements: 13, companies: 5, retention: 90 },
-    technologies: ["FinTech", "Risk Management", "Investment", "Compliance", "Blockchain"],
+    technologies: ["Supply Chain", "Fleet Management", "Warehouse Automation", "Last-Mile", "Blockchain"],
   },
 ];
 
