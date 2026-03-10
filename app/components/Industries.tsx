@@ -83,7 +83,7 @@ export default function Industries() {
     let animationFrame: number;
     let lastTime: number | null = null;
     const speed = 40; 
-    const totalWidth = track.scrollWidth / 3; // Basado en el triplicado
+    const totalWidth = track.scrollWidth / 3;
 
     const animate = (time: number) => {
       if (!isAutoScrollEnabled) {
@@ -154,7 +154,7 @@ export default function Industries() {
                 return (
                   <div
                     key={index}
-                    className="w-[75vw] md:w-[calc(25%-0.75rem)] flex-shrink-0 px-2 pb-8 snap-center md:snap-align-none"
+                    className="w-[85vw] md:w-[calc(33.333%-0.75rem)] flex-shrink-0 px-2 pb-8 snap-center md:snap-align-none"
                     onMouseEnter={() => { setHoveredIndustry(index); setIsAutoScrollEnabled(false); }}
                     onMouseLeave={() => { setHoveredIndustry(null); setIsAutoScrollEnabled(true); }}
                   >

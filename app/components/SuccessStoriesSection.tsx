@@ -91,15 +91,6 @@ export function SuccessStoriesSection({ prefix = "services.partnerships", id, cl
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-boticPurple">{title}</h2>
 
-            {filter !== "candidates" && (
-              <div className="max-w-4xl mx-auto space-y-4">
-                {(Array.isArray(paragraphs) ? paragraphs : []).map((p, i) => (
-                  <p key={i} className="text-gray-600 text-lg">
-                    {p}
-                  </p>
-                ))}
-              </div>
-            )}
           </div>
         )}
 
