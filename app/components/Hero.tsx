@@ -101,9 +101,6 @@ export default function Hero() {
           >
             {t("home.hero.title")}
           </h1>
-          <p className="text-lg md:text-xl text-gray-200" style={{ textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)" }}>
-            {t("home.hero.subtitle")}
-          </p>
         </div>
         <div className="flex justify-center md:justify-end mt-24 md:mt-0 mb-8 md:mb-0">
           <Card className="w-full max-w-md bg-black/70 text-white shadow-lg border border-white/20">
