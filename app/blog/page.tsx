@@ -156,7 +156,7 @@ export default function Blog() {
       </section>
 
       {/* Posts */}
-      <main className="flex-grow py-12 bg-gray-50">
+      <main className="flex-grow py-12 bg-white">
         <div className="container mx-auto px-4">
           {filteredPosts?.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -170,7 +170,7 @@ export default function Blog() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     <Link href={`/blog/${post.id}`}>
-                      <Card className="h-full overflow-hidden hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-primary/30 group">
+                      <Card className="h-full overflow-hidden hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-primary/30 group bg-white text-gray-900">
                         <div className="relative h-48 overflow-hidden">
                           {(() => {
                             const raw =
@@ -236,7 +236,7 @@ export default function Blog() {
       </main>
 
       {/* Newsletter */}
-      <section className="bg-primary/10 py-16">
+      <section className="bg-white py-16 border-t border-gray-200">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">{t("blog.newsletter.title")}</h2>
