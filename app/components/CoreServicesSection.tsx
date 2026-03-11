@@ -36,23 +36,25 @@ export default function CoreServicesSection() {
               key={index}
               className="rounded-2xl bg-boticPurple p-6 flex flex-col shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <h3 className="text-lg font-bold text-white mb-3 leading-snug">
+              <h3 className="text-xl font-bold text-white mb-3 leading-snug">
                 {t(service.titleKey)}
               </h3>
 
-              <p className="text-white/80 text-sm leading-relaxed flex-grow mb-6">
+              <p className="text-white/80 text-base leading-relaxed flex-grow mb-6">
                 {t(service.descKey)}
               </p>
 
-              <Link
-                href={service.link}
-                target={service.external ? "_blank" : undefined}
-                rel={service.external ? "noopener noreferrer" : undefined}
-              >
-                <button className="px-8 py-3.5 rounded-xl text-sm font-semibold bg-white/20 hover:bg-white/30 text-white border border-white/40 transition-colors">
-                  {t("coreServices.learnMore")}
-                </button>
-              </Link>
+              <div className="flex justify-center">
+                <Link
+                  href={service.link}
+                  target={service.external ? "_blank" : undefined}
+                  rel={service.external ? "noopener noreferrer" : undefined}
+                >
+                  <button className="px-8 py-3.5 rounded-xl text-base font-semibold bg-white/20 hover:bg-white/30 text-white border border-white/40 transition-colors">
+                    {t("coreServices.learnMore")}
+                  </button>
+                </Link>
+              </div>
             </div>
           ))}
         </div>
