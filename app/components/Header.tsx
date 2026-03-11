@@ -102,7 +102,7 @@ export function Header() {
   };
 
   return (
-    <header className={`py-4 px-6 fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"}`}>
+    <header className={`py-4 px-6 fixed w-full z-50 transition-all duration-300 ${isScrolled || path !== "/" ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"}`}>
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
           <Image src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/botic%20long-Uu1ik81vsOqA55IYRxP8xIzHs4xpzU.png" alt="Botic Partners" width={200} height={50} className="h-8 w-auto drop-shadow" />
