@@ -42,6 +42,9 @@ export function Header() {
     }
   };
 
+  const darkHeroPages = ["/", "/careers", "/blog"];
+  const hasDarkHero = darkHeroPages.includes(path);
+
   const navItems = [
     { href: "/", label: t("nav.home"), isLink: true },
     {
@@ -75,12 +78,11 @@ export function Header() {
   const renderNavItem = (item: any, isMobile = false) => {
     const baseClasses = "text-lg font-semibold tracking-wide transition-colors duration-200";
 
-    const desktopColor =
-      path === "/"
-        ? isScrolled
-          ? "text-gray-900 hover:text-boticPurple"
-          : "text-white hover:text-gray-200"
-        : "text-gray-900 hover:text-boticPurple";
+    const desktopColor = hasDarkHero
+      ? isScrolled
+        ? "text-gray-900 hover:text-boticPurple"
+        : "text-white hover:text-gray-200"
+      : "text-gray-900 hover:text-boticPurple";
 
     const mobileColor = "text-gray-900 hover:text-boticPurple";
 
@@ -102,7 +104,7 @@ export function Header() {
   };
 
   return (
-    <header className={`py-4 px-6 fixed w-full z-50 transition-all duration-300 ${isScrolled || path !== "/" ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"}`}>
+    <header className={`py-4 px-6 fixed w-full z-50 transition-all duration-300 ${isScrolled || !hasDarkHero ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"}`}>
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
           <Image src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/botic%20long-Uu1ik81vsOqA55IYRxP8xIzHs4xpzU.png" alt="Botic Partners" width={200} height={50} className="h-8 w-auto drop-shadow" />
@@ -126,7 +128,7 @@ export function Header() {
             {t("nav.contact")}
           </Button>
           <button className="md:hidden" onClick={toggleMenu}>
-            <Menu className={`h-6 w-6 ${isScrolled || path !== "/" ? "text-gray-700" : "text-white"}`} />
+            <Menu className={`h-6 w-6 ${isScrolled || !hasDarkHero ? "text-gray-700" : "text-white"}`} />
           </button>
         </div>
       </div>
