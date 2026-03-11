@@ -121,7 +121,7 @@ export default function CareersPage() {
             const Icon = industry.icon;
             const isSelected = selectedIndustry === industry.id;
             return (
-              <Button key={industry.id} variant={isSelected ? "default" : "outline"} onClick={() => setSelectedIndustry(industry.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm md:text-base ${isSelected ? "bg-primary text-primary-foreground hover:bg-primary/90" : "border border-input bg-background hover:bg-accent hover:text-accent-foreground"}`}>
+              <Button key={industry.id} variant={isSelected ? "default" : "outline"} onClick={() => setSelectedIndustry(industry.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm md:text-base ${isSelected ? "bg-primary text-primary-foreground hover:bg-primary/90" : "border border-gray-300 bg-white text-gray-800 hover:bg-gray-100"}`}>
                 {Icon && <Icon className="w-4 h-4" />}
                 {t(industry.nameKey)}
               </Button>
