@@ -83,7 +83,7 @@ export default function Hero() {
   const currentJob = jobPositions[currentJobIndex]
 
   return (
-    <section className="relative w-full min-h-[75vh] flex items-center justify-center overflow-hidden text-white bg-[#1A1A2E]">
+    <section className="relative w-full min-h-[100vh] flex items-center justify-center overflow-hidden text-white bg-[#1A1A2E]">
       {" "}
       {/* Added a fallback background color matching the screenshot */}
       {/* <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover -z-10">
