@@ -92,7 +92,7 @@ export default function PermanentTalent() {
 
       <main className="flex-grow pt-20">
         {/* Hero Section */}
-        <section className="relative py-12 md:py-20 bg-gradient-to-r from-boticPurple/20 to-boticPurple/10">
+        <section className="relative py-12 md:py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row md:items-center gap-x-16 lg:gap-x-24">
               <div className="md:w-1/2 mb-8 md:mb-0">
