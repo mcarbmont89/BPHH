@@ -49,7 +49,7 @@ export default function CoreServicesSection() {
                 target={service.external ? "_blank" : undefined}
                 rel={service.external ? "noopener noreferrer" : undefined}
               >
-                <button className="w-full py-2.5 rounded-xl text-sm font-semibold bg-white/20 hover:bg-white/30 text-white border border-white/40 transition-colors">
+                <button className="px-8 py-3.5 rounded-xl text-sm font-semibold bg-white/20 hover:bg-white/30 text-white border border-white/40 transition-colors">
                   {t("coreServices.learnMore")}
                 </button>
               </Link>
