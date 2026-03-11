@@ -7,7 +7,7 @@ export function ProcessSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="w-full py-20 px-4 md:px-8 bg-boticPurple/10 flex justify-center">
+    <section className="w-full py-20 px-4 md:px-8 bg-white flex justify-center">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
         
         <motion.div
@@ -35,7 +35,7 @@ export function ProcessSection() {
           <div className="relative group">
             <div className="absolute -inset-3 bg-gradient-to-r from-boticPurple to-boticPurple/80 rounded-full opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500" />
 
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-xl ring-4 ring-white ring-offset-4 ring-offset-boticPurple/10 transition-all duration-500 group-hover:shadow-2xl group-hover:scale-105">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-xl ring-4 ring-white ring-offset-4 ring-offset-white transition-all duration-500 group-hover:shadow-2xl group-hover:scale-105">
               <img 
                 src="/images/borja.png" 
                 alt="Borja" 
