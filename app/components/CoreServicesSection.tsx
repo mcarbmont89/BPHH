@@ -41,7 +41,7 @@ export default function CoreServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => {
             return (
-              <Card key={index} className="flex flex-col">
+              <Card key={index} className="flex flex-col bg-white text-gray-900 border-gray-200">
                 <CardHeader>
                   <CardTitle>{t(service.titleKey)}</CardTitle>
                 </CardHeader>
