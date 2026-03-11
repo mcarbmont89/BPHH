@@ -1157,7 +1157,7 @@ export const translations = {
     },
     talentDemoBanner: {
       title: "Tus candidatos a un clic",
-      description: "Descubrí cómo nuestra plataforma impulsada por IA te conecta con candidatos calificados en segundos.",
+      description: "Descubre cómo te conectamos con candidatos calificados en segundos.",
       cta: "Mira nuestra demo",
     },
 
@@ -1229,7 +1229,7 @@ export const translations = {
       title: "En Botic Partners impulsamos el crecimiento de las empresas combinando talento, tecnología y visión estratégica.\nLo hacemos a través de headhunting especializado, automatización de procesos con IA y apoyo en crecimiento y expansión internacional.",
       permanentStaff: {
         title: "Headhunting",
-        description: "Búsqueda y selección del mejor talento, sin bullshit y a tiempo",
+        description: "Búsqueda y selección del mejor talento, sin bullshit y a tiempo.",
       },
       freelanceTalent: {
         title: "Automatización de procesos con IA",
