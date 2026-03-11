@@ -107,6 +107,7 @@ export default function CareersPage() {
         </div>
       </section>
 
+      <div className="bg-white w-full">
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="mb-8 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-800 flex items-center justify-center gap-2">
@@ -139,7 +140,7 @@ export default function CareersPage() {
 
             return (
               <motion.div whileHover={{ y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 200 }}>
-                <Card className="flex flex-col justify-between h-full">
+                <Card className="flex flex-col justify-between h-full bg-white text-gray-900 border-gray-200">
                   <CardHeader>
                     <div className="flex items-center gap-4">
                       {!career["Ocultar empresa"] && (
@@ -194,6 +195,7 @@ export default function CareersPage() {
             );
           })}
         </div>
+      </div>
       </div>
     </div>
   );
