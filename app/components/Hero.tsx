@@ -93,7 +93,7 @@ export default function Hero() {
       <div className={`absolute inset-0 transition-opacity duration-700 ${threadsMounted ? "opacity-100" : "opacity-0"}`}>
         <Threads amplitude={0.2} className="w-full h-full object-cover -mt-4 md:mt-0" />
       </div>
-      <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center pt-32 md:pt-48">
+      <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center pt-32 md:pt-[15vh]">
         <div className="space-y-4 text-center md:text-left">
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"

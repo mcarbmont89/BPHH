@@ -154,7 +154,7 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
   return (
     <>
       <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="sm:max-w-md bg-white">
+        <DialogContent className="sm:max-w-md bg-white text-gray-900">
           <DialogHeader>
             <DialogDescription>Completa el formulario para postular a la vacante de {career.position}.</DialogDescription>
           </DialogHeader>

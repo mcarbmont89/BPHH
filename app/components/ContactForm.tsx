@@ -92,7 +92,8 @@ export default function ContactForm() {
                       onClick={handleCall}
                       size="lg"
                       variant="outline"
-                      className="w-full !bg-white border-2 border-primary text-primary hover:bg-primary/10 py-4 sm:py-6 text-base sm:text-lg font-semibold relative overflow-hidden group"
+                      className="w-full border-2 border-primary text-primary hover:bg-primary/10 py-4 sm:py-6 text-base sm:text-lg font-semibold relative overflow-hidden group"
+                      style={{ backgroundColor: "white" }}
                     >
                       <span className="relative z-10 flex items-center justify-center">
                         {t("contact.callNow")}
