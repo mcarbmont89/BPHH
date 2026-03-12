@@ -83,7 +83,7 @@ export default function Hero() {
   const currentJob = jobPositions[currentJobIndex]
 
   return (
-    <section className="relative w-full min-h-screen flex items-start justify-center overflow-hidden text-white bg-[#1A1A2E]">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden text-white bg-[#1A1A2E]">
       {" "}
       {/* Added a fallback background color matching the screenshot */}
       {/* <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover -z-10">
@@ -93,7 +93,7 @@ export default function Hero() {
       <div className={`absolute inset-0 transition-opacity duration-700 ${threadsMounted ? "opacity-100" : "opacity-0"}`}>
         <Threads amplitude={0.2} className="w-full h-full object-cover -mt-4 md:mt-0" />
       </div>
-      <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center pt-32 md:pt-[15vh]">
+      <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center pt-20">
         <div className="space-y-4 text-center md:text-left">
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
