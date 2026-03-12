@@ -90,7 +90,7 @@ export default function PermanentTalent() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-20 overflow-x-hidden">
         {/* Hero Section */}
         <section className="relative py-12 md:py-20 bg-white">
           <div className="container mx-auto px-4">
