@@ -14,6 +14,7 @@ import CoreServicesSection from "./components/CoreServicesSection"
 import RecruitmentTimeline from "./components/RecruitmentTimeline"
 import AboutUs from "./components/AboutUs"
 import TalentDemoBanner from "./components/banerTalent"
+import TrustpilotReviews from "./components/TrustpilotReviews"
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
 {/*         <TalentMatchingHero />
  */}        <PartnershipsSection />
         <AboutUs/>
+        <TrustpilotReviews />
         <ContactForm />
       </main>                                                                                                        
       <Footer />
