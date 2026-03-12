@@ -15,7 +15,7 @@ interface ApplicationData {
 }
 
 export async function submitApplication(data: ApplicationData) {
-  const apiEndpoint =
+  const apiEndpoint = process.env.POWER_AUTOMATE_URL ||
     "https://e963b58743eceb64a5f2d1c08952b9.49.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/6b307d153e924322929f7061ddb571c3/triggers/manual/paths/invoke/?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=FeT1fzFs64boh_bqTZY6hiIQNTUG-MFdnblNjLoPqik"
 
   const payload = {
@@ -30,33 +30,24 @@ export async function submitApplication(data: ApplicationData) {
     },
   }
 
-  try {
-    const response = await fetch(apiEndpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
+  const response = await fetch(apiEndpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  })
 
-    if (!response.ok) {
-      const errorText = await response.text()
-      throw new Error(`API error: ${response.status} - ${errorText}`)
-    }
-
-    // Check if there's content before trying to parse as JSON
-    const contentType = response.headers.get("content-type")
-
-    // If the response is empty or not JSON, just return a success message
-    if (!contentType || !contentType.includes("application/json")) {
-      return { success: true, message: "Application submitted successfully" }
-    }
-
-    // Only try to parse JSON if we have JSON content
-    const text = await response.text()
-    return text ? JSON.parse(text) : { success: true }
-  } catch (error) {
-    console.error("Error submitting application:", error)
-    throw error
+  if (!response.ok) {
+    const errorText = await response.text().catch(() => "")
+    throw new Error(`API error: ${response.status} - ${errorText}`)
   }
+
+  const contentType = response.headers.get("content-type")
+  if (!contentType || !contentType.includes("application/json")) {
+    return { success: true, message: "Application submitted successfully" }
+  }
+
+  const text = await response.text()
+  return text ? JSON.parse(text) : { success: true }
 }
