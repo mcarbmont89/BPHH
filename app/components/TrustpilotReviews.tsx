@@ -64,7 +64,7 @@ export default function TrustpilotReviews() {
   const { language } = useLanguage()
   const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }))
 
-  const heading = language === "en" ? "What our candidates say" : "Lo que dicen nuestros candidatos"
+  const heading = language === "en" ? "Our Reviews" : "Nuestras Reseñas"
   const subheading = language === "en" ? "Verified reviews on Trustpilot" : "Reseñas verificadas en Trustpilot"
 
   return (
