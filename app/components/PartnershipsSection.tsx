@@ -102,7 +102,8 @@ export default function PartnershipsSection() {
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover object-left"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: "20% center", transform: "scale(1.15)" }}
                   src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/Grabaci%C3%B3n%20de%20pantalla%20desde%2012-03-26%2015%3A08%3A07.webm"
                 />
               </div>
