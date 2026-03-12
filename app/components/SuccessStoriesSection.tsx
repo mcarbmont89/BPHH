@@ -95,7 +95,7 @@ export function SuccessStoriesSection({ prefix = "services.partnerships", id, cl
         )}
 
         <div className="max-w-6xl mx-auto relative" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} ref={containerRef}>
-          <div className="relative h-[500px] md:h-[550px] flex items-center justify-center perspective-1000">
+          <div className="relative h-[500px] md:h-[550px] flex items-center justify-center perspective-1000 overflow-hidden">
             {prevSlide && (
               <motion.div initial={{ opacity: 0, x: -100 }} animate={{ opacity: 0.4, x: -80, scale: 0.85 }} exit={{ opacity: 0, x: -150 }} transition={{ duration: 0.5 }} className="absolute left-0 hidden lg:block w-80 cursor-pointer" style={{ zIndex: 5, filter: "blur(1px)" }} onClick={prev}>
                 <CardPreview slide={prevSlide} kindLabel={prevSlide.kind === "candidate" ? candidatesLabel : clientsLabel} />

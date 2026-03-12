@@ -434,7 +434,7 @@ export const translations = {
       testimonialAuthor: "CEO - Satisfied Client",
     },
     careers: {
-      title: "Explore Opportunities at Botic",
+      title: "Explore Opportunities",
       subtitle: "Find your next role in a company that's shaping the future of AI-powered talent acquisition.",
       filterByIndustry: "Filter by Industry",
       allIndustries: "All Industries",

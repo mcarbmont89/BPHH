@@ -94,7 +94,7 @@ export default function Hero() {
         <Threads amplitude={0.2} className="w-full h-full object-cover -mt-4 md:mt-0" />
       </div>
       <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center mt-20 md:mt-0">
-        <div className="space-y-4 md:space-y-24 md:-mt-16 text-center md:text-left">
+        <div className="space-y-4 md:space-y-24 md:-mt-40 text-center md:text-left">
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
             style={{ textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)" }}
