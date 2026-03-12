@@ -113,7 +113,7 @@ export default function PermanentTalent() {
                   </div>
 
                   <Button onClick={handleMailClick} className="bg-boticPurple hover:bg-boticPurple/90 text-white px-8 py-3 text-lg w-full sm:w-auto">
-                    {t("contact.form.submit")}
+                    {t("permanentTalent.bookMeeting")}
                   </Button>
                 </motion.div>
               </div>
