@@ -159,7 +159,7 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
             <DialogDescription>Completa el formulario para postular a la vacante de {career.position}.</DialogDescription>
           </DialogHeader>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 [&_input]:bg-white [&_input]:text-gray-900 [&_input]:border-gray-300 [&_input]:placeholder:text-gray-400">
               <div className="grid grid-cols-2 gap-4">
                 <FormField
                   control={form.control}
