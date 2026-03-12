@@ -71,25 +71,31 @@ export default function TrustpilotReviews() {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-800 mb-1">{heading}</h2>
+          <p className="text-gray-500 text-sm mb-4">{subheading}</p>
+
+          {/* Trustpilot badge */}
           <a
             href="https://es.trustpilot.com/review/boticpartners.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 mb-3"
+            className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-5 py-3 shadow-sm hover:shadow-md transition-shadow"
           >
-            {/* Trustpilot logo */}
-            <svg viewBox="0 0 126 34" className="h-6" aria-label="Trustpilot">
-              <path fill="#00b67a" d="M18.985 0l-3.89 11.97H1.012l10.237 7.44-3.888 11.97 10.235-7.44 10.236 7.44-3.888-11.97L34.17 11.97H20.088z" />
-              <path fill="#005128" d="M26.07 21.82l-.878-2.702-6.207 4.512z" />
-              <text x="40" y="26" fontFamily="Arial, sans-serif" fontSize="20" fontWeight="bold" fill="#191919">Trustpilot</text>
-            </svg>
+            {/* Trustpilot star icon */}
+            <div className="bg-[#00b67a] rounded-md p-1.5">
+              <svg viewBox="0 0 24 24" className="w-6 h-6" fill="white">
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+              </svg>
+            </div>
+            {/* Trustpilot wordmark */}
+            <div className="flex flex-col items-start">
+              <span className="text-lg font-bold text-gray-900 leading-none tracking-tight">Trustpilot</span>
+              <div className="flex items-center gap-1.5 mt-1">
+                <StarRating rating={5} />
+                <span className="text-sm text-gray-600 font-medium">4.1 / 5</span>
+              </div>
+            </div>
           </a>
-          <h2 className="text-3xl font-bold text-gray-800 mb-1">{heading}</h2>
-          <p className="text-gray-500 text-sm">{subheading}</p>
-          <div className="flex items-center gap-2 mt-2">
-            <StarRating rating={5} />
-            <span className="text-sm text-gray-600 font-medium">4.1 / 5</span>
-          </div>
         </div>
 
         <Carousel
