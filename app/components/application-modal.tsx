@@ -168,7 +168,7 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
                     <FormItem>
                       <FormLabel>Nombre</FormLabel>
                       <FormControl>
-                        <Input placeholder="Juan" {...field} />
+                        <Input placeholder="Juan" {...field} className="bg-white border-gray-300 text-gray-900 focus-visible:ring-blue-500" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -181,7 +181,7 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
                     <FormItem>
                       <FormLabel>Apellido</FormLabel>
                       <FormControl>
-                        <Input placeholder="Perez" {...field} />
+                        <Input placeholder="Perez" {...field} className="bg-white border-gray-300 text-gray-900 focus-visible:ring-blue-500" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -195,7 +195,7 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input type="email" placeholder="juan.perez@example.com" {...field} />
+                      <Input type="email" placeholder="juan.perez@example.com" {...field} className="bg-white border-gray-300 text-gray-900 focus-visible:ring-blue-500" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -208,7 +208,7 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
                   <FormItem>
                     <FormLabel>Telefono</FormLabel>
                     <FormControl>
-                      <Input placeholder="+34 673 456 789" {...field} />
+                      <Input placeholder="+34 673 456 789" {...field} className="bg-white border-gray-300 text-gray-900 focus-visible:ring-blue-500" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -255,6 +255,7 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
                         accept=".pdf,.doc,.docx"
                         onChange={(e) => onChange(e.target.files)}
                         {...rest}
+                        className="bg-white border-gray-300 text-gray-900 focus-visible:ring-blue-500 file:bg-gray-100 file:text-gray-900 file:border-0 file:mr-4 hover:file:bg-gray-200"
                       />
                     </FormControl>
                     <FormMessage />
