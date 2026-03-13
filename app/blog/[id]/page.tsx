@@ -150,7 +150,7 @@ export default function BlogPost() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <div className="relative min-h-[400px] h-[55dvh] md:h-[50vh] lg:h-[60vh] w-full">
+      <div className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] w-full">
         {(() => {
           const rawHero = post?.image?.sizes?.xlarge?.url || post?.image?.sizes?.large?.url || post?.image?.sizes?.og?.url || post?.image?.url || (typeof (post as any)?.image === "string" ? (post as any).image : null);
 
@@ -160,15 +160,15 @@ export default function BlogPost() {
           return <Image src={hero} alt={alt} fill className="object-cover" priority />;
         })()}
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
-          <div className="container mx-auto px-4 pb-6 md:pb-12">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+          <div className="container mx-auto px-4 pb-12">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="max-w-4xl">
-              <Link href="/blog" className="inline-flex items-center text-white mb-3 hover:text-primary transition-colors">
+              <Link href="/blog" className="inline-flex items-center text-white mb-4 hover:text-primary transition-colors">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 {t("blog.backToBlog")}
               </Link>
 
-              <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 leading-snug">{post.title}</h1>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">{post.title}</h1>
 
               <div className="flex items-center text-white/80 text-sm gap-4">
                 <div className="flex items-center">
