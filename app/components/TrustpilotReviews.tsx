@@ -115,10 +115,8 @@ export default function TrustpilotReviews() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-5 py-3 shadow-sm hover:shadow-md transition-shadow"
           >
-            <div className="bg-[#00b67a] rounded-md p-1.5">
-              <svg viewBox="0 0 24 24" className="w-6 h-6" fill="white">
-                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
-              </svg>
+            <div className="bg-[#00b67a] rounded-md w-9 h-9 flex items-center justify-center">
+              <span className="text-white text-lg">★</span>
             </div>
             <div className="flex flex-col items-start">
               <span className="text-lg font-bold text-gray-900 leading-none tracking-tight">Trustpilot</span>
