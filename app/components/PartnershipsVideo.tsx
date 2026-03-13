@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 export default function PartnershipsVideo() {
   return (
-    <section className="pb-10 bg-gradient-to-b from-gray-50 to-white w-full">
+    <section className="py-10 bg-gradient-to-b from-gray-50 to-white w-full">
       <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full overflow-hidden shadow-md"
+          className="mx-6 md:mx-12 overflow-hidden rounded-2xl shadow-lg"
         >
           {/* Mobile: Static image */}
           <img
