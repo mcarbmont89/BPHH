@@ -168,7 +168,7 @@ export default function PartnershipsVideo() {
               transition={{ duration: 4 + k * 1.5, repeat: Infinity, delay: k * 0.8 }}
             />
           ))}
-          <text x={CENTER.x} y={CENTER.y + 5} fontSize="12" fill="white" textAnchor="middle" fontWeight="bold">
+          <text x={CENTER.x} y={CENTER.y + 5} fontSize="12" fill="#fde68a" textAnchor="middle" fontWeight="bold" style={{ filter: "drop-shadow(0 0 3px rgba(0,0,0,0.4))" }}>
             Botic Partners
           </text>
         </svg>
