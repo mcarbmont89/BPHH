@@ -16,7 +16,7 @@ export default function PartnershipsVideo() {
           {/* Mobile: Static image */}
           <img
             alt="Partnership network diagram"
-            className="w-full h-full object-cover md:hidden"
+            className="w-full h-full object-cover block md:hidden"
             src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/partnerships-mobile-2ddb6e4f.jpg"
           />
 
