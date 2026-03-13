@@ -10,14 +10,14 @@ export default function PartnershipsVideo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mx-28 md:mx-48 overflow-hidden rounded-2xl shadow-lg"
+          className="mx-40 md:mx-72 overflow-hidden rounded-2xl shadow-lg"
         >
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full aspect-video object-cover"
+            className="w-full aspect-video object-contain bg-gray-50"
             src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/Grabaci%C3%B3n%20de%20pantalla%20desde%2012-03-26%2015%3A08%3A07.webm"
           />
         </motion.div>
