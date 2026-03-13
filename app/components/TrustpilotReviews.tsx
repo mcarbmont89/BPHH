@@ -111,13 +111,17 @@ export default function TrustpilotReviews() {
             href="https://es.trustpilot.com/review/boticpartners.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-5 py-3 shadow-sm hover:shadow-md transition-shadow"
+            className="inline-flex items-center bg-white border border-gray-200 rounded-xl px-5 py-3 shadow-sm hover:shadow-md transition-shadow"
           >
-            <div className="bg-[#00b67a] rounded-md w-9 h-9 flex items-center justify-center">
-              <span className="text-white text-lg">★</span>
-            </div>
             <div className="flex flex-col items-start">
-              <span className="text-lg font-bold text-gray-900 leading-none tracking-tight">Trustpilot</span>
+              <div className="flex items-center gap-1.5 mb-0.5">
+                <img
+                  src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/TRST.L.svg"
+                  alt="Trustpilot logo"
+                  className="w-6 h-6"
+                />
+                <span className="text-lg font-bold text-gray-900 leading-none tracking-tight">Trustpilot</span>
+              </div>
               <div className="flex items-center gap-1.5 mt-1">
                 <StarRating rating={5} />
                 <span className="text-sm text-gray-600 font-medium">4.1 / 5</span>
