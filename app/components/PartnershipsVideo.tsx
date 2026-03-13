@@ -17,7 +17,7 @@ export default function PartnershipsVideo() {
             loop
             muted
             playsInline
-            className="w-full"
+            className="w-full aspect-video object-cover"
             src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/Grabaci%C3%B3n%20de%20pantalla%20desde%2012-03-26%2015%3A08%3A07.webm"
           />
         </motion.div>
