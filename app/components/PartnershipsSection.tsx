@@ -59,7 +59,7 @@ export default function PartnershipsSection() {
           {/* Subtitle removed */}
         </div>
 
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} className="max-w-6xl mx-auto border border-gray-200 rounded-2xl p-8 md:p-12 bg-white shadow-sm">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} className="max-w-7xl mx-auto border border-gray-200 rounded-2xl p-8 md:p-12 bg-white shadow-sm">
           <div className="space-y-6">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-800">{t("services.partnerships.cta")}</h3>
 
