@@ -206,7 +206,7 @@ export default function BlogPost() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main content */}
             <div className="lg:col-span-2">
-              <article className="prose prose-lg max-w-none">
+              <article className="prose prose-lg md:prose-xl max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-primary hover:prose-a:text-blue-700 prose-img:rounded-xl prose-img:shadow-md">
                 <RichTextComponent content={post.content} />
               </article>
 
