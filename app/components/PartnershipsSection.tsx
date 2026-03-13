@@ -63,7 +63,7 @@ export default function PartnershipsSection() {
           <div className="space-y-6">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-800">{t("services.partnerships.cta")}</h3>
 
-            <p className="text-gray-600 max-w-xl leading-relaxed">{t("services.partnerships.longDescription")}</p>
+            <p className="text-gray-600 leading-relaxed">{t("services.partnerships.longDescription")}</p>
 
             <div className="flex flex-wrap gap-3 pt-2">
               <div className="flex items-center px-3 py-2 bg-boticPurple/10 rounded-lg">
