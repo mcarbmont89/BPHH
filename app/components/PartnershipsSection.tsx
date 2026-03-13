@@ -94,31 +94,6 @@ export default function PartnershipsSection() {
             </div>
           </div>
         </motion.div>
-
-        {/* Media: image on mobile, video on desktop */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mx-4 md:mx-16 mt-10 overflow-hidden rounded-2xl shadow-lg"
-        >
-          {/* Mobile */}
-          <img
-            src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/boticpartnership.png"
-            alt="Botic Partnerships"
-            className="w-full block md:hidden"
-          />
-          {/* Desktop */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full hidden md:block"
-            src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/Grabaci%C3%B3n%20de%20pantalla%20desde%2012-03-26%2015%3A08%3A07.webm"
-          />
-        </motion.div>
       </div>
     </section>
   );
