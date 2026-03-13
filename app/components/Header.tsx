@@ -43,7 +43,7 @@ export function Header() {
   };
 
   const darkHeroPages = ["/", "/careers", "/blog"];
-  const hasDarkHero = darkHeroPages.includes(path);
+  const hasDarkHero = darkHeroPages.includes(path) || path.startsWith("/blog/");
 
   const navItems = [
     { href: "/", label: t("nav.home"), isLink: true },
