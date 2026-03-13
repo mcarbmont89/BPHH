@@ -263,7 +263,7 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
                 )}
               />
               <DialogFooter>
-                <Button type="button" variant="outline" onClick={() => onOpenChange(false)} className="!bg-white !text-gray-700 !border-gray-300 hover:!bg-gray-50">
+                <Button type="button" variant="outline" onClick={() => onOpenChange(false)} className="bg-white text-gray-900 border-gray-300 hover:bg-gray-100">
                   Cancelar
                 </Button>
                 <Button type="submit" disabled={isSubmitting}>
