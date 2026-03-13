@@ -150,34 +150,34 @@ export default function BlogPost() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <div className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] w-full">
+      <div className="relative min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] w-full flex flex-col justify-end pt-32 pb-8 md:pb-12 overflow-hidden">
         {(() => {
           const rawHero = post?.image?.sizes?.xlarge?.url || post?.image?.sizes?.large?.url || post?.image?.sizes?.og?.url || post?.image?.url || (typeof (post as any)?.image === "string" ? (post as any).image : null);
 
           const hero = resolveMediaUrl(rawHero) || "/placeholder.svg";
           const alt = post?.image?.alt || post?.title || "Post cover";
 
-          return <Image src={hero} alt={alt} fill className="object-cover" priority />;
+          return <Image src={hero} alt={alt} fill className="object-cover -z-20" priority />;
         })()}
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-          <div className="container mx-auto px-4 pb-12">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="max-w-4xl pt-24 md:pt-0">
-              <Link href="/blog" className="inline-flex items-center text-white mb-4 hover:text-primary transition-colors">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                {t("blog.backToBlog")}
-              </Link>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/40 md:to-transparent -z-10" />
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">{post.title}</h1>
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="max-w-4xl">
+            <Link href="/blog" className="inline-flex items-center text-white mb-4 hover:text-primary transition-colors">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              {t("blog.backToBlog")}
+            </Link>
 
-              <div className="flex items-center text-white/80 text-sm gap-4">
-                <div className="flex items-center">
-                  <Calendar className="h-4 w-4 mr-1" />
-                  <span>{new Date(post.createdAt).toLocaleDateString(language === "es" ? "es-ES" : "en-US")}</span>
-                </div>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">{post.title}</h1>
+
+            <div className="flex items-center text-white/80 text-sm gap-4">
+              <div className="flex items-center">
+                <Calendar className="h-4 w-4 mr-1" />
+                <span>{new Date(post.createdAt).toLocaleDateString(language === "es" ? "es-ES" : "en-US")}</span>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
