@@ -46,7 +46,7 @@ const reviews = [
   {
     name: "Laura Núñez Molero",
     company: "CECOP Group",
-    avatar: "/avatars/LAURA.png",
+    avatar: "/avatars/LAURA .png",
     rating: 5,
     date: "13 de enero, 2026",
     title: "Todo muy bien 👍",
