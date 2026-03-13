@@ -114,7 +114,7 @@ export function Header() {
             <React.Fragment key={item.href}>{renderNavItem(item)}</React.Fragment>
           ))}
         </nav>
-        <div className="flex items-center space-x-4">
+        <div className={`flex items-center space-x-4 ${path.startsWith("/blog/") ? "w-full justify-end md:w-auto md:justify-start" : ""}`}>
           <button className={`relative hidden md:inline-flex items-center justify-center flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary bg-primary text-white`} onClick={() => setLanguage(language === "en" ? "es" : "en")}>
             <span className="absolute inset-0 flex items-center justify-center w-full text-xs font-semibold">{language === "en" ? "ES" : "EN"}</span>
           </button>
