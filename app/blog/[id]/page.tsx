@@ -150,7 +150,7 @@ export default function BlogPost() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <div className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] w-full">
+      <div className="relative h-auto min-h-[50vh] md:h-[50vh] lg:h-[60vh] w-full overflow-hidden">
         {(() => {
           const rawHero = post?.image?.sizes?.xlarge?.url || post?.image?.sizes?.large?.url || post?.image?.sizes?.og?.url || post?.image?.url || (typeof (post as any)?.image === "string" ? (post as any).image : null);
 
@@ -161,7 +161,7 @@ export default function BlogPost() {
         })()}
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-          <div className="container mx-auto px-4 pb-12">
+          <div className="container mx-auto px-4 pt-24 pb-8 md:pb-12">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="max-w-4xl">
               <Link href="/blog" className="inline-flex items-center text-white mb-4 hover:text-primary transition-colors">
                 <ArrowLeft className="mr-2 h-4 w-4" />
@@ -228,7 +228,7 @@ export default function BlogPost() {
                 <span className="text-gray-700 font-medium mr-3">{language === "es" ? "Compartir:" : "Share:"}</span>
 
                 <div className="relative">
-                  <Button variant="outline" size="sm" className="flex items-center" onClick={() => setIsShareMenuOpen(!isShareMenuOpen)}>
+                  <Button variant="outline" size="sm" className="flex items-center bg-white text-gray-800 border-gray-300 hover:bg-gray-50" onClick={() => setIsShareMenuOpen(!isShareMenuOpen)}>
                     <Share2 className="h-4 w-4 mr-2" />
                     {language === "es" ? "Compartir" : "Share"}
                   </Button>
