@@ -10,7 +10,7 @@ export default function PartnershipsVideo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mx-16 md:mx-28 overflow-hidden rounded-2xl shadow-lg"
+          className="mx-28 md:mx-48 overflow-hidden rounded-2xl shadow-lg"
         >
           <video
             autoPlay
