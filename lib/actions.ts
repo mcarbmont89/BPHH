@@ -3,6 +3,8 @@
 interface CVData {
   nombreArchivo: string
   contenidoBase64: string
+  tipoMime?: string
+  tamanoBytes?: number
 }
 
 interface ApplicationData {
@@ -16,17 +18,26 @@ interface ApplicationData {
 
 export async function submitApplication(data: ApplicationData) {
   const apiEndpoint = process.env.POWER_AUTOMATE_URL ||
-    "https://e963b58743eceb64a5f2d1c08952b9.49.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/6b307d153e924322929f7061ddb571c3/triggers/manual/paths/invoke/?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=FeT1fzFs64boh_bqTZY6hiIQNTUG-MFdnblNjLoPqik"
+    "https://default17147d47caf2493fb27550db21e737.f1.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/dbe91bb3513740ea89e7ef48e8168abd/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mlGCSvgAiClONiXqTXShB_W56pgp6X33dDpVV8Qyiq0"
+
+  const cvPayload: Record<string, unknown> = {
+    nombre_archivo: data.cv.nombreArchivo,
+    contenido_base64: data.cv.contenidoBase64,
+  }
+  if (data.cv.tipoMime) cvPayload.tipo_mime = data.cv.tipoMime
+  if (data.cv.tamanoBytes) cvPayload["tamaño_bytes"] = data.cv.tamanoBytes
 
   const payload = {
-    nombre: data.nombre,
-    apellido: data.apellido,
-    correo: data.correo,
-    telefono: data.telefono,
-    nombreVacante: data.nombreVacante,
-    cv: {
-      nombreArchivo: data.cv.nombreArchivo,
-      contenidoBase64: data.cv.contenidoBase64,
+    candidato: {
+      nombre: data.nombre,
+      apellido: data.apellido,
+      correo: data.correo,
+      telefono: data.telefono,
+      cv: cvPayload,
+    },
+    origen: {
+      timestamp: new Date().toISOString(),
+      pagina_web: data.nombreVacante,
     },
   }
 
