@@ -9,6 +9,7 @@ import Industries from "./components/Industries"
 import TalentMatchingHero from "./components/TalentMatchingHero"
 import HeadhuntingSection from "./components/HeadhuntingSection"
 import PartnershipsSection from "./components/PartnershipsSection"
+import PartnershipsVideo from "./components/PartnershipsVideo"
 import ContactForm from "./components/ContactForm"
 import CoreServicesSection from "./components/CoreServicesSection"
 import RecruitmentTimeline from "./components/RecruitmentTimeline"
@@ -36,6 +37,7 @@ export default function Home() {
         </section>
 {/*         <TalentMatchingHero />
  */}        <PartnershipsSection />
+        <PartnershipsVideo />
         <AboutUs/>
         <TrustpilotReviews />
         <ContactForm />

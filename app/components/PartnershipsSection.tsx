@@ -60,53 +60,37 @@ export default function PartnershipsSection() {
         </div>
 
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} className="max-w-6xl mx-auto border border-gray-200 rounded-2xl p-8 md:p-12 bg-white shadow-sm">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1 space-y-6">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-800">{t("services.partnerships.cta")}</h3>
+          <div className="space-y-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-800">{t("services.partnerships.cta")}</h3>
 
-              <p className="text-gray-600 max-w-xl leading-relaxed">{t("services.partnerships.longDescription")}</p>
+            <p className="text-gray-600 max-w-xl leading-relaxed">{t("services.partnerships.longDescription")}</p>
 
-              <div className="flex flex-wrap gap-3 pt-2">
-                <div className="flex items-center px-3 py-2 bg-boticPurple/10 rounded-lg">
-                  <Network className="h-4 w-4 text-boticPurple mr-2" />
-                  <span className="text-sm text-boticPurple">Validated Direct Network</span>
-                </div>
-
-                <div className="flex items-center px-3 py-2 bg-boticPurple/10 rounded-lg">
-                  <Building2 className="h-4 w-4 text-boticPurple mr-2" />
-                  <span className="text-sm text-boticPurple">Strategic Collaborations</span>
-                </div>
-
-                <div className="flex items-center px-3 py-2 bg-boticPurple/10 rounded-lg">
-                  <DollarSign className="h-4 w-4 text-boticPurple mr-2" />
-                  <span className="text-sm text-boticPurple">Growth Opportunities</span>
-                </div>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <div className="flex items-center px-3 py-2 bg-boticPurple/10 rounded-lg">
+                <Network className="h-4 w-4 text-boticPurple mr-2" />
+                <span className="text-sm text-boticPurple">Validated Direct Network</span>
               </div>
 
-              <div className="pt-4">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <a href="https://acquisition.boticpartners.com/" target="_blank" rel="noopener noreferrer" className="inline-block">
-                    <Button className="bg-boticPurple hover:bg-boticPurple/90 text-white px-8 py-6 rounded-md flex items-center">
-                      {t("services.ctaText")}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </a>
-                </motion.div>
+              <div className="flex items-center px-3 py-2 bg-boticPurple/10 rounded-lg">
+                <Building2 className="h-4 w-4 text-boticPurple mr-2" />
+                <span className="text-sm text-boticPurple">Strategic Collaborations</span>
+              </div>
+
+              <div className="flex items-center px-3 py-2 bg-boticPurple/10 rounded-lg">
+                <DollarSign className="h-4 w-4 text-boticPurple mr-2" />
+                <span className="text-sm text-boticPurple">Growth Opportunities</span>
               </div>
             </div>
 
-            <div className="flex-1 w-full">
-              <div className="relative w-full h-[420px] sm:h-[500px] md:h-[450px] rounded-2xl overflow-hidden shadow-md">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                  style={{ objectPosition: "20% center", transform: "scale(0.5)" }}
-                  src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/Grabaci%C3%B3n%20de%20pantalla%20desde%2012-03-26%2015%3A08%3A07.webm"
-                />
-              </div>
+            <div className="pt-4">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <a href="https://acquisition.boticpartners.com/" target="_blank" rel="noopener noreferrer" className="inline-block">
+                  <Button className="bg-boticPurple hover:bg-boticPurple/90 text-white px-8 py-6 rounded-md flex items-center">
+                    {t("services.ctaText")}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
+              </motion.div>
             </div>
           </div>
         </motion.div>
