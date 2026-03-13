@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function PartnershipsVideo() {
   return (
-    <section className="py-10 bg-gradient-to-b from-gray-50 to-white w-full hidden md:block">
+    <section className="pb-10 bg-gradient-to-b from-gray-50 to-white w-full hidden md:block">
       <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
