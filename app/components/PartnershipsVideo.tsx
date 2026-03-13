@@ -74,13 +74,13 @@ export default function PartnershipsVideo() {
     index === -1 ? CENTER : networkNodes[index];
 
   return (
-    <section className="bg-white w-full hidden md:block" ref={sectionRef}>
+    <section className="bg-gray-50 w-full hidden md:block" ref={sectionRef}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="relative overflow-hidden h-[400px] bg-white border-t border-gray-100"
+        className="relative overflow-hidden h-[400px] bg-gray-50"
       >
         <svg className="w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
           <defs>
