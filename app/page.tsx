@@ -8,7 +8,6 @@ import Footer from "./components/Footer"
 import Industries from "./components/Industries"
 import TalentMatchingHero from "./components/TalentMatchingHero"
 import HeadhuntingSection from "./components/HeadhuntingSection"
-import PartnershipsSection from "./components/PartnershipsSection"
 import PartnershipsVideo from "./components/PartnershipsVideo"
 import ContactForm from "./components/ContactForm"
 import CoreServicesSection from "./components/CoreServicesSection"
@@ -36,8 +35,7 @@ export default function Home() {
           <Industries />
         </section>
 {/*         <TalentMatchingHero />
- */}        <PartnershipsSection />
-        <PartnershipsVideo />
+ */}        <PartnershipsVideo />
         <AboutUs/>
         <TrustpilotReviews />
         <ContactForm />
