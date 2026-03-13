@@ -19,7 +19,7 @@ export default function PartnershipsVideo() {
             muted
             playsInline
             className="w-full h-full object-cover"
-            style={{ objectPosition: "20% center", transform: "scale(0.5)" }}
+            style={{ objectPosition: "center center" }}
             src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/Grabaci%C3%B3n%20de%20pantalla%20desde%2012-03-26%2015%3A08%3A07.webm"
           />
         </motion.div>
