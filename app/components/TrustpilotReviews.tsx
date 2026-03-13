@@ -10,7 +10,7 @@ const reviews = [
   {
     name: "Rebeca Ayuso Álvarez",
     company: "KPMG España",
-    avatar: "/avatars/rebeca.jpg",
+    avatar: "",
     rating: 5,
     date: "10 de marzo, 2026",
     title: "Todo ha ido muy bien",
@@ -19,7 +19,7 @@ const reviews = [
   {
     name: "Núria Martí",
     company: "Nanusens",
-    avatar: "/avatars/nuria.jpg",
+    avatar: "",
     rating: 5,
     date: "4 de febrero, 2026",
     title: "Experiencia de selección excelente",
@@ -28,7 +28,7 @@ const reviews = [
   {
     name: "Abhairaj Singh",
     company: "IBM",
-    avatar: "/avatars/abhairaj.jpg",
+    avatar: "",
     rating: 4,
     date: "2 de febrero, 2026",
     title: "Borja was great",
@@ -37,7 +37,7 @@ const reviews = [
   {
     name: "Nicolas Sopeña Lopez De Lerma",
     company: "Astara",
-    avatar: "/avatars/nicolas.jpg",
+    avatar: "",
     rating: 5,
     date: "14 de enero, 2026",
     title: "Excellent service and management",
@@ -46,7 +46,7 @@ const reviews = [
   {
     name: "Laura Núñez Molero",
     company: "CECOP Group",
-    avatar: "/avatars/laura.jpg",
+    avatar: "",
     rating: 5,
     date: "13 de enero, 2026",
     title: "Todo muy bien 👍",
@@ -115,10 +115,8 @@ export default function TrustpilotReviews() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-5 py-3 shadow-sm hover:shadow-md transition-shadow"
           >
-            <div className="bg-[#00b67a] rounded-md p-1.5">
-              <svg viewBox="0 0 24 24" className="w-6 h-6" fill="white">
-                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
-              </svg>
+            <div className="bg-[#00b67a] rounded-md w-9 h-9 flex items-center justify-center">
+              <span className="text-white text-lg">★</span>
             </div>
             <div className="flex flex-col items-start">
               <span className="text-lg font-bold text-gray-900 leading-none tracking-tight">Trustpilot</span>
