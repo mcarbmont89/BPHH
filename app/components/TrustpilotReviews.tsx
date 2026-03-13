@@ -10,7 +10,7 @@ const reviews = [
   {
     name: "Rebeca Ayuso Álvarez",
     company: "KPMG España",
-    avatar: "/images/avatars/ayuso.jpeg",
+    avatar: "/avatars/ayuso.jpeg",
     rating: 5,
     date: "10 de marzo, 2026",
     title: "Todo ha ido muy bien",
@@ -19,7 +19,7 @@ const reviews = [
   {
     name: "Núria Martí",
     company: "Nanusens",
-    avatar: "/images/avatars/nuria.jpeg",
+    avatar: "/avatars/nuria.jpeg",
     rating: 5,
     date: "4 de febrero, 2026",
     title: "Experiencia de selección excelente",
@@ -28,7 +28,7 @@ const reviews = [
   {
     name: "Abhairaj Singh",
     company: "IBM",
-    avatar: "/images/avatars/ABJ.jpeg",
+    avatar: "/avatars/ABJ.jpeg",
     rating: 4,
     date: "2 de febrero, 2026",
     title: "Borja was great",
@@ -37,7 +37,7 @@ const reviews = [
   {
     name: "Nicolas Sopeña Lopez De Lerma",
     company: "Astara",
-    avatar: "/images/avatars/nicolas.png",
+    avatar: "/avatars/nicolas.png",
     rating: 5,
     date: "14 de enero, 2026",
     title: "Excellent service and management",
@@ -46,7 +46,7 @@ const reviews = [
   {
     name: "Laura Núñez Molero",
     company: "CECOP Group",
-    avatar: "/images/avatars/LAURA .png",
+    avatar: "/avatars/LAURA .png",
     rating: 5,
     date: "13 de enero, 2026",
     title: "Todo muy bien 👍",
