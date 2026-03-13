@@ -69,6 +69,40 @@ function StarRating({ rating }: { rating: number }) {
   )
 }
 
+function YellowStarRating({ rating }: { rating: number }) {
+  const full = Math.floor(rating)
+  const partial = rating - full // 0.1 for 4.1
+
+  return (
+    <div className="flex gap-0.5">
+      {Array.from({ length: 5 }).map((_, i) => {
+        const fill = i < full ? 1 : i === full ? partial : 0
+        const id = `clip-${i}`
+        return (
+          <svg key={i} width="20" height="20" viewBox="0 0 20 20">
+            <defs>
+              <clipPath id={id}>
+                <rect x="0" y="0" width={20 * fill} height="20" />
+              </clipPath>
+            </defs>
+            {/* Background star (gray) */}
+            <path
+              d="M10 1l2.39 5.26 5.61.49-4.2 3.76 1.3 5.49L10 13.27l-5.1 2.73 1.3-5.49L2 6.75l5.61-.49z"
+              fill="#d1d5db"
+            />
+            {/* Foreground star (yellow), clipped */}
+            <path
+              d="M10 1l2.39 5.26 5.61.49-4.2 3.76 1.3 5.49L10 13.27l-5.1 2.73 1.3-5.49L2 6.75l5.61-.49z"
+              fill="#FACC15"
+              clipPath={`url(#${id})`}
+            />
+          </svg>
+        )
+      })}
+    </div>
+  )
+}
+
 function Avatar({ name, avatar }: { name: string; avatar: string }) {
   const initials = name
     .split(" ")
@@ -123,7 +157,7 @@ export default function TrustpilotReviews() {
                 <span className="text-lg font-bold text-gray-900 leading-none tracking-tight">Trustpilot</span>
               </div>
               <div className="flex items-center gap-1.5 mt-1">
-                <StarRating rating={5} />
+                <YellowStarRating rating={4.1} />
                 <span className="text-sm text-gray-600 font-medium">4.1 / 5</span>
               </div>
             </div>

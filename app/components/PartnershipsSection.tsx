@@ -65,6 +65,16 @@ export default function PartnershipsSection() {
 
             <p className="text-gray-600 leading-relaxed">{t("services.partnerships.longDescription")}</p>
 
+            {/* Mobile only video */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full rounded-xl block md:hidden"
+              src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/Grabaci%C3%B3n%20de%20pantalla%20desde%2012-03-26%2015%3A08%3A07.webm"
+            />
+
             <div className="flex flex-wrap gap-3 pt-2">
               <div className="flex items-center px-3 py-2 bg-boticPurple/10 rounded-lg">
                 <Network className="h-4 w-4 text-boticPurple mr-2" />
@@ -92,6 +102,7 @@ export default function PartnershipsSection() {
                 </a>
               </motion.div>
             </div>
+
           </div>
         </motion.div>
       </div>
