@@ -1,8 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Activity } from "lucide-react";
+
+const marketGrowthData = [
+  { year: "2020", growth: 20 },
+  { year: "2021", growth: 35 },
+  { year: "2022", growth: 50 },
+  { year: "2023", growth: 65 },
+  { year: "2024", growth: 82 },
+  { year: "2025", growth: 95 },
+];
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const networkNodes = [
@@ -32,6 +41,8 @@ const CENTER = { x: 600, y: 200 };
 export default function PartnershipsVideo() {
   const { t } = useLanguage();
   const [activeConnection, setActiveConnection] = useState<number | null>(null);
+  const [chartProgress, setChartProgress] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,11 +52,29 @@ export default function PartnershipsVideo() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          let progress = 0;
+          const iv = setInterval(() => {
+            progress += 2;
+            setChartProgress(Math.min(progress, 100));
+            if (progress >= 100) clearInterval(iv);
+          }, 20);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => { if (sectionRef.current) observer.unobserve(sectionRef.current); };
+  }, []);
+
   const getNodeCoords = (index: number) =>
     index === -1 ? CENTER : networkNodes[index];
 
   return (
-    <section className="bg-white w-full hidden md:block">
+    <section className="bg-white w-full hidden md:block" ref={sectionRef}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -143,6 +172,53 @@ export default function PartnershipsVideo() {
             Botic Partners
           </text>
         </svg>
+
+        {/* Growth chart */}
+        <div className="absolute bottom-0 right-0 w-[300px] h-[140px] bg-white/90 backdrop-blur-sm border-t border-l border-purple-100 rounded-tl-xl p-4 shadow-md">
+          <h4 className="text-xs font-semibold text-gray-600 mb-1">{t("services.partnerships.marketGrowth")}</h4>
+          <svg className="w-full h-[95px]" viewBox="0 0 280 95">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <line key={i} x1="30" y1={18 * i + 5} x2="270" y2={18 * i + 5} stroke="#f3e8ff" strokeWidth="1" />
+            ))}
+            {marketGrowthData.map((d, i) => (
+              <text key={i} x={30 + i * 48} y="92" fontSize="8" fill="#9ca3af" textAnchor="middle">{d.year}</text>
+            ))}
+            <text x="22" y="85" fontSize="8" fill="#9ca3af" textAnchor="end">0%</text>
+            <text x="22" y="47" fontSize="8" fill="#9ca3af" textAnchor="end">50%</text>
+            <text x="22" y="9"  fontSize="8" fill="#9ca3af" textAnchor="end">100%</text>
+            {/* Area fill */}
+            <motion.polygon
+              points={[
+                `30,85`,
+                ...marketGrowthData.map((d, i) => {
+                  const prog = Math.max(Math.min(chartProgress / (100 / marketGrowthData.length) - i, 1), 0);
+                  return `${30 + i * 48},${85 - d.growth * 0.76 * prog}`;
+                }),
+                `${30 + (marketGrowthData.length - 1) * 48},85`,
+              ].join(" ")}
+              fill="#a855f7"
+              opacity={0.08}
+            />
+            <motion.polyline
+              points={marketGrowthData.map((d, i) => {
+                const prog = Math.max(Math.min(chartProgress / (100 / marketGrowthData.length) - i, 1), 0);
+                return `${30 + i * 48},${85 - d.growth * 0.76 * prog}`;
+              }).join(" ")}
+              fill="none"
+              stroke="#7c3aed"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            {marketGrowthData.map((d, i) => {
+              const prog = Math.max(Math.min(chartProgress / (100 / marketGrowthData.length) - i, 1), 0);
+              if (prog <= 0) return null;
+              return (
+                <circle key={i} cx={30 + i * 48} cy={85 - d.growth * 0.76} r={3} fill="#7c3aed" opacity={prog} />
+              );
+            })}
+          </svg>
+        </div>
 
         {/* Live indicator */}
         <div className="absolute top-4 right-4 bg-white border border-purple-200 rounded-md px-3 py-2 text-xs text-gray-500 flex items-center gap-1 shadow-sm">
