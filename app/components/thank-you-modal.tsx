@@ -20,7 +20,7 @@ interface ThankYouModalProps {
 export function ThankYouModal({ open, onOpenChange, candidateName }: ThankYouModalProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md bg-white text-gray-900 border-gray-200">
         <DialogHeader className="flex flex-col items-center text-center">
           <CheckCircle2 className="h-16 w-16 text-green-500 mb-2 mt-4" />
           <DialogTitle className="text-2xl">Gracias {candidateName}!</DialogTitle>
