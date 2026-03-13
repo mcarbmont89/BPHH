@@ -277,7 +277,7 @@ export default function BlogPost() {
       </main>
 
       {/* Newsletter section (igual que en /blog) */}
-      <section className="bg-primary/10 py-16">
+      <section className="bg-white py-16 border-t border-gray-200">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">{t("blog.newsletter.title")}</h2>
