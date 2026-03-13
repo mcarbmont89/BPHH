@@ -97,7 +97,7 @@ export default function PartnershipsVideo() {
     index === -1 ? CENTER : networkNodes[index];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden relative" ref={sectionRef}>
+    <section className="py-20 bg-gradient-to-b from-slate-50 via-purple-50/40 to-white overflow-hidden relative" ref={sectionRef}>
       {/* Particle background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <AnimatePresence>
@@ -154,9 +154,19 @@ export default function PartnershipsVideo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-2xl overflow-hidden shadow-xl h-[400px] mb-12 bg-gradient-to-br from-purple-50 to-indigo-100"
+          className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] mb-12 bg-gradient-to-br from-slate-900 via-purple-950 to-indigo-950"
         >
           <svg className="w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+              <filter id="nodeGlow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+            </defs>
             {/* Connection lines */}
             {connectionLines.map((line, index) => {
               const from = getNodeCoords(line.from);
@@ -167,16 +177,16 @@ export default function PartnershipsVideo() {
                   <line
                     x1={from.x} y1={from.y}
                     x2={to.x}   y2={to.y}
-                    stroke={isActive ? "#7c3aed" : "#c4b5fd"}
+                    stroke={isActive ? "#a78bfa" : "#6d28d9"}
                     strokeWidth={isActive ? 2.5 : 1}
                     strokeDasharray={isActive ? "none" : "6,4"}
-                    opacity={isActive ? 1 : 0.5}
+                    opacity={isActive ? 1 : 0.3}
                   />
-                  {/* Animated data packet along active line */}
                   {isActive && (
                     <motion.circle
                       r={5}
-                      fill="#7c3aed"
+                      fill="#e879f9"
+                      filter="url(#glow)"
                       initial={{ offsetDistance: "0%" } as never}
                       animate={{ offsetDistance: "100%" } as never}
                       style={{
@@ -194,17 +204,18 @@ export default function PartnershipsVideo() {
               const isCompany  = node.type === "company";
               const isInvestor = node.type === "investor";
               const baseR = isCompany ? 12 : isInvestor ? 10 : 8;
-              const color = isCompany ? "#8b5cf6" : isInvestor ? "#3b82f6" : "#10b981";
+              const color = isCompany ? "#c084fc" : isInvestor ? "#60a5fa" : "#34d399";
               return (
                 <g key={`node-${i}`}>
                   <motion.circle
                     cx={node.x} cy={node.y}
                     fill={color}
-                    opacity={0.85}
-                    animate={{ r: [baseR, baseR + 2, baseR] }}
+                    filter="url(#nodeGlow)"
+                    opacity={0.9}
+                    animate={{ r: [baseR, baseR + 2.5, baseR] }}
                     transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.4 }}
                   />
-                  <text x={node.x} y={node.y + baseR + 14} fontSize="11" fill="#6b7280" textAnchor="middle" fontWeight="500">
+                  <text x={node.x} y={node.y + baseR + 14} fontSize="11" fill="#d4b8ff" textAnchor="middle" fontWeight="500">
                     {node.type === "company" ? t("services.partnerships.company")
                       : node.type === "investor" ? t("services.partnerships.investor")
                       : t("services.partnerships.partner")}
@@ -217,39 +228,40 @@ export default function PartnershipsVideo() {
             <motion.circle
               cx={CENTER.x} cy={CENTER.y}
               fill="#7c3aed"
-              animate={{ r: [28, 33, 28], opacity: [0.9, 1, 0.9] }}
+              filter="url(#nodeGlow)"
+              animate={{ r: [30, 36, 30], opacity: [0.95, 1, 0.95] }}
               transition={{ duration: 4, repeat: Infinity }}
             />
             {/* Ripple rings */}
-            {[1, 2].map((k) => (
+            {[1, 2, 3].map((k) => (
               <motion.circle
                 key={`ripple-${k}`}
                 cx={CENTER.x} cy={CENTER.y}
                 fill="none"
-                stroke="#7c3aed"
-                strokeWidth={2 - k * 0.5}
-                animate={{ r: [28, 120 * k, 28], opacity: [0.7, 0, 0.7] }}
-                transition={{ duration: 5 + k, repeat: Infinity, delay: k * 1.2 }}
+                stroke="#a855f7"
+                strokeWidth={2.5 - k * 0.5}
+                animate={{ r: [30, 100 * k, 30], opacity: [0.6, 0, 0.6] }}
+                transition={{ duration: 4 + k * 1.5, repeat: Infinity, delay: k * 0.8 }}
               />
             ))}
-            <text x={CENTER.x} y={CENTER.y + 5} fontSize="11" fill="white" textAnchor="middle" fontWeight="bold">
+            <text x={CENTER.x} y={CENTER.y + 5} fontSize="12" fill="white" textAnchor="middle" fontWeight="bold">
               Botic Partners
             </text>
           </svg>
 
           {/* Growth chart */}
-          <div className="absolute bottom-0 right-0 w-[320px] h-[145px] bg-white/85 backdrop-blur-sm p-4 rounded-tl-xl shadow-md hidden md:block">
-            <h4 className="text-xs font-semibold text-gray-700 mb-1">{t("services.partnerships.marketGrowth")}</h4>
+          <div className="absolute bottom-0 right-0 w-[320px] h-[145px] bg-slate-900/80 backdrop-blur-sm p-4 rounded-tl-xl shadow-md hidden md:block border-t border-l border-purple-500/30">
+            <h4 className="text-xs font-semibold text-purple-300 mb-1">{t("services.partnerships.marketGrowth")}</h4>
             <svg className="w-full h-[100px]" viewBox="0 0 300 100">
               {Array.from({ length: 5 }).map((_, i) => (
-                <line key={i} x1="40" y1={20 * i + 10} x2="280" y2={20 * i + 10} stroke="#e5e7eb" strokeWidth="1" />
+                <line key={i} x1="40" y1={20 * i + 10} x2="280" y2={20 * i + 10} stroke="#4c1d95" strokeWidth="1" />
               ))}
               {marketGrowthData.map((d, i) => (
-                <text key={i} x={40 + i * 48} y="100" fontSize="8" fill="#9ca3af" textAnchor="middle">{d.year}</text>
+                <text key={i} x={40 + i * 48} y="100" fontSize="8" fill="#7c3aed" textAnchor="middle">{d.year}</text>
               ))}
-              <text x="30" y="90" fontSize="8" fill="#9ca3af" textAnchor="end">0%</text>
-              <text x="30" y="50" fontSize="8" fill="#9ca3af" textAnchor="end">50%</text>
-              <text x="30" y="13" fontSize="8" fill="#9ca3af" textAnchor="end">100%</text>
+              <text x="30" y="90" fontSize="8" fill="#7c3aed" textAnchor="end">0%</text>
+              <text x="30" y="50" fontSize="8" fill="#7c3aed" textAnchor="end">50%</text>
+              <text x="30" y="13" fontSize="8" fill="#7c3aed" textAnchor="end">100%</text>
               <motion.polyline
                 points={marketGrowthData
                   .map((d, i) => {
@@ -282,24 +294,24 @@ export default function PartnershipsVideo() {
           </div>
 
           {/* Live indicator */}
-          <div className="absolute top-4 right-4 bg-white/85 backdrop-blur-sm rounded-md px-3 py-2 text-xs text-gray-500 flex items-center gap-1 shadow z-10">
-            <Activity className="h-3 w-3 text-purple-500 animate-pulse" />
+          <div className="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-sm border border-purple-500/30 rounded-md px-3 py-2 text-xs text-purple-300 flex items-center gap-1 shadow z-10">
+            <Activity className="h-3 w-3 text-fuchsia-400 animate-pulse" />
             <span>{t("services.partnerships.livePartnershipData")}</span>
             <span className="relative flex h-2 w-2 ml-1">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-500 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fuchsia-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-fuchsia-400" />
             </span>
           </div>
         </motion.div>
 
         {/* What We Do / How We Do It */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-blue-50 rounded-xl p-6 shadow border border-blue-100">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl p-6 shadow border border-violet-200">
             <div className="flex items-center mb-4">
-              <div className="p-2 rounded-full bg-blue-100 mr-3">
-                <Target className="h-5 w-5 text-blue-600" />
+              <div className="p-2 rounded-full bg-violet-100 mr-3">
+                <Target className="h-5 w-5 text-violet-600" />
               </div>
-              <h3 className="text-xl font-bold text-blue-800">{t("services.partnerships.whatWeDo")}</h3>
+              <h3 className="text-xl font-bold text-violet-800">{t("services.partnerships.whatWeDo")}</h3>
             </div>
             <div className="space-y-3">
               {(whatWeDoItems ?? []).map((item, i) => {
@@ -307,31 +319,31 @@ export default function PartnershipsVideo() {
                 return (
                   <motion.div
                     key={i}
-                    className={`flex items-start p-3 rounded-lg transition-colors ${hoveredItem === i ? "bg-blue-100/70" : "hover:bg-blue-100/50"}`}
+                    className={`flex items-start p-3 rounded-lg transition-colors ${hoveredItem === i ? "bg-violet-100/80" : "hover:bg-violet-100/50"}`}
                     onMouseEnter={() => setHoveredItem(i)}
                     onMouseLeave={() => setHoveredItem(null)}
                     whileHover={{ x: 5 }}
                   >
                     <motion.div
-                      className="p-2 rounded-full bg-blue-200 mr-3 flex-shrink-0"
+                      className="p-2 rounded-full bg-violet-200 mr-3 flex-shrink-0"
                       animate={hoveredItem === i ? { scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] } : {}}
                       transition={{ duration: 0.6 }}
                     >
-                      <Icon className="h-4 w-4 text-blue-600" />
+                      <Icon className="h-4 w-4 text-violet-600" />
                     </motion.div>
-                    <h4 className="font-semibold text-blue-900 pt-1">{item.title}</h4>
+                    <h4 className="font-semibold text-violet-900 pt-1">{item.title}</h4>
                   </motion.div>
                 );
               })}
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }} className="bg-green-50 rounded-xl p-6 shadow border border-green-100">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }} className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 shadow border border-indigo-200">
             <div className="flex items-center mb-4">
-              <div className="p-2 rounded-full bg-green-100 mr-3">
-                <Lightbulb className="h-5 w-5 text-green-600" />
+              <div className="p-2 rounded-full bg-indigo-100 mr-3">
+                <Lightbulb className="h-5 w-5 text-indigo-600" />
               </div>
-              <h3 className="text-xl font-bold text-green-800">{t("services.partnerships.howWeDoIt")}</h3>
+              <h3 className="text-xl font-bold text-indigo-800">{t("services.partnerships.howWeDoIt")}</h3>
             </div>
             <div className="space-y-3">
               {(howWeDoItItems ?? []).map((item, i) => {
@@ -339,19 +351,19 @@ export default function PartnershipsVideo() {
                 return (
                   <motion.div
                     key={i}
-                    className={`flex items-start p-3 rounded-lg transition-colors ${hoveredMethod === i ? "bg-green-100/70" : "hover:bg-green-100/50"}`}
+                    className={`flex items-start p-3 rounded-lg transition-colors ${hoveredMethod === i ? "bg-indigo-100/80" : "hover:bg-indigo-100/50"}`}
                     onMouseEnter={() => setHoveredMethod(i)}
                     onMouseLeave={() => setHoveredMethod(null)}
                     whileHover={{ x: 5 }}
                   >
                     <motion.div
-                      className="p-2 rounded-full bg-green-200 mr-3 flex-shrink-0"
+                      className="p-2 rounded-full bg-indigo-200 mr-3 flex-shrink-0"
                       animate={hoveredMethod === i ? { scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] } : {}}
                       transition={{ duration: 0.6 }}
                     >
-                      <Icon className="h-4 w-4 text-green-600" />
+                      <Icon className="h-4 w-4 text-indigo-600" />
                     </motion.div>
-                    <h4 className="font-semibold text-green-900 pt-1">{item.title}</h4>
+                    <h4 className="font-semibold text-indigo-900 pt-1">{item.title}</h4>
                   </motion.div>
                 );
               })}
@@ -368,7 +380,7 @@ export default function PartnershipsVideo() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-white rounded-xl p-6 shadow border border-gray-100"
+              className="bg-white rounded-xl p-6 shadow border-t-2 border-t-violet-400 border border-gray-100"
             >
               <h4 className="text-lg font-bold text-gray-900 mb-2">{block.title}</h4>
               <p className="text-gray-600 text-sm leading-relaxed">{block.description}</p>
