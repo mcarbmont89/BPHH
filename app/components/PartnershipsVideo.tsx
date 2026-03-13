@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 export default function PartnershipsVideo() {
   return (
-    <section className="pb-10 bg-gradient-to-b from-gray-50 to-white w-full hidden md:block">
+    <section className="bg-gradient-to-b from-gray-50 to-white w-full hidden md:block">
       <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-1/2 mx-auto overflow-hidden rounded-2xl shadow-lg"
+          className="w-4/5 mx-auto overflow-hidden rounded-2xl shadow-lg"
         >
           <video
             autoPlay
