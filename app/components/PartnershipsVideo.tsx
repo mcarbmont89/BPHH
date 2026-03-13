@@ -10,12 +10,12 @@ export default function PartnershipsVideo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full overflow-hidden shadow-md aspect-video md:aspect-auto md:h-[450px]"
+          className="w-full overflow-hidden shadow-md"
         >
           {/* Mobile: Static image */}
           <img
             alt="Partnership network diagram"
-            className="w-full h-full object-cover block md:hidden"
+            className="w-full block md:hidden"
             src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/partnerships-mobile-2ddb6e4f.jpg"
           />
 
@@ -25,7 +25,7 @@ export default function PartnershipsVideo() {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover hidden md:block"
+            className="w-full hidden md:block"
             src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/Grabaci%C3%B3n%20de%20pantalla%20desde%2012-03-26%2015%3A08%3A07.webm"
           />
         </motion.div>
