@@ -154,7 +154,7 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
   return (
     <>
       <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md bg-white text-gray-900">
           <DialogHeader>
             <DialogDescription>Completa el formulario para postular a la vacante de {career.position}.</DialogDescription>
           </DialogHeader>
@@ -262,10 +262,10 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
                 )}
               />
               <DialogFooter>
-                <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
+                <Button type="button" variant="outline" onClick={() => onOpenChange(false)} className="!bg-white !text-gray-700 !border-gray-300 hover:!bg-gray-50">
                   Cancelar
                 </Button>
-                <Button type="submit" onClick={() => onSubmit(form.getValues())} disabled={isSubmitting}>
+                <Button type="submit" disabled={isSubmitting}>
                   {isSubmitting ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />

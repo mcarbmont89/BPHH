@@ -40,8 +40,7 @@ export default function RecruitmentTimeline() {
             const contentEl = isTextStep ? (
               <div className="flex flex-col justify-center h-full">
                
-                <h3 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <h3 className="text-3xl lg:text-4xl font-bold text-gray-800">{step.title}</h3>
               </div>
             ) : (
               <div
@@ -50,8 +49,7 @@ export default function RecruitmentTimeline() {
               >
                 <div className="absolute inset-0 bg-slate-900/70 rounded-lg" />
                 <div className="relative z-10">
-                  <h3 className="text-3xl lg:text-4xl font-bold mb-4">{step.title}</h3>
-                  <p className="text-gray-200">{step.description}</p>
+                  <h3 className="text-3xl lg:text-4xl font-bold">{step.title}</h3>
                 </div>
               </div>
             )

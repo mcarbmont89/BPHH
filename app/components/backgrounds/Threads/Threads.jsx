@@ -118,8 +118,10 @@ void main() {
 }
 `;
 
+const DEFAULT_COLOR = [1, 1, 1];
+
 const Threads = ({
-  color = [1, 1, 1],
+  color = DEFAULT_COLOR,
   amplitude = 1,
   distance = 0,
   enableMouseInteraction = false,

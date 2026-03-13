@@ -24,6 +24,7 @@ export default function Hero() {
   const [emailSubject, setEmailSubject] = useState("")
   const [currentJobIndex, setCurrentJobIndex] = useState(0)
   const [isVisible, setIsVisible] = useState(true)
+  const [threadsMounted, setThreadsMounted] = useState(false)
 
   // Sample job positions - you can replace these with your actual job data
   const jobPositions: JobPosition[] = [
@@ -74,6 +75,11 @@ export default function Hero() {
     return () => clearInterval(interval)
   }, [jobPositions.length])
 
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setThreadsMounted(true))
+    return () => cancelAnimationFrame(id)
+  }, [])
+
   const currentJob = jobPositions[currentJobIndex]
 
   return (
@@ -84,9 +90,12 @@ export default function Hero() {
         <source src="/hero-background.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video> */}
-      <Threads amplitude={0.2} className="absolute inset-0 w-full h-full object-cover -mt-4 md:mt-0" />
-      <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center mt-20 md:mt-0">
-        <div className="space-y-4 md:space-y-24 md:-mt-16 text-center md:text-left">
+      <div className={`absolute inset-0 transition-opacity duration-700 ${threadsMounted ? "opacity-100" : "opacity-0"}`}>
+        <Threads amplitude={0.2} className="w-full h-full object-cover -mt-4 md:mt-0" />
+      </div>
+      <div className="absolute inset-0 bg-black/75" />
+      <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center pt-20">
+        <div className="space-y-4 text-center md:text-left">
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
             style={{ textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)" }}
@@ -97,7 +106,7 @@ export default function Hero() {
             {t("home.hero.subtitle")}
           </p>
         </div>
-        <div className="flex justify-center md:justify-end mt-24 md:mt-0 mb-8 md:mb-0">
+        <div className="flex justify-center md:justify-end mb-8 md:mb-0">
           <Card className="w-full max-w-md bg-black/70 text-white shadow-lg border border-white/20">
             <CardContent className="p-6 space-y-4">
               <div className="flex items-center justify-between">

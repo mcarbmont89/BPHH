@@ -4,14 +4,18 @@ import { Header } from "@/app/components/Header"
 import Hero from "./components/Hero"
 import Services from "./components/Services"
 import Footer from "./components/Footer"
-import Chatbot from "./components/Chatbot"
+// import Chatbot from "./components/Chatbot"
 import Industries from "./components/Industries"
 import TalentMatchingHero from "./components/TalentMatchingHero"
 import HeadhuntingSection from "./components/HeadhuntingSection"
 import PartnershipsSection from "./components/PartnershipsSection"
+import PartnershipsVideo from "./components/PartnershipsVideo"
 import ContactForm from "./components/ContactForm"
 import CoreServicesSection from "./components/CoreServicesSection"
 import RecruitmentTimeline from "./components/RecruitmentTimeline"
+import AboutUs from "./components/AboutUs"
+import TalentDemoBanner from "./components/banerTalent"
+import TrustpilotReviews from "./components/TrustpilotReviews"
 
 export default function Home() {
   return (
@@ -19,11 +23,11 @@ export default function Home() {
       <Header />
       <main className="pt-[64px] bg-[#1A1A2E]">
         <Hero />
-        <CoreServicesSection />
         <section id="services">
-          <Services />
-          <HeadhuntingSection />
-          <PartnershipsSection />
+          <CoreServicesSection />
+          <TalentDemoBanner/>
+{/*           <HeadhuntingSection />        
+ */}          <Services />
         </section>
         <section id="process">
           <RecruitmentTimeline />
@@ -31,11 +35,15 @@ export default function Home() {
           <section id="industries">
           <Industries />
         </section>
-        <TalentMatchingHero />
+{/*         <TalentMatchingHero />
+ */}        <PartnershipsSection />
+        <PartnershipsVideo />
+        <AboutUs/>
+        <TrustpilotReviews />
         <ContactForm />
-      </main>
+      </main>                                                                                                        
       <Footer />
-      <Chatbot />
+      {/* <Chatbot /> */}
     </div>
   )
 }
