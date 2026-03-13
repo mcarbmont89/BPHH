@@ -92,6 +92,13 @@ export default function PartnershipsSection() {
                 </a>
               </motion.div>
             </div>
+
+            {/* Mobile only image */}
+            <img
+              src="https://jyliu6i7fajxf7tx.public.blob.vercel-storage.com/boticpartnership.png"
+              alt="Botic Partnerships"
+              className="w-full mt-6 rounded-xl block md:hidden"
+            />
           </div>
         </motion.div>
       </div>
