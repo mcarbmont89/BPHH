@@ -56,9 +56,12 @@ const howWeDoItIcons = [Network, Rocket, Handshake];
 
 export default function PartnershipsVideo() {
   const { t } = useLanguage();
-  const whatWeDoItems = t("services.partnerships.whatWeDoItems", { returnObjects: true }) as unknown as ListItem[];
-  const howWeDoItItems = t("services.partnerships.howWeDoItItems", { returnObjects: true }) as unknown as ListItem[];
-  const explanatoryBlocks = t("services.partnerships.explanatoryBlocks", { returnObjects: true }) as unknown as ExplanatoryBlock[];
+  const _whatWeDoRaw = t("services.partnerships.whatWeDoItems", { returnObjects: true });
+  const _howWeDoRaw = t("services.partnerships.howWeDoItItems", { returnObjects: true });
+  const _blocksRaw = t("services.partnerships.explanatoryBlocks", { returnObjects: true });
+  const whatWeDoItems: ListItem[] = Array.isArray(_whatWeDoRaw) ? (_whatWeDoRaw as ListItem[]) : [];
+  const howWeDoItItems: ListItem[] = Array.isArray(_howWeDoRaw) ? (_howWeDoRaw as ListItem[]) : [];
+  const explanatoryBlocks: ExplanatoryBlock[] = Array.isArray(_blocksRaw) ? (_blocksRaw as ExplanatoryBlock[]) : [];
 
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
   const [hoveredMethod, setHoveredMethod] = useState<number | null>(null);
