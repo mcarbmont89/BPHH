@@ -11,7 +11,7 @@ export default function PartnershipsVideo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-7xl mx-auto rounded-2xl overflow-hidden shadow-md aspect-video md:aspect-auto md:h-[450px]"
+          className="max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-md aspect-video md:aspect-auto md:h-[450px]"
         >
           {/* Mobile: Static image */}
           <img
