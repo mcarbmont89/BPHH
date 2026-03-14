@@ -96,8 +96,6 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
             cv: {
               nombreArchivo: file.name,
               contenidoBase64: base64Content,
-              tipoMime: file.type || undefined,
-              tamanoBytes: file.size || undefined,
             },
           })
 
