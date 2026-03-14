@@ -30,6 +30,7 @@ interface ApplicationModalProps {
 
 export function ApplicationModal({ open, onOpenChange, career, onSuccess }: ApplicationModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
   const { toast } = useToast()
   const [showThankYouModal, setShowThankYouModal] = useState(false)
   const [candidateName, setCandidateName] = useState("")
@@ -71,14 +72,14 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
       apellido: "",
       correo: "",
       telefono: "",
-      nombreVacante: career.ref + " - " + career.position,
+      nombreVacante: career.position || "",
     },
   })
 
   async function onSubmit(data: FormValues) {
-    console.log('submiting')
     try {
       setIsSubmitting(true)
+      setSubmitError(null)
 
       const file = data.cv[0]
       const reader = new FileReader()
@@ -119,11 +120,7 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
           })
         } catch (error) {
           console.error("Error in file upload handler:", error)
-          toast({
-            title: "Error",
-            description: "There was an error submitting your application. Please try again.",
-            variant: "destructive",
-          })
+          setSubmitError("Hubo un error al enviar tu solicitud. Por favor, inténtalo de nuevo.")
         } finally {
           setIsSubmitting(false)
         }
@@ -142,18 +139,14 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
       reader.readAsDataURL(file)
     } catch (error) {
       console.error("Error submitting application:", error)
-      toast({
-        title: "Error",
-        description: "There was an error submitting your application. Please try again.",
-        variant: "destructive",
-      })
+      setSubmitError("Hubo un error al enviar tu solicitud. Por favor, inténtalo de nuevo.")
       setIsSubmitting(false)
     }
   }
 
   return (
     <>
-      <Dialog open={open} onOpenChange={onOpenChange}>
+      <Dialog open={open} onOpenChange={(v) => { if (!v) setSubmitError(null); onOpenChange(v); }}>
         <DialogContent className="sm:max-w-md bg-white text-gray-900">
           <DialogHeader>
             <DialogDescription>Completa el formulario para postular a la vacante de {career.position}.</DialogDescription>
@@ -262,6 +255,9 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
                   </FormItem>
                 )}
               />
+              {submitError && (
+                <p className="text-sm text-red-600 text-center">{submitError}</p>
+              )}
               <DialogFooter>
                 <Button type="button" variant="outline" onClick={() => onOpenChange(false)} className="bg-white text-gray-900 border-gray-300 hover:bg-gray-100">
                   Cancelar
