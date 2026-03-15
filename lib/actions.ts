@@ -40,6 +40,7 @@ export async function submitApplication(data: ApplicationData) {
 
   if (!response.ok) {
     const errorText = await response.text().catch(() => "")
+    console.error(`[submitApplication] API error ${response.status}:`, errorText)
     throw new Error(`API error: ${response.status} - ${errorText}`)
   }
 
