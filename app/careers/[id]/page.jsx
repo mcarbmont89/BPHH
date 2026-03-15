@@ -221,7 +221,7 @@ export default function JobDetailsPage() {
               <div className="flex justify-center space-x-4">
                 {career.linkedIn && career.linkedIn !== "" && (
                   <Link href={career.linkedIn} target="_blank" rel="noopener noreferrer">
-                    <Button disabled={isLoading} variant="outline">
+                    <Button disabled={isLoading} variant="outline" className="bg-white text-gray-900 border-gray-300 hover:bg-gray-100">
                       Ver en LinkedIn
                     </Button>
                   </Link>
