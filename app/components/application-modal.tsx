@@ -72,9 +72,9 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
       apellido: "",
       correo: "",
       telefono: "",
-      nombreVacante: [career.position, career.location, career.salary]
+      nombreVacante: [career.id, career.position, career.location, career.salary]
         .filter(Boolean)
-        .join(" - ") || career.position || "",
+        .join(" - ") || "",
     },
   })
 
