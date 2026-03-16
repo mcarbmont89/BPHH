@@ -1,5 +1,5 @@
 import type React from "react"
-import { Code, Cpu, Building2, Truck, Briefcase, Filter } from "lucide-react"
+import { Code, Cpu, Building2, Truck, Briefcase, Filter, Landmark, Megaphone } from "lucide-react"
 
 export interface Job {
   id: string
@@ -111,9 +111,11 @@ export const jobs: Job[] = [
 
 export const industries = [
   { id: "all", nameKey: "careers.allIndustries", icon: Filter },
-  { id: "software", nameKey: "Software (AI and Development)", icon: Code },
+  { id: "software", nameKey: "Technology (AI & Development)", icon: Code },
   { id: "hardware", nameKey: "Hardware (Deep Tech)", icon: Cpu },
   { id: "construction", nameKey: "Construction & Real Estate", icon: Building2 },
   { id: "logistics", nameKey: "Logistics", icon: Truck },
   { id: "sales", nameKey: "Sales", icon: Briefcase },
+  { id: "finance_fintech", nameKey: "Finance & Fintech", icon: Landmark },
+  { id: "digital_marketing", nameKey: "Digital & Marketing", icon: Megaphone },
 ]
