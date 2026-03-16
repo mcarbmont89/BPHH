@@ -40,10 +40,10 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
     if (typeof window === "undefined") {
       // Server-side fallback schema
       return z.object({
-        nombre: z.string().min(1, "Campo requerido"),
-        apellido: z.string().min(1, "Campo requerido"),
-        correo: z.string().email("Email inválido"),
-        telefono: z.string().min(1, "Campo requerido"),
+        nombre: z.string().trim().min(1, "Campo requerido"),
+        apellido: z.string().trim().min(1, "Campo requerido"),
+        correo: z.string().trim().email("Email inválido"),
+        telefono: z.string().trim().min(1, "Campo requerido"),
         nombreVacante: z.string().min(1, "Campo requerido"),
         cv: z.any(),
       })
@@ -51,10 +51,10 @@ export function ApplicationModal({ open, onOpenChange, career, onSuccess }: Appl
 
     // Client-side schema with FileList
     return z.object({
-      nombre: z.string().min(1, "Campo requerido"),
-      apellido: z.string().min(1, "Campo requerido"),
-      correo: z.string().email("Email inválido"),
-      telefono: z.string().min(1, "Campo requerido"),
+      nombre: z.string().trim().min(1, "Campo requerido"),
+      apellido: z.string().trim().min(1, "Campo requerido"),
+      correo: z.string().trim().email("Email inválido"),
+      telefono: z.string().trim().min(1, "Campo requerido"),
       nombreVacante: z.string().min(1, "Campo requerido"),
       cv: z
         .instanceof(FileList)
