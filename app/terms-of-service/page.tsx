@@ -18,11 +18,9 @@ export default function TermsOfService() {
             <ul className="mt-3 space-y-1 list-none pl-0">
               <li><strong>Nombre:</strong> Borja Moreno-Luque Aguirre</li>
               <li><strong>NIF:</strong> 71678470M</li>
-              <li><strong>Número de IVA:</strong> ES71678470M</li>
               <li><strong>Actividad:</strong> Servicios de headhunting, selección de personal y consultoría de recursos humanos</li>
-              <li><strong>Dirección:</strong> Calle de Ponzano 34, 5º Izquierda, 28003 Madrid, España</li>
+              <li><strong>Domicilio:</strong> Madrid, España</li>
               <li><strong>Correo electrónico:</strong> <a href="mailto:borjamoreno@boticpartners.com" className="text-blue-600 hover:underline">borjamoreno@boticpartners.com</a></li>
-              <li><strong>Teléfono:</strong> +34 651 56 27 72</li>
               <li><strong>Sitio web:</strong> www.boticpartners.com</li>
             </ul>
           </section>
