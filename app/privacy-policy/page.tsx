@@ -10,22 +10,18 @@ export default function PrivacyPolicy() {
       <main className="bg-white text-gray-800 py-16">
         <div className="container mx-auto px-4 max-w-3xl">
           <h1 className="text-3xl font-bold mb-2 text-gray-900">Política de Privacidad</h1>
-          <p className="text-sm text-gray-500 mb-10">Última actualización: [DD/MM/AAAA]</p>
-
-          {/* ─────────────────────────────────────────
-              INSTRUCCIONES PARA EL PROPIETARIO
-              Rellena todos los campos marcados con [ ]
-              ───────────────────────────────────────── */}
+          <p className="text-sm text-gray-500 mb-10">Última actualización: 24/03/2026</p>
 
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-3">1. Responsable del tratamiento</h2>
             <p>En cumplimiento del Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), te informamos que el responsable del tratamiento de tus datos personales es:</p>
             <ul className="mt-3 space-y-1 list-none pl-0">
-              <li><strong>Nombre / Razón social:</strong> [NOMBRE COMPLETO DEL AUTÓNOMO]</li>
-              <li><strong>NIF:</strong> [TU NIF / DNI]</li>
-              <li><strong>Dirección:</strong> [CALLE, NÚMERO, PISO — CIUDAD, CP, PAÍS]</li>
-              <li><strong>Correo electrónico:</strong> [TU EMAIL DE CONTACTO]</li>
-              <li><strong>Teléfono:</strong> [TU TELÉFONO — opcional]</li>
+              <li><strong>Nombre:</strong> Borja Moreno-Luque Aguirre</li>
+              <li><strong>NIF:</strong> 71678470M</li>
+              <li><strong>Número de IVA:</strong> ES71678470M</li>
+              <li><strong>Dirección:</strong> Calle de Ponzano 34, 5º Izquierda, 28003 Madrid, España</li>
+              <li><strong>Correo electrónico:</strong> <a href="mailto:borjamoreno@boticpartners.com" className="text-blue-600 hover:underline">borjamoreno@boticpartners.com</a></li>
+              <li><strong>Teléfono:</strong> +34 651 56 27 72</li>
               <li><strong>Sitio web:</strong> www.boticpartners.com</li>
             </ul>
           </section>
@@ -39,7 +35,6 @@ export default function PrivacyPolicy() {
               <li>Número de teléfono</li>
               <li>Información profesional (CV, experiencia, sector)</li>
               <li>Datos de navegación (cookies, dirección IP)</li>
-              <li>[AÑADE CUALQUIER OTRO DATO QUE RECOPILES]</li>
             </ul>
           </section>
 
@@ -51,7 +46,6 @@ export default function PrivacyPolicy() {
               <li>Gestionar procesos de selección de personal y headhunting.</li>
               <li>Enviar comunicaciones comerciales sobre nuestros servicios, previo consentimiento.</li>
               <li>Cumplir con obligaciones legales aplicables.</li>
-              <li>[AÑADE OTRAS FINALIDADES SI LAS HAY]</li>
             </ul>
           </section>
 
@@ -69,7 +63,7 @@ export default function PrivacyPolicy() {
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-3">5. Conservación de los datos</h2>
             <p>
-              Los datos se conservarán durante el tiempo necesario para cumplir con la finalidad para la que fueron recabados y para atender las posibles responsabilidades legales derivadas de su tratamiento. En general, los datos de contacto se conservarán durante <strong>[X años — p. ej. 3 años]</strong> desde el último contacto, salvo que solicites su supresión antes.
+              Los datos se conservarán durante el tiempo necesario para cumplir con la finalidad para la que fueron recabados y para atender las posibles responsabilidades legales derivadas de su tratamiento. En general, los datos de contacto se conservarán durante <strong>3 años</strong> desde el último contacto, salvo que solicites su supresión antes.
             </p>
           </section>
 
@@ -79,9 +73,7 @@ export default function PrivacyPolicy() {
               No cedemos tus datos a terceros salvo obligación legal o cuando sea necesario para la prestación del servicio. Podemos compartir datos con los siguientes proveedores de servicios que actúan como encargados del tratamiento:
             </p>
             <ul className="mt-3 list-disc pl-6 space-y-1">
-              <li>[PROVEEDOR DE HOSTING — ej. Vercel, AWS, etc.]</li>
-              <li>[PROVEEDOR DE EMAIL MARKETING — si aplica]</li>
-              <li>[OTROS PROVEEDORES — si aplica]</li>
+              <li>Vercel Inc. (alojamiento web) — con sede en EE.UU., bajo decisión de adecuación y cláusulas contractuales tipo.</li>
             </ul>
             <p className="mt-3">Todos ellos cuentan con las garantías adecuadas conforme al RGPD.</p>
           </section>
@@ -89,10 +81,7 @@ export default function PrivacyPolicy() {
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-3">7. Transferencias internacionales</h2>
             <p>
-              [SI NO HAY TRANSFERENCIAS: &quot;No realizamos transferencias internacionales de datos fuera del Espacio Económico Europeo.&quot;]
-            </p>
-            <p>
-              [SI LAS HAY: Indica los países destino y las garantías aplicadas — ej. cláusulas contractuales tipo, decisión de adecuación, etc.]
+              Con carácter general, no realizamos transferencias internacionales de datos fuera del Espacio Económico Europeo. En el caso del proveedor de alojamiento (Vercel Inc.), los datos pueden procesarse en servidores ubicados en Estados Unidos, con las garantías establecidas mediante cláusulas contractuales tipo aprobadas por la Comisión Europea.
             </p>
           </section>
 
@@ -109,20 +98,22 @@ export default function PrivacyPolicy() {
               <li><strong>Retirada del consentimiento</strong> en cualquier momento, sin que ello afecte a la licitud del tratamiento previo.</li>
             </ul>
             <p className="mt-3">
-              Para ejercer tus derechos, escríbenos a: <a href="mailto:[TU EMAIL DE CONTACTO]" className="text-blue-600 hover:underline">[TU EMAIL DE CONTACTO]</a>, indicando &quot;Protección de Datos&quot; en el asunto, junto con una copia de tu documento de identidad.
+              Para ejercer tus derechos, escríbenos a:{" "}
+              <a href="mailto:borjamoreno@boticpartners.com" className="text-blue-600 hover:underline">borjamoreno@boticpartners.com</a>,
+              indicando &quot;Protección de Datos&quot; en el asunto, junto con una copia de tu documento de identidad.
             </p>
             <p className="mt-3">
-              Si consideras que el tratamiento de tus datos no es correcto, tienes derecho a presentar una reclamación ante la <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Agencia Española de Protección de Datos (AEPD)</a>.
+              Si consideras que el tratamiento de tus datos no es correcto, tienes derecho a presentar una reclamación ante la{" "}
+              <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Agencia Española de Protección de Datos (AEPD)
+              </a>.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-3">9. Cookies</h2>
             <p>
-              Este sitio web utiliza cookies propias y de terceros. Puedes consultar nuestra política de cookies [ENLACE A POLÍTICA DE COOKIES — si la tienes] o gestionar tus preferencias en cualquier momento.
-            </p>
-            <p className="mt-3">
-              [SI NO TIENES COOKIES DE TERCEROS: &quot;Este sitio solo utiliza cookies técnicas estrictamente necesarias para el funcionamiento del sitio y no requieren consentimiento.&quot;]
+              Este sitio web utiliza únicamente cookies técnicas estrictamente necesarias para el funcionamiento del sitio, que no requieren consentimiento previo del usuario. No utilizamos cookies de seguimiento ni de publicidad de terceros.
             </p>
           </section>
 
