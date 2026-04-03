@@ -69,11 +69,15 @@ export default function CareersPage() {
 
   if (!mounted) return null;
 
+  const isClosed = (career: any) => {
+    const status = String(career?.status ?? "").toLowerCase();
+    const title = String(career?.position ?? "").toLowerCase();
+    return status === "closed" || title.includes("(closed)") || title.includes("(cerrada)");
+  };
+
   const filteredCareers = careers?.filter((career) => {
-    const status = String(career?.status ?? "active").toLowerCase();
-    const isActive = status !== "closed";
     const matchesIndustry = selectedIndustry === "all" || career.sector === selectedIndustry;
-    return isActive && matchesIndustry;
+    return !isClosed(career) && matchesIndustry;
   });
 
   const lang = (typeof window !== "undefined" && window.localStorage?.getItem("lang")) || ctxLang || "es";
@@ -110,7 +114,7 @@ export default function CareersPage() {
       <div className="bg-white w-full">
       <div className="container mx-auto px-4 py-8 md:py-12">
         {(() => {
-          const closedCareersCount = careers?.filter(c => String(c?.status ?? "active").toLowerCase() === "closed").length || 0;
+          const closedCareersCount = careers?.filter(isClosed).length || 0;
           return closedCareersCount > 0 ? (
             <div className="mb-6 max-w-4xl mx-auto">
               <Link href="/careers/closed">

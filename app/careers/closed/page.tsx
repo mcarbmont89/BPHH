@@ -69,11 +69,15 @@ export default function ClosedCareersPage() {
 
   if (!mounted) return null;
 
+  const isClosed = (career: any) => {
+    const status = String(career?.status ?? "").toLowerCase();
+    const title = String(career?.position ?? "").toLowerCase();
+    return status === "closed" || title.includes("(closed)") || title.includes("(cerrada)");
+  };
+
   const filteredCareers = careers?.filter((career) => {
-    const status = String(career?.status ?? "active").toLowerCase();
-    const isInactive = status === "closed";
     const matchesIndustry = selectedIndustry === "all" || career.sector === selectedIndustry;
-    return isInactive && matchesIndustry; // We only want inactive instances here
+    return isClosed(career) && matchesIndustry;
   });
 
   const lang = (typeof window !== "undefined" && window.localStorage?.getItem("lang")) || ctxLang || "es";
