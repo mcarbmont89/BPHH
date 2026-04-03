@@ -71,7 +71,7 @@ export default function ClosedCareersPage() {
 
   const filteredCareers = careers?.filter((career) => {
     const status = String(career?.status ?? "active").toLowerCase();
-    const isInactive = status === "inactive";
+    const isInactive = status === "closed";
     const matchesIndustry = selectedIndustry === "all" || career.sector === selectedIndustry;
     return isInactive && matchesIndustry; // We only want inactive instances here
   });
