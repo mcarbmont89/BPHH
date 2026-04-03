@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Filter } from "lucide-react";
+import { Filter, CheckCircle, ArrowRight } from "lucide-react";
 import { industries } from "./data";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -109,6 +109,33 @@ export default function CareersPage() {
 
       <div className="bg-white w-full">
       <div className="container mx-auto px-4 py-8 md:py-12">
+        {(() => {
+          const closedCareersCount = careers?.filter(c => String(c?.status ?? "active").toLowerCase() === "inactive").length || 0;
+          return closedCareersCount > 0 ? (
+            <div className="mb-6 max-w-4xl mx-auto">
+              <Link href="/careers/closed">
+                <motion.div
+                  whileHover={{ scale: 1.01 }}
+                  className="bg-primary/5 border border-primary/20 rounded-xl p-4 flex items-center justify-between text-primary cursor-pointer shadow-sm hover:bg-primary/10 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="bg-primary/10 p-2 rounded-full">
+                      <CheckCircle className="w-5 h-5" />
+                    </div>
+                    <span className="font-medium text-sm md:text-base">
+                      {t("careers.closedVacanciesBanner").replace("{count}", closedCareersCount.toString())}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm font-semibold">
+                    <span className="hidden sm:inline">{t("careers.viewClosedPositions")}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </motion.div>
+              </Link>
+            </div>
+          ) : null;
+        })()}
+
         <div className="mb-8 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-800 flex items-center justify-center gap-2">
             <Filter className="w-6 h-6 md:w-8 md:h-8" />

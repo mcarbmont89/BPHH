@@ -133,7 +133,7 @@ export const translations = {
         ],
       },
       contact: {
-        title: "Let's Build the Future, Together.",
+        title: "Strategic Partners for Your Business Success.",
         description: "Ready to find the talent that will define your company's future? Get in touch with us today.",
         form: {
           name: "Name",
@@ -436,6 +436,11 @@ export const translations = {
     careers: {
       title: "Explore Opportunities",
       subtitle: "Find your next role in a company that's shaping the future of AI-powered talent acquisition.",
+      closedVacanciesBanner: "✨ We have successfully closed {count} vacancies. See them here.",
+      viewClosedPositions: "View Closed Positions",
+      closedPositionBadge: "Closed Position",
+      closedVacancyHeroTitle: "Successfully Closed Positions",
+      closedVacancyHeroSubtitle: "Discover the talent we have successfully connected with our partner companies.",
       filterByIndustry: "Filter by Industry",
       allIndustries: "All Industries",
       sector: "Sector",
@@ -610,7 +615,7 @@ export const translations = {
     },
     contact: {
       callNow: "Call Now",
-      title: "Let's Build the Future, Together.",
+      title: "Strategic Partners for Your Business Success.",
       subtitle: "Whether you're looking for talent or your next big opportunity, we're here to help.",
       name: "Name",
       email: "Email",
@@ -1129,7 +1134,7 @@ export const translations = {
         ],
       },
       contact: {
-        title: "Construyamos el futuro, juntos.",
+        title: "Socios estratégicos para el éxito de tu negocio.",
         description: "¿Listo para encontrar el talento que definirá el futuro de tu empresa? Ponte en contacto con nosotros hoy.",
         form: {
           name: "Nombre",
@@ -1419,8 +1424,13 @@ export const translations = {
       testimonialAuthor: "CEO - Cliente Satisfecho",
     },
     careers: {
-      title: "Explora Oportunidades",
-      subtitle: "Encuentra tu próximo rol acompañado por la tecnología de Botic Partners, líder en adquisición de talento impulsada por IA.",
+      title: "Explorar Oportunidades",
+      subtitle: "Encuentra tu próximo rol en una empresa que está dando forma al futuro de la adquisición de talento impulsada por IA.",
+      closedVacanciesBanner: "✨ Hemos cerrado con éxito {count} posiciones. Ver detalle.",
+      viewClosedPositions: "Ver Detalles",
+      closedPositionBadge: "Posición Cerrada",
+      closedVacancyHeroTitle: "Posiciones Cerradas con Éxito",
+      closedVacancyHeroSubtitle: "Descubre el talento que ya hemos conectado con nuestras empresas colaboradoras.",
       filterByIndustry: "Filtrar por industria",
       allIndustries: "Todas las Industrias",
       sector: "Sector",
@@ -1596,7 +1606,7 @@ export const translations = {
     },
     contact: {
       callNow: "Llamar ahora",
-      title: "Construyamos el futuro, juntos.",
+      title: "Socios estratégicos para el éxito de tu negocio.",
       subtitle: "Ya sea que estés buscando talento o tu próxima gran oportunidad, estamos aquí para ayudarte.",
       name: "Nombre",
       email: "Correo Electrónico",

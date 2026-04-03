@@ -136,6 +136,11 @@ export default function JobDetailsPage() {
               )}
               <div>
                 <h1 className="text-3xl font-bold text-primary">{career.position}</h1>
+                {String(career.status || "active").toLowerCase() === "inactive" && (
+                  <span className="inline-block bg-gray-200 text-gray-700 text-sm font-semibold mt-2 px-3 py-1 rounded-full">
+                    {t("careers.closedPositionBadge")}
+                  </span>
+                )}
 
                 {career.company_url && !career["Ocultar empresa"] ? (
                   <Link href={completeUrl(career.company_url)} target="_blank" rel="noopener noreferrer">
@@ -217,19 +222,26 @@ export default function JobDetailsPage() {
             <div className="border-t border-gray-200 my-6"></div>
 
             <div className="mt-8 text-center">
-              {/* <h3 className="text-lg font-semibold mb-4">{t("careers.readyToApply")}</h3> */}
-              <div className="flex justify-center space-x-4">
-                {career.linkedIn && career.linkedIn !== "" && (
-                  <Link href={career.linkedIn} target="_blank" rel="noopener noreferrer">
-                    <Button disabled={isLoading} variant="outline" className="bg-white text-gray-900 border-gray-300 hover:bg-gray-100">
-                      Ver en LinkedIn
-                    </Button>
-                  </Link>
-                )}
-                <Button onClick={() => setIsModalOpen(true)} disabled={isLoading}>
-                  {t("careers.readyToApply")}
-                </Button>
-              </div>
+              {String(career.status || "active").toLowerCase() === "inactive" ? (
+                <div className="flex justify-center">
+                  <Button disabled variant="secondary">
+                    {t("careers.closedPositionBadge")}
+                  </Button>
+                </div>
+              ) : (
+                <div className="flex justify-center space-x-4">
+                  {career.linkedIn && career.linkedIn !== "" && (
+                    <Link href={career.linkedIn} target="_blank" rel="noopener noreferrer">
+                      <Button disabled={isLoading} variant="outline">
+                        Ver en LinkedIn
+                      </Button>
+                    </Link>
+                  )}
+                  <Button onClick={() => setIsModalOpen(true)} disabled={isLoading}>
+                    {t("careers.readyToApply")}
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         </div>

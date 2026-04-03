@@ -49,7 +49,7 @@ export default function ContactForm() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="w-full max-w-md mx-auto lg:max-w-full"
               >
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground text-center lg:text-left">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary text-center lg:text-left">
                   {t("contact.title")}
                 </h2>
                 <p className="text-gray-600 mb-6 text-sm sm:text-base text-center lg:text-left">
