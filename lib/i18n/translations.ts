@@ -231,14 +231,15 @@ export const translations = {
         description: "Finding long-term talent that aligns with your company culture and goals.",
       },
       freelanceTalent: {
-        title: "Agentic Workflows",
-        description: "We teach you how to use automated workflows to make your day-to-day life more efficient.",
+        title: "AI Process Automation",
+        description: "We train companies in AI and teach how to create agents that work 24/7 and how to automate processes with n8n and Claude from scratch with personalised guidance.",
       },
       maServices: {
         title: "M&A Services",
         description: "Strategic support for mergers and acquisitions to drive business growth.",
       },
       whatWeDo: "What We Do",
+      sectionTitle: "Our Services",
       subtitle: "Comprehensive solutions for your talent and growth needs.",
       learnMore: "Learn More",
       readyToFind: "Ready to find your perfect match?",
@@ -1239,13 +1240,14 @@ export const translations = {
       },
       freelanceTalent: {
         title: "Automatización de procesos con IA",
-        description: "Te enseñamos a usar workflows automatizados para hacer más eficiente tu día día.",
+        description: "Formamos a empresas en IA y enseñamos cómo crear agentes que trabajen 24/7 y cómo automatizar procesos con n8n y Claude desde cero y con asesoramiento personalizado.",
       },
       maServices: {
         title: "Scouting estratégico de empresas",
         description: "Apoyo estratégico en operaciones de crecimiento y expansión empresarial.",
       },
       whatWeDo: "Qué Hacemos",
+      sectionTitle: "Nuestros servicios",
       subtitle: "Soluciones integrales para tus necesidades de talento y crecimiento.",
       learnMore: "Saber Más",
       readyToFind: "¿Listo para encontrar tu pareja perfecta?",
