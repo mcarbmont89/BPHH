@@ -133,7 +133,7 @@ export const translations = {
         ],
       },
       contact: {
-        title: "Strategic Partners for Your Business Success.",
+        title: "Contact us.",
         description: "Ready to find the talent that will define your company's future? Get in touch with us today.",
         form: {
           name: "Name",
@@ -1608,7 +1608,7 @@ export const translations = {
     },
     contact: {
       callNow: "Llamar ahora",
-      title: "Socios estratégicos para el éxito de tu negocio.",
+      title: "Contacta con nosotros.",
       subtitle: "Ya sea que estés buscando talento o tu próxima gran oportunidad, estamos aquí para ayudarte.",
       name: "Nombre",
       email: "Correo Electrónico",
