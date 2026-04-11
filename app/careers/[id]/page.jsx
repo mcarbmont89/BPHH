@@ -31,6 +31,12 @@ const completeUrl = (url) => {
   return `https://${url}`;
 };
 
+const isCareerClosed = (career) => {
+  const status = String(career?.status ?? "").toLowerCase();
+  const title = String(career?.position ?? "").toLowerCase();
+  return status === "closed" || title.includes("(closed)") || title.includes("(cerrada)");
+};
+
 export default function JobDetailsPage() {
   const { t, language: ctxLang } = useLanguage();
   const params = useParams();
@@ -136,7 +142,7 @@ export default function JobDetailsPage() {
               )}
               <div>
                 <h1 className="text-3xl font-bold text-primary">{career.position}</h1>
-                {String(career.status || "active").toLowerCase() === "inactive" && (
+                {isCareerClosed(career) && (
                   <span className="inline-block bg-gray-200 text-gray-700 text-sm font-semibold mt-2 px-3 py-1 rounded-full">
                     {t("careers.closedPositionBadge")}
                   </span>
@@ -222,7 +228,7 @@ export default function JobDetailsPage() {
             <div className="border-t border-gray-200 my-6"></div>
 
             <div className="mt-8 text-center">
-              {String(career.status || "active").toLowerCase() === "inactive" ? (
+              {isCareerClosed(career) ? (
                 <div className="flex justify-center">
                   <Button disabled variant="secondary">
                     {t("careers.closedPositionBadge")}
