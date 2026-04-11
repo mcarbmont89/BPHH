@@ -1135,7 +1135,7 @@ export const translations = {
         ],
       },
       contact: {
-        title: "Socios estratégicos para el éxito de tu negocio.",
+        title: "Contacta con nosotros",
         description: "¿Listo para encontrar el talento que definirá el futuro de tu empresa? Ponte en contacto con nosotros hoy.",
         form: {
           name: "Nombre",
