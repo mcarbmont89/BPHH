@@ -119,7 +119,8 @@ export default function CareersPage() {
             <div className="mb-8 max-w-4xl mx-auto">
               <motion.div
                 whileHover={{ scale: 1.01 }}
-                className="bg-primary text-white rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg shadow-primary/20"
+                className="bg-primary text-white rounded-2xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg shadow-primary/20"
+                style={{ minHeight: "180px" }}
               >
                 <div className="flex items-center gap-4">
                   <div className="bg-white/20 p-2.5 rounded-full shrink-0">
