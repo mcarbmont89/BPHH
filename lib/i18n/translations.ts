@@ -437,7 +437,7 @@ export const translations = {
     careers: {
       title: "Explore Opportunities",
       subtitle: "Find your next role in a company that's shaping the future of AI-powered talent acquisition.",
-      closedVacanciesBanner: "✨ We have successfully closed {count} vacancies. See them here.",
+      closedVacanciesBanner: "We have successfully closed {count} vacancies.",
       viewClosedPositions: "View Closed Positions",
       closedPositionBadge: "Closed Position",
       closedVacancyHeroTitle: "Successfully Closed Positions",
@@ -1428,7 +1428,7 @@ export const translations = {
     careers: {
       title: "Explorar Oportunidades",
       subtitle: "Encuentra tu próximo rol en una empresa que está dando forma al futuro de la adquisición de talento impulsada por IA.",
-      closedVacanciesBanner: "✨ Hemos cerrado con éxito {count} posiciones. Ver detalle.",
+      closedVacanciesBanner: "Hemos cerrado con éxito {count} posiciones.",
       viewClosedPositions: "Ver Detalles",
       closedPositionBadge: "Posición Cerrada",
       closedVacancyHeroTitle: "Posiciones Cerradas con Éxito",

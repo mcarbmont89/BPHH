@@ -116,26 +116,26 @@ export default function CareersPage() {
         {(() => {
           const closedCareersCount = careers?.filter(isClosed).length || 0;
           return closedCareersCount > 0 ? (
-            <div className="mb-6 max-w-4xl mx-auto">
-              <Link href="/careers/closed">
-                <motion.div
-                  whileHover={{ scale: 1.01 }}
-                  className="bg-primary/5 border border-primary/20 rounded-xl p-4 flex items-center justify-between text-primary cursor-pointer shadow-sm hover:bg-primary/10 transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="bg-primary/10 p-2 rounded-full">
-                      <CheckCircle className="w-5 h-5" />
-                    </div>
-                    <span className="font-medium text-sm md:text-base">
-                      {t("careers.closedVacanciesBanner").replace("{count}", closedCareersCount.toString())}
-                    </span>
+            <div className="mb-8 max-w-4xl mx-auto">
+              <motion.div
+                whileHover={{ scale: 1.01 }}
+                className="bg-primary text-white rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg shadow-primary/20"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="bg-white/20 p-2.5 rounded-full shrink-0">
+                    <CheckCircle className="w-6 h-6 text-white" />
                   </div>
-                  <div className="flex items-center gap-2 text-sm font-semibold">
-                    <span className="hidden sm:inline">{t("careers.viewClosedPositions")}</span>
+                  <span className="font-semibold text-base md:text-lg text-center sm:text-left">
+                    {t("careers.closedVacanciesBanner").replace("{count}", closedCareersCount.toString())}
+                  </span>
+                </div>
+                <Link href="/careers/closed" className="shrink-0">
+                  <button className="bg-white text-primary font-semibold text-sm px-5 py-2 rounded-lg hover:bg-white/90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                    {t("careers.viewClosedPositions")}
                     <ArrowRight className="w-4 h-4" />
-                  </div>
-                </motion.div>
-              </Link>
+                  </button>
+                </Link>
+              </motion.div>
             </div>
           ) : null;
         })()}
