@@ -113,6 +113,33 @@ export default function CareersPage() {
 
       <div className="bg-white w-full">
       <div className="container mx-auto px-4 py-8 md:py-12">
+        {(() => {
+          const closedCareersCount = careers?.filter(isClosed).length || 0;
+          return closedCareersCount > 0 ? (
+            <div className="mb-8 max-w-4xl mx-auto">
+              <motion.div
+                whileHover={{ scale: 1.01 }}
+                className="bg-primary text-white rounded-2xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg shadow-primary/20"
+                style={{ minHeight: "100px" }}
+              >
+                <div className="flex items-center gap-4">
+                  <div className="bg-white/20 p-2.5 rounded-full shrink-0">
+                    <CheckCircle className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="font-semibold text-base md:text-lg text-center sm:text-left">
+                    {t("careers.closedVacanciesBanner").replace("{count}", closedCareersCount.toString())}
+                  </span>
+                </div>
+                <Link href="/careers/closed" className="shrink-0">
+                  <button className="bg-white text-primary font-semibold text-sm px-5 py-2 rounded-lg hover:bg-white/90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                    {t("careers.viewClosedPositions")}
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </Link>
+              </motion.div>
+            </div>
+          ) : null;
+        })()}
 
         <div className="mb-8 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-800 flex items-center justify-center gap-2">
