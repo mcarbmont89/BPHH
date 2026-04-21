@@ -169,26 +169,22 @@ export default function CareersPage() {
           {filteredCareers.map((career) => {
             const hideSalary = Boolean(career?.["Ocultar salario"]);
             const salaryText = hideSalary ? null : formatSalaryText(career?.salary, career?.currency_code, locale);
+            const logoUrl = (() => {
+              const server = process.env.NEXT_PUBLIC_CMS_URL || "";
+              const url = career?.logo?.url;
+              if (url) return url.startsWith("http") ? url : `${server}${url}`;
+              if ((career.company || "").toLowerCase() === "botic partners") return "/boticlogo.png";
+              if (career.company_url) return `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("http://", "").replace("www.", "")}`;
+              return "/placeholder-company.png";
+            })();
 
             return (
-              <motion.div whileHover={{ y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 200 }}>
+              <motion.div key={career.id} whileHover={{ y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 200 }}>
                 <Card className="flex flex-col justify-between h-full bg-white text-gray-900 border-gray-200">
                   <CardHeader>
                     <div className="flex items-center gap-4">
                       {!career["Ocultar empresa"] && (
-                        <img
-                          src={(() => {
-                            const server = process.env.NEXT_PUBLIC_CMS_URL || "";
-                            const url = career?.logo?.url;
-
-                            if (url) return url.startsWith("http") ? url : `${server}${url}`;
-                            if ((career.company || "").toLowerCase() === "botic partners") return "/boticlogo.png";
-                            if (career.company_url) return `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("http://", "").replace("www.", "")}`;
-                            return "/placeholder-company.png";
-                          })()}
-                          alt={career.company || "Company logo"}
-                          className="w-12 h-12"
-                        />
+                        <img src={logoUrl} alt={career.company || "Company logo"} className="w-12 h-12" />
                       )}
                       <div>
                         <CardTitle className="text-xl font-semibold text-foreground">{career.position}</CardTitle>
@@ -196,27 +192,11 @@ export default function CareersPage() {
                       </div>
                     </div>
                   </CardHeader>
-
                   <CardContent className="flex-grow flex flex-col gap-2">
-                    {career.location && (
-                      <p className="text-sm text-foreground">
-                        <b>{locationLabel}:</b> {career.location}
-                      </p>
-                    )}
-
-                    {!hideSalary && salaryText && (
-                      <p className="text-sm text-foreground">
-                        <b>{salaryLabel}:</b> {salaryText}
-                      </p>
-                    )}
-
-                    {hideSalary && (
-                      <p className="text-sm text-foreground">
-                        <b>{salaryLabel}:</b> {lang === "en" ? "Confidential" : "Confidencial"}
-                      </p>
-                    )}
+                    {career.location && <p className="text-sm text-foreground"><b>{locationLabel}:</b> {career.location}</p>}
+                    {!hideSalary && salaryText && <p className="text-sm text-foreground"><b>{salaryLabel}:</b> {salaryText}</p>}
+                    {hideSalary && <p className="text-sm text-foreground"><b>{salaryLabel}:</b> {lang === "en" ? "Confidential" : "Confidencial"}</p>}
                   </CardContent>
-
                   <CardFooter>
                     <Link href={`/careers/${career.id}`} className="w-full bg-primary py-2 text-center rounded-lg text-primary-foreground hover:bg-primary/90">
                       {t("careers.learnMore")}
@@ -227,6 +207,72 @@ export default function CareersPage() {
             );
           })}
         </div>
+
+        {(() => {
+          const closedFiltered = careers?.filter((c) => isClosed(c) && (selectedIndustry === "all" || c.sector === selectedIndustry)) ?? [];
+          if (closedFiltered.length === 0) return null;
+          return (
+            <div className="mt-16">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="flex-1 h-px bg-gray-200" />
+                <h2 className="text-xl font-semibold text-gray-400 flex items-center gap-2 whitespace-nowrap">
+                  <CheckCircle className="w-5 h-5" />
+                  {lang === "en" ? "Closed positions" : "Posiciones cerradas"}
+                </h2>
+                <div className="flex-1 h-px bg-gray-200" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {closedFiltered.map((career) => {
+                  const hideSalary = Boolean(career?.["Ocultar salario"]);
+                  const salaryText = hideSalary ? null : formatSalaryText(career?.salary, career?.currency_code, locale);
+                  const logoUrl = (() => {
+                    const server = process.env.NEXT_PUBLIC_CMS_URL || "";
+                    const url = career?.logo?.url;
+                    if (url) return url.startsWith("http") ? url : `${server}${url}`;
+                    if ((career.company || "").toLowerCase() === "botic partners") return "/boticlogo.png";
+                    if (career.company_url) return `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("http://", "").replace("www.", "")}`;
+                    return "/placeholder-company.png";
+                  })();
+
+                  return (
+                    <motion.div key={career.id} whileHover={{ y: -4, scale: 1.01 }} transition={{ type: "spring", stiffness: 200 }}>
+                      <Card className="flex flex-col justify-between h-full bg-gray-50 text-gray-400 border-gray-200 opacity-80 relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gray-200" />
+                        <CardHeader>
+                          <div className="flex items-center gap-4">
+                            {!career["Ocultar empresa"] && (
+                              <div className="grayscale opacity-60">
+                                <img src={logoUrl} alt={career.company || "Company logo"} className="w-12 h-12" />
+                              </div>
+                            )}
+                            <div>
+                              <CardTitle className="text-xl font-semibold text-gray-500">{career.position}</CardTitle>
+                              <CardDescription className="text-gray-400 text-sm">{career["Ocultar empresa"] ? "Confidencial" : career.company}</CardDescription>
+                            </div>
+                          </div>
+                        </CardHeader>
+                        <CardContent className="flex-grow flex flex-col gap-2">
+                          <span className="inline-block bg-gray-100 text-gray-500 text-xs font-semibold px-2 py-1 rounded w-fit border border-gray-200">
+                            {t("careers.closedPositionBadge")}
+                          </span>
+                          {career.location && <p className="text-sm"><b>{locationLabel}:</b> {career.location}</p>}
+                          {!hideSalary && salaryText && <p className="text-sm"><b>{salaryLabel}:</b> {salaryText}</p>}
+                          {hideSalary && <p className="text-sm"><b>{salaryLabel}:</b> {lang === "en" ? "Confidential" : "Confidencial"}</p>}
+                        </CardContent>
+                        <CardFooter>
+                          <Link href={`/careers/${career.id}`} className="w-full bg-gray-200 py-2 text-center rounded-lg text-gray-600 hover:bg-gray-300 font-medium transition-colors">
+                            {t("careers.viewClosedPositions")}
+                          </Link>
+                        </CardFooter>
+                      </Card>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })()}
+
       </div>
       </div>
     </div>
