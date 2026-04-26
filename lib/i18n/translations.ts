@@ -438,7 +438,7 @@ export const translations = {
       title: "Explore Opportunities",
       subtitle: "Find your next role in a company that's shaping the future of AI-powered talent acquisition.",
       closedVacanciesBanner: "View recently filled positions.",
-      viewClosedPositions: "View Closed Positions",
+      viewClosedPositions: "More details",
       closedPositionBadge: "Closed Position",
       closedVacancyHeroTitle: "Successfully Closed Positions",
       closedVacancyHeroSubtitle: "Discover the talent we have successfully connected with our partner companies.",
