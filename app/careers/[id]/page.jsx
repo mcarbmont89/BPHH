@@ -34,11 +34,7 @@ const isCareerClosed = (career) => {
   const status = String(career?.status ?? "").toLowerCase();
   const title = String(career?.position ?? "").toLowerCase();
 
-  return (
-    status === "closed" ||
-    title.includes("(closed)") ||
-    title.includes("(cerrada)")
-  );
+  return status === "closed" || title.includes("(closed)") || title.includes("(cerrada)");
 };
 const currencySymbol = (code) => {
   const map = { EUR: "€", USD: "$", GBP: "£" };
@@ -260,7 +256,7 @@ export default function JobDetailsPage() {
                 <div className="flex justify-center space-x-4">
                   {career.linkedIn && career.linkedIn !== "" && (
                     <Link href={career.linkedIn} target="_blank" rel="noopener noreferrer">
-                      <Button disabled={isLoading} variant="outline">
+                      <Button disabled={isLoading} className="bg-white text-black border border-gray-300 hover:bg-gray-100">
                         Ver en LinkedIn
                       </Button>
                     </Link>
