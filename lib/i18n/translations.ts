@@ -42,7 +42,7 @@ export const translations = {
       termsOfService: "Terms of Service",
       rightsReserved: "© 2025 Botic Partners. All rights reserved.",
       quickLinks: "Quick Links",
-      contactEmail: "admin@boticpartners.com",
+      contactEmail: "borjamoreno@boticpartners.com",
       followUs: "Follow Us",
       rights: "All rights reserved.",
       privacy: "Privacy Policy",
