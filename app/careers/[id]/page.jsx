@@ -31,10 +31,7 @@ const completeUrl = (url) => {
   return `https://${url}`;
 };
 const isCareerClosed = (career) => {
-  const status = String(career?.status ?? "").toLowerCase();
-  const title = String(career?.position ?? "").toLowerCase();
-
-  return status === "closed" || title.includes("(closed)") || title.includes("(cerrada)");
+  return String(career?.status ?? "").toLowerCase() === "closed";
 };
 const currencySymbol = (code) => {
   const map = { EUR: "€", USD: "$", GBP: "£" };
