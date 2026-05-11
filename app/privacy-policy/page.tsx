@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
           <p className="text-sm text-gray-500 mb-10">Última actualización: 24/03/2026</p>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold mb-3">1. Responsable del tratamiento</h2>
+            <h2 className="text-xl font-semibold mb-3">1. Responsable del tratamiento </h2>
             <p>En cumplimiento del Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), te informamos que el responsable del tratamiento de tus datos personales es:</p>
             <ul className="mt-3 space-y-1 list-none pl-0">
               <li><strong>Nombre:</strong> Borja Moreno-Luque Aguirre</li>
