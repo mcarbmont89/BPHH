@@ -71,7 +71,7 @@ export default function PrivacyPolicy() {
               No cedemos tus datos a terceros salvo obligación legal o cuando sea necesario para la prestación del servicio. Podemos compartir datos con los siguientes proveedores de servicios que actúan como encargados del tratamiento:
             </p>
             <ul className="mt-3 list-disc pl-6 space-y-1">
-              <li>Vercel Inc. (alojamiento web) — con sede en EE.UU., bajo decisión de adecuación y cláusulas contractuales tipo.</li>
+              <li>Vercel Inc. (web) y documentos en instancia europea de MS., bajo decisión de adecuación y cláusulas contractuales tipo.</li>
             </ul>
             <p className="mt-3">Todos ellos cuentan con las garantías adecuadas conforme al RGPD.</p>
           </section>
