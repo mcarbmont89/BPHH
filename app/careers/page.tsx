@@ -9,41 +9,8 @@ import { industries } from "./data";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { fetchCareers } from "@/app/api/careers";
+import { formatSalaryText, isCareerClosed, getLogoUrl } from "./utils";
 import Header from "../components/Header";
-
-const currencySymbol = (code: string) => {
-  const map: Record<string, string> = { EUR: "€", USD: "$", GBP: "£" };
-  return map[(code || "").toUpperCase()] || (code ? code.toUpperCase() : "€");
-};
-
-const formatNumber = (n: number, locale: string) => new Intl.NumberFormat(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(n);
-
-const formatSalaryText = (salaryRaw: unknown, currencyCode: string, locale: string) => {
-  if (salaryRaw === null || salaryRaw === undefined) return null;
-
-  const symbol = currencySymbol(currencyCode);
-  const s = String(salaryRaw).trim();
-  if (!s) return null;
-
-  const hasCurrencyAlready = /€|\$|£|\bEUR\b|\bUSD\b|\bGBP\b/i.test(s);
-
-  const rangeMatch = s.match(/^\s*([\d.,]+)\s*[-–]\s*([\d.,]+)\s*$/);
-  if (rangeMatch) {
-    const a = Number(rangeMatch[1].replace(/\./g, "").replace(",", "."));
-    const b = Number(rangeMatch[2].replace(/\./g, "").replace(",", "."));
-    const left = Number.isFinite(a) ? formatNumber(a, locale) : rangeMatch[1];
-    const right = Number.isFinite(b) ? formatNumber(b, locale) : rangeMatch[2];
-    return `${left} - ${right}${hasCurrencyAlready ? "" : ` ${symbol}`}`;
-  }
-
-  const singleNumberMatch = s.match(/^\s*[\d.,]+\s*$/);
-  if (singleNumberMatch) {
-    const n = Number(s.replace(/\./g, "").replace(",", "."));
-    if (Number.isFinite(n)) return `${formatNumber(n, locale)}${hasCurrencyAlready ? "" : ` ${symbol}`}`;
-  }
-
-  return hasCurrencyAlready ? s : `${s} ${symbol}`;
-};
 
 export default function CareersPage() {
   const { t, language: ctxLang } = useLanguage();
@@ -69,12 +36,9 @@ export default function CareersPage() {
 
   if (!mounted) return null;
 
-  const isClosed = (career: any) => {
-    return String(career?.status ?? "").toLowerCase() === "closed";
-  };
   const filteredCareers = careers?.filter((career) => {
     const matchesIndustry = selectedIndustry === "all" || career.sector === selectedIndustry;
-    return !isClosed(career) && matchesIndustry;
+    return !isCareerClosed(career) && matchesIndustry;
   });
 
   const lang = (typeof window !== "undefined" && window.localStorage?.getItem("lang")) || ctxLang || "es";
@@ -109,28 +73,33 @@ export default function CareersPage() {
       </section>
 
       <div className="bg-white w-full">
-        <div className="container mx-auto px-4 py-8 md:py-12">
-          {(() => {
-            const closedCareersCount = careers?.filter(isClosed).length || 0;
-            return closedCareersCount > 0 ? (
-              <div className="mb-8 max-w-4xl mx-auto">
-                <motion.div whileHover={{ scale: 1.01 }} className="bg-primary text-white rounded-2xl px-6 py-4 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 shadow-lg shadow-primary/20">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-white/20 p-2 rounded-full shrink-0">
-                      <CheckCircle className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="font-semibold text-sm md:text-base text-center sm:text-left">{t("careers.closedVacanciesBanner").replace("{count}", closedCareersCount.toString())}</span>
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        {(() => {
+          const closedCareersCount = careers?.filter(isCareerClosed).length || 0;
+          return closedCareersCount > 0 ? (
+            <div className="mb-8 max-w-4xl mx-auto">
+              <motion.div
+                whileHover={{ scale: 1.01 }}
+                className="bg-primary text-white rounded-2xl px-6 py-4 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 shadow-lg shadow-primary/20"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="bg-white/20 p-2 rounded-full shrink-0">
+                    <CheckCircle className="w-5 h-5 text-white" />
                   </div>
-                  <Link href="/careers/closed" className="shrink-0 w-full sm:w-auto">
-                    <button className="bg-white text-primary font-semibold text-sm px-5 py-2 rounded-lg hover:bg-white/90 transition-colors flex items-center justify-center gap-2 w-full sm:w-auto whitespace-nowrap">
-                      {t("careers.viewClosedPositions")}
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </Link>
-                </motion.div>
-              </div>
-            ) : null;
-          })()}
+                  <span className="font-semibold text-sm md:text-base text-center sm:text-left">
+                    {t("careers.closedVacanciesBanner").replace("{count}", closedCareersCount.toString())}
+                  </span>
+                </div>
+                <Link href="/careers/closed" className="shrink-0 w-full sm:w-auto">
+                  <button className="bg-white text-primary font-semibold text-sm px-5 py-2 rounded-lg hover:bg-white/90 transition-colors flex items-center justify-center gap-2 w-full sm:w-auto whitespace-nowrap">
+                    {t("careers.viewClosedPositions")}
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </Link>
+              </motion.div>
+            </div>
+          ) : null;
+        })()}
 
           <div className="mb-8 text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 flex items-center justify-center gap-2">
@@ -156,18 +125,11 @@ export default function CareersPage() {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 flex items-center justify-center gap-2">{selectedIndustry === "all" ? t("careers.allIndustries") : t(industries.find((i) => i.id === selectedIndustry)?.nameKey || "")}</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredCareers.map((career) => {
-              const hideSalary = Boolean(career?.["Ocultar salario"]);
-              const salaryText = hideSalary ? null : formatSalaryText(career?.salary, career?.currency_code, locale);
-              const logoUrl = (() => {
-                const server = process.env.NEXT_PUBLIC_CMS_URL || "";
-                const url = career?.logo?.url;
-                if (url) return url.startsWith("http") ? url : `${server}${url}`;
-                if ((career.company || "").toLowerCase() === "botic partners") return "/boticlogo.png";
-                if (career.company_url) return `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("http://", "").replace("www.", "")}`;
-                return "/placeholder-company.png";
-              })();
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredCareers.map((career) => {
+            const hideSalary = Boolean(career?.["Ocultar salario"]);
+            const salaryText = hideSalary ? null : formatSalaryText(career?.salary, career?.currency_code, locale);
+            const logoUrl = getLogoUrl(career);
 
               return (
                 <motion.div key={career.id} whileHover={{ y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 200 }}>
@@ -209,31 +171,24 @@ export default function CareersPage() {
             })}
           </div>
 
-          {(() => {
-            const closedFiltered = careers?.filter((c) => isClosed(c) && (selectedIndustry === "all" || c.sector === selectedIndustry)) ?? [];
-            if (closedFiltered.length === 0) return null;
-            return (
-              <div className="mt-16">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="flex-1 h-px bg-gray-200" />
-                  <h2 className="text-xl font-semibold text-gray-400 flex items-center gap-2 whitespace-nowrap">
-                    <CheckCircle className="w-5 h-5" />
-                    {lang === "en" ? "Closed positions" : "Posiciones cerradas"}
-                  </h2>
-                  <div className="flex-1 h-px bg-gray-200" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {closedFiltered.map((career) => {
-                    const hideSalary = Boolean(career?.["Ocultar salario"]);
-                    const salaryText = hideSalary ? null : formatSalaryText(career?.salary, career?.currency_code, locale);
-                    const logoUrl = (() => {
-                      const server = process.env.NEXT_PUBLIC_CMS_URL || "";
-                      const url = career?.logo?.url;
-                      if (url) return url.startsWith("http") ? url : `${server}${url}`;
-                      if ((career.company || "").toLowerCase() === "botic partners") return "/boticlogo.png";
-                      if (career.company_url) return `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("http://", "").replace("www.", "")}`;
-                      return "/placeholder-company.png";
-                    })();
+        {(() => {
+          const closedFiltered = careers?.filter((c) => isCareerClosed(c) && (selectedIndustry === "all" || c.sector === selectedIndustry)) ?? [];
+          if (closedFiltered.length === 0) return null;
+          return (
+            <div className="mt-16">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="flex-1 h-px bg-gray-200" />
+                <h2 className="text-xl font-semibold text-gray-400 flex items-center gap-2 whitespace-nowrap">
+                  <CheckCircle className="w-5 h-5" />
+                  {lang === "en" ? "Closed positions" : "Posiciones cerradas"}
+                </h2>
+                <div className="flex-1 h-px bg-gray-200" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {closedFiltered.map((career) => {
+                  const hideSalary = Boolean(career?.["Ocultar salario"]);
+                  const salaryText = hideSalary ? null : formatSalaryText(career?.salary, career?.currency_code, locale);
+                  const logoUrl = getLogoUrl(career);
 
                     return (
                       <motion.div key={career.id} whileHover={{ y: -4, scale: 1.01 }} transition={{ type: "spring", stiffness: 200 }}>

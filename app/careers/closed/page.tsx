@@ -9,41 +9,8 @@ import { industries } from "../data";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { fetchCareers } from "@/app/api/careers";
+import { formatSalaryText, isCareerClosed, getLogoUrl } from "../utils";
 import Header from "../../components/Header";
-
-const currencySymbol = (code: string) => {
-  const map: Record<string, string> = { EUR: "€", USD: "$", GBP: "£" };
-  return map[(code || "").toUpperCase()] || (code ? code.toUpperCase() : "€");
-};
-
-const formatNumber = (n: number, locale: string) => new Intl.NumberFormat(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(n);
-
-const formatSalaryText = (salaryRaw: unknown, currencyCode: string, locale: string) => {
-  if (salaryRaw === null || salaryRaw === undefined) return null;
-
-  const symbol = currencySymbol(currencyCode);
-  const s = String(salaryRaw).trim();
-  if (!s) return null;
-
-  const hasCurrencyAlready = /€|\$|£|\bEUR\b|\bUSD\b|\bGBP\b/i.test(s);
-
-  const rangeMatch = s.match(/^\s*([\d.,]+)\s*[-–]\s*([\d.,]+)\s*$/);
-  if (rangeMatch) {
-    const a = Number(rangeMatch[1].replace(/\./g, "").replace(",", "."));
-    const b = Number(rangeMatch[2].replace(/\./g, "").replace(",", "."));
-    const left = Number.isFinite(a) ? formatNumber(a, locale) : rangeMatch[1];
-    const right = Number.isFinite(b) ? formatNumber(b, locale) : rangeMatch[2];
-    return `${left} - ${right}${hasCurrencyAlready ? "" : ` ${symbol}`}`;
-  }
-
-  const singleNumberMatch = s.match(/^\s*[\d.,]+\s*$/);
-  if (singleNumberMatch) {
-    const n = Number(s.replace(/\./g, "").replace(",", "."));
-    if (Number.isFinite(n)) return `${formatNumber(n, locale)}${hasCurrencyAlready ? "" : ` ${symbol}`}`;
-  }
-
-  return hasCurrencyAlready ? s : `${s} ${symbol}`;
-};
 
 export default function ClosedCareersPage() {
   const { t, language: ctxLang } = useLanguage();
@@ -69,13 +36,9 @@ export default function ClosedCareersPage() {
 
   if (!mounted) return null;
 
-  const isClosed = (career: any) => {
-    return String(career?.status ?? "").toLowerCase() === "closed";
-  };
-
   const filteredCareers = careers?.filter((career) => {
     const matchesIndustry = selectedIndustry === "all" || career.sector === selectedIndustry;
-    return isClosed(career) && matchesIndustry;
+    return isCareerClosed(career) && matchesIndustry;
   });
 
   const lang = (typeof window !== "undefined" && window.localStorage?.getItem("lang")) || ctxLang || "es";
@@ -135,40 +98,32 @@ export default function ClosedCareersPage() {
             })}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredCareers.map((career) => {
-              const hideSalary = Boolean(career?.["Ocultar salario"]);
-              const salaryText = hideSalary ? null : formatSalaryText(career?.salary, career?.currency_code, locale);
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredCareers.map((career) => {
+            const hideSalary = Boolean(career?.["Ocultar salario"]);
+            const salaryText = hideSalary ? null : formatSalaryText(career?.salary, career?.currency_code, locale);
 
-              return (
-                <motion.div key={career.id} whileHover={{ y: -4, scale: 1.01 }} transition={{ type: "spring", stiffness: 200 }}>
-                  <Card className="flex flex-col justify-between h-full bg-white text-gray-500 border-gray-200 opacity-90 shadow-sm relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gray-300"></div>
-                    <CardHeader>
-                      <div className="flex items-center gap-4">
-                        {!career["Ocultar empresa"] && (
-                          <div className="grayscale opacity-75">
-                            <img
-                              src={(() => {
-                                const server = process.env.NEXT_PUBLIC_CMS_URL || "";
-                                const url = career?.logo?.url;
-
-                                if (url) return url.startsWith("http") ? url : `${server}${url}`;
-                                if ((career.company || "").toLowerCase() === "botic partners") return "/boticlogo.png";
-                                if (career.company_url) return `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("http://", "").replace("www.", "")}`;
-                                return "/placeholder-company.png";
-                              })()}
-                              alt={career.company || "Company logo"}
-                              className="w-12 h-12"
-                            />
-                          </div>
-                        )}
-                        <div>
-                          <CardTitle className="text-xl font-semibold text-gray-700">{career.position}</CardTitle>
-                          <CardDescription className="text-gray-400 text-sm">{career["Ocultar empresa"] ? "Confidencial" : career.company}</CardDescription>
+            return (
+              <motion.div key={career.id} whileHover={{ y: -4, scale: 1.01 }} transition={{ type: "spring", stiffness: 200 }}>
+                <Card className="flex flex-col justify-between h-full bg-white text-gray-500 border-gray-200 opacity-90 shadow-sm relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gray-300"></div>
+                  <CardHeader>
+                    <div className="flex items-center gap-4">
+                      {!career["Ocultar empresa"] && (
+                        <div className="grayscale opacity-75">
+                          <img
+                            src={getLogoUrl(career)}
+                            alt={career.company || "Company logo"}
+                            className="w-12 h-12"
+                          />
                         </div>
+                      )}
+                      <div>
+                        <CardTitle className="text-xl font-semibold text-gray-700">{career.position}</CardTitle>
+                        <CardDescription className="text-gray-400 text-sm">{career["Ocultar empresa"] ? "Confidencial" : career.company}</CardDescription>
                       </div>
-                    </CardHeader>
+                    </div>
+                  </CardHeader>
 
                     <CardContent className="flex-grow flex flex-col gap-2">
                       <span className="inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-1 rounded w-fit mb-2 border border-gray-200">{t("careers.closedPositionBadge")}</span>
