@@ -9,41 +9,8 @@ import { industries } from "../data";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { fetchCareers } from "@/app/api/careers";
+import { formatSalaryText, isCareerClosed, getLogoUrl } from "../utils";
 import Header from "../../components/Header";
-
-const currencySymbol = (code: string) => {
-  const map: Record<string, string> = { EUR: "€", USD: "$", GBP: "£" };
-  return map[(code || "").toUpperCase()] || (code ? code.toUpperCase() : "€");
-};
-
-const formatNumber = (n: number, locale: string) => new Intl.NumberFormat(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(n);
-
-const formatSalaryText = (salaryRaw: unknown, currencyCode: string, locale: string) => {
-  if (salaryRaw === null || salaryRaw === undefined) return null;
-
-  const symbol = currencySymbol(currencyCode);
-  const s = String(salaryRaw).trim();
-  if (!s) return null;
-
-  const hasCurrencyAlready = /€|\$|£|\bEUR\b|\bUSD\b|\bGBP\b/i.test(s);
-
-  const rangeMatch = s.match(/^\s*([\d.,]+)\s*[-–]\s*([\d.,]+)\s*$/);
-  if (rangeMatch) {
-    const a = Number(rangeMatch[1].replace(/\./g, "").replace(",", "."));
-    const b = Number(rangeMatch[2].replace(/\./g, "").replace(",", "."));
-    const left = Number.isFinite(a) ? formatNumber(a, locale) : rangeMatch[1];
-    const right = Number.isFinite(b) ? formatNumber(b, locale) : rangeMatch[2];
-    return `${left} - ${right}${hasCurrencyAlready ? "" : ` ${symbol}`}`;
-  }
-
-  const singleNumberMatch = s.match(/^\s*[\d.,]+\s*$/);
-  if (singleNumberMatch) {
-    const n = Number(s.replace(/\./g, "").replace(",", "."));
-    if (Number.isFinite(n)) return `${formatNumber(n, locale)}${hasCurrencyAlready ? "" : ` ${symbol}`}`;
-  }
-
-  return hasCurrencyAlready ? s : `${s} ${symbol}`;
-};
 
 export default function ClosedCareersPage() {
   const { t, language: ctxLang } = useLanguage();
@@ -69,15 +36,9 @@ export default function ClosedCareersPage() {
 
   if (!mounted) return null;
 
-  const isClosed = (career: any) => {
-    const status = String(career?.status ?? "").toLowerCase();
-    const title = String(career?.position ?? "").toLowerCase();
-    return status === "closed" || title.includes("(closed)") || title.includes("(cerrada)");
-  };
-
   const filteredCareers = careers?.filter((career) => {
     const matchesIndustry = selectedIndustry === "all" || career.sector === selectedIndustry;
-    return isClosed(career) && matchesIndustry;
+    return isCareerClosed(career) && matchesIndustry;
   });
 
   const lang = (typeof window !== "undefined" && window.localStorage?.getItem("lang")) || ctxLang || "es";
@@ -151,15 +112,7 @@ export default function ClosedCareersPage() {
                       {!career["Ocultar empresa"] && (
                         <div className="grayscale opacity-75">
                           <img
-                            src={(() => {
-                              const server = process.env.NEXT_PUBLIC_CMS_URL || "";
-                              const url = career?.logo?.url;
-
-                              if (url) return url.startsWith("http") ? url : `${server}${url}`;
-                              if ((career.company || "").toLowerCase() === "botic partners") return "/boticlogo.png";
-                              if (career.company_url) return `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("http://", "").replace("www.", "")}`;
-                              return "/placeholder-company.png";
-                            })()}
+                            src={getLogoUrl(career)}
                             alt={career.company || "Company logo"}
                             className="w-12 h-12"
                           />

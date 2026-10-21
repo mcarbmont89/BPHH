@@ -10,19 +10,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useEffect } from "react";
 import { fetchCareerById } from "@/app/api/careers";
+import { isCareerClosed, getLogoUrl } from "../utils";
 import RichTextComponent from "@/components/RichText";
 import Loading from "./loading";
 import { ApplicationModal } from "@/app/components/application-modal";
 import { ThankYouModal } from "@/app/components/thank-you-modal";
-
-// // Helper function to find a job by ID
-// const findJobById = (id: string): Job | undefined => {
-//   for (const industry in jobsByIndustry) {
-//     const job = jobsByIndustry[industry as keyof typeof jobsByIndustry].find((job) => job.id === id)
-//     if (job) return job
-//   }
-//   return undefined
-// }
 
 const completeUrl = (url) => {
   if (url.startsWith("http://") || url.startsWith("https://")) {
@@ -31,17 +23,10 @@ const completeUrl = (url) => {
   return `https://${url}`;
 };
 
-const isCareerClosed = (career) => {
-  const status = String(career?.status ?? "").toLowerCase();
-  const title = String(career?.position ?? "").toLowerCase();
-  return status === "closed" || title.includes("(closed)") || title.includes("(cerrada)");
-};
-
 export default function JobDetailsPage() {
   const { t, language: ctxLang } = useLanguage();
   const params = useParams();
   const jobId = params.id;
-  // const job = findJobById(jobId)
   const [career, setCareer] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -69,19 +54,6 @@ export default function JobDetailsPage() {
     setShowThankYouModal(true);
   };
 
-  // const handleApply = (useGmail) => {
-  //   if (!career) return
-  //   setIsLoading(true)
-  //   const subject = encodeURIComponent(`Application for ${career.position} - ${career.company}`)
-  //   const email = "admin@boticpartners.com"
-  //   const mailtoLink = `mailto:${email}?subject=${subject}`
-  //   const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}`
-
-  //   setTimeout(() => {
-  //     window.open(useGmail ? gmailLink : mailtoLink, "_blank")
-  //     setIsLoading(false)
-  //   }, 500)
-  // }
   const lang = (typeof window !== "undefined" && window.localStorage?.getItem("lang")) || ctxLang || "es";
   const locale = lang === "en" ? "en-US" : "es-ES";
   const salaryLabel = lang === "en" ? "Salary" : "Salario";
@@ -125,17 +97,7 @@ export default function JobDetailsPage() {
             <div className="flex gap-6 items-center mb-4">
               {!career["Ocultar empresa"] && (
                 <img
-                  src={(() => {
-                    const server = process.env.NEXT_PUBLIC_CMS_URL || "";
-                    const url = career?.logo?.url;
-
-                    if (url) return url.startsWith("http") ? url : `${server}${url}`;
-                    if ((career.company || "").toLowerCase() === "botic partners") return "/boticlogo.png";
-                    if (career.company_url) {
-                      return `https://logo.clearbit.com/${career.company_url.replace("https://", "").replace("http://", "").replace("www.", "")}`;
-                    }
-                    return "/placeholder-company.png";
-                  })()}
+                  src={getLogoUrl(career)}
                   alt={career.company || "Company logo"}
                   className="w-16 h-16"
                 />
