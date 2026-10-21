@@ -117,8 +117,13 @@ export default function ClosedCareersPage() {
                             className="w-12 h-12"
                           />
                         </div>
+                      )}
+                      <div>
+                        <CardTitle className="text-xl font-semibold text-gray-700">{career.position}</CardTitle>
+                        <CardDescription className="text-gray-400 text-sm">{career["Ocultar empresa"] ? "Confidencial" : career.company}</CardDescription>
                       </div>
-                    </CardHeader>
+                    </div>
+                  </CardHeader>
 
                     <CardContent className="flex-grow flex flex-col gap-2">
                       <span className="inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-1 rounded w-fit mb-2 border border-gray-200">{t("careers.closedPositionBadge")}</span>

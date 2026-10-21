@@ -86,16 +86,20 @@ export default function CareersPage() {
                   <div className="bg-white/20 p-2 rounded-full shrink-0">
                     <CheckCircle className="w-5 h-5 text-white" />
                   </div>
-                  <Link href="/careers/closed" className="shrink-0 w-full sm:w-auto">
-                    <button className="bg-white text-primary font-semibold text-sm px-5 py-2 rounded-lg hover:bg-white/90 transition-colors flex items-center justify-center gap-2 w-full sm:w-auto whitespace-nowrap">
-                      {t("careers.viewClosedPositions")}
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </Link>
-                </motion.div>
-              </div>
-            ) : null;
-          })()}
+                  <span className="font-semibold text-sm md:text-base text-center sm:text-left">
+                    {t("careers.closedVacanciesBanner").replace("{count}", closedCareersCount.toString())}
+                  </span>
+                </div>
+                <Link href="/careers/closed" className="shrink-0 w-full sm:w-auto">
+                  <button className="bg-white text-primary font-semibold text-sm px-5 py-2 rounded-lg hover:bg-white/90 transition-colors flex items-center justify-center gap-2 w-full sm:w-auto whitespace-nowrap">
+                    {t("careers.viewClosedPositions")}
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </Link>
+              </motion.div>
+            </div>
+          ) : null;
+        })()}
 
           <div className="mb-8 text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 flex items-center justify-center gap-2">
