@@ -982,7 +982,7 @@ export const translations = {
       termsOfService: "Términos de servicio",
       rightsReserved: "© 2025 Botic Partners. Todos los derechos reservados.",
       quickLinks: "Enlaces rápidos",
-      contactEmail: "admin@boticpartners.com",
+      contactEmail: "borjamoreno@boticpartners.com",
       followUs: "Síguenos",
       rights: "Todos los derechos reservados.",
       privacy: "Política de privacidad",
