@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useEffect } from "react";
 import { fetchCareerById } from "@/app/api/careers";
-import { isCareerClosed, getLogoUrl } from "../utils";
+import { isCareerClosed, getLogoUrl, formatSalaryText } from "../utils";
 import RichTextComponent from "@/components/RichText";
 import Loading from "./loading";
 import { ApplicationModal } from "@/app/components/application-modal";
