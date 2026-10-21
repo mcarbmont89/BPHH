@@ -42,7 +42,7 @@ export const translations = {
       termsOfService: "Terms of Service",
       rightsReserved: "© 2025 Botic Partners. All rights reserved.",
       quickLinks: "Quick Links",
-      contactEmail: "admin@boticpartners.com",
+      contactEmail: "borjamoreno@boticpartners.com",
       followUs: "Follow Us",
       rights: "All rights reserved.",
       privacy: "Privacy Policy",
@@ -437,8 +437,8 @@ export const translations = {
     careers: {
       title: "Explore Opportunities",
       subtitle: "Find your next role in a company that's shaping the future of AI-powered talent acquisition.",
-      closedVacanciesBanner: "We have successfully closed {count} vacancies.",
-      viewClosedPositions: "View Closed Positions",
+      closedVacanciesBanner: "View recently filled positions.",
+      viewClosedPositions: "More details",
       closedPositionBadge: "Closed Position",
       closedVacancyHeroTitle: "Successfully Closed Positions",
       closedVacancyHeroSubtitle: "Discover the talent we have successfully connected with our partner companies.",
@@ -1366,7 +1366,7 @@ export const translations = {
     careers: {
       title: "Explorar Oportunidades",
       subtitle: "Encuentra tu próximo rol en una empresa que está dando forma al futuro de la adquisición de talento impulsada por IA.",
-      closedVacanciesBanner: "Hemos cerrado con éxito {count} posiciones.",
+      closedVacanciesBanner: "Ver vacantes cerradas recientemente.",
       viewClosedPositions: "Ver Detalles",
       closedPositionBadge: "Posición Cerrada",
       closedVacancyHeroTitle: "Posiciones Cerradas con Éxito",

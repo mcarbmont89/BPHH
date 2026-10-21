@@ -104,11 +104,7 @@ export default function JobDetailsPage() {
               )}
               <div>
                 <h1 className="text-3xl font-bold text-primary">{career.position}</h1>
-                {isCareerClosed(career) && (
-                  <span className="inline-block bg-gray-200 text-gray-700 text-sm font-semibold mt-2 px-3 py-1 rounded-full">
-                    {t("careers.closedPositionBadge")}
-                  </span>
-                )}
+                {isCareerClosed(career) && <span className="inline-block bg-gray-200 text-gray-700 text-sm font-semibold mt-2 px-3 py-1 rounded-full">{t("careers.closedPositionBadge")}</span>}
 
                 {career.company_url && !career["Ocultar empresa"] ? (
                   <Link href={completeUrl(career.company_url)} target="_blank" rel="noopener noreferrer">
@@ -157,33 +153,11 @@ export default function JobDetailsPage() {
                 <p className="text-gray-700">{career.location}</p>
               </div>
             )}
-            {career.salary && (
+            {(career.salary || career["Ocultar salario"]) && (
               <div className="flex gap-4 items-center mb-2">
                 <h2 className="font-semibold">{salaryLabel}</h2>
-                <p className="text-gray-700">
-                  {career["Ocultar salario"]
-                    ? "Confidencial"
-                    : (() => {
-                        const amount =
-                          typeof career.salary === "number"
-                            ? career.salary
-                            : Number(
-                                String(career.salary)
-                                  .replace(/[^\d.-]/g, "")
-                                  .replace(",", ".")
-                              );
 
-                        const localeForNumber = locale;
-
-                        const numberOnly = new Intl.NumberFormat(localeForNumber, {
-                          style: "decimal",
-                          minimumFractionDigits: 0,
-                          maximumFractionDigits: 0,
-                        }).format(amount);
-
-                        return `${numberOnly} €`;
-                      })()}
-                </p>
+                <p className="text-gray-700">{career["Ocultar salario"] ? "Confidencial" : formatSalaryText(career.salary, career.currency_code, locale)}</p>
               </div>
             )}
 
@@ -200,7 +174,7 @@ export default function JobDetailsPage() {
                 <div className="flex justify-center space-x-4">
                   {career.linkedIn && career.linkedIn !== "" && (
                     <Link href={career.linkedIn} target="_blank" rel="noopener noreferrer">
-                      <Button disabled={isLoading} variant="outline">
+                      <Button disabled={isLoading} className="bg-white text-black border border-gray-300 hover:bg-gray-100">
                         Ver en LinkedIn
                       </Button>
                     </Link>

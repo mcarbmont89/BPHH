@@ -77,26 +77,26 @@ export default function ClosedCareersPage() {
       </section>
 
       <div className="bg-gray-50 w-full flex-grow">
-      <div className="container mx-auto px-4 py-8 md:py-12">
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 flex items-center justify-center gap-2">
-            <Filter className="w-6 h-6 md:w-8 md:h-8" />
-            {t("careers.filterByIndustry")}
-          </h1>
-        </div>
+        <div className="container mx-auto px-4 py-8 md:py-12">
+          <div className="mb-8 text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 flex items-center justify-center gap-2">
+              <Filter className="w-6 h-6 md:w-8 md:h-8" />
+              {t("careers.filterByIndustry")}
+            </h1>
+          </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {industries.map((industry) => {
-            const Icon = industry.icon;
-            const isSelected = selectedIndustry === industry.id;
-            return (
-              <Button key={industry.id} variant={isSelected ? "default" : "outline"} onClick={() => setSelectedIndustry(industry.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm md:text-base ${isSelected ? "bg-gray-800 text-white hover:bg-gray-700" : "border border-gray-300 bg-white text-gray-800 hover:bg-gray-100"}`}>
-                {Icon && <Icon className="w-4 h-4" />}
-                {t(industry.nameKey)}
-              </Button>
-            );
-          })}
-        </div>
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {industries.map((industry) => {
+              const Icon = industry.icon;
+              const isSelected = selectedIndustry === industry.id;
+              return (
+                <Button key={industry.id} variant={isSelected ? "default" : "outline"} onClick={() => setSelectedIndustry(industry.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm md:text-base ${isSelected ? "bg-gray-800 text-white hover:bg-gray-700" : "border border-gray-300 bg-white text-gray-800 hover:bg-gray-100"}`}>
+                  {Icon && <Icon className="w-4 h-4" />}
+                  {t(industry.nameKey)}
+                </Button>
+              );
+            })}
+          </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredCareers.map((career) => {
@@ -117,54 +117,47 @@ export default function ClosedCareersPage() {
                             className="w-12 h-12"
                           />
                         </div>
-                      )}
-                      <div>
-                        <CardTitle className="text-xl font-semibold text-gray-700">{career.position}</CardTitle>
-                        <CardDescription className="text-gray-400 text-sm">{career["Ocultar empresa"] ? "Confidencial" : career.company}</CardDescription>
                       </div>
-                    </div>
-                  </CardHeader>
+                    </CardHeader>
 
-                  <CardContent className="flex-grow flex flex-col gap-2">
-                    <span className="inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-1 rounded w-fit mb-2 border border-gray-200">
-                      {t("careers.closedPositionBadge")}
-                    </span>
-                    {career.location && (
-                      <p className="text-sm">
-                        <b>{locationLabel}:</b> {career.location}
-                      </p>
-                    )}
+                    <CardContent className="flex-grow flex flex-col gap-2">
+                      <span className="inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-1 rounded w-fit mb-2 border border-gray-200">{t("careers.closedPositionBadge")}</span>
+                      {career.location && (
+                        <p className="text-sm">
+                          <b>{locationLabel}:</b> {career.location}
+                        </p>
+                      )}
 
-                    {!hideSalary && salaryText && (
-                      <p className="text-sm">
-                        <b>{salaryLabel}:</b> {salaryText}
-                      </p>
-                    )}
+                      {!hideSalary && salaryText && (
+                        <p className="text-sm">
+                          <b>{salaryLabel}:</b> {salaryText}
+                        </p>
+                      )}
 
-                    {hideSalary && (
-                      <p className="text-sm">
-                        <b>{salaryLabel}:</b> {lang === "en" ? "Confidential" : "Confidencial"}
-                      </p>
-                    )}
-                  </CardContent>
+                      {hideSalary && (
+                        <p className="text-sm">
+                          <b>{salaryLabel}:</b> {lang === "en" ? "Confidential" : "Confidencial"}
+                        </p>
+                      )}
+                    </CardContent>
 
-                  <CardFooter>
-                    <Link href={`/careers/${career.id}`} className="w-full bg-gray-200 py-2 text-center rounded-lg text-gray-700 hover:bg-gray-300 font-medium transition-colors">
-                      {t("careers.viewClosedPositions") || "Ver detalles"}
-                    </Link>
-                  </CardFooter>
-                </Card>
-              </motion.div>
-            );
-          })}
+                    <CardFooter>
+                      <Link href={`/careers/${career.id}`} className="w-full bg-gray-200 py-2 text-center rounded-lg text-gray-700 hover:bg-gray-300 font-medium transition-colors">
+                        {t("careers.viewClosedPositions") || "Ver detalles"}
+                      </Link>
+                    </CardFooter>
+                  </Card>
+                </motion.div>
+              );
+            })}
 
-          {filteredCareers.length === 0 && (
-             <div className="col-span-full py-12 text-center text-gray-500">
-             <p>{lang === "en" ? "No closed vacancies found for this sector." : "No se han encontrado posiciones cerradas para este sector."}</p>
-           </div>
-          )}
+            {filteredCareers.length === 0 && (
+              <div className="col-span-full py-12 text-center text-gray-500">
+                <p>{lang === "en" ? "No closed vacancies found for this sector." : "No se han encontrado posiciones cerradas para este sector."}</p>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

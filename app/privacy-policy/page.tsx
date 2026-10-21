@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
           <p className="text-sm text-gray-500 mb-10">Última actualización: 24/03/2026</p>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold mb-3">1. Responsable del tratamiento</h2>
+            <h2 className="text-xl font-semibold mb-3">1. Responsable del tratamiento </h2>
             <p>En cumplimiento del Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), te informamos que el responsable del tratamiento de tus datos personales es:</p>
             <ul className="mt-3 space-y-1 list-none pl-0">
               <li><strong>Nombre:</strong> Borja Moreno-Luque Aguirre</li>
@@ -71,7 +71,7 @@ export default function PrivacyPolicy() {
               No cedemos tus datos a terceros salvo obligación legal o cuando sea necesario para la prestación del servicio. Podemos compartir datos con los siguientes proveedores de servicios que actúan como encargados del tratamiento:
             </p>
             <ul className="mt-3 list-disc pl-6 space-y-1">
-              <li>Vercel Inc. (alojamiento web) — con sede en EE.UU., bajo decisión de adecuación y cláusulas contractuales tipo.</li>
+              <li>Vercel Inc. (web) y documentos en instancia europea de MS., bajo decisión de adecuación y cláusulas contractuales tipo.</li>
             </ul>
             <p className="mt-3">Todos ellos cuentan con las garantías adecuadas conforme al RGPD.</p>
           </section>
