@@ -456,68 +456,6 @@ export const translations = {
         description: "The position you are looking for does not exist or has been filled.",
         backButton: "Back to Careers",
       },
-      jobs: {
-        seniorFullStack: {
-          title: "Senior Full Stack Developer",
-          description: "Develop and maintain web applications, ensuring high performance and responsiveness across various platforms.",
-        },
-        aiResearchScientist: {
-          title: "AI Research Scientist",
-          description: "Conduct cutting-edge research in artificial intelligence and machine learning, contributing to innovative solutions.",
-        },
-        dataScientist: {
-          title: "Data Scientist",
-          description: "Analyze complex datasets to extract actionable insights and build predictive models for business optimization.",
-        },
-        devOpsEngineer: {
-          title: "DevOps Engineer",
-          description: "Implement and manage continuous integration and deployment pipelines, ensuring smooth software delivery.",
-        },
-        productManager: {
-          title: "Product Manager",
-          description: "Define product vision, strategy, and roadmap, guiding development from conception to launch.",
-        },
-        uxDesigner: {
-          title: "UX Designer",
-          description: "Design intuitive and engaging user experiences, conducting research and usability testing.",
-        },
-        semiconductorProcessEngineer: {
-          title: "Semiconductor Process Engineer",
-          description: "Design and optimize semiconductor manufacturing processes to improve yield and performance.",
-        },
-        asicDesignEngineer: {
-          title: "ASIC Design Engineer",
-          description: "Join our hardware team to design and verify high-performance Application-Specific Integrated Circuits (ASICs).",
-        },
-        embeddedSystemsEngineer: {
-          title: "Embedded Systems Engineer",
-          description: "Develop firmware and software for our next-generation embedded hardware devices.",
-        },
-        constructionProjectManager: {
-          title: "Construction Project Manager",
-          description: "Oversee and manage large-scale construction projects, ensuring they are completed on time and within budget.",
-        },
-        bimSpecialist: {
-          title: "BIM Specialist",
-          description: "Utilize Building Information Modeling (BIM) to create and manage digital models for construction projects.",
-        },
-        smartBuildingEngineer: {
-          title: "Smart Building Engineer",
-          description: "Design and implement IoT and automation solutions for modern, intelligent buildings.",
-        },
-        supplyChainAnalyst: {
-          title: "Supply Chain Analyst",
-          description: "Analyze and optimize supply chain operations to increase efficiency and reduce costs.",
-        },
-        logisticsOperationsManager: {
-          title: "Logistics Operations Manager",
-          description: "Manage and coordinate the daily operations of our logistics network, including transportation and warehousing.",
-        },
-        warehouseAutomationSpecialist: {
-          title: "Warehouse Automation Specialist",
-          description: "Implement and maintain robotic and automation systems within our warehouse facilities.",
-        },
-      },
     },
     blog: {
       title: "Insights & Perspectives",
@@ -1446,68 +1384,6 @@ export const translations = {
         title: "Puesto no encontrado",
         description: "El puesto que está buscando no existe o ha sido cubierto.",
         backButton: "Volver a Vacantes",
-      },
-      jobs: {
-        seniorFullStack: {
-          title: "Ingeniero senior de Full-Stack",
-          description: "Desarrollar y mantener nuestra plataforma central, trabajando en toda la pila para entregar características de alta calidad.",
-        },
-        aiResearchScientist: {
-          title: "Científico de investigación de IA",
-          description: "Realizar investigaciones de vanguardia en aprendizaje automático y procesamiento del lenguaje natural para mejorar nuestros modelos de IA.",
-        },
-        dataScientist: {
-          title: "Científico de datos",
-          description: "Analizar conjuntos de datos complejos para extraer información valiosa y ayudar a impulsar decisiones empresariales estratégicas.",
-        },
-        devOpsEngineer: {
-          title: "Ingeniero DevOps",
-          description: "Implementar y gestionar pipelines de integración y despliegue continuos, asegurando una entrega de software fluida.",
-        },
-        productManager: {
-          title: "Gerente de producto",
-          description: "Definir la visión, estrategia y hoja de ruta del producto, guiando el desarrollo desde la concepción hasta el lanzamiento.",
-        },
-        uxDesigner: {
-          title: "Diseñador UX",
-          description: "Diseñar experiencias de usuario intuitivas y atractivas, realizando investigación y pruebas de usabilidad.",
-        },
-        semiconductorProcessEngineer: {
-          title: "Ingeniero de procesos de semiconductores",
-          description: "Diseñar y optimizar procesos de fabricación de semiconductores para mejorar el rendimiento y la producción.",
-        },
-        asicDesignEngineer: {
-          title: "Ingeniero de Diseño ASIC",
-          description: "Únete a nuestro equipo de hardware para diseñar y verificar circuitos integrados de aplicación específica (ASIC) de alto rendimiento.",
-        },
-        embeddedSystemsEngineer: {
-          title: "Ingeniero de sistemas embebidos",
-          description: "Desarrollar firmware y software para nuestros dispositivos de hardware embebido de próxima generación.",
-        },
-        constructionProjectManager: {
-          title: "Gerente de proyecto de construcción",
-          description: "Supervisar y gestionar proyectos de construcción a gran escala, asegurando que se completen a tiempo y dentro del presupuesto.",
-        },
-        bimSpecialist: {
-          title: "Especialista en BIM",
-          description: "Utilizar el modelado de información de construcción (BIM) para crear y gestionar modelos digitales para proyectos de construcción.",
-        },
-        smartBuildingEngineer: {
-          title: "Ingeniero de edificios inteligentes",
-          description: "Diseñar e implementar soluciones de IoT y automatización para edificios modernos e inteligentes.",
-        },
-        supplyChainAnalyst: {
-          title: "Analista de la cadena de suministro",
-          description: "Analizar y optimizar las operaciones de la cadena de suministro para aumentar la eficiencia y reducir los costos.",
-        },
-        logisticsOperationsManager: {
-          title: "Gerente de operaciones de logística",
-          description: "Gestionar y coordinar las operaciones diarias de nuestra red de logística, incluyendo el transporte y el almacenamiento.",
-        },
-        warehouseAutomationSpecialist: {
-          title: "Especialista en automatización de almacenes",
-          description: "Implementar y mantener sistemas robóticos y de automatización dentro de nuestras instalaciones de almacén.",
-        },
       },
     },
     blog: {
