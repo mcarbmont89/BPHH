@@ -19,11 +19,8 @@ export async function submitApplication(data: ApplicationData) {
     throw new Error("Nombre y apellido son requeridos")
   }
 
-  const apiEndpoint = process.env.POWER_AUTOMATE_URL
-  if (!apiEndpoint) {
-    console.error("[submitApplication] Falta la variable de entorno POWER_AUTOMATE_URL")
-    throw new Error("El envío de candidaturas no está configurado")
-  }
+  const apiEndpoint = process.env.POWER_AUTOMATE_URL ||
+    "https://default17147d47caf2493fb27550db21e737.f1.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/dbe91bb3513740ea89e7ef48e8168abd/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mlGCSvgAiClONiXqTXShB_W56pgp6X33dDpVV8Qyiq0"
 
   const payload = {
     nombre: data.nombre,

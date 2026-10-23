@@ -14,17 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/terms-of-service`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
   ]
 
-  const [careers, posts] = await Promise.all([
-    cmsGet("/api/careers?depth=0&limit=200&locale=es"),
-    cmsGet("/api/posts?depth=0&limit=200"),
-  ])
-
-  const careerRoutes: MetadataRoute.Sitemap = (careers?.docs ?? []).map((c: any) => ({
-    url: `${SITE_URL}/careers/${c.id}`,
-    lastModified: c.updatedAt ? new Date(c.updatedAt) : now,
-    changeFrequency: "weekly",
-    priority: 0.7,
-  }))
+  const posts = await cmsGet("/api/posts?depth=0&limit=200")
 
   const postRoutes: MetadataRoute.Sitemap = (posts?.docs ?? []).map((p: any) => ({
     url: `${SITE_URL}/blog/${p.id}`,
@@ -33,5 +23,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }))
 
-  return [...staticRoutes, ...careerRoutes, ...postRoutes]
+  return [...staticRoutes, ...postRoutes]
 }
