@@ -2,7 +2,10 @@
 
 import Link from "next/link"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
-import { Facebook, Linkedin, Twitter, Instagram } from "lucide-react"
+import { Linkedin } from "lucide-react"
+
+// Añade aquí la URL de la página de LinkedIn de Botic Partners para mostrar el icono.
+const LINKEDIN_URL = ""
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -13,20 +16,11 @@ export default function Footer() {
         <div className="space-y-4">
           <h3 className="text-xl font-bold text-white">{t("footer.title")}</h3>
           <p className="text-sm">{t("footer.description")}</p>
-          <div className="flex space-x-4">
-            <Link href="#" className="text-gray-400 hover:text-white" aria-label="Facebook">
-              <Facebook size={20} />
-            </Link>
-            <Link href="#" className="text-gray-400 hover:text-white" aria-label="Twitter">
-              <Twitter size={20} />
-            </Link>
-            <Link href="#" className="text-gray-400 hover:text-white" aria-label="LinkedIn">
+          {LINKEDIN_URL && (
+            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-flex text-gray-400 hover:text-white" aria-label="LinkedIn">
               <Linkedin size={20} />
-            </Link>
-            <Link href="#" className="text-gray-400 hover:text-white" aria-label="Instagram">
-              <Instagram size={20} />
-            </Link>
-          </div>
+            </a>
+          )}
         </div>
 
         <div className="space-y-4">
@@ -38,12 +32,12 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/services" className="hover:text-white">
+              <Link href="/#core-services" className="hover:text-white">
                 {t("nav.services")}
               </Link>
             </li>
             <li>
-              <Link href="/industries" className="hover:text-white">
+              <Link href="/#industries" className="hover:text-white">
                 {t("nav.industries")}
               </Link>
             </li>
@@ -54,7 +48,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/blog" className="hover:text-white">
-                Blog
+                {t("nav.blog")}
               </Link>
             </li>
           </ul>
@@ -71,7 +65,7 @@ export default function Footer() {
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-white">{t("footer.followUs")}</h3>
+          <h3 className="text-lg font-semibold text-white">{t("footer.legal")}</h3>
           <ul className="space-y-2">
             <li>
               <Link href="/privacy-policy" className="hover:text-white">
