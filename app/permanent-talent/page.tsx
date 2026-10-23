@@ -133,9 +133,6 @@ export default function PermanentTalent() {
                       }}
                     />
                   </div>
-                  <div className="absolute inset-0 bg-boticPurple/10 rounded-lg flex items-center justify-center text-gray-500" style={{ display: "none" }}>
-                    Imagen no disponible
-                  </div>
                 </motion.div>
               </div>
             </div>

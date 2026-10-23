@@ -50,7 +50,7 @@ const industries = [
     borderColor: "border-green-200",
     iconColor: "text-green-500",
     stats: { placements: 13, companies: 5, retention: 90 },
-    technologies: ["Supply Chain", "Fleet Management", "Warehouse Automation", "Last-Mile", "Blockchain"],
+    technologies: ["Fintech", "Banking", "Corporate Finance", "Risk & Compliance", "Payments"],
   },
 ];
 
@@ -170,15 +170,15 @@ export default function Industries() {
                             <div className="grid grid-cols-3 gap-2 border-y border-gray-200/50 py-6 md:py-4">
                               <div>
                                 <div className={`text-xl md:text-lg font-bold ${industry.iconColor}`}>{industry.stats.placements}+</div>
-                                <div className="text-[10px] md:text-[9px] uppercase text-gray-500">Placements</div>
+                                <div className="text-[10px] md:text-[9px] uppercase text-gray-500">{t("industries.placementsLabel")}</div>
                               </div>
                               <div>
                                 <div className={`text-xl md:text-lg font-bold ${industry.iconColor}`}>{industry.stats.companies}+</div>
-                                <div className="text-[10px] md:text-[9px] uppercase text-gray-500">Companies</div>
+                                <div className="text-[10px] md:text-[9px] uppercase text-gray-500">{t("industries.companiesLabel")}</div>
                               </div>
                               <div>
                                 <div className={`text-xl md:text-lg font-bold ${industry.iconColor}`}>{industry.stats.retention}%</div>
-                                <div className="text-[10px] md:text-[9px] uppercase text-gray-500">Retention</div>
+                                <div className="text-[10px] md:text-[9px] uppercase text-gray-500">{t("industries.retentionLabel")}</div>
                               </div>
                             </div>
                             <div className="flex flex-wrap justify-center gap-2">

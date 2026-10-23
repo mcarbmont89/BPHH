@@ -39,7 +39,7 @@ export default function Hero() {
     },
     {
       title: "Full Stack Engineer",
-      description: "Looking for a versatile developer with experience in modern web technologies.",
+      description: t("home.hero.jobDescription2"),
       scores: {
         general: 92.0,
         technical: 94.0,
@@ -48,7 +48,7 @@ export default function Hero() {
     },
     {
       title: "DevOps Specialist",
-      description: "Join our team to optimize deployment pipelines and cloud infrastructure.",
+      description: t("home.hero.jobDescription3"),
       scores: {
         general: 85.0,
         technical: 90.0,

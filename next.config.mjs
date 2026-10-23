@@ -9,6 +9,13 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  async redirects() {
+    return [
+      // Páginas antiguas de la plantilla, sustituidas por los servicios actuales
+      { source: "/ma-services", destination: "https://acquisition.boticpartners.com/", permanent: true },
+      { source: "/freelance-talent", destination: "/", permanent: true },
+    ]
+  },
   experimental: {
     serverActions: {
       bodySizeLimit: "10mb",

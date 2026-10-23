@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
+import { SITE_URL, SITE_NAME, DEFAULT_DESCRIPTION } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,9 +12,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Botic Partners",
-  description: "AI-Powered Talent Acquisition",
-  generator: "v0.dev",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Botic Partners | Headhunting y selección de talento con IA",
+    template: "%s | Botic Partners",
+  },
+  description: DEFAULT_DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: "/",
+    siteName: SITE_NAME,
+    title: "Botic Partners | Headhunting y selección de talento con IA",
+    description: DEFAULT_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Botic Partners | Headhunting y selección de talento con IA",
+    description: DEFAULT_DESCRIPTION,
+  },
+  icons: { icon: "/favicon.ico" },
 };
 
 export const viewport = {
@@ -23,7 +42,7 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" style={{ backgroundColor: "#1A1A2E" }}>
+    <html lang="es" style={{ backgroundColor: "#1A1A2E" }}>
       <head>
         <Script id="gtm-head" strategy="beforeInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

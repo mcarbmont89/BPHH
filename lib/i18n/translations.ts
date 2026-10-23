@@ -56,6 +56,8 @@ export const translations = {
         lastMatch: "Last Matches",
         jobTitle: "Senior Backend Engineer",
         jobDescription: "A leading fintech company is looking for a skilled engineer to build and scale their core infrastructure.",
+        jobDescription2: "Looking for a versatile developer with experience in modern web technologies.",
+        jobDescription3: "Join the team to optimize deployment pipelines and cloud infrastructure.",
         generalScore: "General Score",
         technicalSkills: "Technical Skills",
         teamFit: "Team Fit",
@@ -428,6 +430,9 @@ export const translations = {
         description: "Our AI-powered global recruitment focuses on Software, Hardware, Construction & Real Estate, and Logistics. We provide tailored talent acquisition services, ensuring perfect matches in these high-demand, specialized sectors.",
       },
       exploreOpportunities: "Explore Opportunities",
+      placementsLabel: "Placements",
+      companiesLabel: "Companies",
+      retentionLabel: "Retention",
     },
     clientCarousel: {
       title: "Trusted by Industry Leaders",
@@ -570,10 +575,10 @@ export const translations = {
       other: "Other",
       getInTouch: "Get in Touch",
       whyPartnerWithUs: "Why Partner With Us",
-      aiTalentMatching: "AI talent matching with 93% accuracy",
-      reduceTimeToHire: "Reduce time-to-hire by up to 60%",
-      accessToTalent: "Access to 10,000+ pre-vetted professionals",
-      retentionRate: "82% retention rate after 2+ years",
+      aiTalentMatching: "AI talent matching, validated by an expert headhunter",
+      reduceTimeToHire: "21-day average time-to-hire",
+      accessToTalent: "Direct access to passive talent across Europe and Latin America",
+      retentionRate: "93% retention rate after 2 years",
       aiPoweredRecruitment: "AI-Powered Recruitment",
       form: {
         name: {
@@ -995,7 +1000,9 @@ export const translations = {
         subtitle: "Conectamos talento de primer nivel con empresas líderes, aprovechando la IA de vanguardia para asegurar la combinación perfecta.",
         lastMatch: "Últimos matches",
         jobTitle: "Ingeniero de backend senior",
-        jobDescription: "Una empresa líder en fintech busca un ingeniero calificado para construir y escalar su infraestructura central.",
+        jobDescription: "Una empresa líder en fintech busca un ingeniero cualificado para construir y escalar su infraestructura principal.",
+        jobDescription2: "Buscamos un perfil versátil con experiencia en tecnologías web modernas.",
+        jobDescription3: "Únete al equipo para optimizar los pipelines de despliegue y la infraestructura cloud.",
         generalScore: "Puntaje general",
         technicalSkills: "Habilidades técnicas",
         teamFit: "Ajuste de equipo",
@@ -1174,7 +1181,7 @@ export const translations = {
       title: "En Botic Partners impulsamos el crecimiento de las empresas combinando talento, tecnología y visión estratégica.\nLo hacemos a través de headhunting especializado, automatización de procesos con IA y apoyo en crecimiento y expansión internacional.",
       permanentStaff: {
         title: "Headhunting",
-        description: "Búsqueda y selección del mejor talento, sin bullshit y a tiempo.",
+        description: "Búsqueda y selección del mejor talento, sin rodeos y a tiempo.",
       },
       freelanceTalent: {
         title: "Automatización de procesos con IA",
@@ -1357,6 +1364,9 @@ export const translations = {
         description: "Nuestro reclutamiento global impulsado por IA se enfoca en Software, Hardware, Construcción e Inmobiliaria, y Logística. Ofrecemos servicios de adquisición de talento a medida, asegurando el match perfecto en estos sectores especializados de alta demanda.",
       },
       exploreOpportunities: "Explorar Oportunidades",
+      placementsLabel: "Colocaciones",
+      companiesLabel: "Empresas",
+      retentionLabel: "Retención",
     },
     clientCarousel: {
       title: "Con la confianza de líderes de la industria",
@@ -1500,10 +1510,10 @@ export const translations = {
       other: "Otro",
       getInTouch: "Agendar reunión",
       whyPartnerWithUs: "Por qué trabajar con nosotros",
-      aiTalentMatching: "Matching de talento con IA con un 93% de precisión",
-      reduceTimeToHire: "Reduce el tiempo de contratación hasta en un 60%",
-      accessToTalent: "Acceso a más de 10,000 profesionales pre-evaluados",
-      retentionRate: "Tasa de retención del 82% después de más de 2 años",
+      aiTalentMatching: "Matching de talento con IA, validado por un headhunter experto",
+      reduceTimeToHire: "Tiempo medio de contratación de 21 días",
+      accessToTalent: "Acceso directo a talento pasivo en Europa y Latinoamérica",
+      retentionRate: "Tasa de retención del 93% a los 2 años",
       aiPoweredRecruitment: "Reclutamiento Impulsado por IA",
       form: {
         name: {
